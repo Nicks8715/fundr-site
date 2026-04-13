@@ -1,0 +1,326 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+:root{
+  --orange:#f06c00;
+  --ink:#16140f;
+  --mid:#5a5348;
+  --faint:#a09890;
+  --sand:#f0ece3;
+  --sand2:#e8e2d8;
+  --dark:#0e0d0b;
+  --dark2:#1a1a18;
+  --white:#fff;
+  --border:rgba(22,20,15,.09);
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Geist',system-ui,sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
+
+.sec-label{font-size:.68rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.sec-label::before{content:'◆';color:var(--orange);font-size:.42rem;flex-shrink:0}
+.sec-label.light{color:rgba(255,255,255,.40)}
+
+/* ═══ 1. HERO ═══ */
+.hero{background:var(--dark);padding:96px 48px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
+.hero-grain{position:absolute;inset:0;opacity:.035;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:150px}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,4rem);font-weight:400;line-height:1.06;color:#fff;margin-bottom:20px;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:rgba(255,255,255,.72)}
+.hero-desc{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.50);line-height:1.85;margin-bottom:36px}
+.hero-desc strong{color:rgba(255,255,255,.85);font-weight:500}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);padding:15px 26px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background .25s,color .25s;white-space:nowrap}
+.btn-primary:hover{background:var(--orange);color:#fff}
+
+/* Hero right — quick stats */
+.hero-stats{display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
+.hero-stat{padding:22px 28px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:18px}
+.hero-stat:last-child{border-bottom:none}
+.hero-stat-num{font-family:var(--serif);font-size:2.2rem;font-style:italic;color:#fff;line-height:1;flex-shrink:0;min-width:64px}
+.hero-stat-text strong{display:block;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.82);margin-bottom:2px}
+.hero-stat-text span{font-size:.72rem;font-weight:300;color:rgba(255,255,255,.38)}
+
+/* ═══ 2. STEPS ═══ */
+.steps{background:var(--white);padding:96px 48px}
+.steps-inner{max-width:1200px;margin:0 auto}
+.steps-header{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:72px}
+.steps h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.1;color:var(--ink)}
+.steps h2 em{font-style:italic}
+.steps-intro{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.85}
+.steps-intro strong{color:var(--ink);font-weight:500}
+
+.step-list{display:flex;flex-direction:column;gap:0}
+.step-item{display:grid;grid-template-columns:80px 1fr;gap:40px;align-items:start;padding:48px 0;border-bottom:1px solid var(--border);position:relative}
+.step-item:first-child{padding-top:0}
+.step-item:last-child{border-bottom:none;padding-bottom:0}
+
+/* Connector line */
+.step-item:not(:last-child)::after{
+  content:'';position:absolute;
+  left:39px;top:52px;bottom:-48px;
+  width:1px;
+  background:linear-gradient(to bottom,var(--orange),rgba(240,108,0,.15));
+}
+.step-item:first-child::after{top:44px}
+
+.step-num-wrap{display:flex;flex-direction:column;align-items:center;padding-top:4px}
+.step-num{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:1.1rem;font-style:italic;color:#fff;
+  flex-shrink:0;position:relative;z-index:1;
+}
+.step-body{}
+.step-tag{font-size:.65rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.step-body h3{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink);margin-bottom:12px;line-height:1.2}
+.step-body p{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.82}
+.step-detail{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.step-chip{font-size:.70rem;font-weight:400;color:var(--mid);padding:5px 12px;border:1px solid var(--border);border-radius:100px;background:var(--sand)}
+
+/* ═══ 3. PROMISE ═══ */
+.promise{background:var(--sand);padding:96px 48px}
+.promise-inner{max-width:1200px;margin:0 auto}
+.promise h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:12px}
+.promise h2 em{font-style:italic}
+.promise-sub{font-size:.88rem;font-weight:300;color:var(--mid);max-width:520px;line-height:1.75;margin-bottom:56px}
+.promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.promise-card{background:#fff;border:1px solid var(--border);border-radius:6px;padding:30px 26px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s}
+.promise-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.promise-card:hover{border-color:rgba(240,108,0,.2);transform:translateY(-3px);box-shadow:0 8px 24px rgba(22,20,15,.07)}
+.promise-card:hover::before{transform:scaleX(1)}
+.promise-card h3{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:8px}
+.promise-card p{font-size:.78rem;font-weight:300;color:var(--mid);line-height:1.72}
+
+/* ═══ 4. CTA ═══ */
+.cta{background:var(--orange);padding:80px 48px;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.06;pointer-events:none}
+.cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;position:relative;z-index:1}
+.cta h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;color:#fff;line-height:1.15;margin-bottom:10px}
+.cta h2 em{font-style:italic}
+.cta p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.7}
+.cta-btns{display:flex;flex-direction:column;gap:12px;flex-shrink:0}
+.btn-white{display:inline-flex;align-items:center;gap:8px;justify-content:center;background:#fff;color:var(--orange);padding:15px 28px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap}
+.btn-white:hover{background:var(--ink);color:#fff}
+.btn-outline-white{display:inline-flex;align-items:center;gap:8px;justify-content:center;background:transparent;color:#fff;padding:14px 28px;font-family:var(--sans);font-size:.78rem;font-weight:500;border:1px solid rgba(255,255,255,.45);border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s;white-space:nowrap}
+.btn-outline-white:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.8)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .promise-grid{grid-template-columns:1fr 1fr}
+  .steps-header{grid-template-columns:1fr;gap:24px}
+}
+@media(max-width:900px){
+  .hero{padding:72px 24px 64px}
+  .hero-inner{grid-template-columns:1fr;gap:44px}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr}
+  .hero-stat{padding:20px 22px;flex-direction:column;align-items:flex-start;gap:6px}
+  .hero-stat-num{font-size:2rem;min-width:unset}
+  .steps{padding:72px 24px}
+  .promise{padding:72px 24px}
+  .cta{padding:64px 24px}
+  .cta-inner{grid-template-columns:1fr;gap:28px}
+  .cta-btns{flex-direction:row;flex-wrap:wrap}
+  .step-item{grid-template-columns:60px 1fr;gap:24px}
+  .step-item:not(:last-child)::after{left:29px}
+}
+@media(max-width:600px){
+  .hero{padding:56px 20px 52px}
+  .hero h1{font-size:clamp(2rem,8.5vw,2.8rem)}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .hero-stat{padding:16px 14px}
+  .hero-stat-num{font-size:1.7rem}
+  .hero-stat-text strong{font-size:.74rem}
+  .hero-stat-text span{font-size:.67rem}
+  .steps{padding:56px 20px}
+  .step-item{grid-template-columns:48px 1fr;gap:20px;padding:36px 0}
+  .step-item:not(:last-child)::after{left:23px;top:40px}
+  .step-num{width:38px;height:38px;font-size:1rem}
+  .step-body h3{font-size:1.25rem}
+  .promise{padding:56px 20px}
+  .promise-grid{grid-template-columns:1fr}
+  .cta{padding:52px 20px}
+  .cta-btns{flex-direction:column;width:100%}
+  .btn-white,.btn-outline-white{width:100%;justify-content:center}
+}
+@media(max-width:380px){
+  .hero{padding:44px 16px 40px}
+  .steps{padding:44px 16px}
+  .promise{padding:44px 16px}
+  .cta{padding:40px 16px}
+}
+</style>
+
+<!-- ═══ 1. HERO ═══ -->
+<section class="hero" aria-label="How fundr works">
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div>
+      <p class="sec-label light">Our Process</p>
+      <h1>Simple finance.<br><em>Fast results.</em></h1>
+      <p class="hero-desc"><strong>No runaround, no jargon.</strong> fundr works around your business — not the other way around. We take the time to understand what you need, then find the lender that fits your deal best. One broker, one conversation, 15+ lenders working for you.</p>
+      <button class="btn-primary" onclick="window.open('https://www.fundr.co.nz/apply','_blank')" aria-label="Apply now">Apply Now &rarr;</button>
+    </div>
+    <div class="hero-stats" aria-label="fundr by the numbers">
+      <div class="hero-stat">
+        <div class="hero-stat-num">4</div>
+        <div class="hero-stat-text"><strong>Simple steps</strong><span>From first conversation to settlement</span></div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">24hr</div>
+        <div class="hero-stat-text"><strong>Typical approval</strong><span>Most applications decided same or next day</span></div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">15+</div>
+        <div class="hero-stat-text"><strong>NZ lenders on panel</strong><span>We find the right fit for your deal</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2. STEPS ═══ -->
+<section class="steps" aria-label="fundr's 4-step finance process">
+  <div class="steps-inner">
+    <div class="steps-header">
+      <div>
+        <p class="sec-label">The Process</p>
+        <h2>Four steps from<br>enquiry to <em>funded.</em></h2>
+      </div>
+      <p class="steps-intro">fundr handles the hard work — you just tell us what you need and choose the option that suits your business. <strong>Most clients are approved within 24 hours</strong> of submitting their details.</p>
+    </div>
+
+    <div class="step-list" role="list">
+
+      <div class="step-item" role="listitem">
+        <div class="step-num-wrap">
+          <div class="step-num" aria-hidden="true">1</div>
+        </div>
+        <div class="step-body">
+          <p class="step-tag">Step One</p>
+          <h3>Tell us what you need</h3>
+          <p>Share what your business is looking to finance and what you're trying to achieve. Whether it's a single vehicle, a piece of equipment, or a larger fleet — give us the details and we'll take it from there. No lengthy forms, no jargon.</p>
+          <div class="step-detail">
+            <span class="step-chip">Vehicle or asset type</span>
+            <span class="step-chip">Approximate value</span>
+            <span class="step-chip">Business details</span>
+            <span class="step-chip">Your goals</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-item" role="listitem">
+        <div class="step-num-wrap">
+          <div class="step-num" aria-hidden="true">2</div>
+        </div>
+        <div class="step-body">
+          <p class="step-tag">Step Two</p>
+          <h3>We review and go to market</h3>
+          <p>Nick personally reviews your application and takes it to the right lenders on our panel. We know which lenders suit which assets, industries and business profiles — so we don't just submit and hope. We structure your deal to give it the strongest possible chance of approval.</p>
+          <div class="step-detail">
+            <span class="step-chip">15+ lenders assessed</span>
+            <span class="step-chip">Right lender matched</span>
+            <span class="step-chip">Application structured correctly</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-item" role="listitem">
+        <div class="step-num-wrap">
+          <div class="step-num" aria-hidden="true">3</div>
+        </div>
+        <div class="step-body">
+          <p class="step-tag">Step Three</p>
+          <h3>We present your options</h3>
+          <p>Once we have lender responses, Nick walks you through the options in plain English — rates, terms, repayments, and which option makes the most sense for your situation. No pressure, no upselling. Just clear, honest advice so you can make the right decision for your business.</p>
+          <div class="step-detail">
+            <span class="step-chip">Clear comparison</span>
+            <span class="step-chip">Plain English explanations</span>
+            <span class="step-chip">Honest recommendation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-item" role="listitem">
+        <div class="step-num-wrap">
+          <div class="step-num" aria-hidden="true">4</div>
+        </div>
+        <div class="step-body">
+          <p class="step-tag">Step Four</p>
+          <h3>Sign, settle, and get moving</h3>
+          <p>Choose the option that works for you, sign the documentation, and we handle everything through to settlement. Once settled, the asset is yours — and fundr remains your point of contact for any questions, refinancing, or future finance needs.</p>
+          <div class="step-detail">
+            <span class="step-chip">Digital documentation</span>
+            <span class="step-chip">Managed settlement</span>
+            <span class="step-chip">Ongoing support</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p style="margin-top:48px;font-size:.72rem;font-weight:300;color:var(--faint)">Terms, conditions, fees and normal lending criteria apply.</p>
+  </div>
+</section>
+
+<!-- ═══ 3. PROMISE ═══ -->
+<section class="promise" aria-label="Our promise to you">
+  <div class="promise-inner">
+    <p class="sec-label">Our Promise</p>
+    <h2>What you can always<br><em>expect from fundr.</em></h2>
+    <p class="promise-sub">Every deal we work on comes with the same commitment — to your business, not the lender.</p>
+    <div class="promise-grid" role="list">
+      <div class="promise-card" role="listitem">
+        <h3>15+ Lenders on Panel</h3>
+        <p>We're not tied to any single lender. We go to the market and find the right fit — better rates, better terms, better outcomes for your business.</p>
+      </div>
+      <div class="promise-card" role="listitem">
+        <h3>24hr Decision</h3>
+        <p>Most applications receive a decision the same or next business day. No waiting weeks while the bank sits on your deal.</p>
+      </div>
+      <div class="promise-card" role="listitem">
+        <h3>Honest Advice</h3>
+        <p>We tell you what's possible and what isn't — clearly, without spin. If a deal can't be done, we'll tell you why and what to do next.</p>
+      </div>
+      <div class="promise-card" role="listitem">
+        <h3>Right Structuring</h3>
+        <p>Nick knows what each lender looks for. We structure your application to give it the strongest possible position from the start.</p>
+      </div>
+      <div class="promise-card" role="listitem">
+        <h3>One Point of Contact</h3>
+        <p>Nick handles your deal personally — from first enquiry through to settlement and beyond. No call centres, no being passed around.</p>
+      </div>
+      <div class="promise-card" role="listitem">
+        <h3>Lifetime Support</h3>
+        <p>Our relationship doesn't end at settlement. We're here when you need to refinance, upgrade, or finance your next asset.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. CTA ═══ -->
+<section class="cta" aria-label="Get started with fundr">
+  <div class="cta-inner">
+    <div>
+      <h2>Ready to get<br><em>started?</em></h2>
+      <p>One application. 15+ lenders. A decision in 24 hours. Talk to Nick today — no obligation, no credit impact to enquire.</p>
+    </div>
+    <div class="cta-btns">
+      <button class="btn-white" onclick="window.open('https://www.fundr.co.nz/apply','_blank')" aria-label="Apply now">Apply Now &rarr;</button>
+      <button class="btn-outline-white" onclick="window.location.href='tel:0211023416'" aria-label="Call Nick">Call Nick — 021 102 3416</button>
+    </div>
+  </div>
+</section>
+
+<script>
+function reportHeight(){window.parent.postMessage({type:'setHeight',height:document.body.scrollHeight},'*')}
+window.addEventListener('load',reportHeight);
+window.addEventListener('resize',reportHeight);
+new ResizeObserver(reportHeight).observe(document.body);
+</script>

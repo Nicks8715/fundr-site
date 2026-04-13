@@ -1,0 +1,375 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+:root{
+  --orange:#f06c00;
+  --ink:#16140f;
+  --mid:#5a5348;
+  --faint:#a09890;
+  --sand:#f0ece3;
+  --sand2:#e8e2d8;
+  --dark:#0e0d0b;
+  --dark2:#1a1a18;
+  --white:#fff;
+  --border:rgba(22,20,15,.09);
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Geist',system-ui,sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
+
+/* ── SHARED ── */
+.sec-label{font-size:.68rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.sec-label::before{content:'◆';color:var(--orange);font-size:.42rem;flex-shrink:0}
+.sec-label.light{color:rgba(255,255,255,.40)}
+
+/* ═══════════════════════════════
+   1. HERO — dark, 2-col
+═══════════════════════════════ */
+.hero{background:var(--dark);padding:96px 48px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
+.hero-grain{position:absolute;inset:0;opacity:.035;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:150px}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-size:clamp(2.6rem,5.5vw,4.4rem);font-weight:400;line-height:1.05;color:#fff;margin-bottom:24px;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:rgba(255,255,255,.75)}
+.hero-desc{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.82;margin-bottom:36px}
+.hero-desc strong{color:rgba(255,255,255,.85);font-weight:500}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);padding:15px 26px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background .25s,color .25s;white-space:nowrap}
+.btn-primary:hover{background:var(--orange);color:#fff}
+.btn-ghost{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.45);background:none;border:none;border-bottom:1px solid rgba(255,255,255,.18);padding:0 0 2px;font-family:var(--sans);font-size:.78rem;cursor:pointer;transition:color .2s,border-color .2s}
+.btn-ghost:hover{color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.45)}
+
+/* Hero right — credential cards */
+.hero-creds{display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
+.hero-cred{padding:24px 28px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:16px;transition:background .2s}
+.hero-cred:last-child{border-bottom:none}
+.hero-cred:hover{background:rgba(255,255,255,.04)}
+.hero-cred-icon{width:36px;height:36px;flex-shrink:0;border-radius:7px;background:rgba(240,108,0,.12);border:1px solid rgba(240,108,0,.22);display:flex;align-items:center;justify-content:center}
+.hero-cred-icon svg{width:16px;height:16px;stroke:var(--orange);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.hero-cred-text strong{display:block;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.85);margin-bottom:2px}
+.hero-cred-text span{font-size:.72rem;font-weight:300;color:rgba(255,255,255,.38)}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-left>*{animation:fadeUp .7s var(--ease) both}
+.hero-left>*:nth-child(1){animation-delay:.05s}
+.hero-left>*:nth-child(2){animation-delay:.15s}
+.hero-left>*:nth-child(3){animation-delay:.25s}
+.hero-left>*:nth-child(4){animation-delay:.35s}
+
+/* ═══════════════════════════════
+   2. STORY — white, 2-col
+═══════════════════════════════ */
+.story{background:var(--white);padding:96px 48px}
+.story-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.story h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:28px}
+.story h2 em{font-style:italic}
+.story-body{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.88}
+.story-body p+p{margin-top:18px}
+.story-body strong{color:var(--ink);font-weight:500}
+.text-link{display:inline-flex;align-items:center;gap:6px;margin-top:28px;font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:none;border:none;border-bottom:1px solid var(--ink);padding:0 0 2px;cursor:pointer;transition:color .2s,border-color .2s}
+.text-link:hover{color:var(--orange);border-color:var(--orange)}
+
+/* Stats stack */
+.story-stats{display:flex;flex-direction:column;gap:0}
+.story-stat{padding:28px 0;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:20px}
+.story-stat:first-child{padding-top:0}
+.story-stat:last-child{border-bottom:none;padding-bottom:0}
+.story-stat-num{font-family:var(--serif);font-size:3.2rem;font-style:italic;color:var(--ink);line-height:1;flex-shrink:0;min-width:96px}
+.story-stat-text strong{display:block;font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:4px}
+.story-stat-text span{font-size:.78rem;font-weight:300;color:var(--mid);line-height:1.6}
+
+/* ═══════════════════════════════
+   3. NICK — sand bg
+═══════════════════════════════ */
+.nick{background:var(--sand);padding:96px 48px}
+.nick-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
+.nick h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:28px}
+.nick h2 em{font-style:italic}
+.nick-body{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.88;margin-bottom:32px}
+.nick-body p+p{margin-top:16px}
+.nick-body strong{color:var(--ink);font-weight:500}
+
+/* Institution logos as text badges */
+.nick-institutions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.inst-badge{font-size:.70rem;font-weight:500;color:var(--mid);padding:6px 14px;border:1px solid var(--sand2);border-radius:100px;background:#fff;letter-spacing:.04em}
+
+.nick-right{display:flex;flex-direction:column;gap:16px}
+.nick-photo{
+  width:100%;max-width:340px;aspect-ratio:3/4;border-radius:4px;overflow:hidden;
+  background:var(--sand2);position:relative;
+}
+.nick-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.nick-photo-placeholder{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--faint);
+}
+
+/* Credential cards */
+.nick-cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.nick-cred-card{background:#fff;border:1px solid var(--border);border-radius:6px;padding:16px 18px;transition:border-color .2s,transform .2s}
+.nick-cred-card:hover{border-color:rgba(240,108,0,.3);transform:translateY(-2px)}
+.nick-cred-card strong{display:block;font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:3px}
+.nick-cred-card span{font-size:.72rem;font-weight:300;color:var(--mid)}
+
+/* ═══════════════════════════════
+   4. VALUES — dark
+═══════════════════════════════ */
+.values{background:var(--dark2);padding:96px 48px}
+.values-inner{max-width:1200px;margin:0 auto}
+.values h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;color:#fff;margin-bottom:12px}
+.values h2 em{font-style:italic}
+.values-sub{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.48);line-height:1.75;max-width:520px;margin-bottom:56px}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);border-radius:6px;overflow:hidden}
+.value-card{background:var(--dark2);padding:36px 32px;display:flex;flex-direction:column;gap:14px;position:relative;transition:background .25s var(--ease)}
+.value-card:hover{background:#222118}
+.value-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.value-card:hover::after{transform:scaleX(1)}
+.value-icon{width:44px;height:44px;border-radius:8px;background:rgba(240,108,0,.10);border:1px solid rgba(240,108,0,.2);display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s}
+.value-card:hover .value-icon{background:rgba(240,108,0,.18);border-color:rgba(240,108,0,.38)}
+.value-icon svg{width:20px;height:20px;stroke:var(--orange);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.value-card h3{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:#fff;line-height:1.2}
+.value-card p{font-size:.82rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75}
+
+/* ═══════════════════════════════
+   5. CTA — orange
+═══════════════════════════════ */
+.cta{background:var(--orange);padding:80px 48px;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.06;pointer-events:none}
+.cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;position:relative;z-index:1}
+.cta h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;color:#fff;line-height:1.15;margin-bottom:12px}
+.cta h2 em{font-style:italic}
+.cta p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.7}
+.cta-btns{display:flex;flex-direction:column;gap:12px;flex-shrink:0}
+.btn-white{display:inline-flex;align-items:center;gap:8px;justify-content:center;background:#fff;color:var(--orange);padding:15px 28px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap}
+.btn-white:hover{background:var(--ink);color:#fff}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;justify-content:center;background:transparent;color:#fff;padding:14px 28px;font-family:var(--sans);font-size:.78rem;font-weight:500;letter-spacing:.04em;border:1px solid rgba(255,255,255,.45);border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s;white-space:nowrap}
+.btn-outline:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.8)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .values-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .hero{padding:72px 24px 64px}
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .story{padding:72px 24px}
+  .story-inner{grid-template-columns:1fr;gap:48px}
+  .nick{padding:72px 24px}
+  .nick-inner{grid-template-columns:1fr;gap:48px}
+  .nick-right{flex-direction:row;gap:24px}
+  .nick-photo{flex:1;min-width:0;aspect-ratio:1/1}
+  .nick-cred-grid{flex:1;min-width:0}
+  .values{padding:72px 24px}
+  .cta{padding:64px 24px}
+  .cta-inner{grid-template-columns:1fr;gap:28px}
+  .cta-btns{flex-direction:row;flex-wrap:wrap}
+}
+@media(max-width:600px){
+  .hero{padding:56px 20px 52px}
+  .hero h1{font-size:clamp(2.2rem,9vw,3rem)}
+  .story{padding:56px 20px}
+  .nick{padding:56px 20px}
+  .nick-right{flex-direction:column}
+  .nick-photo{aspect-ratio:4/3}
+  .nick-cred-grid{grid-template-columns:1fr 1fr}
+  .values{padding:56px 20px}
+  .values-grid{grid-template-columns:1fr}
+  .cta{padding:52px 20px}
+  .cta-btns{flex-direction:column;width:100%}
+  .btn-white,.btn-outline{width:100%;justify-content:center}
+  .story-stat-num{font-size:2.4rem;min-width:72px}
+}
+@media(max-width:380px){
+  .hero{padding:48px 16px 44px}
+  .story{padding:48px 16px}
+  .nick{padding:48px 16px}
+  .values{padding:48px 16px}
+  .cta{padding:44px 16px}
+  .nick-cred-grid{grid-template-columns:1fr}
+}
+</style>
+
+<!-- ═══ 1. HERO ═══ -->
+<section class="hero" aria-label="About fundr">
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <p class="sec-label light">About fundr</p>
+      <h1>Built for Kiwi<br>businesses.<br><em>By one of them.</em></h1>
+      <p class="hero-desc">
+        <strong>fundr is an independent NZ asset finance broker.</strong> We're not a bank, not a lender, and not tied to any institution. Our only job is finding the right finance for your business — fast, honestly, and without the runaround.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="window.open('https://www.fundr.co.nz/apply','_blank')" aria-label="Apply for finance">Apply Now &rarr;</button>
+        <button class="btn-ghost" onclick="window.open('https://www.fundr.co.nz/fundr-way','_blank')" aria-label="How fundr works">How we work &rarr;</button>
+      </div>
+    </div>
+    <div class="hero-creds" aria-label="fundr credentials">
+      <div class="hero-cred">
+        <div class="hero-cred-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="hero-cred-text"><strong>FSP Registered</strong><span>FSP1007390 — fully accredited commercial finance specialist</span></div>
+      </div>
+      <div class="hero-cred">
+        <div class="hero-cred-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="hero-cred-text"><strong>15+ Years Experience</strong><span>Commercial lending across NZ and Australia</span></div>
+      </div>
+      <div class="hero-cred">
+        <div class="hero-cred-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="hero-cred-text"><strong>15+ NZ Lenders on Panel</strong><span>More choice, better rates, right fit for your deal</span></div>
+      </div>
+      <div class="hero-cred">
+        <div class="hero-cred-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="hero-cred-text"><strong>One Point of Contact</strong><span>Nick handles every deal personally, start to finish</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2. STORY ═══ -->
+<section class="story" aria-label="About fundr — our story">
+  <div class="story-inner">
+    <div>
+      <p class="sec-label">Our Story</p>
+      <h2>Why fundr<br><em>exists.</em></h2>
+      <div class="story-body">
+        <p>fundr was built on a simple observation: most Kiwi businesses were being underserved when it came to asset finance. The banks were slow, the process was opaque, and businesses were left waiting weeks for decisions on equipment they needed now.</p>
+        <p><strong>Nick Sevta founded fundr to fix that.</strong> Having spent 15+ years inside institutions like BNZ, GE Capital, and Wells Fargo, he understood exactly why the system was broken — and how to navigate around it.</p>
+        <p>As an independent broker, fundr has no allegiance to any lender. We take your application to the right lenders for your deal, structure it to give it the best chance of approval, and get you a decision fast. Most within 24 hours.</p>
+        <p>The result is a business built on relationships, not transactions. Many of our clients have been with us for years — coming back every time they need a new vehicle, a piece of equipment, or a funding solution for their next step.</p>
+      </div>
+      <button class="text-link" onclick="window.open('https://www.fundr.co.nz/fundr-way','_blank')" aria-label="How fundr works">The fundr Way &rarr;</button>
+    </div>
+    <div class="story-stats" aria-label="fundr by the numbers">
+      <div class="story-stat">
+        <div class="story-stat-num">15+</div>
+        <div class="story-stat-text"><strong>NZ lenders on panel</strong><span>We find the lender that suits your deal — not the other way around.</span></div>
+      </div>
+      <div class="story-stat">
+        <div class="story-stat-num">24hr</div>
+        <div class="story-stat-text"><strong>Typical approval time</strong><span>Most applications receive a decision the same or next business day.</span></div>
+      </div>
+      <div class="story-stat">
+        <div class="story-stat-num">15yr</div>
+        <div class="story-stat-text"><strong>Commercial finance experience</strong><span>Hundreds of deals across every asset class and industry in NZ.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3. NICK ═══ -->
+<section class="nick" aria-label="Meet Nick Sevta">
+  <div class="nick-inner">
+    <div>
+      <p class="sec-label">Your Broker</p>
+      <h2>Meet Nick<br><em>Sevta.</em></h2>
+      <div class="nick-body">
+        <p>Nick Sevta is the Managing Director of fundr and your direct point of contact for every deal. He founded fundr with one goal: to give Kiwi businesses access to the same quality of finance advice that was previously only available to large corporates.</p>
+        <p><strong>With 15+ years in commercial lending</strong> across New Zealand and Australia, Nick has worked inside some of the biggest names in the industry. That experience means he knows exactly what lenders look for — and how to position your application to get the best outcome.</p>
+        <p>Nick's approach is direct and honest. He'll tell you clearly what's possible, what the options are, and what makes the most sense for your business. No jargon, no spin.</p>
+      </div>
+      <p style="font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:12px">Previous institutions</p>
+      <div class="nick-institutions" aria-label="Nick's previous employers">
+        <span class="inst-badge">Bank of New Zealand</span>
+        <span class="inst-badge">Bank of Queensland</span>
+        <span class="inst-badge">GE Capital</span>
+        <span class="inst-badge">Wells Fargo</span>
+        <span class="inst-badge">flexicommercial</span>
+      </div>
+      <button class="text-link" onclick="window.open('https://www.fundr.co.nz/about-nick','_blank')" aria-label="More about Nick">More about Nick &rarr;</button>
+    </div>
+    <div class="nick-right">
+
+      <div class="nick-cred-grid" aria-label="Nick's credentials">
+        <div class="nick-cred-card">
+          <strong>15+ Years</strong>
+          <span>Commercial lending in NZ &amp; Australia</span>
+        </div>
+        <div class="nick-cred-card">
+          <strong>15+ Lenders</strong>
+          <span>Active lender relationships nationwide</span>
+        </div>
+        <div class="nick-cred-card">
+          <strong>FSP Registered</strong>
+          <span>FSP1007390 — fully accredited</span>
+        </div>
+        <div class="nick-cred-card">
+          <strong>Nationwide</strong>
+          <span>Helping businesses across all of NZ</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. VALUES ═══ -->
+<section class="values" aria-label="What fundr stands for">
+  <div class="values-inner">
+    <p class="sec-label light">What We Stand For</p>
+    <h2>Three things fundr<br><em>never compromises on.</em></h2>
+    <p class="values-sub">These aren't marketing words. They're the principles that shape every conversation, every application, and every deal we work on.</p>
+    <div class="values-grid" role="list">
+
+      <div class="value-card" role="listitem">
+        <div class="value-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Relationships over transactions</h3>
+        <p>We're in it for the long term. fundr builds lasting relationships with clients — not just one-off deals. Most of our business comes from people who've worked with us before or been referred by someone who has.</p>
+      </div>
+
+      <div class="value-card" role="listitem">
+        <div class="value-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Transparency, always</h3>
+        <p>You'll always know exactly where your deal stands, what the options are, and what it's going to cost. We don't hide fees, oversell outcomes, or tell you what you want to hear. Just straight, honest advice.</p>
+      </div>
+
+      <div class="value-card" role="listitem">
+        <div class="value-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Speed without shortcuts</h3>
+        <p>Fast doesn't mean sloppy. We move quickly because we do the work properly — structuring applications correctly, anticipating lender requirements, and staying on top of every deal so nothing sits in a queue.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5. CTA ═══ -->
+<section class="cta" aria-label="Get started with fundr">
+  <div class="cta-inner">
+    <div>
+      <h2>Ready to work with<br><em>a broker who gets it?</em></h2>
+      <p>One application. 15+ lenders. A decision in 24 hours. Talk to Nick today — no obligation, no runaround.</p>
+    </div>
+    <div class="cta-btns">
+      <button class="btn-white" onclick="window.open('https://www.fundr.co.nz/apply','_blank')" aria-label="Apply for finance">Apply Now &rarr;</button>
+      <button class="btn-outline" onclick="window.location.href='tel:0211023416'" aria-label="Call Nick">Call Nick — 021 102 3416</button>
+    </div>
+  </div>
+</section>
+
+<script>
+function reportHeight(){window.parent.postMessage({type:'setHeight',height:document.body.scrollHeight},'*')}
+window.addEventListener('load',reportHeight);
+window.addEventListener('resize',reportHeight);
+new ResizeObserver(reportHeight).observe(document.body);
+</script>

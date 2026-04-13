@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The fundr Way | Independent NZ Finance Broker — How We Work</title>
+<meta name="description" content="The fundr way: honest, fast, relationship-focused business finance for Kiwi businesses. One broker, 15+ lenders, no runaround. Find out how fundr works for you.">
+<link rel="canonical" href="https://www.fundr.co.nz/fundr-way">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The fundr Way | How fundr Works for NZ Businesses">
+<meta property="og:description" content="Honest, fast, relationship-focused business finance. One broker, 15+ NZ lenders. Find out what makes fundr different.">
+<meta property="og:url" content="https://www.fundr.co.nz/fundr-way">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"AboutPage",
+  "name":"The fundr Way",
+  "url":"https://www.fundr.co.nz/fundr-way",
+  "description":"fundr is an independent NZ asset finance broker. We work for your business — not the lender. 15+ lenders, 24hr approvals, one point of contact.",
+  "mainEntity":{
+    "@type":"FinancialService",
+    "name":"fundr",
+    "description":"Independent NZ business finance broker specialising in vehicle, truck, ute and equipment finance.",
+    "url":"https://www.fundr.co.nz",
+    "telephone":"+6421102341",
+    "email":"nick@fundr.co.nz",
+    "areaServed":"NZ",
+    "serviceType":["Vehicle Finance","Ute Finance","Truck Finance","Equipment Finance","Business Finance"]
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+:root{
+  --orange:#f06c00;
+  --ink:#16140f;
+  --mid:#5a5348;
+  --faint:#a09890;
+  --sand:#f0ece3;
+  --sand2:#e8e2d8;
+  --dark:#0e0d0b;
+  --dark2:#1a1a18;
+  --white:#fff;
+  --border:rgba(22,20,15,.09);
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Geist',system-ui,sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
+
+/* ── SHARED ── */
+.sec-label{font-size:.68rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.sec-label::before{content:'◆';color:var(--orange);font-size:.42rem;flex-shrink:0}
+.sec-label.light{color:rgba(255,255,255,.40)}
+
+/* ═══════════════════════════════
+   1. HERO
+═══════════════════════════════ */
+.hero{
+  background:var(--dark);
+  padding:96px 48px 80px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--orange);
+}
+.hero-grain{
+  position:absolute;inset:0;opacity:.035;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:150px;
+}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.hero-left{}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(2.6rem,5.5vw,4.4rem);
+  font-weight:400;line-height:1.05;
+  color:#fff;margin-bottom:24px;letter-spacing:-.02em;
+}
+.hero h1 em{font-style:italic;color:rgba(255,255,255,.75)}
+.hero-desc{font-size:.96rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.8;max-width:440px;margin-bottom:36px}
+.hero-desc strong{color:rgba(255,255,255,.85);font-weight:500}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;color:var(--ink);
+  padding:15px 26px;font-family:var(--sans);font-size:.78rem;font-weight:600;
+  letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;
+  cursor:pointer;transition:background .25s,color .25s;white-space:nowrap;
+}
+.btn-primary:hover{background:var(--orange);color:#fff}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:6px;
+  color:rgba(255,255,255,.45);background:none;border:none;
+  border-bottom:1px solid rgba(255,255,255,.18);padding:0 0 2px;
+  font-family:var(--sans);font-size:.78rem;cursor:pointer;
+  transition:color .2s,border-color .2s;
+}
+.btn-ghost:hover{color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.45)}
+
+/* Hero right — stat stack */
+.hero-stats{display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
+.hero-stat{
+  padding:28px 32px;border-bottom:1px solid rgba(255,255,255,.07);
+  display:flex;align-items:baseline;gap:16px;
+  transition:background .2s;
+}
+.hero-stat:last-child{border-bottom:none}
+.hero-stat:hover{background:rgba(255,255,255,.04)}
+.hero-stat-num{font-family:var(--serif);font-size:2.2rem;font-style:italic;color:#fff;line-height:1;flex-shrink:0;min-width:64px}
+.hero-stat-text strong{display:block;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.80);margin-bottom:3px}
+.hero-stat-text span{font-size:.75rem;font-weight:300;color:rgba(255,255,255,.38)}
+
+/* ═══════════════════════════════
+   2. WHAT MAKES US DIFFERENT
+═══════════════════════════════ */
+.different{background:var(--white);padding:96px 48px}
+.different-inner{max-width:1200px;margin:0 auto}
+.different-header{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px}
+.different h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;color:var(--ink)}
+.different h2 em{font-style:italic}
+.different-intro{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.8}
+
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.diff-card{
+  background:#fff;padding:36px 32px;
+  display:flex;flex-direction:column;gap:16px;
+  position:relative;
+  transition:background .25s var(--ease);
+}
+.diff-card:hover{background:var(--sand)}
+.diff-card::after{
+  content:'';position:absolute;top:0;left:0;width:100%;height:2px;
+  background:var(--orange);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s var(--ease);
+}
+.diff-card:hover::after{transform:scaleX(1)}
+.diff-icon{
+  width:44px;height:44px;border-radius:8px;
+  background:rgba(240,108,0,.08);border:1px solid rgba(240,108,0,.2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:background .25s,border-color .25s;
+}
+.diff-card:hover .diff-icon{background:rgba(240,108,0,.16);border-color:rgba(240,108,0,.38)}
+.diff-icon svg{width:20px;height:20px;stroke:var(--orange);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.diff-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--ink);line-height:1.2}
+.diff-card p{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.75}
+
+/* ═══════════════════════════════
+   3. WHAT WE FINANCE
+═══════════════════════════════ */
+.finance{background:var(--sand);padding:96px 48px}
+.finance-inner{max-width:1200px;margin:0 auto}
+.finance h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:12px}
+.finance h2 em{font-style:italic}
+.finance-sub{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.75;max-width:520px;margin-bottom:56px}
+.finance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.finance-card{
+  background:#fff;border:1px solid var(--border);border-radius:6px;
+  padding:28px 24px;
+  display:flex;align-items:flex-start;gap:16px;
+  cursor:pointer;
+  transition:border-color .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+.finance-card:hover{border-color:rgba(240,108,0,.35);transform:translateY(-3px);box-shadow:0 8px 24px rgba(22,20,15,.08)}
+.finance-card-icon{
+  width:40px;height:40px;flex-shrink:0;border-radius:7px;
+  background:rgba(240,108,0,.08);border:1px solid rgba(240,108,0,.18);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .25s,border-color .25s;
+}
+.finance-card:hover .finance-card-icon{background:rgba(240,108,0,.16);border-color:rgba(240,108,0,.35)}
+.finance-card-icon svg{width:18px;height:18px;stroke:var(--orange);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.finance-card-body strong{display:block;font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+.finance-card-body span{font-size:.76rem;font-weight:300;color:var(--mid)}
+
+/* ═══════════════════════════════
+   4. OUR PROMISE
+═══════════════════════════════ */
+.promise{background:var(--dark2);padding:96px 48px}
+.promise-inner{max-width:1200px;margin:0 auto}
+.promise h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;color:#fff;margin-bottom:12px}
+.promise h2 em{font-style:italic}
+.promise-sub{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.48);line-height:1.75;max-width:520px;margin-bottom:56px}
+.promise-list{display:flex;flex-direction:column;gap:0}
+.promise-item{
+  display:grid;grid-template-columns:48px 1fr;gap:24px;align-items:start;
+  padding:28px 0;border-bottom:1px solid rgba(255,255,255,.07);
+  transition:padding-left .25s var(--ease);
+  cursor:default;
+}
+.promise-item:last-child{border-bottom:none}
+.promise-item:hover{padding-left:8px}
+.promise-num{
+  font-family:var(--serif);font-style:italic;font-size:1.5rem;
+  color:rgba(255,255,255,.18);line-height:1;padding-top:4px;
+  transition:color .25s;
+}
+.promise-item:hover .promise-num{color:var(--orange)}
+.promise-content h3{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:#fff;margin-bottom:8px;line-height:1.2}
+.promise-content p{font-size:.84rem;font-weight:300;color:rgba(255,255,255,.52);line-height:1.8}
+.promise-item:hover .promise-content p{color:rgba(255,255,255,.72)}
+
+/* ═══════════════════════════════
+   5. NICK / CTA
+═══════════════════════════════ */
+.nick-cta{background:var(--orange);padding:80px 48px;position:relative;overflow:hidden}
+.nick-cta::before{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px;opacity:.06;pointer-events:none;
+}
+.nick-cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;position:relative;z-index:1}
+.nick-cta h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;color:#fff;line-height:1.15;margin-bottom:12px}
+.nick-cta h2 em{font-style:italic}
+.nick-cta p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.7}
+.nick-cta-btns{display:flex;flex-direction:column;gap:12px;flex-shrink:0}
+.btn-cta-white{
+  display:inline-flex;align-items:center;gap:8px;justify-content:center;
+  background:#fff;color:var(--orange);
+  padding:15px 28px;font-family:var(--sans);font-size:.78rem;font-weight:600;
+  letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;
+  cursor:pointer;transition:background .2s,color .2s;white-space:nowrap;
+}
+.btn-cta-white:hover{background:var(--ink);color:#fff}
+.btn-cta-outline{
+  display:inline-flex;align-items:center;gap:8px;justify-content:center;
+  background:transparent;color:#fff;
+  padding:14px 28px;font-family:var(--sans);font-size:.78rem;font-weight:500;
+  letter-spacing:.04em;border:1px solid rgba(255,255,255,.45);border-radius:2px;
+  cursor:pointer;transition:background .2s,border-color .2s;white-space:nowrap;
+}
+.btn-cta-outline:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.8)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-left>*{animation:fadeUp .7s var(--ease) both}
+.hero-left>*:nth-child(1){animation-delay:.05s}
+.hero-left>*:nth-child(2){animation-delay:.15s}
+.hero-left>*:nth-child(3){animation-delay:.25s}
+.hero-left>*:nth-child(4){animation-delay:.35s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .different-header{grid-template-columns:1fr}
+  .diff-grid{grid-template-columns:repeat(2,1fr)}
+  .finance-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .hero{padding:64px 24px 56px}
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .different{padding:64px 24px}
+  .finance{padding:64px 24px}
+  .promise{padding:64px 24px}
+  .nick-cta{padding:56px 24px}
+  .nick-cta-inner{grid-template-columns:1fr;gap:28px}
+  .nick-cta-btns{flex-direction:row;flex-wrap:wrap}
+  /* Stat grid: 2x2 on tablet */
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr}
+  .hero-stat{padding:22px 20px}
+  .hero-stat-num{font-size:2rem;min-width:56px}
+}
+@media(max-width:600px){
+  .hero{padding:52px 20px 48px}
+  .hero h1{font-size:clamp(2.2rem,9vw,3rem)}
+  .hero-desc{font-size:.88rem;margin-bottom:28px}
+  /* Stats: 2x2 but compact */
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .hero-stat{padding:18px 16px}
+  .hero-stat-num{font-size:1.7rem;min-width:48px}
+  .hero-stat-text strong{font-size:.76rem}
+  .hero-stat-text span{font-size:.68rem}
+  .different{padding:52px 20px}
+  .different-header{gap:24px;margin-bottom:40px}
+  .diff-grid{grid-template-columns:1fr}
+  .finance{padding:52px 20px}
+  .finance-grid{grid-template-columns:1fr}
+  .promise{padding:52px 20px}
+  .promise-item{grid-template-columns:36px 1fr;gap:16px;padding:22px 0}
+  .promise-num{font-size:1.2rem}
+  .nick-cta{padding:48px 20px}
+  .nick-cta-btns{flex-direction:column;width:100%}
+  .btn-cta-white,.btn-cta-outline{width:100%;justify-content:center}
+}
+@media(max-width:400px){
+  .hero{padding:44px 16px 40px}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .hero-stat{padding:14px 12px}
+  .hero-stat-num{font-size:1.5rem;min-width:40px}
+  .different{padding:44px 16px}
+  .diff-card{padding:24px 20px}
+  .finance{padding:44px 16px}
+  .finance-card{padding:20px 16px}
+  .promise{padding:44px 16px}
+  .nick-cta{padding:44px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ 1. HERO ═══ -->
+<section class="hero" aria-label="The fundr way">
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <p class="sec-label light">The fundr Way</p>
+      <h1>Finance that works<br><em>for your business.</em></h1>
+      <p class="hero-desc">
+        <strong>fundr is an independent NZ broker — we work for you, not the lender.</strong>
+        We understand the unique needs of Kiwi businesses. From tradies and contractors to transport operators and business owners, we help you get the gear you need without the runaround.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="window.open('https://www.fundr.co.nz/apply','_blank')" aria-label="Get my finance options">
+          Get My Options &rarr;
+        </button>
+        <button class="btn-ghost" onclick="window.open('https://www.fundr.co.nz/about-nick','_self')" aria-label="About Nick">
+          Meet Nick &rarr;
+        </button>
+      </div>
+    </div>
+    <div class="hero-stats" aria-label="fundr at a glance">
+      <div class="hero-stat">
+        <div class="hero-stat-num">15+</div>
+        <div class="hero-stat-text"><strong>NZ Lenders on Panel</strong><span>We find the lender that suits your deal</span></div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">24hr</div>
+        <div class="hero-stat-text"><strong>Typical Approval</strong><span>Most decisions same or next business day</span></div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">15yr</div>
+        <div class="hero-stat-text"><strong>Commercial Experience</strong><span>Hundreds of deals across every asset class</span></div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1</div>
+        <div class="hero-stat-text"><strong>Point of Contact</strong><span>Nick handles your deal start to finish</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2. WHAT MAKES US DIFFERENT ═══ -->
+<section class="different" aria-label="What makes fundr different">
+  <div class="different-inner">
+    <div class="different-header">
+      <div>
+        <p class="sec-label">What Makes Us Different</p>
+        <h2>We work for<br><em>your business.</em></h2>
+      </div>
+      <p class="different-intro">Most businesses go straight to their bank — and spend weeks waiting for a decision. fundr takes a different approach. We know which lenders suit which industries, assets, and business profiles. That knowledge gets your deal across the line faster.</p>
+    </div>
+    <div class="diff-grid" role="list">
+
+      <div class="diff-card" role="listitem">
+        <div class="diff-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Independent — we work for you</h3>
+        <p>fundr is not affiliated with any bank or lender. Our only job is finding the best deal for your business. We're paid when you get funded, so our interests are fully aligned with yours.</p>
+      </div>
+
+      <div class="diff-card" role="listitem">
+        <div class="diff-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Fast — approvals in 24 hours</h3>
+        <p>Most applications receive a decision within 24 hours. We structure your application correctly from the start, which means fewer delays and a smoother path to approval.</p>
+      </div>
+
+      <div class="diff-card" role="listitem">
+        <div class="diff-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>One person, start to finish</h3>
+        <p>You deal with Nick — directly — from your first enquiry through to settlement. No call centres, no handoffs, no repeating yourself. Just one experienced broker who knows your deal.</p>
+      </div>
+
+      <div class="diff-card" role="listitem">
+        <div class="diff-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>15+ lenders, better rates</h3>
+        <p>We present your deal to our full panel of NZ lenders — not just whoever is convenient. More competition means better rates, better terms, and more choice for your business.</p>
+      </div>
+
+      <div class="diff-card" role="listitem">
+        <div class="diff-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Reliable &amp; FSP registered</h3>
+        <p>fundr is a registered Financial Services Provider (FSP1007390). You can trust that your application is handled professionally, ethically, and in your best interests at all times.</p>
+      </div>
+
+      <div class="diff-card" role="listitem">
+        <div class="diff-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Lifetime support</h3>
+        <p>Our relationship doesn't end at settlement. fundr provides ongoing admin and support for the life of your loan — and we'll be ready when you need finance again.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3. WHAT WE FINANCE ═══ -->
+<section class="finance" aria-label="What fundr finances">
+  <div class="finance-inner">
+    <p class="sec-label">What We Finance</p>
+    <h2>Built for every<br><em>business asset.</em></h2>
+    <p class="finance-sub">From a single ute to a full fleet of trucks or a new piece of heavy equipment — if your business needs it, fundr can finance it.</p>
+    <div class="finance-grid" role="list">
+
+      <div class="finance-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/what-we-finance/vehicle-finance','_self')">
+        <div class="finance-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="finance-card-body">
+          <strong>Vehicle Finance</strong>
+          <span>Cars, SUVs and company vehicles for business use</span>
+        </div>
+      </div>
+
+      <div class="finance-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/ute-finance','_self')">
+        <div class="finance-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="finance-card-body">
+          <strong>Ute Finance</strong>
+          <span>Hilux, Ranger, BT-50 and all work utes</span>
+        </div>
+      </div>
+
+      <div class="finance-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/what-we-finance/truck-finance','_self')">
+        <div class="finance-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="finance-card-body">
+          <strong>Truck Finance</strong>
+          <span>Rigid trucks, tippers, trailers and transport fleet</span>
+        </div>
+      </div>
+
+      <div class="finance-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/what-we-finance/equipment-finance','_self')">
+        <div class="finance-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="finance-card-body">
+          <strong>Equipment Finance</strong>
+          <span>Diggers, machinery, forklifts and construction gear</span>
+        </div>
+      </div>
+
+      <div class="finance-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/what-we-finance/business-finance','_self')">
+        <div class="finance-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div class="finance-card-body">
+          <strong>Business Finance</strong>
+          <span>Working capital, fit-outs and business lending</span>
+        </div>
+      </div>
+
+      <div class="finance-card" role="listitem" onclick="window.parent.postMessage({type:'openContactLightbox'},'*')">
+        <div class="finance-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        </div>
+        <div class="finance-card-body">
+          <strong>Something Else?</strong>
+          <span>Talk to Nick — if your business needs it, we can likely finance it</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. OUR PROMISE ═══ -->
+<section class="promise" aria-label="Our promise to you">
+  <div class="promise-inner">
+    <p class="sec-label light">Our Promise</p>
+    <h2>What you can always<br><em>expect from fundr.</em></h2>
+    <p class="promise-sub">Every client, every deal, every time — this is what fundr commits to.</p>
+    <div class="promise-list" role="list">
+
+      <div class="promise-item" role="listitem">
+        <div class="promise-num" aria-hidden="true">01</div>
+        <div class="promise-content">
+          <h3>Straight answers, fast</h3>
+          <p>No jargon, no spin. You'll always know where your deal stands, what the options are, and what happens next. We respond quickly because we know your time matters.</p>
+        </div>
+      </div>
+
+      <div class="promise-item" role="listitem">
+        <div class="promise-num" aria-hidden="true">02</div>
+        <div class="promise-content">
+          <h3>We fight for your deal</h3>
+          <p>Getting the right finance isn't always straightforward. We know which lenders suit which assets, industries and business profiles — and we structure your application to give it the strongest possible position from the start.</p>
+        </div>
+      </div>
+
+      <div class="promise-item" role="listitem">
+        <div class="promise-num" aria-hidden="true">03</div>
+        <div class="promise-content">
+          <h3>Your interests, not the lender's</h3>
+          <p>As an independent broker, fundr is never incentivised to place you with a particular lender. We recommend what's right for your business — full stop.</p>
+        </div>
+      </div>
+
+      <div class="promise-item" role="listitem">
+        <div class="promise-num" aria-hidden="true">04</div>
+        <div class="promise-content">
+          <h3>One person, start to finish</h3>
+          <p>You'll never be passed around. Nick manages your deal personally from the first conversation through to settlement and beyond.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5. CTA ═══ -->
+<section class="nick-cta" aria-label="Get started with fundr">
+  <div class="nick-cta-inner">
+    <div>
+      <h2>Ready to get your<br><em>business moving?</em></h2>
+      <p>One application. 15+ lenders. Approvals in 24 hours. Talk to Nick today — no obligation, no runaround.</p>
+    </div>
+    <div class="nick-cta-btns">
+      <button class="btn-cta-white" onclick="window.open('https://www.fundr.co.nz/apply','_blank')" aria-label="Get finance options">Get My Options &rarr;</button>
+      <button class="btn-cta-outline" onclick="window.location.href='tel:0211023416'" aria-label="Call Nick">Call Nick — 021 102 3416</button>
+    </div>
+  </div>
+</section>
+
+<script>
+function reportHeight(){window.parent.postMessage({type:'setHeight',height:document.body.scrollHeight},'*')}
+window.addEventListener('load',reportHeight);window.addEventListener('resize',reportHeight);
+new ResizeObserver(reportHeight).observe(document.body);
+</script>
+</body>
+</html>
