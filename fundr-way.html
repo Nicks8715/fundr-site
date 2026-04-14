@@ -548,5 +548,6 @@ function reportHeight(){window.parent.postMessage({type:'setHeight',height:docum
 window.addEventListener('load',reportHeight);window.addEventListener('resize',reportHeight);
 new ResizeObserver(reportHeight).observe(document.body);
 </script>
+<script src="/footer.js"></script>
 </body>
 </html>

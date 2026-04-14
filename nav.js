@@ -1,35 +1,5 @@
-/*
-  FUNDR NAV — nav.js
-  Drop this file in your fundr-site root folder.
-  Then add these two lines to every HTML page:
-
-  In <head>:
-    <link rel="stylesheet" href="/nav.css">
-
-  Just after <body>:
-    <div id="fundr-nav"></div>
-    <script src="/nav.js"></script>
-
-  That's it. The nav appears on every page automatically.
-*/
-
 (function () {
-
-  /* ── Detect current page for active link highlighting ── */
   var path = window.location.pathname;
-
-  function isActive(href) {
-    if (href === '/index.html' || href === '/') {
-      return path === '/' || path === '/index.html';
-    }
-    return path.indexOf(href.replace('.html', '')) !== -1;
-  }
-
-  var links = [
-    { label: 'About', href: '/about.html' },
-    { label: 'Process', href: '/process.html' },
-    { label: 'Calculator', href: '/calculator.html' },
-  ];
 
   var financeLinks = [
     { label: 'Vehicle Finance', sub: 'Cars, SUVs, vans & business vehicles', href: '/vehicle-finance.html', icon: 'vehicle' },
@@ -48,11 +18,18 @@
     phone:   '<svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>',
     email:   '<svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>',
     chevron: '<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>',
+    blog:    '<svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>',
+    faq:     '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
   };
 
-  /* ── Build dropdown items ── */
+  /* Detect if we're in the Blog subfolder */
+  var inBlog = path.indexOf('/Blog/') !== -1;
+  var base = inBlog ? '..' : '';
+
+  function href(p) { return base + p; }
+
   var ddHTML = financeLinks.map(function (fl) {
-    return '<a href="' + fl.href + '" class="fnd-dd-item">' +
+    return '<a href="' + href(fl.href) + '" class="fnd-dd-item">' +
       '<span class="fnd-dd-ico">' + icons[fl.icon] + '</span>' +
       '<span class="fnd-dd-txt">' +
         '<span class="fnd-dd-label">' + fl.label + '</span>' +
@@ -61,30 +38,18 @@
     '</a>';
   }).join('');
 
-  /* ── Build desktop links ── */
-  var desktopLinks = links.map(function (l) {
-    var active = isActive(l.href) ? ' fnd-active' : '';
-    return '<a href="' + l.href + '" class="fnd-link' + active + '">' + l.label + '</a>';
-  }).join('');
-
-  /* ── Build mobile sub-links ── */
-  var mobSub = financeLinks.map(function (fl) {
-    return '<a href="' + fl.href + '" class="fnd-mob-sub-a">' + fl.label + '</a>';
-  }).join('');
-
-  /* ── Build mobile main links ── */
-  var mobLinks = links.map(function (l) {
-    return '<a href="' + l.href + '" class="fnd-mob-a">' + l.label + '</a>';
-  }).join('');
-
-  /* ── Full nav HTML ── */
   var html =
     '<nav class="fnd" id="fnd">' +
-      '<a href="/index.html" class="fnd-logo">fundr.</a>' +
+      /* Logo — use image */
+      '<a href="' + href('/index.html') + '" class="fnd-logo" aria-label="fundr home">' +
+        '<img src="' + href('/images/logo.png') + '" alt="fundr." class="fnd-logo-img">' +
+      '</a>' +
 
+      /* Desktop centre white bar */
       '<div class="fnd-centre">' +
+        /* What We Finance dropdown */
         '<div class="fnd-drop-wrap">' +
-          '<button class="fnd-drop-btn" aria-haspopup="true" aria-expanded="false" id="fnd-drop-btn">' +
+          '<button class="fnd-drop-btn" id="fnd-drop-btn" aria-haspopup="true" aria-expanded="false">' +
             'What We Finance' +
             '<span class="fnd-chev">' + icons.chevron + '</span>' +
           '</button>' +
@@ -92,115 +57,92 @@
             ddHTML +
           '</div>' +
         '</div>' +
-        desktopLinks +
+        '<a href="' + href('/about.html') + '" class="fnd-link">About</a>' +
+        '<a href="' + href('/process.html') + '" class="fnd-link">Process</a>' +
+        '<a href="' + href('/calculator.html') + '" class="fnd-link">Calculator</a>' +
       '</div>' +
 
-      '<a href="/apply.html" class="fnd-apply">Apply Now</a>' +
+      /* Apply Now pill */
+      '<a href="' + href('/check-eligibility-full.html') + '" class="fnd-apply">Apply Now</a>' +
+
+      /* Hamburger circle */
       '<button class="fnd-ham" id="fnd-ham" aria-label="Open menu" aria-expanded="false">' +
         '<span></span><span></span><span></span>' +
       '</button>' +
     '</nav>' +
 
-    '<div class="fnd-overlay" id="fnd-overlay" aria-hidden="true"></div>' +
+    /* Overlay */
+    '<div class="fnd-overlay" id="fnd-overlay"></div>' +
 
+    /* Mobile slide panel */
     '<aside class="fnd-panel" id="fnd-panel" aria-label="Mobile navigation" aria-hidden="true">' +
       '<div class="fnd-panel-top">' +
-        '<a href="/index.html" class="fnd-panel-logo">fundr.</a>' +
-        '<button class="fnd-close" id="fnd-close" aria-label="Close menu">' +
-          '<span></span><span></span>' +
-        '</button>' +
+        '<a href="' + href('/index.html') + '" class="fnd-panel-logo">' +
+          '<img src="' + href('/images/logo.png') + '" alt="fundr." style="height:22px;filter:brightness(0) invert(1)">' +
+        '</a>' +
+        '<button class="fnd-close" id="fnd-close" aria-label="Close menu"><span></span><span></span></button>' +
       '</div>' +
 
       '<div class="fnd-mob-section">' +
         '<div class="fnd-mob-label">What We Finance</div>' +
-        '<div class="fnd-mob-sub">' + mobSub + '</div>' +
+        '<div class="fnd-mob-sub">' +
+          financeLinks.map(function(fl){ return '<a href="' + href(fl.href) + '" class="fnd-mob-sub-a">' + fl.label + '</a>'; }).join('') +
+        '</div>' +
       '</div>' +
 
-      '<div class="fnd-mob-main">' + mobLinks + '</div>' +
+      '<div class="fnd-mob-main">' +
+        '<a href="' + href('/about.html') + '" class="fnd-mob-a">About</a>' +
+        '<a href="' + href('/process.html') + '" class="fnd-mob-a">Process</a>' +
+        '<a href="' + href('/calculator.html') + '" class="fnd-mob-a">Calculator</a>' +
+        '<a href="' + href('/Blog/') + '" class="fnd-mob-a">Blog</a>' +
+        '<a href="' + href('/faq.html') + '" class="fnd-mob-a">FAQ</a>' +
+        '<a href="' + href('/what-we-finance.html') + '" class="fnd-mob-a">All Finance Options</a>' +
+      '</div>' +
 
-      '<a href="/apply.html" class="fnd-mob-apply">Apply Now →</a>' +
+      '<a href="' + href('/check-eligibility-full.html') + '" class="fnd-mob-apply">Apply Now →</a>' +
 
       '<div class="fnd-mob-contact">' +
-        '<a href="tel:02110216">' + icons.phone + '021 102 3416</a>' +
+        '<a href="tel:0211023416">' + icons.phone + '021 102 3416</a>' +
         '<a href="mailto:nick@fundr.co.nz">' + icons.email + 'nick@fundr.co.nz</a>' +
       '</div>' +
     '</aside>';
 
-  /* ── Inject into #fundr-nav ── */
   var target = document.getElementById('fundr-nav');
   if (target) {
     target.innerHTML = html;
     target.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:1000;';
   }
 
-  /* ── Wire up interactions ── */
-  var nav     = document.getElementById('fnd');
-  var ham     = document.getElementById('fnd-ham');
-  var panel   = document.getElementById('fnd-panel');
-  var overlay = document.getElementById('fnd-overlay');
+  /* Wire interactions */
+  var nav      = document.getElementById('fnd');
+  var ham      = document.getElementById('fnd-ham');
+  var panel    = document.getElementById('fnd-panel');
+  var overlay  = document.getElementById('fnd-overlay');
   var closeBtn = document.getElementById('fnd-close');
   var dropBtn  = document.getElementById('fnd-drop-btn');
   var dropdown = document.getElementById('fnd-dropdown');
 
-  function openPanel() {
-    panel.classList.add('fnd-open');
-    overlay.classList.add('fnd-open');
-    ham.classList.add('fnd-open');
-    ham.setAttribute('aria-expanded', 'true');
-    panel.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
+  function openPanel()  { panel.classList.add('fnd-open'); overlay.classList.add('fnd-open'); ham.classList.add('fnd-open'); ham.setAttribute('aria-expanded','true'); panel.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function closePanel() { panel.classList.remove('fnd-open'); overlay.classList.remove('fnd-open'); ham.classList.remove('fnd-open'); ham.setAttribute('aria-expanded','false'); panel.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
 
-  function closePanel() {
-    panel.classList.remove('fnd-open');
-    overlay.classList.remove('fnd-open');
-    ham.classList.remove('fnd-open');
-    ham.setAttribute('aria-expanded', 'false');
-    panel.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-
-  if (ham) ham.addEventListener('click', function () {
-    panel.classList.contains('fnd-open') ? closePanel() : openPanel();
-  });
-
+  if (ham)      ham.addEventListener('click', function(){ panel.classList.contains('fnd-open') ? closePanel() : openPanel(); });
   if (closeBtn) closeBtn.addEventListener('click', closePanel);
-  if (overlay) overlay.addEventListener('click', closePanel);
+  if (overlay)  overlay.addEventListener('click', closePanel);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closePanel(); });
+  window.addEventListener('scroll', function(){ if(nav) nav.classList.toggle('fnd-scrolled', window.scrollY > 10); }, { passive:true });
+  window.addEventListener('resize', function(){ if(window.innerWidth > 960) closePanel(); });
 
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') { closePanel(); }
-  });
-
-  /* Scroll shadow */
-  window.addEventListener('scroll', function () {
-    if (nav) nav.classList.toggle('fnd-scrolled', window.scrollY > 10);
-  }, { passive: true });
-
-  /* Resize — close panel if going to desktop */
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 960) closePanel();
-  });
-
-  /* Dropdown keyboard accessibility */
+  /* Dropdown — hover works via CSS, click toggle for touch */
   if (dropBtn) {
-    dropBtn.addEventListener('click', function () {
+    dropBtn.addEventListener('click', function(){
       var open = dropdown.classList.toggle('fnd-dd-open');
       dropBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-    document.addEventListener('click', function (e) {
+    document.addEventListener('click', function(e){
       if (!dropBtn.contains(e.target) && !dropdown.contains(e.target)) {
         dropdown.classList.remove('fnd-dd-open');
-        dropBtn.setAttribute('aria-expanded', 'false');
+        dropBtn.setAttribute('aria-expanded','false');
       }
     });
   }
-
-  /* Push page body down by nav height */
-  document.addEventListener('DOMContentLoaded', function () {
-    var firstSection = document.querySelector('body > *:not(#fundr-nav):not(script):not(style)');
-    if (firstSection && getComputedStyle(firstSection).position !== 'fixed') {
-      // Already handled by nav.css padding-top on body
-    }
-  });
-
 })();
