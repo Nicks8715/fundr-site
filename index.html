@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>fundr | Vehicle, Truck & Equipment Finance NZ — Business Finance Broker</title>
 <meta name="description" content="fundr is NZ's specialist asset finance broker. Vehicle, ute, truck and equipment finance from 15+ lenders. Approvals in 24 hours. Talk to Nick directly.">
-<link rel="canonical" href="https://www.fundr.co.nz/">
+<link rel="canonical" href="/index.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="fundr | Vehicle, Truck & Equipment Finance NZ">
 <meta property="og:description" content="NZ's specialist business finance broker. 15+ lenders, 24hr approvals. Cars, utes, trucks, equipment and business assets.">
-<meta property="og:url" content="https://www.fundr.co.nz/">
+<meta property="og:url" content="/index.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -97,7 +97,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 }
 .hero-bg{
   position:absolute;inset:0;
-  background-image:url(https://static.wixstatic.com/media/c80c61_100df3328f704470bf8f77859203103e~mv2.png);
+  background-image:url(/images/hero-vehicles.png);
   background-size:72%;
   background-position:right 2% center;
   background-repeat:no-repeat;
@@ -641,8 +641,11 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 }
 @media(max-width:380px){.final-cta{padding:48px 16px}}
 </style>
+<link rel="stylesheet" href="/nav.css">
 </head>
 <body>
+<div id="fundr-nav"></div>
+<script src="/nav.js"></script>
 
 <!-- =============================================
      1. HERO
@@ -668,11 +671,11 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <span class="pill" role="listitem">No Credit Impact to Apply</span>
     </div>
     <div class="hero-actions">
-      <button class="btn-hero" onclick="window.location.href='https://www.fundr.co.nz/apply'" aria-label="Get my finance options">
+      <button class="btn-hero" onclick="window.location.href='/check-eligibility-full.html'" aria-label="Get my finance options">
         Get My Finance Options
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
-      <button class="btn-ghost-hero" onclick="window.open('https://www.fundr.co.nz/check-eligibility','_blank')" aria-label="Check your eligibility">
+      <button class="btn-ghost-hero" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Check your eligibility">
         Check my eligibility &rarr;
       </button>
     </div>
@@ -719,7 +722,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <p>fundr is an independent broker, which means we work for your business, not the lender. We take your application to our full panel of 15+ NZ lenders and find the one that fits your situation best.</p>
         <p>One application, one point of contact — Nick — from enquiry through to keys in hand.</p>
       </div>
-      <button class="text-link" onclick="window.open('https://www.fundr.co.nz/fundr-way','_self')" aria-label="Learn how fundr works">The fundr way &rarr;</button>
+      <button class="text-link" onclick="window.open('/fundr-way.html','_self')" aria-label="Learn how fundr works">The fundr way &rarr;</button>
     </div>
     <div class="intro-stats" aria-label="fundr key facts">
       <div class="intro-stat">
@@ -748,11 +751,11 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <p class="sec-label">What We Finance</p>
         <h2>Vehicle, truck &amp; equipment<br>finance for <em>every Kiwi business.</em></h2>
       </div>
-      <button class="text-link" onclick="window.open('https://www.fundr.co.nz/what-we-finance','_blank')" aria-label="View all finance products">View All &rarr;</button>
+      <button class="text-link" onclick="window.open('/what-we-finance.html','_blank')" aria-label="View all finance products">View All &rarr;</button>
     </div>
     <div class="products-grid" role="list" aria-label="Finance products">
 
-      <article class="product-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/what-we-finance/vehicle-finance','_blank')">
+      <article class="product-card" role="listitem" onclick="window.open('/vehicle-finance.html','_blank')">
         <span class="product-num">01</span>
         <h3>Vehicle Finance</h3>
         <p>Cars, SUVs, vans and commercial vehicles for NZ businesses. New or used, dealer or private sale.</p>
@@ -764,7 +767,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <button class="product-arrow" aria-label="Learn about vehicle finance">Explore Vehicle Finance &rarr;</button>
       </article>
 
-      <article class="product-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/ute-finance','_blank')">
+      <article class="product-card" role="listitem" onclick="window.open('/ute-finance.html','_blank')">
         <span class="product-num">02</span>
         <h3>Ute Finance</h3>
         <p>Ranger, Hilux, D-Max and every work ute. Built for tradies who need fast approvals, not bank paperwork.</p>
@@ -776,7 +779,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <button class="product-arrow" aria-label="Learn about ute finance">Explore Ute Finance &rarr;</button>
       </article>
 
-      <article class="product-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/what-we-finance/truck-finance','_blank')">
+      <article class="product-card" role="listitem" onclick="window.open('/truck-finance.html','_blank')">
         <span class="product-num">03</span>
         <h3>Truck Finance</h3>
         <p>Prime movers, tippers, curtainsiders, crane trucks and specialist vehicles. Owner-operators and fleets.</p>
@@ -788,7 +791,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <button class="product-arrow" aria-label="Learn about truck finance">Explore Truck Finance &rarr;</button>
       </article>
 
-      <article class="product-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/what-we-finance/equipment-finance','_blank')">
+      <article class="product-card" role="listitem" onclick="window.open('/equipment-finance.html','_blank')">
         <span class="product-num">04</span>
         <h3>Equipment Finance</h3>
         <p>Any business equipment — construction, medical, kitchen, gym, warehouse and more. Any industry, any asset.</p>
@@ -818,7 +821,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
     </div>
     <div class="who-grid" role="list" aria-label="Types of businesses fundr helps">
 
-      <article class="who-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/ute-finance','_blank')">
+      <article class="who-card" role="listitem" onclick="window.open('/ute-finance.html','_blank')">
         <div class="who-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         </div>
@@ -827,7 +830,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <button class="who-card-link" aria-label="Ute finance for tradies">Ute finance &rarr;</button>
       </article>
 
-      <article class="who-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/what-we-finance/truck-finance','_blank')">
+      <article class="who-card" role="listitem" onclick="window.open('/truck-finance.html','_blank')">
         <div class="who-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><path d="M10 3v13"/></svg>
         </div>
@@ -836,7 +839,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <button class="who-card-link" aria-label="Truck finance for transport operators">Truck finance &rarr;</button>
       </article>
 
-      <article class="who-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/what-we-finance/equipment-finance','_blank')">
+      <article class="who-card" role="listitem" onclick="window.open('/equipment-finance.html','_blank')">
         <div class="who-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M6 20V10l6-7 6 7v10"/><path d="M10 20v-5h4v5"/><rect x="9" y="10" width="6" height="4" rx="1"/></svg>
         </div>
@@ -845,7 +848,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <button class="who-card-link" aria-label="Equipment finance for contractors">Equipment finance &rarr;</button>
       </article>
 
-      <article class="who-card" role="listitem" onclick="window.open('https://www.fundr.co.nz/what-we-finance/business-finance','_blank')">
+      <article class="who-card" role="listitem" onclick="window.open('/business-finance.html','_blank')">
         <div class="who-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
         </div>
@@ -891,7 +894,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <p>No obligation. Just fast, honest finance.</p>
       </div>
       <div class="cta-btns">
-        <button class="btn-cta-primary" onclick="window.open('https://www.fundr.co.nz/apply','_blank')" aria-label="Apply now">Apply Now &rarr;</button>
+        <button class="btn-cta-primary" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Apply now">Apply Now &rarr;</button>
         <button class="btn-cta-ghost" onclick="window.location.href='tel:0211023416'" aria-label="Call Nick">&#128222; 021 102 3416</button>
       </div>
     </div>
@@ -998,7 +1001,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <p class="promise-cta-quote">"If I can't get your deal done, I'll tell you why — and point you in the right direction. That's the <strong>fundr way.</strong>"</p>
         <p class="promise-cta-sig">— <span>Nick</span>, fundr founder &amp; broker</p>
       </div>
-      <button class="btn-promise" onclick="window.open('https://www.fundr.co.nz/fundr-way','_blank')" aria-label="Learn more about the fundr way">The fundr Way &rarr;</button>
+      <button class="btn-promise" onclick="window.open('/fundr-way.html','_blank')" aria-label="Learn more about the fundr way">The fundr Way &rarr;</button>
     </div>
   </div>
 </section>
@@ -1062,8 +1065,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <p>No call centres. No passing you from person to person. When you contact fundr, you talk to <strong>Nick</strong> — the owner, the broker, and the person who will structure and settle your deal from start to finish.</p>
       <p>With 15 years of commercial finance experience across vehicles, trucks and equipment, Nick has the relationships and expertise to get your deal done — even if the bank said no.</p>
       <div class="nick-actions">
-        <button class="btn-cta-primary" onclick="window.open('https://www.fundr.co.nz/apply','_blank')" aria-label="Get started">Get Started &rarr;</button>
-        <button class="btn-cta-ghost" onclick="window.open('https://www.fundr.co.nz/about-nick','_blank')" aria-label="About Nick">About Nick &rarr;</button>
+        <button class="btn-cta-primary" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Get started">Get Started &rarr;</button>
+        <button class="btn-cta-ghost" onclick="window.open('/about.html','_blank')" aria-label="About Nick">About Nick &rarr;</button>
       </div>
     </div>
     <div class="nick-creds" aria-label="Nick's credentials">
@@ -1107,8 +1110,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
     <h2>Apply for business finance NZ —<br><em>get moving today.</em></h2>
     <p>One application, 15+ lenders, 24-hour approvals. Talk to Nick today.</p>
     <div class="final-cta-btns">
-      <button class="btn-final-white" onclick="window.open('https://www.fundr.co.nz/apply','_blank')" aria-label="Apply now for finance">Apply Now &rarr;</button>
-      <button class="btn-final-outline" onclick="window.open('https://www.fundr.co.nz/calculator','_blank')" aria-label="Use the repayment calculator">Try the Calculator &rarr;</button>
+      <button class="btn-final-white" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Apply now for finance">Apply Now &rarr;</button>
+      <button class="btn-final-outline" onclick="window.open('/calculator.html','_blank')" aria-label="Use the repayment calculator">Try the Calculator &rarr;</button>
     </div>
   </div>
 </section>

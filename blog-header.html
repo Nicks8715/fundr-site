@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — fundr NZ Finance | fundr</title>
+<link rel="stylesheet" href="/nav.css">
+</head>
+<body>
+<div id="fundr-nav"></div>
+<script src="/nav.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -148,7 +159,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <div class="stat-num">NZ</div>
       <div class="stat-text"><strong>Focused content</strong>Written for Kiwi businesses specifically</div>
     </div>
-    <button class="btn-subscribe" onclick="window.open('https://www.fundr.co.nz/apply','_blank')" aria-label="Get finance options">Get My Finance Options &rarr;</button>
+    <button class="btn-subscribe" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Get finance options">Get My Finance Options &rarr;</button>
   </div>
 </div>
 
@@ -158,3 +169,5 @@ window.addEventListener('load',reportHeight);
 window.addEventListener('resize',reportHeight);
 new ResizeObserver(reportHeight).observe(document.body);
 </script>
+</body>
+</html>

@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Business Asset Finance NZ | Vehicle, Truck & Equipment Finance | fundr</title>
 <meta name="description" content="fundr finances vehicles, trucks, utes, equipment and business assets for NZ businesses. 15+ lenders, 24hr approvals, no bank required. Get your options today.">
-<link rel="canonical" href="https://www.fundr.co.nz/what-we-finance">
+<link rel="canonical" href="/what-we-finance.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Business Asset Finance NZ | fundr">
 <meta property="og:description" content="Vehicle, truck, ute, equipment and business finance for Kiwi businesses. Independent broker, 15+ lenders, 24hr approvals.">
-<meta property="og:url" content="https://www.fundr.co.nz/what-we-finance">
+<meta property="og:url" content="/what-we-finance.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "What We Finance | fundr",
-  "url": "https://www.fundr.co.nz/what-we-finance",
+  "url": "/what-we-finance.html",
   "description": "fundr provides vehicle, truck, ute, equipment and business asset finance for NZ businesses. Independent broker with 15+ lenders and 24hr approval.",
   "provider": {
     "@type": "FinancialService",
@@ -28,10 +28,10 @@
     ]
   },
   "hasPart": [
-    {"@type":"WebPage","name":"Vehicle Finance","url":"https://www.fundr.co.nz/what-we-finance/vehicle-finance"},
-    {"@type":"WebPage","name":"Truck Finance","url":"https://www.fundr.co.nz/what-we-finance/truck-finance"},
-    {"@type":"WebPage","name":"Equipment Finance","url":"https://www.fundr.co.nz/what-we-finance/equipment-finance"},
-    {"@type":"WebPage","name":"Business Finance","url":"https://www.fundr.co.nz/what-we-finance/business-finance"}
+    {"@type":"WebPage","name":"Vehicle Finance","url":"/vehicle-finance.html"},
+    {"@type":"WebPage","name":"Truck Finance","url":"/truck-finance.html"},
+    {"@type":"WebPage","name":"Equipment Finance","url":"/equipment-finance.html"},
+    {"@type":"WebPage","name":"Business Finance","url":"/business-finance.html"}
   ]
 }
 </script>
@@ -251,8 +251,11 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
   .cta{padding:40px 16px}
 }
 </style>
+<link rel="stylesheet" href="/nav.css">
 </head>
 <body>
+<div id="fundr-nav"></div>
+<script src="/nav.js"></script>
 
 <!-- ═══ 1. HERO ═══ -->
 <section class="hero" aria-label="What fundr finances">
@@ -271,27 +274,27 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <span class="hero-pill">Flexible Terms</span>
       </div>
       <div class="hero-actions">
-        <button class="btn-primary" onclick="navTo('https://www.fundr.co.nz/apply')" aria-label="Apply for finance">Get My Options &rarr;</button>
-        <button class="btn-ghost" onclick="navTo('https://www.fundr.co.nz/calculator')" aria-label="Calculate repayments">Calculate repayments &rarr;</button>
+        <button class="btn-primary" onclick="navTo('/check-eligibility-full.html')" aria-label="Apply for finance">Get My Options &rarr;</button>
+        <button class="btn-ghost" onclick="navTo('/calculator.html')" aria-label="Calculate repayments">Calculate repayments &rarr;</button>
       </div>
     </div>
     <nav class="hero-nav" aria-label="Finance product quick links">
-      <button class="hero-nav-tile" onclick="navTo('https://www.fundr.co.nz/what-we-finance/vehicle-finance')" aria-label="Vehicle Finance">
+      <button class="hero-nav-tile" onclick="navTo('/vehicle-finance.html')" aria-label="Vehicle Finance">
         <span class="hero-nav-tile-icon" aria-hidden="true">🚗</span>
         <strong>Vehicle Finance</strong>
         <span>Cars, SUVs &amp; commercial vehicles</span>
       </button>
-      <button class="hero-nav-tile" onclick="navTo('https://www.fundr.co.nz/ute-finance')" aria-label="Ute Finance">
+      <button class="hero-nav-tile" onclick="navTo('/ute-finance.html')" aria-label="Ute Finance">
         <span class="hero-nav-tile-icon" aria-hidden="true">🛻</span>
         <strong>Ute Finance</strong>
         <span>Hilux, Ranger, BT-50 &amp; more</span>
       </button>
-      <button class="hero-nav-tile" onclick="navTo('https://www.fundr.co.nz/what-we-finance/truck-finance')" aria-label="Truck Finance">
+      <button class="hero-nav-tile" onclick="navTo('/truck-finance.html')" aria-label="Truck Finance">
         <span class="hero-nav-tile-icon" aria-hidden="true">🚛</span>
         <strong>Truck Finance</strong>
         <span>Rigids, semis &amp; fleet</span>
       </button>
-      <button class="hero-nav-tile" onclick="navTo('https://www.fundr.co.nz/what-we-finance/equipment-finance')" aria-label="Equipment Finance">
+      <button class="hero-nav-tile" onclick="navTo('/equipment-finance.html')" aria-label="Equipment Finance">
         <span class="hero-nav-tile-icon" aria-hidden="true">⚙️</span>
         <strong>Equipment Finance</strong>
         <span>Plant, machinery &amp; more</span>
@@ -313,7 +316,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 
     <div class="product-list" role="list">
 
-      <article class="product-card" role="listitem" onclick="navTo('https://www.fundr.co.nz/what-we-finance/vehicle-finance')" aria-label="Vehicle Finance">
+      <article class="product-card" role="listitem" onclick="navTo('/vehicle-finance.html')" aria-label="Vehicle Finance">
         <div class="product-card-body">
           <p class="product-card-tag">Cars &amp; Commercial Vehicles</p>
           <h3>Vehicle Finance</h3>
@@ -329,7 +332,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <span class="product-card-arrow" aria-hidden="true">&rarr;</span>
       </article>
 
-      <article class="product-card" role="listitem" onclick="navTo('https://www.fundr.co.nz/ute-finance')" aria-label="Ute Finance">
+      <article class="product-card" role="listitem" onclick="navTo('/ute-finance.html')" aria-label="Ute Finance">
         <div class="product-card-body">
           <p class="product-card-tag">Hilux, Ranger, BT-50 &amp; More</p>
           <h3>Ute Finance</h3>
@@ -345,7 +348,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <span class="product-card-arrow" aria-hidden="true">&rarr;</span>
       </article>
 
-      <article class="product-card" role="listitem" onclick="navTo('https://www.fundr.co.nz/what-we-finance/truck-finance')" aria-label="Truck Finance">
+      <article class="product-card" role="listitem" onclick="navTo('/truck-finance.html')" aria-label="Truck Finance">
         <div class="product-card-body">
           <p class="product-card-tag">Rigids, Semis &amp; Fleets</p>
           <h3>Truck Finance</h3>
@@ -361,7 +364,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <span class="product-card-arrow" aria-hidden="true">&rarr;</span>
       </article>
 
-      <article class="product-card" role="listitem" onclick="navTo('https://www.fundr.co.nz/what-we-finance/equipment-finance')" aria-label="Equipment Finance">
+      <article class="product-card" role="listitem" onclick="navTo('/equipment-finance.html')" aria-label="Equipment Finance">
         <div class="product-card-body">
           <p class="product-card-tag">Plant, Machinery &amp; Tools</p>
           <h3>Equipment Finance</h3>
@@ -377,7 +380,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <span class="product-card-arrow" aria-hidden="true">&rarr;</span>
       </article>
 
-      <article class="product-card" role="listitem" onclick="navTo('https://www.fundr.co.nz/what-we-finance/business-finance')" aria-label="Business Finance">
+      <article class="product-card" role="listitem" onclick="navTo('/business-finance.html')" aria-label="Business Finance">
         <div class="product-card-body">
           <p class="product-card-tag">Working Capital &amp; Business Loans</p>
           <h3>Business Finance</h3>
@@ -454,7 +457,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <p class="sec-label light">Why fundr</p>
       <h2>Why NZ businesses<br>choose us over<br><em>the bank.</em></h2>
       <p class="why-body">Banks are slow, rigid, and built for their own interests. <strong>fundr is built for yours.</strong> As an independent broker, we work for you — not for any lender — which means we find the right deal, not just the easiest one to approve.</p>
-      <button class="btn-why" onclick="navTo('https://www.fundr.co.nz/fundr-way')" aria-label="Learn about the fundr way">The fundr Way &rarr;</button>
+      <button class="btn-why" onclick="navTo('/fundr-way.html')" aria-label="Learn about the fundr way">The fundr Way &rarr;</button>
     </div>
     <div class="why-list" role="list">
       <div class="why-item" role="listitem">
@@ -497,7 +500,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <p>Talk to Nick. One conversation is usually all it takes to work out the right structure for your deal — no obligation, no credit impact to enquire.</p>
     </div>
     <div class="cta-btns">
-      <button class="btn-white" onclick="navTo('https://www.fundr.co.nz/apply')" aria-label="Apply now">Get My Options &rarr;</button>
+      <button class="btn-white" onclick="navTo('/check-eligibility-full.html')" aria-label="Apply now">Get My Options &rarr;</button>
       <button class="btn-outline-white" onclick="window.location.href='tel:0211023416'" aria-label="Call Nick">Call Nick — 021 102 3416</button>
     </div>
   </div>
