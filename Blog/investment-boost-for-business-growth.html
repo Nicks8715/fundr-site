@@ -197,11 +197,11 @@ footer{background:var(--black);padding:60px 0 0}
 .rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
 </style>
-<link rel="stylesheet" href="../nav.css">
+
+<link rel="stylesheet" href="../shared.css">
 </head>
 <body>
-<div id="fundr-nav"></div>
-<script src="../nav.js"></script>
+<div id="header-placeholder"></div>
 
 <!-- NAV -->
 <nav>
@@ -525,6 +525,16 @@ window.addEventListener('scroll', () => {
   document.querySelector('nav').style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,.4)' : 'none';
 }, {passive:true});
 </script>
-<script src="../footer.js"></script>
+<div id="footer-placeholder"></div>
+<div id="popup-placeholder"></div>
+<script src="../shared.js"></script>
+<script>
+(function(){
+function loadComp(id,path){fetch(path).then(function(r){return r.text()}).then(function(html){var el=document.getElementById(id);if(el)el.outerHTML=html;}).catch(function(){});}
+loadComp('header-placeholder','../_components/header.html');
+loadComp('footer-placeholder','../_components/footer.html');
+loadComp('popup-placeholder','../_components/popup.html');
+})();
+</script>
 </body>
 </html>

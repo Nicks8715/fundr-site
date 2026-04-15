@@ -1,0 +1,91 @@
+<!-- =============================================
+     FUNDR SHARED HEADER
+     Include on every page. Requires header.css + nav.js
+     ============================================= -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+
+    <a href="/index.html" class="header-logo" aria-label="fundr home">fundr.</a>
+
+    <!-- Desktop Nav -->
+    <nav class="header-nav" aria-label="Main navigation">
+
+      <!-- What We Finance dropdown -->
+      <div class="nav-item has-dropdown">
+        <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          What We Finance
+          <svg class="chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a href="/vehicle-finance.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🚗</span>
+            <span class="di-body"><strong>Vehicle Finance</strong><span>Cars, utes, vans & SUVs</span></span>
+          </a>
+          <a href="/ute-finance.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🛻</span>
+            <span class="di-body"><strong>Ute Finance</strong><span>Hilux, Ranger, Triton & more</span></span>
+          </a>
+          <a href="/truck-finance.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🚚</span>
+            <span class="di-body"><strong>Truck Finance</strong><span>Owner-operators & fleets</span></span>
+          </a>
+          <a href="/equipment-finance.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">⚙️</span>
+            <span class="di-body"><strong>Equipment Finance</strong><span>Any industry, any equipment</span></span>
+          </a>
+          <a href="/business-finance.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🏢</span>
+            <span class="di-body"><strong>Business Finance</strong><span>Working capital & business loans</span></span>
+          </a>
+          <a href="/what-we-finance.html" class="dropdown-item dropdown-item--all" role="menuitem">
+            View All Finance Options →
+          </a>
+        </div>
+      </div>
+
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/process.html" class="nav-link">Process</a>
+      <a href="/calculator.html" class="nav-link">Calculator</a>
+      <a href="/blog.html" class="nav-link">Blog</a>
+      <a href="/faq.html" class="nav-link">FAQ</a>
+    </nav>
+
+    <!-- CTA + Hamburger -->
+    <div class="header-actions">
+      <a href="/apply.html" class="header-apply">Apply Now</a>
+      <button class="header-hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <div class="mobile-section">
+        <p class="mobile-section-label">What We Finance</p>
+        <a href="/vehicle-finance.html" class="mobile-link">Vehicle Finance</a>
+        <a href="/ute-finance.html" class="mobile-link">Ute Finance</a>
+        <a href="/truck-finance.html" class="mobile-link">Truck Finance</a>
+        <a href="/equipment-finance.html" class="mobile-link">Equipment Finance</a>
+        <a href="/business-finance.html" class="mobile-link">Business Finance</a>
+        <a href="/what-we-finance.html" class="mobile-link mobile-link--all">View All →</a>
+      </div>
+      <div class="mobile-section">
+        <p class="mobile-section-label">Company</p>
+        <a href="/about.html" class="mobile-link">About</a>
+        <a href="/process.html" class="mobile-link">Process</a>
+        <a href="/calculator.html" class="mobile-link">Calculator</a>
+        <a href="/blog.html" class="mobile-link">Blog</a>
+        <a href="/faq.html" class="mobile-link">FAQ</a>
+      </div>
+      <div class="mobile-cta">
+        <a href="/apply.html" class="mobile-apply-btn">Apply Now →</a>
+        <a href="tel:0211023416" class="mobile-phone-btn">📞 021 102 3416</a>
+      </div>
+    </div>
+  </div>
+</header>

@@ -187,11 +187,11 @@ footer{background:var(--black);padding:60px 0 0}
 @media(max-width:1024px){.post-layout{grid-template-columns:1fr}.sidebar{position:static}.container{padding:0 36px}}
 @media(max-width:768px){.nav-center{display:none}.container{padding:0 24px}.post-hero{padding:100px 0 52px}.post-h1{font-size:2rem}.cta-btns{flex-direction:column}.f-simple{flex-direction:column;gap:32px}}
 </style>
-<link rel="stylesheet" href="../nav.css">
+
+<link rel="stylesheet" href="../shared.css">
 </head>
 <body>
-<div id="fundr-nav"></div>
-<script src="../nav.js"></script>
+<div id="header-placeholder"></div>
 
 <nav>
   <a href="/" class="nav-logo">fundr.</a>
@@ -421,6 +421,16 @@ const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.
 document.querySelectorAll('.rv').forEach(el=>o.observe(el));
 window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>20?'0 2px 24px rgba(0,0,0,.4)':'none'},{passive:true});
 </script>
-<script src="../footer.js"></script>
+<div id="footer-placeholder"></div>
+<div id="popup-placeholder"></div>
+<script src="../shared.js"></script>
+<script>
+(function(){
+function loadComp(id,path){fetch(path).then(function(r){return r.text()}).then(function(html){var el=document.getElementById(id);if(el)el.outerHTML=html;}).catch(function(){});}
+loadComp('header-placeholder','../_components/header.html');
+loadComp('footer-placeholder','../_components/footer.html');
+loadComp('popup-placeholder','../_components/popup.html');
+})();
+</script>
 </body>
 </html>

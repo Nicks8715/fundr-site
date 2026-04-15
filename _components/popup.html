@@ -1,0 +1,97 @@
+<!-- =============================================
+     FUNDR CONTACT POPUP
+     Include once per page, before </body>
+     Triggered by: data-popup="contact" or class="open-popup"
+     ============================================= -->
+<div class="popup-overlay" id="contact-popup" role="dialog" aria-modal="true" aria-labelledby="popup-heading">
+  <div class="popup-card">
+
+    <!-- Header -->
+    <div class="popup-head">
+      <button class="popup-close" aria-label="Close">&#x2715;</button>
+      <p class="popup-eyebrow">Get My Options</p>
+      <h2 id="popup-heading">Fast, honest finance<br><em>for your business.</em></h2>
+      <p><strong>No credit check. No obligation.</strong> Nick will come back to you with your options within 24 hours.</p>
+      <div class="popup-badges">
+        <span class="popup-badge">15+ NZ Lenders</span>
+        <span class="popup-badge">24hr Response</span>
+        <span class="popup-badge">FSP Registered</span>
+      </div>
+    </div>
+
+    <!-- Form body -->
+    <div class="popup-body">
+      <form id="popup-form" action="https://formspree.io/f/xnjbveny" method="POST">
+        <input type="hidden" name="_subject" value="New Finance Enquiry — fundr">
+        <input type="hidden" name="source" value="popup-form">
+
+        <div class="popup-field-row">
+          <div class="popup-field">
+            <label for="p-first">First Name</label>
+            <input id="p-first" type="text" name="first_name" placeholder="John" required>
+          </div>
+          <div class="popup-field">
+            <label for="p-last">Last Name <span>(optional)</span></label>
+            <input id="p-last" type="text" name="last_name" placeholder="Smith">
+          </div>
+        </div>
+
+        <div class="popup-field-row">
+          <div class="popup-field">
+            <label for="p-phone">Phone</label>
+            <input id="p-phone" type="tel" name="phone" placeholder="021 000 0000" required>
+          </div>
+          <div class="popup-field">
+            <label for="p-email">Email</label>
+            <input id="p-email" type="email" name="email" placeholder="john@business.co.nz" required>
+          </div>
+        </div>
+
+        <div class="popup-field">
+          <label for="p-company">Company Name</label>
+          <input id="p-company" type="text" name="company" placeholder="Smith Contracting Ltd">
+        </div>
+
+        <div class="popup-field-row">
+          <div class="popup-field">
+            <label for="p-finance-type">What do you need to finance?</label>
+            <select id="p-finance-type" name="finance_type" required>
+              <option value="" disabled selected>Select</option>
+              <option>Vehicle / Ute</option>
+              <option>Truck</option>
+              <option>Equipment</option>
+              <option>Business Finance</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="popup-field">
+            <label for="p-amount">Approximate Amount <span>(optional)</span></label>
+            <select id="p-amount" name="approximate_amount">
+              <option value="" disabled selected>Select</option>
+              <option>Under $50k</option>
+              <option>$50k – $100k</option>
+              <option>$100k – $250k</option>
+              <option>$250k – $500k</option>
+              <option>$500k+</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="popup-submit">
+          GET MY OPTIONS →
+        </button>
+        <p class="popup-disclaimer">By submitting you agree to be contacted by fundr. No credit check at this stage.</p>
+      </form>
+
+      <!-- Success state -->
+      <div class="popup-success" id="popup-success">
+        <div class="popup-success-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14l6 6 10-10" stroke="#f06c00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Enquiry Received</h3>
+        <p>Thanks — Nick will be in touch within 24 hours with your finance options across 15+ NZ lenders.</p>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -4,335 +4,107 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Disclosure Statement | fundr</title>
-<meta name="description" content="fundr Limited disclosure statement. FSP registered financial advice services provider. FSPR Number 1007390.">
 <link rel="canonical" href="https://www.fundr.co.nz/disclosure">
-<link rel="stylesheet" href="/nav.css">
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Geist',system-ui,sans-serif;color:#1e1e1c;background:#f7f5f0;-webkit-font-smoothing:antialiased}
-
-/* HERO */
-.d-hero{background:#111110;padding:88px 48px 60px}
-.d-hero-inner{max-width:900px;margin:0 auto}
-.d-tag{display:inline-flex;background:rgba(232,101,10,.1);border:1px solid rgba(232,101,10,.22);border-radius:2px;padding:4px 12px;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;font-weight:500;color:#e8650a;margin-bottom:18px}
-.d-hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(2rem,4vw,2.8rem);color:#fff;line-height:1.07;letter-spacing:-.02em;margin-bottom:14px}
-.d-hero-sub{font-size:.88rem;color:rgba(255,255,255,.42);font-weight:300;line-height:1.6}
-
-/* LAYOUT */
-.d-wrap{max-width:900px;margin:0 auto;padding:64px 48px 100px;display:grid;grid-template-columns:1fr 280px;gap:64px;align-items:start}
-
-/* MAIN CONTENT */
-.d-main{}
-.d-section{margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid #e0dbd2}
-.d-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.d-section-label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:#e8650a;margin-bottom:10px;display:flex;align-items:center;gap:7px}
-.d-section-label::before{content:'◆';font-size:.4rem}
-.d-section h2{font-family:'Instrument Serif',Georgia,serif;font-size:1.45rem;color:#1e1e1c;line-height:1.15;letter-spacing:-.01em;margin-bottom:16px}
-.d-section p{font-size:.925rem;color:#3a3a36;line-height:1.85;margin-bottom:14px;font-weight:300}
-.d-section p:last-child{margin-bottom:0}
-.d-section strong{font-weight:600;color:#1e1e1c}
-.d-section a{color:#e8650a;text-decoration:none;border-bottom:1px solid rgba(232,101,10,.28);transition:border-color .15s}
-.d-section a:hover{border-color:#e8650a}
-
-/* Detail rows (About Us) */
-.d-details{display:flex;flex-direction:column;gap:0;margin:20px 0;border:1px solid #e0dbd2;border-radius:3px;overflow:hidden}
-.d-detail-row{display:grid;grid-template-columns:160px 1fr;gap:0}
-.d-detail-row:not(:last-child){border-bottom:1px solid #e0dbd2}
-.d-detail-key{font-size:.82rem;font-weight:600;color:#1e1e1c;padding:13px 18px;background:#fff;border-right:1px solid #e0dbd2}
-.d-detail-val{font-size:.82rem;color:#3a3a36;padding:13px 18px;font-weight:300;background:#faf8f4}
-.d-detail-val a{color:#e8650a;text-decoration:none;border-bottom:1px solid rgba(232,101,10,.25)}
-
-/* Lenders list */
-.d-lenders{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0}
-.d-lender{background:#fff;border:1px solid #e0dbd2;border-radius:2px;padding:10px 16px;font-size:.84rem;font-weight:400;color:#1e1e1c;display:flex;align-items:center;gap:8px}
-.d-lender::before{content:'';width:6px;height:6px;border-radius:50%;background:#e8650a;flex-shrink:0;opacity:.7}
-
-/* Duties list */
-.d-duties{display:flex;flex-direction:column;gap:10px;margin:16px 0}
-.d-duty{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;background:#fff;border:1px solid #e0dbd2;border-radius:2px}
-.d-duty-num{width:24px;height:24px;border-radius:50%;background:rgba(232,101,10,.1);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:600;color:#e8650a;flex-shrink:0;margin-top:1px}
-.d-duty-text{font-size:.875rem;color:#3a3a36;line-height:1.6;font-weight:300}
-
-/* Fee range visual */
-.d-fee-range{background:#fff;border:1px solid #e0dbd2;border-radius:3px;padding:20px 24px;margin:20px 0;display:flex;align-items:center;gap:20px}
-.d-fee-label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#9a9a92}
-.d-fee-amount{font-family:'Instrument Serif',Georgia,serif;font-size:2rem;font-style:italic;color:#1e1e1c;line-height:1}
-.d-fee-sep{font-size:1.2rem;color:#e0dbd2}
-
-/* FMA link box */
-.d-ext-link{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #e0dbd2;border-radius:3px;padding:16px 20px;margin:16px 0;text-decoration:none;transition:border-color .2s,background .2s}
-.d-ext-link:hover{border-color:#e8650a;background:#faf8f4}
-.d-ext-icon{width:36px;height:36px;background:rgba(232,101,10,.08);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.d-ext-icon svg{width:16px;height:16px;stroke:#e8650a;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.d-ext-label{font-size:.84rem;font-weight:500;color:#1e1e1c}
-.d-ext-sub{font-size:.76rem;color:#6e6e66;font-weight:300;margin-top:1px}
-.d-ext-arrow{margin-left:auto;font-size:.85rem;color:#9a9a92}
-
-/* SIDEBAR */
-.d-sidebar{position:sticky;top:84px;display:flex;flex-direction:column;gap:16px}
-.d-side-card{background:#fff;border:1px solid #e0dbd2;border-radius:3px;padding:24px}
-.d-side-title{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:#9a9a92;margin-bottom:14px}
-.d-side-contact{display:flex;flex-direction:column;gap:10px}
-.d-side-contact a{font-size:.84rem;color:#3a3a36;text-decoration:none;display:flex;align-items:center;gap:9px;transition:color .15s;font-weight:300}
-.d-side-contact a:hover{color:#e8650a}
-.d-side-contact svg{width:14px;height:14px;stroke:#e8650a;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-.d-cta-box{background:#111110;border-radius:3px;padding:24px;position:relative;overflow:hidden}
-.d-cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:#e8650a}
-.d-cta-box h4{font-family:'Instrument Serif',Georgia,serif;font-size:1.2rem;color:#fff;margin-bottom:8px}
-.d-cta-box h4 em{font-style:italic}
-.d-cta-box p{font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:16px;font-weight:300}
-.d-cta-btn{display:block;background:#e8650a;color:#fff;text-align:center;text-decoration:none;padding:12px;font-size:.76rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-radius:2px;transition:background .2s}
-.d-cta-btn:hover{background:#d45a06}
-.d-nav-links{display:flex;flex-direction:column;gap:6px}
-.d-nav-link{font-size:.84rem;color:#3a3a36;text-decoration:none;padding:9px 12px;border-radius:2px;background:#f7f5f0;border:1px solid #e0dbd2;transition:all .15s;font-weight:300;display:flex;align-items:center;justify-content:space-between}
-.d-nav-link:hover{background:#fff;border-color:#e8650a;color:#1e1e1c}
-.d-nav-link::after{content:'→';font-size:.8rem;color:#9a9a92}
-.d-updated{font-size:.76rem;color:#9a9a92;font-weight:300;padding-top:20px;border-top:1px solid #e0dbd2;margin-top:32px}
-
-@media(max-width:960px){.d-wrap{grid-template-columns:1fr;gap:40px}.d-sidebar{position:static}.d-hero{padding:72px 28px 48px}.d-wrap{padding:48px 28px 72px}}
-@media(max-width:600px){.d-lenders{grid-template-columns:1fr}.d-detail-row{grid-template-columns:1fr}.d-detail-key{border-right:none;border-bottom:1px solid #e0dbd2;padding-bottom:4px}.d-fee-range{flex-direction:column;align-items:flex-start;gap:8px}}
+.legal-hero{background:#111110;padding:80px 48px 56px}
+.legal-hero-inner{max-width:860px;margin:0 auto}
+.legal-tag{display:inline-flex;background:rgba(232,101,10,.1);border:1px solid rgba(232,101,10,.2);border-radius:2px;padding:4px 12px;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;font-weight:500;color:#e8650a;margin-bottom:16px}
+.legal-hero h1{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(2rem,4vw,2.8rem);color:#fff;line-height:1.08;letter-spacing:-.02em;margin-bottom:14px}
+.legal-hero p{font-size:.88rem;color:rgba(255,255,255,.45);font-weight:300}
+.legal-body{max-width:860px;margin:0 auto;padding:64px 48px 96px}
+.legal-body h2{font-family:'Instrument Serif',Georgia,serif;font-size:1.45rem;color:#1e1e1c;margin:40px 0 14px;padding-top:40px;border-top:1px solid #e0dbd2;letter-spacing:-.01em}
+.legal-body h2:first-child{margin-top:0;padding-top:0;border-top:none}
+.legal-body h3{font-family:'Instrument Serif',Georgia,serif;font-size:1.1rem;font-style:italic;color:#1e1e1c;margin:24px 0 10px}
+.legal-body p{font-size:.95rem;color:#3a3a36;line-height:1.85;margin-bottom:16px;font-weight:300}
+.legal-body ul{padding-left:0;margin:0 0 16px;list-style:none;display:flex;flex-direction:column;gap:8px}
+.legal-body ul li{font-size:.95rem;color:#3a3a36;line-height:1.7;padding-left:18px;position:relative;font-weight:300}
+.legal-body ul li::before{content:'—';position:absolute;left:0;color:#e8650a;font-size:.85rem}
+.legal-body a{color:#e8650a;text-decoration:none;border-bottom:1px solid rgba(232,101,10,.3)}
+.legal-body a:hover{border-color:#e8650a}
+.legal-body strong{font-weight:600;color:#1e1e1c}
+.legal-contact-box{background:#111110;border-radius:3px;padding:32px 36px;margin-top:40px}
+.legal-contact-box h3{font-family:'Instrument Serif',Georgia,serif;font-size:1.3rem;color:#fff;margin-bottom:10px;font-style:italic}
+.legal-contact-box p{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:0;font-weight:300}
+.legal-contact-box a{color:#e8650a;border-bottom:none}
+.updated{font-size:.78rem;color:#9a9a92;font-weight:300;margin-top:48px;padding-top:24px;border-top:1px solid #e0dbd2}
+@media(max-width:768px){.legal-hero{padding:72px 24px 44px}.legal-body{padding:44px 24px 72px}}
 </style>
+<link rel="stylesheet" href="/shared.css">
 </head>
 <body>
-
-<div id="fundr-nav"></div>
-<script src="/nav.js"></script>
-
-<!-- HERO -->
-<section class="d-hero">
-  <div class="d-hero-inner">
-    <div class="d-tag">Legal Document</div>
+<div id="header-placeholder"></div>
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-tag">Legal</div>
     <h1>Disclosure Statement</h1>
-    <p class="d-hero-sub">This Disclosure Statement provides you with important information about the financial advice services provided by fundr Limited.</p>
+    <p>fundr Limited — FSP1007390 — New Zealand</p>
   </div>
 </section>
+<div class="legal-body">
 
-<!-- BODY -->
-<div class="d-wrap">
+<h2>About This Disclosure</h2>
+<p>This disclosure statement is provided in accordance with the Financial Advisers Act 2008 and the Financial Markets Conduct Act 2013. It contains important information about fundr Limited and our services to help you decide whether to use our services.</p>
 
-  <main class="d-main">
+<h2>About fundr Limited</h2>
+<ul>
+<li><strong>Business name:</strong> fundr Limited</li>
+<li><strong>Trading name:</strong> fundr</li>
+<li><strong>FSP Registration Number:</strong> FSP1007390</li>
+<li><strong>Nature of business:</strong> Asset finance brokerage</li>
+<li><strong>Director and broker:</strong> Nick Sevta</li>
+<li><strong>Contact:</strong> <a href='mailto:nick@fundr.co.nz'>nick@fundr.co.nz</a> | <a href='tel:0211023416'>021 102 3416</a></li>
+</ul>
 
-    <!-- ABOUT US -->
-    <div class="d-section">
-      <div class="d-section-label">About Us</div>
-      <h2>About fundr Limited</h2>
-      <p>fundr Limited holds a Full Licence and is registered with the Financial Markets Authority as a Financial Advice Provider.</p>
+<h2>Services We Provide</h2>
+<p>fundr is a specialist asset finance brokerage. We provide financial adviser services in relation to asset finance products, including:</p>
+<ul>
+<li>Vehicle finance (cars, utes, vans, trucks)</li>
+<li>Equipment finance</li>
+<li>Business finance and working capital</li>
+</ul>
+<p>We do not provide financial advice in relation to investment products, insurance, mortgages, or KiwiSaver.</p>
 
-      <div class="d-details">
-        <div class="d-detail-row">
-          <div class="d-detail-key">Legal name</div>
-          <div class="d-detail-val">fundr Limited</div>
-        </div>
-        <div class="d-detail-row">
-          <div class="d-detail-key">Trading as</div>
-          <div class="d-detail-val">fundr</div>
-        </div>
-        <div class="d-detail-row">
-          <div class="d-detail-key">FSPR Number</div>
-          <div class="d-detail-val">1007390</div>
-        </div>
-        <div class="d-detail-row">
-          <div class="d-detail-key">Email</div>
-          <div class="d-detail-val"><a href="mailto:nick@fundr.co.nz">nick@fundr.co.nz</a></div>
-        </div>
-        <div class="d-detail-row">
-          <div class="d-detail-key">Website</div>
-          <div class="d-detail-val"><a href="https://www.fundr.co.nz">www.fundr.co.nz</a></div>
-        </div>
-        <div class="d-detail-row">
-          <div class="d-detail-key">Address</div>
-          <div class="d-detail-val">80A Matipo Road, Mairangi Bay, Auckland 0630</div>
-        </div>
-      </div>
-    </div>
+<h2>Our Lender Panel</h2>
+<p>fundr works with a panel of 15+ New Zealand lenders, including banks and specialist non-bank asset finance companies. We submit applications to lenders on your behalf and identify the lender most suited to your situation and requirements.</p>
+<p>We do not have any ownership interest in any lender on our panel, and no lender has any ownership interest in fundr.</p>
 
-    <!-- NATURE OF ADVICE -->
-    <div class="d-section">
-      <div class="d-section-label">Services</div>
-      <h2>Nature and Scope of Financial Advice</h2>
-      <p>fundr Limited can give you advice about financial products such as business, vehicle, and equipment finance and consumer finance. We specialise in sourcing finance for businesses and consumers by understanding their needs and then negotiating on their behalf with multiple financiers.</p>
-      <p>fundr is unable to offer legal or tax advice. We recommend you consult your solicitor or accountant for this type of advice.</p>
-    </div>
+<h2>How We Are Paid</h2>
+<p>fundr is primarily compensated by lenders through commission payments when a finance application is settled. The commission rate varies by lender and product type. In some cases, a broker fee may also be charged to clients — this will always be disclosed and agreed upfront before any application is submitted.</p>
+<p>Our commission arrangements do not prevent us from acting in your best interests. We recommend lenders based on which lender is the best fit for your specific deal and circumstances, not which lender pays the highest commission.</p>
 
-    <!-- LENDERS -->
-    <div class="d-section">
-      <div class="d-section-label">Lender Panel</div>
-      <h2>Banks and Lenders We Use</h2>
-      <p>fundr has agreements in place with a range of product providers and will recommend a suitable provider once we have conducted our analysis of your situation and research on the best product and/or product provider to meet your needs.</p>
+<h2>Conflicts of Interest</h2>
+<p>As a broker compensated by lenders, fundr has a potential conflict of interest in that we may receive different commission rates from different lenders. We manage this conflict by:</p>
+<ul>
+<li>Always recommending the lender and structure that best fits your needs</li>
+<li>Being transparent about our remuneration arrangements on request</li>
+<li>Having a formal conflicts of interest policy</li>
+</ul>
 
-      <div class="d-lenders">
-        <div class="d-lender">Flexicommercial</div>
-        <div class="d-lender">Heartland Bank</div>
-        <div class="d-lender">Kiwibank</div>
-        <div class="d-lender">Line Capital</div>
-        <div class="d-lender">Orix New Zealand</div>
-        <div class="d-lender">Speirs Finance</div>
-        <div class="d-lender">Avanti Finance</div>
-        <div class="d-lender">Finance Now</div>
-        <div class="d-lender">Geneva Finance</div>
-        <div class="d-lender">Branded Financial Services</div>
-        <div class="d-lender">CFI Finance</div>
-        <div class="d-lender">Prospa</div>
-        <div class="d-lender">Fundtap</div>
-      </div>
-    </div>
+<h2>Duties</h2>
+<p>fundr and its representatives are bound by duties under the Financial Markets Conduct Act 2013, including the duty to:</p>
+<ul>
+<li>Meet the standards of competence, knowledge, and skill</li>
+<li>Give priority to your interests</li>
+<li>Exercise care, diligence, and skill</li>
+<li>Comply with the Code of Professional Conduct for Financial Advice Services</li>
+</ul>
 
-    <!-- DUTIES -->
-    <div class="d-section">
-      <div class="d-section-label">Our Obligations</div>
-      <h2>Our Duties</h2>
-      <p>fundr Limited is bound by and supports the duties set out in the Financial Markets Conduct Act 2013. These duties are:</p>
+<h2>Dispute Resolution</h2>
+<p>If you have a complaint about our services, please refer to our <a href='/complaints.html'>Complaints Process</a>. fundr is a member of Financial Services Complaints Limited (FSCL), an approved dispute resolution scheme.</p>
 
-      <div class="d-duties">
-        <div class="d-duty">
-          <div class="d-duty-num">1</div>
-          <div class="d-duty-text">Meet the standards of competence, knowledge, and skill set out in the Code of Professional Conduct for Financial Advice Services.</div>
-        </div>
-        <div class="d-duty">
-          <div class="d-duty-num">2</div>
-          <div class="d-duty-text">Give priority to my client's interests.</div>
-        </div>
-        <div class="d-duty">
-          <div class="d-duty-num">3</div>
-          <div class="d-duty-text">Exercise care, diligence, and skill.</div>
-        </div>
-        <div class="d-duty">
-          <div class="d-duty-num">4</div>
-          <div class="d-duty-text">Meet the standards of ethical behaviour, conduct, and client care set out in the Code of Professional Conduct for Financial Advice Services.</div>
-        </div>
-      </div>
+<h2>Privacy</h2>
+<p>We collect and use personal information in accordance with our <a href='/privacy.html'>Privacy Policy</a> and the New Zealand Privacy Act 2020.</p>
 
-      <p>More information is available by contacting us, or by visiting the Financial Markets Authority website.</p>
-
-      <a href="https://www.fma.govt.nz" target="_blank" rel="noopener noreferrer" class="d-ext-link">
-        <div class="d-ext-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
-        <div><div class="d-ext-label">Financial Markets Authority</div><div class="d-ext-sub">fma.govt.nz</div></div>
-        <span class="d-ext-arrow">↗</span>
-      </a>
-
-      <a href="https://www.fma.govt.nz/assets/assets/code-of-professional-conduct-for-financial-advice-services.pdf" target="_blank" rel="noopener noreferrer" class="d-ext-link">
-        <div class="d-ext-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-        <div><div class="d-ext-label">Code of Professional Conduct for Financial Advice Services</div><div class="d-ext-sub">FMA — PDF document</div></div>
-        <span class="d-ext-arrow">↗</span>
-      </a>
-    </div>
-
-    <!-- HOW WE GET PAID -->
-    <div class="d-section">
-      <div class="d-section-label">Remuneration</div>
-      <h2>How We Get Paid</h2>
-      <p>For business, vehicle, equipment finance and consumer finance, fundr and the financial adviser receive commissions from the various finance providers we work with.</p>
-      <p>If you decide to take out a loan, the lender will pay a commission to fundr and your financial adviser. The amount of the commission is calculated through an agreed base rate between the lender and fundr. The adviser will then add a margin above the base rate to reflect the commission paid.</p>
-    </div>
-
-    <!-- FEES -->
-    <div class="d-section">
-      <div class="d-section-label">Fees</div>
-      <h2>Fees and Charges</h2>
-      <p>fundr charges a broker fee for every deal we process. This fee is included in your loan structure and repayments.</p>
-
-      <div class="d-fee-range">
-        <div><div class="d-fee-label">Broker fee range</div><div class="d-fee-amount">$0</div></div>
-        <div class="d-fee-sep">—</div>
-        <div><div class="d-fee-label">&nbsp;</div><div class="d-fee-amount">$1,000</div></div>
-      </div>
-
-      <p>The fee charged relates to providing specialised assistance with sourcing the right finance solutions to meet your needs and objectives.</p>
-      <p>If you do not enter into the credit contract, you will not be charged. Please note the finance provider will also have fees and charges relating to the processing of your deal and loading security on the PPSR. All fees and charges will be disclosed to you upfront upon approval from the finance provider.</p>
-    </div>
-
-    <!-- CONFLICTS OF INTEREST -->
-    <div class="d-section">
-      <div class="d-section-label">Conflicts of Interest</div>
-      <h2>Conflicts of Interest and Incentives</h2>
-      <p>To ensure that our financial advisers prioritise the client's interest above their own, we follow an advice process that ensures our recommendations are made on the basis of the client's goals and circumstances. All our financial advisers undergo annual training about how to manage conflicts of interest. We undertake a compliance audit and a review of our compliance programme annually. We maintain registers of conflicts of interests, and the gifts and incentives we receive.</p>
-      <p>fundr and our financial advisers can receive commissions and brokerage from the finance providers on whose products we give financial advice. If you decide to take out the loan, the finance provider will pay a commission or brokerage to fundr at time of settlement.</p>
-    </div>
-
-    <!-- PRIVACY -->
-    <div class="d-section">
-      <div class="d-section-label">Privacy</div>
-      <h2>Privacy Policy &amp; Security</h2>
-      <p>We will collect personal information in accordance with our Privacy Policy. We regard client confidentiality as of paramount importance. We will not disclose any confidential information obtained from or about you to any other person, except in accordance with our Privacy Policy.</p>
-      <a href="/privacy.html" class="d-ext-link">
-        <div class="d-ext-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div><div class="d-ext-label">Privacy Policy</div><div class="d-ext-sub">How we collect and use your information</div></div>
-        <span class="d-ext-arrow">→</span>
-      </a>
-    </div>
-
-    <!-- AVAILABILITY -->
-    <div class="d-section">
-      <div class="d-section-label">Access</div>
-      <h2>Availability of Information</h2>
-      <p>This information can be provided in hardcopy upon your request by contacting us at <a href="mailto:nick@fundr.co.nz">nick@fundr.co.nz</a>.</p>
-    </div>
-
-    <!-- COMPLAINTS -->
-    <div class="d-section">
-      <div class="d-section-label">Complaints</div>
-      <h2>Complaints Process</h2>
-      <p>If you have a complaint about our services, please refer to our internal complaints process. fundr is a member of an approved dispute resolution scheme.</p>
-      <a href="/complaints.html" class="d-ext-link">
-        <div class="d-ext-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-        <div><div class="d-ext-label">Complaints Process</div><div class="d-ext-sub">How to make a complaint and dispute resolution</div></div>
-        <span class="d-ext-arrow">→</span>
-      </a>
-
-      <p class="d-updated">Last updated: April 2026 &nbsp;·&nbsp; fundr Limited FSP1007390</p>
-    </div>
-
-  </main>
-
-  <!-- SIDEBAR -->
-  <aside class="d-sidebar">
-
-    <div class="d-cta-box">
-      <h4>Talk to <em>Nick.</em></h4>
-      <p>Questions about this disclosure? Contact Nick directly.</p>
-      <a href="/check-eligibility-full.html" class="d-cta-btn">Apply Now →</a>
-    </div>
-
-    <div class="d-side-card">
-      <div class="d-side-title">Contact</div>
-      <div class="d-side-contact">
-        <a href="mailto:nick@fundr.co.nz">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          nick@fundr.co.nz
-        </a>
-        <a href="tel:0211023416">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          021 102 3416
-        </a>
-        <a href="https://www.fundr.co.nz">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-          fundr.co.nz
-        </a>
-      </div>
-    </div>
-
-    <div class="d-side-card">
-      <div class="d-side-title">Legal Documents</div>
-      <div class="d-nav-links">
-        <a href="/disclosure.html" class="d-nav-link" style="border-color:#e8650a;color:#1e1e1c">Disclosure Statement</a>
-        <a href="/privacy.html" class="d-nav-link">Privacy Policy</a>
-        <a href="/complaints.html" class="d-nav-link">Complaints Process</a>
-      </div>
-    </div>
-
-    <div class="d-side-card">
-      <div class="d-side-title">External Resources</div>
-      <div class="d-nav-links">
-        <a href="https://www.fma.govt.nz" target="_blank" rel="noopener noreferrer" class="d-nav-link">FMA Website ↗</a>
-        <a href="https://fscl.org.nz" target="_blank" rel="noopener noreferrer" class="d-nav-link">FSCL ↗</a>
-        <a href="https://www.companiesoffice.govt.nz/companies/app/ui/pages/companies/8213027" target="_blank" rel="noopener noreferrer" class="d-nav-link">Companies Register ↗</a>
-      </div>
-    </div>
-
-  </aside>
+<p class='updated'>Last updated: April 2026</p>
 
 </div>
-
-<script src="/footer.js"></script>
+<div id="footer-placeholder"></div>
+<div id="popup-placeholder"></div>
+<script src="/shared.js"></script>
+<script>(function(){function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h}).catch(function(){})}lc("header-placeholder","/_components/header.html");lc("footer-placeholder","/_components/footer.html");lc("popup-placeholder","/_components/popup.html")})();
+</script>
 </body>
 </html>

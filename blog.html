@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Asset Finance Insights for NZ Businesses | fundr</title>
+<meta name="description" content="Finance tips, industry news and guides for NZ business owners. Vehicle, truck, equipment and business finance insights from fundr's team.">
+<link rel="canonical" href="https://www.fundr.co.nz/blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog | fundr NZ Finance Insights">
+<meta property="og:description" content="Finance tips, guides and industry news for NZ businesses from fundr.">
+<meta property="og:url" content="https://www.fundr.co.nz/blog">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared.css">
+<style>
+body{background:var(--sand)}
+
+/* ── HERO ── */
+.blog-hero{background:var(--dark);padding:72px 48px 64px;position:relative;overflow:hidden}
+.blog-hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
+.blog-hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.sec-label-light{font-size:.68rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.sec-label-light::before{content:'◆';color:var(--orange);font-size:.42rem}
+.blog-hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:400;line-height:1.08;color:#fff;letter-spacing:-.02em;margin-bottom:16px}
+.blog-hero h1 em{font-style:italic}
+.blog-hero p{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.8;max-width:420px}
+.blog-hero-right{display:flex;flex-direction:column;gap:10px}
+.blog-category-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:100px;font-size:.76rem;font-weight:400;color:rgba(255,255,255,.65);cursor:pointer;transition:background .2s,border-color .2s;text-decoration:none;width:fit-content}
+.blog-category-pill:hover{background:rgba(255,255,255,.10);border-color:rgba(240,108,0,.35);color:#fff}
+.blog-category-pill-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0}
+
+/* ── FILTER BAR ── */
+.filter-bar{background:var(--white);border-bottom:1px solid var(--border);padding:0 48px;position:sticky;top:68px;z-index:100}
+.filter-bar-inner{max-width:1100px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:12px 0;scrollbar-width:none}
+.filter-bar-inner::-webkit-scrollbar{display:none}
+.filter-btn{font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--faint);cursor:pointer;transition:all .2s;white-space:nowrap}
+.filter-btn:hover{border-color:var(--ink);color:var(--ink)}
+.filter-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ── FEATURED ARTICLE ── */
+.featured-wrap{max-width:1100px;margin:0 auto;padding:64px 48px 0}
+.featured-label{font-size:.68rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:10px;margin-bottom:24px}
+.featured-label::before{content:'◆';color:var(--orange);font-size:.42rem}
+.featured-card{background:var(--white);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);transition:box-shadow .25s,transform .25s;cursor:pointer;text-decoration:none;color:inherit}
+.featured-card:hover{box-shadow:0 16px 48px rgba(22,20,15,.10);transform:translateY(-4px)}
+.featured-img{background:var(--dark2);min-height:320px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.featured-img-placeholder{font-size:4rem;opacity:.4}
+.featured-body{padding:48px 44px;display:flex;flex-direction:column;justify-content:center}
+.article-category{font-size:.65rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.featured-body h2{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:14px}
+.featured-body h2 em{font-style:italic}
+.article-excerpt{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.8;margin-bottom:24px}
+.article-meta{display:flex;align-items:center;gap:16px;font-size:.72rem;color:var(--faint)}
+.article-meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint)}
+.read-more{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-top:12px}
+.read-more svg{width:12px;height:12px;transition:transform .2s}
+.featured-card:hover .read-more svg{transform:translateX(4px)}
+
+/* ── ARTICLE GRID ── */
+.articles-wrap{max-width:1100px;margin:0 auto;padding:48px 48px 80px}
+.articles-grid-label{font-size:.68rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:10px;margin-bottom:28px}
+.articles-grid-label::before{content:'◆';color:var(--orange);font-size:.42rem}
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.article-card{background:var(--white);border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:box-shadow .25s,transform .25s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.article-card:hover{box-shadow:0 12px 36px rgba(22,20,15,.09);transform:translateY(-4px)}
+.article-thumb{background:var(--dark2);height:180px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;opacity:.5;position:relative;overflow:hidden}
+.article-thumb img{width:100%;height:100%;object-fit:cover;opacity:1}
+.article-content{padding:24px 24px 28px;flex:1;display:flex;flex-direction:column}
+.article-content .article-category{margin-bottom:10px}
+.article-content h3{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--ink);line-height:1.3;margin-bottom:12px}
+.article-content p{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.7;flex:1;margin-bottom:16px}
+.article-content .article-meta{margin-top:auto}
+
+/* ── NEWSLETTER CTA ── */
+.newsletter{background:var(--dark2);padding:72px 48px;margin-top:0}
+.newsletter-inner{max-width:560px;margin:0 auto;text-align:center}
+.newsletter h2{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:400;color:#fff;margin-bottom:12px}
+.newsletter h2 em{font-style:italic}
+.newsletter p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:28px}
+.newsletter-form{display:flex;gap:10px;max-width:440px;margin:0 auto}
+.newsletter-input{flex:1;padding:13px 16px;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.07);font-family:var(--sans);font-size:.88rem;color:#fff;outline:none;transition:border-color .2s}
+.newsletter-input::placeholder{color:rgba(255,255,255,.35)}
+.newsletter-input:focus{border-color:var(--orange)}
+.newsletter-btn{padding:13px 22px;background:var(--orange);border:none;border-radius:8px;font-family:var(--sans);font-size:.76rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#fff;cursor:pointer;white-space:nowrap;transition:opacity .2s}
+.newsletter-btn:hover{opacity:.88}
+.newsletter-note{font-size:.70rem;color:rgba(255,255,255,.35);margin-top:12px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .blog-hero-inner{grid-template-columns:1fr;gap:40px}
+  .blog-hero-right{flex-direction:row;flex-wrap:wrap}
+  .blog-hero{padding:56px 24px 48px}
+  .filter-bar{padding:0 24px}
+  .featured-wrap{padding:48px 24px 0}
+  .featured-card{grid-template-columns:1fr}
+  .featured-img{min-height:220px}
+  .articles-wrap{padding:40px 24px 64px}
+  .articles-grid{grid-template-columns:repeat(2,1fr)}
+  .newsletter{padding:56px 24px}
+}
+@media(max-width:580px){
+  .articles-grid{grid-template-columns:1fr}
+  .newsletter-form{flex-direction:column}
+  .newsletter-btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER (inject via JS or include here) -->
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section class="blog-hero" aria-label="fundr blog">
+  <div class="blog-hero-inner">
+    <div>
+      <p class="sec-label-light">fundr Blog</p>
+      <h1>Finance insights<br>for NZ <em>businesses.</em></h1>
+      <p>Guides, tips and industry news to help Kiwi businesses make smarter finance decisions — from vehicle loans to equipment and business funding.</p>
+    </div>
+    <div class="blog-hero-right">
+      <a href="#" class="blog-category-pill" onclick="filterArticles('vehicles',this)"><span class="blog-category-pill-dot"></span>Vehicles &amp; Utes</a>
+      <a href="#" class="blog-category-pill" onclick="filterArticles('trucks',this)"><span class="blog-category-pill-dot"></span>Trucks &amp; Transport</a>
+      <a href="#" class="blog-category-pill" onclick="filterArticles('equipment',this)"><span class="blog-category-pill-dot"></span>Equipment Finance</a>
+      <a href="#" class="blog-category-pill" onclick="filterArticles('business',this)"><span class="blog-category-pill-dot"></span>Business Finance</a>
+      <a href="#" class="blog-category-pill" onclick="filterArticles('guides',this)"><span class="blog-category-pill-dot"></span>Finance Guides</a>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar" role="navigation" aria-label="Blog categories">
+  <div class="filter-bar-inner">
+    <button class="filter-btn active" onclick="filterArticles('all',this)">All Articles</button>
+    <button class="filter-btn" onclick="filterArticles('vehicles',this)">Vehicles &amp; Utes</button>
+    <button class="filter-btn" onclick="filterArticles('trucks',this)">Trucks</button>
+    <button class="filter-btn" onclick="filterArticles('equipment',this)">Equipment</button>
+    <button class="filter-btn" onclick="filterArticles('business',this)">Business Finance</button>
+    <button class="filter-btn" onclick="filterArticles('guides',this)">Guides</button>
+  </div>
+</div>
+
+<!-- FEATURED ARTICLE -->
+<div class="featured-wrap">
+  <p class="featured-label">Featured Article</p>
+  <a href="/blog/how-to-get-equipment-finance-nz.html" class="featured-card" data-category="equipment">
+    <div class="featured-img">
+      <span class="featured-img-placeholder">⚙️</span>
+    </div>
+    <div class="featured-body">
+      <p class="article-category">Equipment Finance</p>
+      <h2>How to Get Equipment Finance<br><em>in NZ in 2026</em></h2>
+      <p class="article-excerpt">Everything NZ business owners need to know about financing equipment — from excavators to dental chairs. We cover eligibility, the application process, what lenders look for, and how to get approved faster.</p>
+      <div class="article-meta">
+        <span>Nick — fundr</span>
+        <span class="article-meta-dot"></span>
+        <span>8 min read</span>
+        <span class="article-meta-dot"></span>
+        <span>April 2026</span>
+      </div>
+      <span class="read-more">
+        Read Article
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </div>
+  </a>
+</div>
+
+<!-- ARTICLE GRID -->
+<div class="articles-wrap">
+  <p class="articles-grid-label">All Articles</p>
+  <div class="articles-grid" id="articles-grid">
+
+    <a href="/blog/ute-finance-nz-guide.html" class="article-card" data-category="vehicles">
+      <div class="article-thumb">🛻</div>
+      <div class="article-content">
+        <p class="article-category">Vehicles &amp; Utes</p>
+        <h3>The Complete Guide to Ute Finance in NZ</h3>
+        <p>Everything tradies and business owners need to know about financing a Ford Ranger, Toyota Hilux or Mitsubishi Triton in 2026.</p>
+        <div class="article-meta">
+          <span>6 min read</span>
+          <span class="article-meta-dot"></span>
+          <span>March 2026</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/blog/truck-finance-owner-operators.html" class="article-card" data-category="trucks">
+      <div class="article-thumb">🚚</div>
+      <div class="article-content">
+        <p class="article-category">Trucks</p>
+        <h3>Truck Finance for Owner-Operators: What You Need to Know</h3>
+        <p>Getting a prime mover or rigid truck financed as an owner-operator? Here's how lenders assess your deal — and how to put your best foot forward.</p>
+        <div class="article-meta">
+          <span>7 min read</span>
+          <span class="article-meta-dot"></span>
+          <span>March 2026</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/blog/business-finance-no-deposit.html" class="article-card" data-category="business">
+      <div class="article-thumb">🏢</div>
+      <div class="article-content">
+        <p class="article-category">Business Finance</p>
+        <h3>Can You Get Business Asset Finance with No Deposit?</h3>
+        <p>The short answer: often yes. We break down when 100% finance is available, what lenders look for, and how to improve your chances of approval.</p>
+        <div class="article-meta">
+          <span>5 min read</span>
+          <span class="article-meta-dot"></span>
+          <span>February 2026</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/blog/finance-broker-vs-bank.html" class="article-card" data-category="guides">
+      <div class="article-thumb">🏦</div>
+      <div class="article-content">
+        <p class="article-category">Finance Guides</p>
+        <h3>Finance Broker vs Your Bank: Which Gets You a Better Deal?</h3>
+        <p>Most Kiwi business owners go to their bank first — but is that the best move? We compare brokers vs banks across rates, speed, and flexibility.</p>
+        <div class="article-meta">
+          <span>6 min read</span>
+          <span class="article-meta-dot"></span>
+          <span>February 2026</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/blog/equipment-finance-tax-nz.html" class="article-card" data-category="equipment">
+      <div class="article-thumb">📊</div>
+      <div class="article-content">
+        <p class="article-category">Equipment Finance</p>
+        <h3>Is Equipment Finance Tax Deductible in NZ?</h3>
+        <p>Equipment finance repayments can often be claimed as a business expense in NZ. Here's what you need to know before talking to your accountant.</p>
+        <div class="article-meta">
+          <span>4 min read</span>
+          <span class="article-meta-dot"></span>
+          <span>January 2026</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/blog/new-business-equipment-finance.html" class="article-card" data-category="guides">
+      <div class="article-thumb">🆕</div>
+      <div class="article-content">
+        <p class="article-category">Finance Guides</p>
+        <h3>Can a New Business Get Equipment Finance in NZ?</h3>
+        <p>Most people assume new businesses won't qualify for equipment finance. They're often wrong. Here's how fundr structures deals for newer operations.</p>
+        <div class="article-meta">
+          <span>5 min read</span>
+          <span class="article-meta-dot"></span>
+          <span>January 2026</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="newsletter-inner">
+    <h2>Stay up to date with<br><em>NZ finance news.</em></h2>
+    <p>Monthly insights on rates, lender appetite and asset finance tips for NZ business owners — no spam, just useful stuff.</p>
+    <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+      <input type="email" class="newsletter-input" placeholder="your@email.co.nz" required aria-label="Email address">
+      <button type="submit" class="newsletter-btn">Subscribe</button>
+    </form>
+    <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- CONTACT POPUP -->
+<div id="popup-placeholder"></div>
+
+<script src="/shared.js"></script>
+<script>
+// Load shared components
+function loadComponent(id, path) {
+  fetch(path).then(r => r.text()).then(html => {
+    const el = document.getElementById(id);
+    if (el) el.outerHTML = html;
+  }).catch(() => {});
+}
+loadComponent('header-placeholder', '/_components/header.html');
+loadComponent('footer-placeholder', '/_components/footer.html');
+loadComponent('popup-placeholder', '/_components/popup.html');
+
+// Category filter
+function filterArticles(category, btn) {
+  // Update filter buttons
+  document.querySelectorAll('.filter-btn, .blog-category-pill').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+
+  const cards = document.querySelectorAll('.article-card, .featured-card');
+  cards.forEach(card => {
+    const cat = card.getAttribute('data-category');
+    if (category === 'all' || cat === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  return false;
+}
+
+function handleNewsletterSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.newsletter-btn');
+  btn.textContent = 'Subscribed! ✓';
+  btn.style.background = '#2a8a4a';
+  btn.disabled = true;
+}
+</script>
+</body>
+</html>

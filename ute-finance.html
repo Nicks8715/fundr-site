@@ -475,11 +475,11 @@ footer{background:var(--dark);padding:72px 48px 40px}
 @media(max-width:900px){footer{padding:56px 24px 36px}.footer-top{gap:32px;padding-bottom:40px}}
 @media(max-width:600px){footer{padding:48px 20px 32px}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;align-items:flex-start}.footer-legal{gap:16px}.footer-locations{gap:16px}.loc-label{width:100%}}
 </style>
-<link rel="stylesheet" href="/nav.css">
+
+<link rel="stylesheet" href="/shared.css">
 </head>
 <body>
-<div id="fundr-nav"></div>
-<script src="/nav.js"></script>
+<div id="header-placeholder"></div>
 
 <!-- =============================================
      1. HERO
@@ -1044,6 +1044,10 @@ footer{background:var(--dark);padding:72px 48px 40px}
     });
   });
 </script>
-<script src="/footer.js"></script>
+<div id="footer-placeholder"></div>
+<div id="popup-placeholder"></div>
+<script src="/shared.js"></script>
+<script>(function(){function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h}).catch(function(){})}lc("header-placeholder","/_components/header.html");lc("footer-placeholder","/_components/footer.html");lc("popup-placeholder","/_components/popup.html")})();
+</script>
 </body>
 </html>
