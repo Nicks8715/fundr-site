@@ -1,92 +1,97 @@
-<!-- =============================================
-     FUNDR CONTACT POPUP
-     Include once per page, before </body>
-     Triggered by: data-popup="contact" or class="open-popup"
-     ============================================= -->
 <div class="popup-overlay" id="contact-popup" role="dialog" aria-modal="true" aria-labelledby="popup-heading">
   <div class="popup-card">
 
-    <!-- Header -->
+    <!-- Dark header section -->
     <div class="popup-head">
       <button class="popup-close" aria-label="Close">&#x2715;</button>
-      <p class="popup-eyebrow">Get My Options</p>
+      <p class="popup-eyebrow">
+        <span class="popup-eyebrow-dot"></span>
+        GET MY OPTIONS
+      </p>
       <h2 id="popup-heading">Fast, honest finance<br><em>for your business.</em></h2>
-      <p><strong>No credit check. No obligation.</strong> Nick will come back to you with your options within 24 hours.</p>
+      <p class="popup-subtext"><strong>No credit check. No obligation.</strong> Nick will come back to you with your options within 24 hours.</p>
       <div class="popup-badges">
-        <span class="popup-badge">15+ NZ Lenders</span>
-        <span class="popup-badge">24hr Response</span>
-        <span class="popup-badge">FSP Registered</span>
+        <span class="popup-badge"><span class="popup-badge-check">✓</span> 15+ NZ Lenders</span>
+        <span class="popup-badge"><span class="popup-badge-check">✓</span> 24hr Response</span>
+        <span class="popup-badge"><span class="popup-badge-check">✓</span> FSP Registered</span>
       </div>
     </div>
 
-    <!-- Form body -->
+    <!-- White form body -->
     <div class="popup-body">
       <form id="popup-form" action="https://formspree.io/f/xnjbveny" method="POST">
         <input type="hidden" name="_subject" value="New Finance Enquiry — fundr">
-        <input type="hidden" name="source" value="popup-form">
+        <input type="hidden" name="source" value="website-popup">
 
-        <div class="popup-field-row">
+        <div class="popup-row">
           <div class="popup-field">
-            <label for="p-first">First Name</label>
+            <label for="p-first">FIRST NAME</label>
             <input id="p-first" type="text" name="first_name" placeholder="John" required>
           </div>
           <div class="popup-field">
-            <label for="p-last">Last Name <span>(optional)</span></label>
+            <label for="p-last">LAST NAME <span class="popup-opt">(optional)</span></label>
             <input id="p-last" type="text" name="last_name" placeholder="Smith">
           </div>
         </div>
 
-        <div class="popup-field-row">
+        <div class="popup-row">
           <div class="popup-field">
-            <label for="p-phone">Phone</label>
+            <label for="p-phone">PHONE</label>
             <input id="p-phone" type="tel" name="phone" placeholder="021 000 0000" required>
           </div>
           <div class="popup-field">
-            <label for="p-email">Email</label>
+            <label for="p-email">EMAIL</label>
             <input id="p-email" type="email" name="email" placeholder="john@business.co.nz" required>
           </div>
         </div>
 
         <div class="popup-field">
-          <label for="p-company">Company Name</label>
+          <label for="p-company">COMPANY NAME</label>
           <input id="p-company" type="text" name="company" placeholder="Smith Contracting Ltd">
         </div>
 
-        <div class="popup-field-row">
+        <div class="popup-row">
           <div class="popup-field">
-            <label for="p-finance-type">What do you need to finance?</label>
-            <select id="p-finance-type" name="finance_type" required>
-              <option value="" disabled selected>Select</option>
-              <option>Vehicle / Ute</option>
-              <option>Truck</option>
-              <option>Equipment</option>
-              <option>Business Finance</option>
-              <option>Other</option>
-            </select>
+            <label for="p-type">WHAT DO YOU NEED TO FINANCE?</label>
+            <div class="popup-select-wrap">
+              <select id="p-type" name="finance_type" required>
+                <option value="" disabled selected>Select</option>
+                <option>Vehicle / Ute</option>
+                <option>Truck</option>
+                <option>Equipment</option>
+                <option>Business Finance</option>
+                <option>Other</option>
+              </select>
+              <svg class="popup-select-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </div>
           </div>
           <div class="popup-field">
-            <label for="p-amount">Approximate Amount <span>(optional)</span></label>
-            <select id="p-amount" name="approximate_amount">
-              <option value="" disabled selected>Select</option>
-              <option>Under $50k</option>
-              <option>$50k – $100k</option>
-              <option>$100k – $250k</option>
-              <option>$250k – $500k</option>
-              <option>$500k+</option>
-            </select>
+            <label for="p-amount">APPROXIMATE AMOUNT <span class="popup-opt">(optional)</span></label>
+            <div class="popup-select-wrap">
+              <select id="p-amount" name="approximate_amount">
+                <option value="" disabled selected>Select</option>
+                <option>Under $50k</option>
+                <option>$50k – $100k</option>
+                <option>$100k – $250k</option>
+                <option>$250k – $500k</option>
+                <option>$500k+</option>
+              </select>
+              <svg class="popup-select-arrow" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </div>
           </div>
         </div>
 
-        <button type="submit" class="popup-submit">
-          GET MY OPTIONS →
-        </button>
+        <button type="submit" class="popup-submit">GET MY OPTIONS →</button>
         <p class="popup-disclaimer">By submitting you agree to be contacted by fundr. No credit check at this stage.</p>
       </form>
 
       <!-- Success state -->
-      <div class="popup-success" id="popup-success">
+      <div class="popup-success" id="popup-success" style="display:none">
         <div class="popup-success-icon">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14l6 6 10-10" stroke="#f06c00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="16" fill="rgba(240,108,0,.12)"/>
+            <path d="M10 16l4 4 8-8" stroke="#f06c00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
         <h3>Enquiry Received</h3>
         <p>Thanks — Nick will be in touch within 24 hours with your finance options across 15+ NZ lenders.</p>
@@ -95,3 +100,158 @@
 
   </div>
 </div>
+
+<style>
+/* ── POPUP OVERLAY ── */
+.popup-overlay{
+  position:fixed;inset:0;z-index:2000;
+  background:rgba(14,13,11,.72);
+  backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  opacity:0;visibility:hidden;
+  transition:opacity .25s,visibility .25s;
+}
+.popup-overlay.open{opacity:1;visibility:visible}
+
+/* ── POPUP CARD ── */
+.popup-card{
+  width:100%;max-width:520px;
+  border-radius:6px;overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,.45);
+  max-height:90vh;overflow-y:auto;
+  display:flex;flex-direction:column;
+}
+
+/* ── DARK HEADER ── */
+.popup-head{
+  background:#111110;
+  padding:32px 32px 28px;
+  position:relative;
+  flex-shrink:0;
+}
+.popup-close{
+  position:absolute;top:16px;right:16px;
+  width:32px;height:32px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.06);
+  color:rgba(255,255,255,.7);
+  font-size:.95rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s,border-color .15s;
+  line-height:1;
+}
+.popup-close:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4)}
+.popup-eyebrow{
+  display:flex;align-items:center;gap:8px;
+  font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;
+  color:#f06c00;font-weight:600;margin-bottom:12px;
+  font-family:'Geist',system-ui,sans-serif;
+}
+.popup-eyebrow-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:#f06c00;flex-shrink:0;
+}
+.popup-head h2{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:1.7rem;color:#fff;
+  line-height:1.1;letter-spacing:-.01em;margin-bottom:12px;
+}
+.popup-head h2 em{font-style:italic;font-weight:400}
+.popup-subtext{
+  font-size:.85rem;color:rgba(255,255,255,.65);
+  line-height:1.6;margin-bottom:16px;
+  font-family:'Geist',system-ui,sans-serif;font-weight:300;
+}
+.popup-subtext strong{color:#fff;font-weight:600}
+.popup-badges{display:flex;flex-wrap:wrap;gap:8px}
+.popup-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:.72rem;font-weight:400;color:rgba(255,255,255,.7);
+  border:1px solid rgba(255,255,255,.16);border-radius:100px;
+  padding:5px 12px;
+  font-family:'Geist',system-ui,sans-serif;
+}
+.popup-badge-check{color:#f06c00;font-size:.68rem}
+
+/* ── WHITE FORM BODY ── */
+.popup-body{
+  background:#fff;
+  padding:28px 32px 24px;
+  flex:1;
+}
+.popup-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.popup-field{display:flex;flex-direction:column;gap:6px;margin-bottom:0}
+.popup-field:not(.popup-row .popup-field){margin-bottom:14px}
+.popup-field label{
+  font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:600;color:#5a5348;
+  font-family:'Geist',system-ui,sans-serif;
+}
+.popup-opt{
+  font-size:.65rem;font-weight:400;text-transform:none;
+  letter-spacing:0;color:#a09890;
+}
+.popup-field input,.popup-field select{
+  width:100%;padding:12px 14px;
+  border:1px solid #e0dbd2;border-radius:4px;
+  font-family:'Geist',system-ui,sans-serif;
+  font-size:.88rem;font-weight:300;color:#16140f;
+  background:#fff;outline:none;
+  transition:border-color .15s,box-shadow .15s;
+  -webkit-appearance:none;appearance:none;
+}
+.popup-field input:focus,.popup-field select:focus{
+  border-color:#f06c00;
+  box-shadow:0 0 0 3px rgba(240,108,0,.1);
+}
+.popup-field input::placeholder{color:#c0bab2}
+.popup-select-wrap{position:relative}
+.popup-select-wrap select{padding-right:36px;cursor:pointer}
+.popup-select-arrow{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  width:10px;height:6px;pointer-events:none;
+  stroke:#a09890;
+}
+.popup-submit{
+  width:100%;padding:16px;margin-top:4px;
+  background:#f06c00;color:#fff;border:none;border-radius:4px;
+  font-family:'Geist',system-ui,sans-serif;
+  font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  cursor:pointer;transition:background .2s,transform .15s;
+}
+.popup-submit:hover{background:#d45a06;transform:translateY(-1px)}
+.popup-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.popup-disclaimer{
+  font-size:.74rem;color:#a09890;text-align:center;
+  margin-top:12px;line-height:1.5;font-weight:300;
+  font-family:'Geist',system-ui,sans-serif;
+}
+
+/* ── SUCCESS STATE ── */
+.popup-success{
+  display:none;flex-direction:column;
+  align-items:center;text-align:center;
+  padding:24px 0;gap:12px;
+}
+.popup-success-icon{margin-bottom:4px}
+.popup-success h3{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:1.4rem;color:#16140f;
+}
+.popup-success p{
+  font-size:.88rem;color:#5a5348;line-height:1.65;
+  font-weight:300;font-family:'Geist',system-ui,sans-serif;
+  max-width:340px;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:540px){
+  .popup-card{border-radius:4px 4px 0 0;max-height:96vh}
+  .popup-overlay{align-items:flex-end;padding:0}
+  .popup-head{padding:24px 22px 20px}
+  .popup-body{padding:22px 22px 20px}
+  .popup-row{grid-template-columns:1fr}
+  .popup-head h2{font-size:1.4rem}
+}
+</style>

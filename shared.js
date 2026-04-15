@@ -1,17 +1,11 @@
-/* =============================================
-   FUNDR SHARED JS — shared.js
-   Handles: nav dropdown, mobile menu,
-            contact popup, active link states
-   ============================================= */
-
 (function() {
   'use strict';
 
   /* ── Active nav link ── */
   function setActiveNavLink() {
-    const path = window.location.pathname.replace(/\/$/, '') || '/index';
-    document.querySelectorAll('.nav-link, .mobile-link').forEach(function(el) {
-      const href = el.getAttribute('href') || '';
+    var path = window.location.pathname.replace(/\/$/, '') || '/index';
+    document.querySelectorAll('.nav-link, .mobile-link, .wwf-label').forEach(function(el) {
+      var href = el.getAttribute('href') || '';
       if (href && path.includes(href.replace('.html', '').replace('/', ''))) {
         el.classList.add('active');
       }
@@ -21,16 +15,17 @@
   /* ── Dropdown toggle ── */
   function initDropdowns() {
     document.querySelectorAll('.nav-item.has-dropdown').forEach(function(item) {
-      const toggle = item.querySelector('.dropdown-toggle');
+      // Toggle button is either .dropdown-toggle or .wwf-arrow
+      var toggle = item.querySelector('.wwf-arrow, .dropdown-toggle');
       if (!toggle) return;
 
       toggle.addEventListener('click', function(e) {
         e.stopPropagation();
-        const isOpen = item.classList.contains('open');
+        var isOpen = item.classList.contains('open');
         // Close all
         document.querySelectorAll('.nav-item.has-dropdown').forEach(function(i) {
           i.classList.remove('open');
-          const t = i.querySelector('.dropdown-toggle');
+          var t = i.querySelector('.wwf-arrow, .dropdown-toggle');
           if (t) t.setAttribute('aria-expanded', 'false');
         });
         if (!isOpen) {
@@ -44,7 +39,7 @@
     document.addEventListener('click', function() {
       document.querySelectorAll('.nav-item.has-dropdown').forEach(function(i) {
         i.classList.remove('open');
-        const t = i.querySelector('.dropdown-toggle');
+        var t = i.querySelector('.wwf-arrow, .dropdown-toggle');
         if (t) t.setAttribute('aria-expanded', 'false');
       });
     });
@@ -52,12 +47,12 @@
 
   /* ── Mobile menu ── */
   function initMobileMenu() {
-    const btn = document.getElementById('hamburger-btn');
-    const menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('hamburger-btn');
+    var menu = document.getElementById('mobile-menu');
     if (!btn || !menu) return;
 
     btn.addEventListener('click', function() {
-      const isOpen = menu.classList.contains('open');
+      var isOpen = menu.classList.contains('open');
       if (isOpen) {
         menu.classList.remove('open');
         btn.classList.remove('open');
@@ -73,7 +68,6 @@
       }
     });
 
-    // Close on link click
     menu.querySelectorAll('a').forEach(function(a) {
       a.addEventListener('click', function() {
         menu.classList.remove('open');
@@ -86,18 +80,16 @@
 
   /* ── Contact Popup ── */
   function initPopup() {
-    const overlay = document.getElementById('contact-popup');
+    var overlay = document.getElementById('contact-popup');
     if (!overlay) return;
 
-    const card = overlay.querySelector('.popup-card');
-    const closeBtn = overlay.querySelector('.popup-close');
-    const form = document.getElementById('popup-form');
-    const successEl = document.getElementById('popup-success');
+    var form = document.getElementById('popup-form');
+    var successEl = document.getElementById('popup-success');
+    var closeBtn = overlay.querySelector('.popup-close');
 
     function openPopup() {
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
-      // Reset
       if (form) form.style.display = '';
       if (successEl) successEl.style.display = 'none';
     }
@@ -107,69 +99,62 @@
       document.body.style.overflow = '';
     }
 
-    // Trigger buttons — any element with data-popup="contact" or class "open-popup"
     document.querySelectorAll('[data-popup="contact"], .open-popup').forEach(function(btn) {
       btn.addEventListener('click', openPopup);
     });
 
     if (closeBtn) closeBtn.addEventListener('click', closePopup);
 
-    // Close on overlay click (not card)
     overlay.addEventListener('click', function(e) {
       if (e.target === overlay) closePopup();
     });
 
-    // Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closePopup();
     });
 
-    // Form submit
     if (form) {
-      form.addEventListener('submit', async function(e) {
+      form.addEventListener('submit', function(e) {
         e.preventDefault();
-        const submitBtn = form.querySelector('.popup-submit');
+        var submitBtn = form.querySelector('.popup-submit');
         submitBtn.textContent = 'Sending…';
         submitBtn.disabled = true;
 
-        try {
-          const data = new FormData(form);
-          const res = await fetch(form.action, {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-          });
+        var data = new FormData(form);
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function(res) {
           if (res.ok) {
             form.style.display = 'none';
-            if (successEl) successEl.style.display = 'block';
+            if (successEl) successEl.style.display = 'flex';
           } else {
             submitBtn.textContent = 'GET MY OPTIONS →';
             submitBtn.disabled = false;
-            alert('Something went wrong — please try again or call Nick directly.');
+            alert('Something went wrong — please try again or call Nick directly on 021 102 3416.');
           }
-        } catch {
+        }).catch(function() {
           submitBtn.textContent = 'GET MY OPTIONS →';
           submitBtn.disabled = false;
           alert('Connection error. Please check your internet and try again.');
-        }
+        });
       });
     }
   }
 
   /* ── Header scroll shadow ── */
   function initHeaderScroll() {
-    const header = document.getElementById('site-header');
+    var header = document.getElementById('site-header');
     if (!header) return;
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 10) {
-        header.style.boxShadow = '0 2px 20px rgba(22,20,15,.08)';
-      } else {
-        header.style.boxShadow = 'none';
-      }
+      header.style.boxShadow = window.scrollY > 10
+        ? '0 2px 20px rgba(22,20,15,.08)'
+        : 'none';
     }, { passive: true });
   }
 
-  /* ── Init all ── */
+  /* ── Init ── */
   document.addEventListener('DOMContentLoaded', function() {
     setActiveNavLink();
     initDropdowns();
