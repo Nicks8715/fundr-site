@@ -171,27 +171,27 @@ article{min-width:0}
 .share-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 
 /* FOOTER */
-footer{background:var(--black);padding:60px 0 0}
-.f-bot-strip{padding:20px 0;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+
+
 .f-bot-strip p{font-size:.75rem;color:rgba(255,255,255,.25)}
-.f-leg{display:flex;gap:22px}
+
 .f-leg a{font-size:.75rem;color:rgba(255,255,255,.25);text-decoration:none;transition:color .2s}
 .f-leg a:hover{color:rgba(255,255,255,.55)}
-.f-simple{display:flex;justify-content:space-between;align-items:start;gap:60px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07)}
-.f-logo{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:#fff;letter-spacing:-.02em;margin-bottom:10px}
-.f-tagline{font-size:.78rem;color:rgba(255,255,255,.35);max-width:220px;line-height:1.6}
+
+
+
 .f-nav-group h5{font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:500;margin-bottom:14px}
 .f-nav-group ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 .f-nav-group a{font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
 .f-nav-group a:hover{color:#fff}
-.f-contact-group{display:flex;flex-direction:column;gap:8px}
+
 .f-contact-group a{font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s}
 .f-contact-group a:hover{color:#fff}
 .f-contact-group svg{width:13px;height:13px;stroke:rgba(255,255,255,.3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
 /* RESPONSIVE */
 @media(max-width:1024px){.post-layout{grid-template-columns:1fr}.sidebar{position:static}.container{padding:0 36px}}
-@media(max-width:768px){.nav-center{display:none}.container{padding:0 24px}.post-hero{padding:100px 0 52px}.post-h1{font-size:2rem}.cta-btns{flex-direction:column}.f-simple{flex-direction:column;gap:36px}}
+@media(max-width:768px){.nav-center{display:none}.container{padding:0 24px}.post-hero{padding:100px 0 52px}.post-h1{font-size:2rem}.cta-btns{flex-direction:column}}
 
 /* SCROLL REVEAL */
 .rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
@@ -203,18 +203,6 @@ footer{background:var(--black);padding:60px 0 0}
 <body>
 <div id="header-placeholder"></div>
 
-<!-- NAV -->
-<nav>
-  <a href="/" class="nav-logo">fundr.</a>
-  <div class="nav-center">
-    <a href="/what-we-finance">What We Finance</a>
-    <a href="/about">About</a>
-    <a href="/process">Process</a>
-    <a href="/calculator">Calculator</a>
-  </div>
-  <a href="/apply" class="btn-apply">Apply Now</a>
-  <button class="nav-ham" aria-label="Menu"><span></span><span></span></button>
-</nav>
 
 <!-- POST HERO -->
 <section class="post-hero">
@@ -223,7 +211,7 @@ footer{background:var(--black);padding:60px 0 0}
       <div class="breadcrumb">
         <a href="/">Home</a>
         <span class="breadcrumb-sep">›</span>
-        <a href="/blog">Blog</a>
+        <a href="/blog.html">Blog</a>
         <span class="breadcrumb-sep">›</span>
         <span class="breadcrumb-current">IRD Investment Boost</span>
       </div>
@@ -252,6 +240,10 @@ footer{background:var(--black);padding:60px 0 0}
   </div>
 </section>
 
+
+<div class="blog-hero-img-wrap">
+  <img src="/images/blog-investment-boost.jpg" alt="IRD investment boost NZ — business equipment finance" class="blog-hero-img" loading="eager">
+</div>
 <!-- MAIN CONTENT -->
 <div class="container">
   <div class="post-layout">
@@ -405,7 +397,7 @@ footer{background:var(--black);padding:60px 0 0}
           <h3>Talk to <em>Nick.</em></h3>
           <p>If you're considering a new asset purchase and want to understand how financing and the Investment Boost work together for your specific situation, start with a conversation. fundr works with 15+ NZ lenders to structure asset finance that fits your cashflow. No forms. No credit impact to enquire. Most finance decisions within 24 hours.</p>
           <div class="cta-btns">
-            <a href="/apply" class="btn-org">APPLY NOW →</a>
+            <a href="/apply.html" class="btn-org">APPLY NOW →</a>
             <a href="tel:02110216" class="btn-gw">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               021 102 3416
@@ -421,7 +413,7 @@ footer{background:var(--black);padding:60px 0 0}
       <div class="sidebar-cta">
         <h4>Ready to <em>finance?</em></h4>
         <p>15+ NZ lenders. Approvals in 24 hours. No credit impact to enquire.</p>
-        <a href="/apply" class="btn-org">Apply Now →</a>
+        <a href="/apply.html" class="btn-org">Apply Now →</a>
       </div>
 
       <div class="sidebar-card">
@@ -449,19 +441,19 @@ footer{background:var(--black);padding:60px 0 0}
       <div class="sidebar-card">
         <div class="sidebar-title">Related pages</div>
         <div class="related-posts">
-          <a href="/what-we-finance/equipment-finance" class="related-post">
+          <a href="/equipment-finance.html" class="related-post">
             <span class="rp-cat">What We Finance</span>
             <span class="rp-title">Equipment Finance NZ</span>
           </a>
-          <a href="/what-we-finance/truck-finance" class="related-post">
+          <a href="/truck-finance.html" class="related-post">
             <span class="rp-cat">What We Finance</span>
             <span class="rp-title">Truck Finance NZ</span>
           </a>
-          <a href="/what-we-finance/vehicle-finance" class="related-post">
+          <a href="/vehicle-finance.html" class="related-post">
             <span class="rp-cat">What We Finance</span>
             <span class="rp-title">Vehicle Finance NZ</span>
           </a>
-          <a href="/blog" class="related-post">
+          <a href="/blog.html" class="related-post">
             <span class="rp-cat">Blog</span>
             <span class="rp-title">All Articles →</span>
           </a>
@@ -472,59 +464,8 @@ footer{background:var(--black);padding:60px 0 0}
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="f-simple">
-      <div>
-        <div class="f-logo">fundr.</div>
-        <p class="f-tagline">Fast, simple asset finance for Kiwi businesses.</p>
-      </div>
-      <div class="f-nav-group">
-        <h5>What We Finance</h5>
-        <ul>
-          <li><a href="/what-we-finance/vehicle-finance">Vehicle Finance</a></li>
-          <li><a href="/what-we-finance/ute-finance">Ute Finance</a></li>
-          <li><a href="/what-we-finance/truck-finance">Truck Finance</a></li>
-          <li><a href="/what-we-finance/equipment-finance">Equipment Finance</a></li>
-          <li><a href="/what-we-finance/business-finance">Business Finance</a></li>
-        </ul>
-      </div>
-      <div class="f-nav-group">
-        <h5>Company</h5>
-        <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/process">Our Process</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="f-nav-group" style="margin-bottom:16px"><h5>Contact</h5></div>
-        <div class="f-contact-group">
-          <a href="mailto:nick@fundr.co.nz"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>nick@fundr.co.nz</a>
-          <a href="tel:02110216"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>021 102 3416</a>
-        </div>
-      </div>
-    </div>
-    <div class="f-bot-strip">
-      <p>© 2026 fundr Limited. FSP1007390. All rights reserved.</p>
-      <div class="f-leg">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/complaints">Complaints Process</a>
-        <a href="/disclosure">Disclosure Statement</a>
-      </div>
-    </div>
-  </div>
-</footer>
 
-<script>
-const o = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('on');o.unobserve(x.target)} }), {threshold:.1,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.rv').forEach(el => o.observe(el));
-window.addEventListener('scroll', () => {
-  document.querySelector('nav').style.boxShadow = window.scrollY > 20 ? '0 2px 24px rgba(0,0,0,.4)' : 'none';
-}, {passive:true});
-</script>
+
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
 <script src="../shared.js"></script>

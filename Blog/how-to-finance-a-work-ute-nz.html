@@ -132,11 +132,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:grid;grid-template-c
 .rel:hover{background:#fff;border-color:var(--orange)}
 .rel-cat{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--orange)}
 .rel-title{font-size:.82rem;font-weight:500;color:var(--text);line-height:1.3}
-footer{background:var(--black);padding:52px 0 0}
-.f-wrap{display:grid;grid-template-columns:220px 1fr 1fr 260px;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07)}
-.f-logo{font-family:var(--serif);font-size:1.25rem;color:#fff;margin-bottom:10px}
-.f-desc{font-size:.77rem;color:rgba(255,255,255,.3);line-height:1.65;margin-bottom:20px;font-weight:300}
-.f-contacts{display:flex;flex-direction:column;gap:7px}
+
+
+
+
+
 .f-contacts a{font-size:.77rem;color:rgba(255,255,255,.38);text-decoration:none;display:flex;align-items:center;gap:7px;transition:color .15s;font-weight:300}
 .f-contacts a:hover{color:#fff}
 .f-contacts svg{width:12px;height:12px;stroke:rgba(255,255,255,.25);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
@@ -145,22 +145,22 @@ footer{background:var(--black);padding:52px 0 0}
 .f-col a{font-size:.78rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .15s;font-weight:300}
 .f-col a:hover{color:#fff}
 .f-actions h5{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.25);font-weight:600;margin-bottom:13px}
-.f-ac{display:flex;flex-direction:column;gap:7px}
+
 .f-ac a{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:2px;padding:11px 13px;text-decoration:none;transition:background .15s}
 .f-ac a:hover{background:rgba(255,255,255,.06)}
-.f-ac-ico{width:28px;height:28px;background:rgba(232,101,10,.1);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
 .f-ac-ico svg{width:13px;height:13px;stroke:var(--orange);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.f-ac-t{font-size:.78rem;font-weight:500;color:#fff;margin-bottom:1px}
-.f-ac-d{font-size:.7rem;color:rgba(255,255,255,.28);font-weight:300}
-.f-bot{padding:16px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+
+
+
 .f-bot p{font-size:.72rem;color:rgba(255,255,255,.22);font-weight:300}
-.f-leg{display:flex;gap:20px}
+
 .f-leg a{font-size:.72rem;color:rgba(255,255,255,.22);text-decoration:none;transition:color .15s;font-weight:300}
 .f-leg a:hover{color:rgba(255,255,255,.5)}
 .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
-@media(max-width:1100px){.post-wrap{grid-template-columns:1fr}.sidebar{position:static}.wrap{padding:0 32px}.f-wrap{grid-template-columns:1fr 1fr;gap:36px}.struct-cards{grid-template-columns:1fr}}
-@media(max-width:768px){.nav-links{display:none}.wrap{padding:0 22px}.hero{padding:94px 0 48px}.post-title{font-size:1.9rem}.cta-btns{flex-direction:column;align-items:center}.f-wrap{grid-template-columns:1fr;gap:32px}.f-bot{flex-direction:column;text-align:center}}
+@media(max-width:1100px){.post-wrap{grid-template-columns:1fr}.sidebar{position:static}.wrap{padding:0 32px}.struct-cards{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links{display:none}.wrap{padding:0 22px}.hero{padding:94px 0 48px}.post-title{font-size:1.9rem}.cta-btns{flex-direction:column;align-items:center}}
 </style>
 
 <link rel="stylesheet" href="../shared.css">
@@ -171,19 +171,19 @@ footer{background:var(--black);padding:52px 0 0}
 <nav>
   <a href="/" class="nav-logo">fundr.</a>
   <div class="nav-links">
-    <a href="/what-we-finance">What We Finance</a>
-    <a href="/about">About</a>
-    <a href="/process">Process</a>
-    <a href="/calculator">Calculator</a>
+    <a href="/what-we-finance.html">What We Finance</a>
+    <a href="/about.html">About</a>
+    <a href="/process.html">Process</a>
+    <a href="/calculator.html">Calculator</a>
   </div>
-  <a href="/apply" class="nav-apply">Apply Now</a>
+  <a href="/apply.html" class="nav-apply">Apply Now</a>
   <button class="nav-ham" aria-label="Menu"><span></span><span></span></button>
 </nav>
 
 <section class="hero">
   <div class="wrap">
     <div class="hero-inner">
-      <div class="crumb"><a href="/">Home</a><span class="crumb-sep">›</span><a href="/blog">Blog</a><span class="crumb-sep">›</span><span class="crumb-cur">How to Finance a Work Ute</span></div>
+      <div class="crumb"><a href="/">Home</a><span class="crumb-sep">›</span><a href="/blog.html">Blog</a><span class="crumb-sep">›</span><span class="crumb-cur">How to Finance a Work Ute</span></div>
       <div class="post-tag">Ute Finance</div>
       <h1 class="post-title">How to Finance a Work Ute in NZ:<br><em>What Tradies Need to Know in 2026</em></h1>
       <div class="post-meta">
@@ -200,6 +200,8 @@ footer{background:var(--black);padding:52px 0 0}
 <div class="wrap">
   <div class="post-wrap">
     <article class="prose">
+<div class="blog-hero-img-wrap"><img src="/images/blog-ute-finance.jpg" alt="How to finance a work ute in NZ — tradie ute finance guide 2026" class="blog-hero-img" loading="eager"></div>
+
 
       <div class="toc rv">
         <div class="toc-lbl">In this article</div>
@@ -323,7 +325,7 @@ footer{background:var(--black);padding:52px 0 0}
         <h3>Get your ute <em>financed.</em></h3>
         <p>No credit impact to apply. No broker fee. Just straight answers from someone who knows the NZ lending market.</p>
         <div class="cta-btns">
-          <a href="/apply" class="btn-fill">GET MY FINANCE OPTIONS →</a>
+          <a href="/apply.html" class="btn-fill">GET MY FINANCE OPTIONS →</a>
           <a href="tel:02110216" class="btn-outline"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>021 102 3416</a>
         </div>
       </div>
@@ -331,7 +333,7 @@ footer{background:var(--black);padding:52px 0 0}
     </article>
 
     <aside class="sidebar">
-      <div class="s-cta"><h4>Ready to <em>finance?</em></h4><p>15+ NZ lenders. 24hr approvals. No credit impact to enquire.</p><a href="/apply" class="btn-fill">Apply Now →</a></div>
+      <div class="s-cta"><h4>Ready to <em>finance?</em></h4><p>15+ NZ lenders. 24hr approvals. No credit impact to enquire.</p><a href="/apply.html" class="btn-fill">Apply Now →</a></div>
       <div class="s-card">
         <div class="s-lbl">Quick facts</div>
         <div class="s-facts">
@@ -344,27 +346,17 @@ footer{background:var(--black);padding:52px 0 0}
       <div class="s-card">
         <div class="s-lbl">Related</div>
         <div class="related">
-          <a href="/what-we-finance/ute-finance" class="rel"><span class="rel-cat">What We Finance</span><span class="rel-title">Ute Finance NZ</span></a>
+          <a href="/ute-finance.html" class="rel"><span class="rel-cat">What We Finance</span><span class="rel-title">Ute Finance NZ</span></a>
           <a href="/blog/ute-finance-nz-fleet-upgrade" class="rel"><span class="rel-cat">Blog</span><span class="rel-title">Should You Upgrade Your Fleet in 2026?</span></a>
           <a href="/blog/investment-boost-for-business-growth" class="rel"><span class="rel-cat">Blog</span><span class="rel-title">IRD Investment Boost Explained</span></a>
-          <a href="/blog" class="rel"><span class="rel-cat">Blog</span><span class="rel-title">All Articles →</span></a>
+          <a href="/blog.html" class="rel"><span class="rel-cat">Blog</span><span class="rel-title">All Articles →</span></a>
         </div>
       </div>
     </aside>
   </div>
 </div>
 
-<footer>
-  <div class="wrap">
-    <div class="f-wrap">
-      <div><div class="f-logo">fundr.</div><p class="f-desc">Fast, simple asset finance for Kiwi businesses. From trucks to equipment — we help you get the gear you need to grow, without the wait.</p><div class="f-contacts"><a href="mailto:nick@fundr.co.nz"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>nick@fundr.co.nz</a><a href="tel:02110216"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>021 102 3416</a></div></div>
-      <div class="f-col"><h5>What We Finance</h5><ul><li><a href="/what-we-finance/vehicle-finance">Vehicle Finance</a></li><li><a href="/what-we-finance/ute-finance">Ute Finance</a></li><li><a href="/what-we-finance/truck-finance">Truck Finance</a></li><li><a href="/what-we-finance/equipment-finance">Equipment Finance</a></li><li><a href="/what-we-finance/business-finance">Business Finance</a></li></ul></div>
-      <div class="f-col"><h5>Company</h5><ul><li><a href="/about">About</a></li><li><a href="/about/nick">About Nick</a></li><li><a href="/process">Our Process</a></li><li><a href="/blog">Blog</a></li><li><a href="/faq">FAQ</a></li></ul></div>
-      <div class="f-actions"><h5>Quick Actions</h5><div class="f-ac"><a href="/calculator"><div class="f-ac-ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg></div><div><div class="f-ac-t">Repayment Calculator</div><div class="f-ac-d">Estimate repayments in seconds</div></div></a><a href="/apply"><div class="f-ac-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><div class="f-ac-t">Apply Now</div><div class="f-ac-d">Start your application today</div></div></a><a href="/eligibility"><div class="f-ac-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="f-ac-t">Check Eligibility</div><div class="f-ac-d">See if you qualify in minutes</div></div></a></div></div>
-    </div>
-    <div class="f-bot"><p>© 2026 fundr Limited. FSP1007390. All rights reserved.</p><div class="f-leg"><a href="/privacy">Privacy Policy</a><a href="/complaints">Complaints Process</a><a href="/disclosure">Disclosure Statement</a></div></div>
-  </div>
-</footer>
+
 <script>
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("on");obs.unobserve(x.target)}}),{threshold:.1,rootMargin:"0px 0px -30px 0px"});
 document.querySelectorAll(".rv").forEach(el=>obs.observe(el));
