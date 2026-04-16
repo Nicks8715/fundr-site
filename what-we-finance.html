@@ -330,15 +330,14 @@
 
 <script src="/shared.js"></script>
 <script>
-function loadComp(id, path) {
-  fetch(path).then(r=>r.text()).then(html=>{
-    const el=document.getElementById(id);
-    if(el) el.outerHTML=html;
-  }).catch(()=>{});
-}
-loadComp('header-placeholder','/_components/header.html');
-loadComp('footer-placeholder','/_components/footer.html');
-loadComp('popup-placeholder','/_components/popup.html');
+(function(){
+  var loaded=0,total=3;
+  function done(){loaded++;if(loaded>=total){document.dispatchEvent(new Event('components-loaded'));}}
+  function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h;done();}).catch(function(){done();});}
+  lc('header-placeholder','/_components/header.html');
+  lc('footer-placeholder','/_components/footer.html');
+  lc('popup-placeholder','/_components/popup.html');
+})();
 </script>
 </body>
 </html>

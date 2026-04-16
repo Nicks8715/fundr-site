@@ -247,70 +247,14 @@ body{background:var(--sand)}
 
 <script src="/shared.js"></script>
 <script>
-// Load shared components
-['header-placeholder/_components/header.html',
- 'footer-placeholder/_components/footer.html',
- 'popup-placeholder/_components/popup.html'].forEach(function(s) {
-  const [id, path] = s.split('/').reduce((a,_,i,arr) => i===0?[arr[0],arr.slice(1).join('/')]:[a[0],a[1]],[]);
-  const parts = s.split('/');
-  const elId = parts[0];
-  const filePath = '/' + parts.slice(1).join('/');
-  fetch(filePath).then(r=>r.text()).then(html=>{
-    const el=document.getElementById(elId);
-    if(el) el.outerHTML=html;
-  }).catch(()=>{});
-});
-
-function loadComp(id, path) {
-  fetch(path).then(r=>r.text()).then(html=>{
-    const el=document.getElementById(id);
-    if(el) el.outerHTML=html;
-  }).catch(()=>{});
-}
-loadComp('header-placeholder','/_components/header.html');
-loadComp('footer-placeholder','/_components/footer.html');
-loadComp('popup-placeholder','/_components/popup.html');
-
-// Calculator logic
-const typeConfig = {
-  vehicle:   {title:'Vehicle &amp; Ute <em>Finance Calculator</em>',label:'Vehicle Price',  amount:45000, max:300000},
-  truck:     {title:'Truck <em>Finance Calculator</em>',            label:'Truck Price',    amount:180000,max:2000000},
-  equipment: {title:'Equipment <em>Finance Calculator</em>',        label:'Equipment Price',amount:85000, max:500000},
-  business:  {title:'Business <em>Finance Calculator</em>',         label:'Loan Amount',    amount:50000, max:1000000},
-};
-
-function setType(type, btn) {
-  document.querySelectorAll('.tab').forEach(t=>{
-    t.classList.remove('active');
-    t.setAttribute('aria-selected','false');
-  });
-  btn.classList.add('active');
-  btn.setAttribute('aria-selected','true');
-  const cfg=typeConfig[type];
-  document.getElementById('calc-title').innerHTML=cfg.title;
-  document.getElementById('amount-label').textContent=cfg.label;
-  const amtInput=document.getElementById('c-amount');
-  amtInput.value=cfg.amount;
-  amtInput.max=cfg.max;
-  calcRepay();
-}
-
-function calcRepay() {
-  const amt   = parseFloat(document.getElementById('c-amount').value)||0;
-  const months= parseInt(document.getElementById('c-term').value)||48;
-  const rate  = parseFloat(document.getElementById('c-rate').value)||0;
-  const r     = (rate/100)/12;
-  const pmt   = r===0 ? amt/months : amt*(r*Math.pow(1+r,months))/(Math.pow(1+r,months)-1);
-  const totalRepaid = Math.round(pmt)*months;
-  const totalInterest = totalRepaid - amt;
-  const fmt = n => isNaN(n)||n<=0 ? '$0' : '$'+Math.round(n).toLocaleString('en-NZ');
-  document.getElementById('c-result').textContent    = fmt(pmt);
-  document.getElementById('b-principal').textContent = fmt(amt);
-  document.getElementById('b-interest').textContent  = isNaN(pmt)||pmt<=0 ? '—' : fmt(totalInterest);
-  document.getElementById('b-total').textContent     = isNaN(pmt)||pmt<=0 ? '—' : fmt(totalRepaid);
-}
-
-calcRepay();
+(function(){
+  var loaded=0,total=3;
+  function done(){loaded++;if(loaded>=total){document.dispatchEvent(new Event('components-loaded'));}}
+  function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h;done();}).catch(function(){done();});}
+  lc('header-placeholder','/_components/header.html');
+  lc('footer-placeholder','/_components/footer.html');
+  lc('popup-placeholder','/_components/popup.html');
+})();
 </script>
 </body>
 </html>

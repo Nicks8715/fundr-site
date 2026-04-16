@@ -163,18 +163,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:grid;grid-template-c
 <body>
 <div id="header-placeholder"></div>
 
-<nav>
-  <a href="/" class="nav-logo">fundr.</a>
-  <div class="nav-center">
-    <a href="/what-we-finance.html">What We Finance</a>
-    <a href="/about.html">About</a>
-    <a href="/process.html">Process</a>
-    <a href="/calculator.html">Calculator</a>
-  </div>
-  <a href="/apply.html" class="btn-apply">Apply Now</a>
-  <button class="nav-ham" aria-label="Menu"><span></span><span></span></button>
-</nav>
-
 <section class="post-hero">
   <div class="container">
     <div class="post-hero-inner">
@@ -357,11 +345,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:grid;grid-template-c
 </div>
 
 
-<script>
-const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');o.unobserve(x.target)}}),{threshold:.1,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.rv').forEach(el=>o.observe(el));
-window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>20?'0 2px 24px rgba(0,0,0,.4)':'none'},{passive:true});
-</script>
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
 <script src="../shared.js"></script>
