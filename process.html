@@ -178,7 +178,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <p class="sec-label light">Our Process</p>
       <h1>Simple finance.<br><em>Fast results.</em></h1>
       <p class="hero-desc"><strong>No runaround, no jargon.</strong> fundr works around your business — not the other way around. We take the time to understand what you need, then find the lender that fits your deal best. One broker, one conversation, 15+ lenders working for you.</p>
-      <button class="btn-primary" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Apply now">Apply Now &rarr;</button>
+      <button class="btn-primary" onclick="window.location.href='/apply.html'" aria-label="Apply now">Apply Now &rarr;</button>
     </div>
     <div class="hero-stats" aria-label="fundr by the numbers">
       <div class="hero-stat">
@@ -323,7 +323,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <p>One application. 15+ lenders. A decision in 24 hours. Talk to Nick today — no obligation, no credit impact to enquire.</p>
     </div>
     <div class="cta-btns">
-      <button class="btn-white" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Apply now">Apply Now &rarr;</button>
+      <button class="btn-white" onclick="window.location.href='/apply.html'" aria-label="Apply now">Apply Now &rarr;</button>
       <button class="btn-outline-white" onclick="window.location.href='tel:0211023416'" aria-label="Call Nick">Call Nick — 021 102 3416</button>
     </div>
   </div>
@@ -338,7 +338,15 @@ new ResizeObserver(reportHeight).observe(document.body);
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
 <script src="/shared.js"></script>
-<script>(function(){function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h}).catch(function(){})}lc("header-placeholder","/_components/header.html");lc("footer-placeholder","/_components/footer.html");lc("popup-placeholder","/_components/popup.html")})();
+<script>
+(function(){
+  var loaded=0,total=3;
+  function done(){loaded++;if(loaded>=total){document.dispatchEvent(new Event('components-loaded'));}}
+  function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h;done();}).catch(function(){done();});}
+  lc('header-placeholder','/_components/header.html');
+  lc('footer-placeholder','/_components/footer.html');
+  lc('popup-placeholder','/_components/popup.html');
+})();
 </script>
 </body>
 </html>

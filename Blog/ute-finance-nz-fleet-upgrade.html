@@ -375,10 +375,12 @@ window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxSha
 <script src="../shared.js"></script>
 <script>
 (function(){
-function loadComp(id,path){fetch(path).then(function(r){return r.text()}).then(function(html){var el=document.getElementById(id);if(el)el.outerHTML=html;}).catch(function(){});}
-loadComp('header-placeholder','../_components/header.html');
-loadComp('footer-placeholder','../_components/footer.html');
-loadComp('popup-placeholder','../_components/popup.html');
+  var loaded=0,total=3;
+  function done(){loaded++;if(loaded>=total){document.dispatchEvent(new Event('components-loaded'));}}
+  function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h;done();}).catch(function(){done();});}
+  lc('header-placeholder','../_components/header.html');
+  lc('footer-placeholder','../_components/footer.html');
+  lc('popup-placeholder','../_components/popup.html');
 })();
 </script>
 </body>

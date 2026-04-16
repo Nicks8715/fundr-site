@@ -279,7 +279,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <h1>Funding to grow<br>your NZ<br><em>business.</em></h1>
       <p class="hero-desc"><strong>fundr arranges business finance for Kiwi companies</strong> — from working capital and cashflow solutions to full business acquisition funding. Independent broker, 15+ lenders, decisions fast.</p>
       <div class="hero-actions">
-        <button class="btn-primary" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Apply for business finance">Get My Options &rarr;</button>
+        <button class="btn-primary" onclick="window.location.href='/apply.html'" aria-label="Apply for business finance">Get My Options &rarr;</button>
         <button class="btn-ghost" onclick="window.open('/calculator.html','_self')" aria-label="Calculate repayments">Calculate repayments &rarr;</button>
       </div>
     </div>
@@ -505,7 +505,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <p>One conversation with Nick is usually all it takes. Tell us what you need — we'll work out the right structure and get you options fast. No obligation, no credit impact to enquire.</p>
     </div>
     <div class="cta-btns">
-      <button class="btn-white" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Apply for business finance">Get My Options &rarr;</button>
+      <button class="btn-white" onclick="window.location.href='/apply.html'" aria-label="Apply for business finance">Get My Options &rarr;</button>
       <button class="btn-outline-white" onclick="window.location.href='tel:0211023416'" aria-label="Call Nick">Call Nick — 021 102 3416</button>
     </div>
   </div>
@@ -532,7 +532,15 @@ new ResizeObserver(reportHeight).observe(document.body);
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
 <script src="/shared.js"></script>
-<script>(function(){function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h}).catch(function(){})}lc("header-placeholder","/_components/header.html");lc("footer-placeholder","/_components/footer.html");lc("popup-placeholder","/_components/popup.html")})();
+<script>
+(function(){
+  var loaded=0,total=3;
+  function done(){loaded++;if(loaded>=total){document.dispatchEvent(new Event('components-loaded'));}}
+  function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h;done();}).catch(function(){done();});}
+  lc('header-placeholder','/_components/header.html');
+  lc('footer-placeholder','/_components/footer.html');
+  lc('popup-placeholder','/_components/popup.html');
+})();
 </script>
 </body>
 </html>

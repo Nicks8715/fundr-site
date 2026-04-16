@@ -780,7 +780,7 @@ footer{background:var(--dark);padding:72px 48px 40px}
         <p>Talk to Nick directly — no call centres, no waiting around.</p>
       </div>
       <div class="process-cta-btns">
-        <button class="btn-orange" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Apply now for equipment finance">Apply Now &rarr;</button>
+        <button class="btn-orange" onclick="window.location.href='/apply.html'" aria-label="Apply now for equipment finance">Apply Now &rarr;</button>
         <button class="btn-phone" onclick="window.location.href='tel:0211023416'" aria-label="Call Nick on 021 102 3416">📞 021 102 3416</button>
       </div>
     </div>
@@ -945,7 +945,7 @@ footer{background:var(--dark);padding:72px 48px 40px}
     <h2>Finance your equipment —<br><em>fast, simple, no fuss.</em></h2>
     <p class="final-sub">One application, 15+ lenders, 24-hour approvals. No broker fee charged to you — ever.</p>
     <div class="final-cta-btns">
-      <button class="btn-final-primary" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Apply now for equipment finance">Apply Now &rarr;</button>
+      <button class="btn-final-primary" onclick="window.location.href='/apply.html'" aria-label="Apply now for equipment finance">Apply Now &rarr;</button>
       <button class="btn-final-secondary" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Check equipment finance eligibility">Check my eligibility &rarr;</button>
     </div>
     <p class="related-label">Also from fundr</p>
@@ -1093,7 +1093,15 @@ footer{background:var(--dark);padding:72px 48px 40px}
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
 <script src="/shared.js"></script>
-<script>(function(){function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h}).catch(function(){})}lc("header-placeholder","/_components/header.html");lc("footer-placeholder","/_components/footer.html");lc("popup-placeholder","/_components/popup.html")})();
+<script>
+(function(){
+  var loaded=0,total=3;
+  function done(){loaded++;if(loaded>=total){document.dispatchEvent(new Event('components-loaded'));}}
+  function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h;done();}).catch(function(){done();});}
+  lc('header-placeholder','/_components/header.html');
+  lc('footer-placeholder','/_components/footer.html');
+  lc('popup-placeholder','/_components/popup.html');
+})();
 </script>
 </body>
 </html>

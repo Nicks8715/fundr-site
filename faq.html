@@ -380,7 +380,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
           <h3>Ready to get your <em>options?</em></h3>
           <p>No credit impact to apply. 15+ lenders. Hear back from Nick within 24 hours.</p>
         </div>
-        <button class="btn-cta" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Apply now">Apply Now &rarr;</button>
+        <button class="btn-cta" onclick="window.location.href='/apply.html'" aria-label="Apply now">Apply Now &rarr;</button>
       </div>
 
       <!-- COSTS & RATES -->
@@ -564,7 +564,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <p>Call Nick directly — he's happy to talk through your situation with no obligation. Or apply online and he'll be in touch within 24 hours.</p>
     </div>
     <div class="cta-btns">
-      <button class="btn-white" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Apply now">Apply Now &rarr;</button>
+      <button class="btn-white" onclick="window.location.href='/apply.html'" aria-label="Apply now">Apply Now &rarr;</button>
       <button class="btn-outline-white" onclick="window.location.href='tel:0211023416'" aria-label="Call Nick">Call Nick — 021 102 3416</button>
     </div>
   </div>
@@ -630,7 +630,15 @@ new ResizeObserver(reportHeight).observe(document.body);
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
 <script src="/shared.js"></script>
-<script>(function(){function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h}).catch(function(){})}lc("header-placeholder","/_components/header.html");lc("footer-placeholder","/_components/footer.html");lc("popup-placeholder","/_components/popup.html")})();
+<script>
+(function(){
+  var loaded=0,total=3;
+  function done(){loaded++;if(loaded>=total){document.dispatchEvent(new Event('components-loaded'));}}
+  function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h;done();}).catch(function(){done();});}
+  lc('header-placeholder','/_components/header.html');
+  lc('footer-placeholder','/_components/footer.html');
+  lc('popup-placeholder','/_components/popup.html');
+})();
 </script>
 </body>
 </html>

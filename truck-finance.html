@@ -780,7 +780,7 @@ footer{background:var(--dark);padding:72px 48px 40px}
         <p>One application. 15+ lenders. A decision in 24 hours. fundr makes truck finance straightforward for NZ businesses.</p>
       </div>
       <div class="process-cta-actions">
-        <button class="btn-orange" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Apply for truck finance">Apply Now — Free, No Obligation &rarr;</button>
+        <button class="btn-orange" onclick="window.location.href='/apply.html'" aria-label="Apply for truck finance">Apply Now — Free, No Obligation &rarr;</button>
         <button class="cta-phone" onclick="window.location.href='tel:0211023416'" aria-label="Call Nick">Or call Nick: 021 102 3416</button>
       </div>
     </div>
@@ -964,7 +964,7 @@ footer{background:var(--dark);padding:72px 48px 40px}
     <p class="final-sec-label">Get Started</p>
     <h2>Ready to get your<br><em>truck financed?</em></h2>
     <div class="final-cta-buttons">
-      <button class="btn-final-primary" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Apply now for truck finance">Apply Now — It's Free &rarr;</button>
+      <button class="btn-final-primary" onclick="window.location.href='/apply.html'" aria-label="Apply now for truck finance">Apply Now — It's Free &rarr;</button>
       <button class="btn-final-ghost" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Check eligibility">Check eligibility</button>
     </div>
     <p class="reassurance">
@@ -1123,7 +1123,15 @@ footer{background:var(--dark);padding:72px 48px 40px}
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
 <script src="/shared.js"></script>
-<script>(function(){function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h}).catch(function(){})}lc("header-placeholder","/_components/header.html");lc("footer-placeholder","/_components/footer.html");lc("popup-placeholder","/_components/popup.html")})();
+<script>
+(function(){
+  var loaded=0,total=3;
+  function done(){loaded++;if(loaded>=total){document.dispatchEvent(new Event('components-loaded'));}}
+  function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h;done();}).catch(function(){done();});}
+  lc('header-placeholder','/_components/header.html');
+  lc('footer-placeholder','/_components/footer.html');
+  lc('popup-placeholder','/_components/popup.html');
+})();
 </script>
 </body>
 </html>
