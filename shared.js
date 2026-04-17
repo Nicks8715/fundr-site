@@ -230,3 +230,35 @@
   }
 
 })();
+
+/* ─────────────────────────────────────────
+   SCROLL REVEAL ANIMATION
+   Adds .on class to .rv elements as they enter viewport
+   Content is visible by default (opacity:1 in CSS)
+   This only adds the animated entrance effect
+───────────────────────────────────────── */
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('on');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+  // Run on DOMContentLoaded to catch elements already in DOM
+  function observeAll() {
+    document.querySelectorAll('.rv').forEach(function (el) {
+      observer.observe(el);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', observeAll);
+  } else {
+    observeAll();
+  }
+})();
