@@ -436,3 +436,9 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
   border-radius: 8px 8px 0 0;
   background: #1a1a18;
 }
+
+/* ── Mobile font size — ensures readable body text on small screens ── */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  p, li, a { line-height: 1.75; }
+}
