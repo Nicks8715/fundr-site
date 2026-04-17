@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog | Asset Finance Insights for NZ Businesses | fundr</title>
 <meta name="description" content="Finance tips, industry news and guides for NZ business owners. Vehicle, truck, equipment and business finance insights from fundr's team.">
@@ -109,7 +112,28 @@ body{background:var(--sand)}
 .article-thumb-img{height:200px;overflow:hidden;background:var(--dark2);}
 .article-thumb{display:none;}
 
+
+/* ── BLOG MOBILE FIXES ── */
+@media(max-width:480px){
+  .featured-card{grid-template-columns:1fr}
+  .featured-img{min-height:200px}
+  .featured-body{padding:24px 20px}
+  .featured-body h2{font-size:1.3rem}
+  .articles-grid{grid-template-columns:1fr}
+  .filter-bar{gap:6px}
+  .filter-btn{font-size:.65rem;padding:7px 12px}
+  .newsletter-inner{padding:32px 20px}
+  .newsletter-form{flex-direction:column}
+  .newsletter-input,.newsletter-btn{width:100%}
+}
 </style>
+
+<meta name="robots" content="index, follow"><meta property="og:image" content="https://www.fundr.co.nz/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="fundr. — Vehicles | Equipment | Business finance NZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.fundr.co.nz/images/og-image.jpg">
 </head>
 <body>
 
@@ -257,5 +281,32 @@ body{background:var(--sand)}
 <div id="popup-placeholder"></div>
 
 <script src="/shared.js"></script>
+
+<script>
+function handleNewsletterSubmit(e) {
+  e.preventDefault();
+  var form = e.target;
+  var email = form.querySelector('input[type="email"]').value;
+  var btn = form.querySelector('.newsletter-btn');
+  btn.textContent = 'Subscribing…';
+  btn.disabled = true;
+  fetch('https://formspree.io/f/xnjbveny', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ email: email, source: 'newsletter-blog' })
+  }).then(function(r) {
+    if (r.ok) {
+      form.innerHTML = '<p style="color:#e8650a;font-weight:500;font-size:.9rem">✓ You're subscribed — we'll be in touch.</p>';
+    } else {
+      btn.textContent = 'Subscribe';
+      btn.disabled = false;
+      alert('Something went wrong — please try again.');
+    }
+  }).catch(function() {
+    btn.textContent = 'Subscribe';
+    btn.disabled = false;
+  });
+}
+</script>
 </body>
 </html>

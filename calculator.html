@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finance Repayment Calculator NZ | Vehicle, Equipment & Business Loans | fundr</title>
 <meta name="description" content="Estimate your monthly repayments on vehicle, truck, equipment or business finance with fundr's free NZ calculator. Adjust loan amount, term and rate instantly. No credit check required.">
@@ -111,7 +114,24 @@ body{background:var(--sand)}
   .breakdown{grid-template-columns:1fr}
   .result-num{font-size:1.9rem}
 }
+
+/* ── CALCULATOR MOBILE FIXES ── */
+@media(max-width:480px){
+  .calc-layout{grid-template-columns:1fr}
+  .calc-card{padding:24px 18px}
+  .calc-row{grid-template-columns:1fr}
+  .breakdown{grid-template-columns:1fr}
+  .result-num{font-size:2rem}
+  .sidebar{display:none}
+}
 </style>
+
+<meta name="robots" content="index, follow"><meta property="og:image" content="https://www.fundr.co.nz/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="fundr. — Vehicles | Equipment | Business finance NZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.fundr.co.nz/images/og-image.jpg">
 </head>
 <body>
 
