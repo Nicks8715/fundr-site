@@ -188,7 +188,7 @@ body{background:var(--sand)}
 
       <p class="disclaimer">Figures are estimates only. Actual interest rates, fees and repayments vary based on your credit profile, lender approval and loan structure. No credit check is performed when using this calculator.</p>
 
-      <button class="calc-btn open-popup">
+      <button class="calc-btn" onclick="window.location.href='/apply.html'">
         Apply Now — Get a Real Quote &rarr;
       </button>
     </div>
@@ -222,7 +222,7 @@ body{background:var(--sand)}
       <div class="nick-eyebrow">Talk to Nick</div>
       <h3>Get a real quote,<br><em>not just an estimate.</em></h3>
       <p>Nick will find you the best rate from 15+ NZ lenders — usually within 24 hours. No broker fee charged to you.</p>
-      <button class="btn-orange-solid open-popup">Apply Now &rarr;</button>
+      <a href="/apply.html" class="btn-orange-solid">Apply Now &rarr;</a>
       <a href="tel:0211023416" class="btn-phone-dark">&#128222; 021 102 3416</a>
     </div>
   </aside>
@@ -246,5 +246,102 @@ body{background:var(--sand)}
 <div id="popup-placeholder"></div>
 
 <script src="/shared.js"></script>
+
+<script>
+/* ─── FUNDR REPAYMENT CALCULATOR ─── */
+(function () {
+
+  /* Default rates per finance type */
+  var DEFAULTS = {
+    vehicle:   { label: 'Vehicle & Ute <em>Finance Calculator</em>', amountLabel: 'Vehicle Price',    rate: 8.9,  amount: 45000  },
+    truck:     { label: 'Truck <em>Finance Calculator</em>',         amountLabel: 'Truck Price',       rate: 9.5,  amount: 120000 },
+    equipment: { label: 'Equipment <em>Finance Calculator</em>',     amountLabel: 'Equipment Cost',    rate: 9.9,  amount: 60000  },
+    business:  { label: 'Business <em>Finance Calculator</em>',      amountLabel: 'Loan Amount',       rate: 10.5, amount: 50000  },
+  };
+
+  var currentType = 'vehicle';
+
+  /* Format number as $X,XXX */
+  function fmt(n) {
+    return '$' + Math.round(n).toLocaleString('en-NZ');
+  }
+
+  /* Core PMT formula */
+  function calcPMT(principal, annualRate, months) {
+    if (annualRate === 0) return principal / months;
+    var r = annualRate / 100 / 12;
+    return principal * r * Math.pow(1 + r, months) / (Math.pow(1 + r, months) - 1);
+  }
+
+  /* Update display */
+  window.calcRepay = function () {
+    var principal = parseFloat(document.getElementById('c-amount').value) || 0;
+    var months    = parseInt(document.getElementById('c-term').value)    || 48;
+    var rate      = parseFloat(document.getElementById('c-rate').value)  || 0;
+
+    var resultEl    = document.getElementById('c-result');
+    var principalEl = document.getElementById('b-principal');
+    var interestEl  = document.getElementById('b-interest');
+    var totalEl     = document.getElementById('b-total');
+
+    if (!resultEl) return;
+
+    if (principal <= 0 || rate <= 0) {
+      resultEl.textContent = '$0';
+      if (principalEl) principalEl.textContent = fmt(principal);
+      if (interestEl)  interestEl.textContent  = '—';
+      if (totalEl)     totalEl.textContent      = '—';
+      return;
+    }
+
+    var monthly      = calcPMT(principal, rate, months);
+    var totalRepaid  = monthly * months;
+    var totalInterest = totalRepaid - principal;
+
+    resultEl.textContent = fmt(monthly);
+    if (principalEl) principalEl.textContent = fmt(principal);
+    if (interestEl)  interestEl.textContent  = fmt(totalInterest);
+    if (totalEl)     totalEl.textContent      = fmt(totalRepaid);
+  };
+
+  /* Switch finance type tab */
+  window.setType = function (type, btn) {
+    currentType = type;
+    var config = DEFAULTS[type] || DEFAULTS.vehicle;
+
+    /* Update tab active state */
+    document.querySelectorAll('.tab').forEach(function (t) {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    if (btn) {
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+    }
+
+    /* Update calculator title and labels */
+    var titleEl = document.getElementById('calc-title');
+    if (titleEl) titleEl.innerHTML = config.label;
+
+    var amtLabel = document.getElementById('amount-label');
+    if (amtLabel) amtLabel.textContent = config.amountLabel;
+
+    /* Set defaults for this type */
+    var amtInput  = document.getElementById('c-amount');
+    var rateInput = document.getElementById('c-rate');
+    if (amtInput)  amtInput.value  = config.amount;
+    if (rateInput) rateInput.value = config.rate;
+
+    calcRepay();
+  };
+
+  /* Run on load */
+  document.addEventListener('DOMContentLoaded', function () {
+    calcRepay();
+  });
+
+})();
+</script>
+
 </body>
 </html>
