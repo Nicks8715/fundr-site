@@ -170,10 +170,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:grid;grid-template-c
 <div class="wrap">
   <div class="post-wrap">
     <article class="prose">
-<div class="blog-hero-img-wrap"><img src="/images/blog-truck-finance.jpg" alt="Truck finance NZ — prime mover on NZ highway" class="blog-hero-img" loading="eager"></div>
-
-
-      <div class="toc rv">
+<div class="toc rv">
         <div class="toc-lbl">In this article</div>
         <ol>
           <li><a href="#why-finance">Why finance a truck instead of buying outright?</a></li>
@@ -347,15 +344,5 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:grid;grid-template-c
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
 <script src="../shared.js"></script>
-<script>
-(function(){
-  var loaded=0,total=3;
-  function done(){loaded++;if(loaded>=total){document.dispatchEvent(new Event('components-loaded'));}}
-  function lc(id,p){fetch(p).then(function(r){return r.text()}).then(function(h){var e=document.getElementById(id);if(e)e.outerHTML=h;done();}).catch(function(){done();});}
-  lc('header-placeholder','../_components/header.html');
-  lc('footer-placeholder','../_components/footer.html');
-  lc('popup-placeholder','../_components/popup.html');
-})();
-</script>
 </body>
 </html>
