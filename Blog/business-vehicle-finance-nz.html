@@ -161,21 +161,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:grid;grid-template-c
 .rel-title{font-size:.84rem;font-weight:500;color:var(--text);line-height:1.35}
 
 /* FOOTER */
-
-
-
-
+footer{background:var(--black);padding:60px 0 0}
+.f-simple{display:flex;justify-content:space-between;align-items:start;gap:60px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07);flex-wrap:wrap}
+.f-logo{font-family:var(--serif);font-size:1.3rem;color:#fff;margin-bottom:10px}
+.f-tagline{font-size:.78rem;color:rgba(255,255,255,.35);max-width:220px;line-height:1.6;font-weight:300}
 .f-col h5{font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:600;margin-bottom:14px}
 .f-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 .f-col a{font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;font-weight:300}
 .f-col a:hover{color:#fff}
-
+.f-contact{display:flex;flex-direction:column;gap:8px}
 .f-contact a{font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s;font-weight:300}
 .f-contact a:hover{color:#fff}
 .f-contact svg{width:13px;height:13px;stroke:rgba(255,255,255,.3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-
+.f-bot{padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .f-bot p{font-size:.75rem;color:rgba(255,255,255,.25);font-weight:300}
-
+.f-leg{display:flex;gap:22px}
 .f-leg a{font-size:.75rem;color:rgba(255,255,255,.25);text-decoration:none;transition:color .2s;font-weight:300}
 .f-leg a:hover{color:rgba(255,255,255,.55)}
 
@@ -185,7 +185,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:grid;grid-template-c
 
 /* RESPONSIVE */
 @media(max-width:1024px){.post-layout{grid-template-columns:1fr}.sidebar{position:static}.container{padding:0 36px}}
-@media(max-width:768px){.nav-center{display:none}.container{padding:0 24px}.post-hero{padding:100px 0 52px}.post-h1{font-size:2rem}.cta-btns{flex-direction:column}}
+@media(max-width:768px){.nav-center{display:none}.container{padding:0 24px}.post-hero{padding:100px 0 52px}.post-h1{font-size:2rem}.cta-btns{flex-direction:column}.f-simple{flex-direction:column;gap:32px}}
 </style>
 
 <link rel="stylesheet" href="../shared.css">
@@ -197,7 +197,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:grid;grid-template-c
   <div class="container">
     <div class="post-hero-inner">
       <div class="breadcrumb">
-        <a href="/">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="/index.html">Home</a><span class="breadcrumb-sep">›</span>
         <a href="/blog.html">Blog</a><span class="breadcrumb-sep">›</span>
         <span class="breadcrumb-cur">Business Vehicle Finance NZ</span>
       </div>
@@ -257,6 +257,85 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:grid;grid-template-c
         <p class="rv">You can structure the loan with or without a balloon payment at the end. A balloon reduces your monthly repayments but means you owe a lump sum at the end of the term — paid by refinancing, using the trade value, or paying it outright.</p>
         <div class="callout rv">
           <div class="callout-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p><strong>Best for:</strong> most NZ businesses financing a ute, van, or company vehicle.</p>
+        </div>
+
+        <h3 class="rv">Hire purchase</h3>
+        <p class="rv">Similar to a term loan, but ownership formally transfers at the end of the agreement rather than from day one. Less common for business vehicle finance in NZ. GST is claimed over the term rather than upfront — worth discussing with your accountant if this matters to your tax position.</p>
+
+        <h3 class="rv">Finance lease</h3>
+        <p class="rv">The lender owns the vehicle and you lease it for an agreed period. At the end you can buy it, extend, or return it. Monthly payments are typically lower than a term loan, but you don't build equity in the asset. Suits businesses that prefer lower monthly costs and aren't concerned about ownership.</p>
+
+        <h3 class="rv">Operating lease</h3>
+        <p class="rv">Effectively a rental agreement. No ownership, no residual obligation. Works well for businesses that upgrade vehicles frequently or want predictable fleet costs without the admin of ownership. Usually better suited to cars and light commercial vehicles than utes used in heavy trade environments.</p>
+
+        <div class="callout rv">
+          <div class="callout-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <p>Which structure is right for you depends on your GST position, whether you want to own the asset, your balance sheet, and how long you plan to keep the vehicle. Nick will walk you through this before any application is submitted.</p>
+        </div>
+
+        <h2 id="new-used" class="rv">New, used, or private sale?</h2>
+
+        <h3 class="rv">New vehicles</h3>
+        <p class="rv">More lenders available, lower rates, easier approvals. Higher purchase price but a stronger asset backing the loan and a manufacturer warranty reducing your risk of unexpected costs. For most NZ businesses financing a primary work vehicle, a new or near-new model is the better financial decision over the life of the asset.</p>
+
+        <h3 class="rv">Used vehicles</h3>
+        <p class="rv">Fully financeable across fundr's lender panel. The age, kilometres, make, and condition all factor into the lender's assessment. Vehicles over 10 years old or with very high kilometres attract a smaller pool of lenders and may require a deposit.</p>
+
+        <h3 class="rv">Private sale</h3>
+        <p class="rv">Common in NZ and handled regularly by fundr. You find the vehicle, agree a price, and fundr arranges payment directly to the seller from the lender. No different to a dealer purchase from a finance perspective — the process is straightforward.</p>
+
+        <h3 class="rv">Imported vehicles</h3>
+        <p class="rv">Financeable but some lenders are more cautious on grey imports depending on the make and local parts availability. Worth discussing with Nick before you commit to a purchase.</p>
+
+        <h2 id="lenders" class="rv">What lenders actually look at</h2>
+        <p class="rv">Understanding what lenders assess helps you present your application effectively. fundr works across 15+ NZ lenders — each with different criteria. Here's what matters across most of them:</p>
+        <ul class="rv">
+          <li><strong>Trading history</strong> — Most lenders prefer 12+ months. Shorter history doesn't disqualify you but narrows the lender options.</li>
+          <li><strong>Credit profile</strong> — Both business and personal credit history. A clean profile gives you access to more lenders and better rates.</li>
+          <li><strong>Business cashflow</strong> — Lenders want to see the business generates enough revenue to service repayments. Recent bank statements (typically 3–6 months) are the primary evidence.</li>
+          <li><strong>The vehicle itself</strong> — Age, make, model, condition, and resale value. Common makes with strong NZ resale markets (Ford Ranger, Toyota HiLux, Toyota HiAce) are lower risk for lenders.</li>
+          <li><strong>Purpose</strong> — Is the vehicle being used in the business, and does that use make sense? A plumber financing a ute is a clear, low-risk application.</li>
+          <li><strong>Deposit</strong> — Not always required, but having one improves your application and often results in a better rate. A deposit of 10–20% is common for new businesses.</li>
+        </ul>
+
+        <h2 id="rates" class="rv">What rates can I expect?</h2>
+        <p class="rv">Business vehicle finance rates in NZ typically range from around <strong>7% to 14% per annum</strong>. Where you land depends on your credit history, the vehicle, your trading history, loan term and structure, and whether you have a deposit.</p>
+
+        <table class="rate-table rv">
+          <thead><tr><th>Profile</th><th>Typical rate range</th></tr></thead>
+          <tbody>
+            <tr><td>Established business, clean credit, new vehicle</td><td>7% – 9% p.a.</td></tr>
+            <tr><td>Established business, minor credit issues</td><td>9% – 11% p.a.</td></tr>
+            <tr><td>New business (&lt;12 months), clean credit</td><td>10% – 12% p.a.</td></tr>
+            <tr><td>Complex credit or older vehicle</td><td>12% – 14% p.a.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout rv">
+          <div class="callout-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <p><strong>A note on dealer finance:</strong> vehicle dealers often offer finance at the point of sale. This is convenient but the rate offered is frequently not the most competitive available. It's worth getting a comparison from a broker before you sign — there's no cost to enquire and the savings on a 3–5 year loan can be significant.</p>
+        </div>
+
+        <h2 id="tax" class="rv">The tax side — what to know before you apply</h2>
+        <ul class="rv">
+          <li><strong>GST</strong> — You can claim the GST on the purchase price back in your next GST return. This is a real cashflow benefit and one of the reasons a term loan is often preferred over a lease for business vehicles.</li>
+          <li><strong>Interest</strong> — Interest on a business vehicle loan is generally tax-deductible to the extent the vehicle is used for business purposes.</li>
+          <li><strong>Depreciation</strong> — Vehicles are depreciable assets. If you also claim mileage rates, note that depreciation is included in those rates — you can't claim both.</li>
+          <li><strong>IRD Investment Boost</strong> — From 22 May 2025, NZ businesses can claim 20% of the cost of new assets as an upfront expense. This applies to new vehicles first available for use on or after that date. <a href="/blog/investment-boost-for-business-growth">Read our full Investment Boost guide →</a></li>
+        </ul>
+
+        <h2 id="apply" class="rv">How to apply through fundr</h2>
+        <p class="rv">Start with a conversation, not a form. Let Nick know what vehicle you're looking to finance, the approximate amount, and your business situation. No credit impact at this stage.</p>
+        <p class="rv">Nick assesses your situation across the full lender panel and identifies the right lender for your profile — not just who will approve it, but who will approve it on the best terms. One application is submitted. Most applications receive a credit decision within 24 hours. Same-day approvals are available for straightforward deals.</p>
+        <p class="rv">Funds are released the same day once documents are signed and conditions are met — paid directly to the dealer or private seller. Nick manages the lender through to settlement. You deal with one person, start to finish.</p>
+        <div class="callout rv">
+          <div class="callout-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <p><strong>Logbook:</strong> If the vehicle is used for both business and personal purposes, IRD requires a logbook to substantiate the business use percentage. A 90-day logbook every three years is the standard approach.</p>
+        </div>
+
+        <h2 id="faq" class="rv">Common questions</h2>
+        <div class="faq-item rv"><div class="faq-q">Can I finance a work vehicle as a sole trader?</div><div class="faq-a">Yes. Sole traders, partnerships, and companies can all access business vehicle finance in NZ. As a sole trader you'll be assessed on both personal and business credit history, and a personal guarantee is standard.</div>
           <p><strong>Best for:</strong> most NZ businesses financing a ute, van, or company vehicle.</p>
         </div>
 

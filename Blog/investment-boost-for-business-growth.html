@@ -171,27 +171,27 @@ article{min-width:0}
 .share-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 
 /* FOOTER */
-
-
+footer{background:var(--black);padding:60px 0 0}
+.f-bot-strip{padding:20px 0;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .f-bot-strip p{font-size:.75rem;color:rgba(255,255,255,.25)}
-
+.f-leg{display:flex;gap:22px}
 .f-leg a{font-size:.75rem;color:rgba(255,255,255,.25);text-decoration:none;transition:color .2s}
 .f-leg a:hover{color:rgba(255,255,255,.55)}
-
-
-
+.f-simple{display:flex;justify-content:space-between;align-items:start;gap:60px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07)}
+.f-logo{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:#fff;letter-spacing:-.02em;margin-bottom:10px}
+.f-tagline{font-size:.78rem;color:rgba(255,255,255,.35);max-width:220px;line-height:1.6}
 .f-nav-group h5{font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:500;margin-bottom:14px}
 .f-nav-group ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 .f-nav-group a{font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
 .f-nav-group a:hover{color:#fff}
-
+.f-contact-group{display:flex;flex-direction:column;gap:8px}
 .f-contact-group a{font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s}
 .f-contact-group a:hover{color:#fff}
 .f-contact-group svg{width:13px;height:13px;stroke:rgba(255,255,255,.3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 
 /* RESPONSIVE */
 @media(max-width:1024px){.post-layout{grid-template-columns:1fr}.sidebar{position:static}.container{padding:0 36px}}
-@media(max-width:768px){.nav-center{display:none}.container{padding:0 24px}.post-hero{padding:100px 0 52px}.post-h1{font-size:2rem}.cta-btns{flex-direction:column}}
+@media(max-width:768px){.nav-center{display:none}.container{padding:0 24px}.post-hero{padding:100px 0 52px}.post-h1{font-size:2rem}.cta-btns{flex-direction:column}.f-simple{flex-direction:column;gap:36px}}
 
 /* SCROLL REVEAL */
 .rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
@@ -209,7 +209,7 @@ article{min-width:0}
   <div class="container">
     <div class="post-hero-inner">
       <div class="breadcrumb">
-        <a href="/">Home</a>
+        <a href="/index.html">Home</a>
         <span class="breadcrumb-sep">›</span>
         <a href="/blog.html">Blog</a>
         <span class="breadcrumb-sep">›</span>
@@ -291,6 +291,65 @@ article{min-width:0}
           <hr class="example-divider">
           <p>At a 28% company tax rate, that's approximately <span class="highlight">$3,412 more tax saved in year one alone.</span></p>
         </div>
+
+        <p class="rv">The overall tax paid across the asset's life remains similar — but pulling those deductions forward improves your cashflow when it matters most: the year you've just spent money on a major asset.</p>
+        <p class="rv">The GST position is separate — GST-registered businesses can still claim the GST on the purchase price back in their GST return, as they always could.</p>
+
+        <h2 id="qualifies" class="rv">What qualifies for the Investment Boost?</h2>
+        <p class="rv">The asset must be:</p>
+        <ul class="rv">
+          <li><strong>New</strong> — meaning new-to-New Zealand. A brand new vehicle or piece of equipment purchased from a NZ dealer qualifies. Second-hand assets already used in NZ do not qualify, unless they are being imported into NZ for the first time.</li>
+          <li><strong>Depreciable</strong> — the asset must be one that IRD allows depreciation to be claimed on. Most business vehicles, equipment, and machinery qualify. Land, residential property, and certain financial instruments do not.</li>
+          <li><strong>Available for use on or after 22 May 2025</strong> — the date you can first use the asset, not the date you ordered or paid for it. If you ordered equipment before 22 May 2025 but it wasn't delivered and available for use until after that date, it may still qualify. This is worth confirming with your accountant.</li>
+          <li><strong>Used for business purposes</strong> — as with standard depreciation, the asset must be used for income-earning purposes. If a vehicle is used partly for personal purposes, the Investment Boost deduction is apportioned accordingly.</li>
+          <li><strong>Optional</strong> — businesses can choose whether to apply the Investment Boost on an asset-by-asset basis. In some circumstances your accountant may advise against it.</li>
+        </ul>
+
+        <h2 id="does-not-qualify" class="rv">What does not qualify?</h2>
+        <ul class="rv">
+          <li><strong>Second-hand assets already used in NZ</strong> — the most common exception. If you're buying a used ute from a local dealer or a private seller, the Investment Boost does not apply.</li>
+          <li><strong>Assets purchased before 22 May 2025</strong> — even if you're still paying them off, the qualifying date is when the asset first became available for use.</li>
+          <li><strong>Non-depreciable assets</strong> — land and some other asset classes are excluded.</li>
+          <li><strong>Assets written off under the $1,000 low-value threshold</strong> — if an asset is under $1,000 and you claim it as an immediate expense under the low-value threshold, you cannot also apply the Investment Boost.</li>
+        </ul>
+
+        <h2 id="financing" class="rv">How to combine the Investment Boost with asset financing</h2>
+        <p class="rv">The Investment Boost applies whether you buy the asset outright or finance it. This is important — you don't need to pay cash to access the tax benefit.</p>
+        <p class="rv">If you finance a new truck or piece of equipment through fundr on a term loan (chattel mortgage), you still claim the 20% Investment Boost in year one based on the full purchase price. The fact that the lender holds security over the asset doesn't affect your eligibility to claim depreciation and the Investment Boost.</p>
+
+        <div class="callout rv">
+          <div class="callout-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p>This means financing and the Investment Boost work together: you preserve working capital by spreading the cost over 2–5 years, claim the full GST back upfront, claim the Investment Boost deduction in year one on the full asset cost, and interest on the finance is generally tax-deductible.</p>
+        </div>
+
+        <p class="rv">The combination of upfront GST recovery, the Investment Boost deduction, and tax-deductible interest makes financed new asset purchases particularly attractive in the current environment.</p>
+        <p class="rv">The key question — as always — is whether the asset makes business sense first, and the tax treatment second. Talk to your accountant before making a purchasing decision primarily based on tax benefits.</p>
+
+        <h2 id="timing" class="rv">Timing considerations</h2>
+        <p class="rv">The Investment Boost applies to assets first available for use on or after 22 May 2025 with no stated end date at this stage. However, the scheme was introduced by the current government and could change in future budgets.</p>
+        <p class="rv">For most NZ businesses operating on a 31 March financial year, assets purchased and available for use before 31 March 2026 will generate the Investment Boost deduction in the 2026 tax year. Assets purchased after 1 April 2026 will generate the deduction in the 2027 tax year — so timing relative to your financial year end matters.</p>
+        <p class="rv">If you're planning a significant asset purchase anyway, bringing it forward before your financial year end may make the deduction more immediately useful. Your accountant can help you model the cashflow impact.</p>
+
+        <h2 id="worth-it" class="rv">Is the Investment Boost worth it for your business?</h2>
+        <p class="rv">The Investment Boost is genuinely useful for businesses that:</p>
+        <ul class="rv">
+          <li>Are planning to purchase new (not second-hand) vehicles or equipment</li>
+          <li>Are profitable — so there's actual tax to save</li>
+          <li>Have positive cashflow to service asset finance repayments</li>
+          <li>Are operating on a financial year where the deduction is timely</li>
+        </ul>
+        <p class="rv">It's less relevant if your business is in a loss position (no tax to save), if you're primarily buying second-hand assets, or if the assets you need don't qualify as new-to-NZ.</p>
+
+        <div class="callout rv">
+          <div class="callout-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <p>The honest answer is that the Investment Boost should not be the primary reason you buy an asset. <strong>If the business case for the asset is strong, the tax benefit makes a good decision better.</strong> If the business case is marginal, a tax deduction doesn't change the underlying economics.</p>
+        </div>
+
+        <h2 id="faq" class="rv">Common questions</h2>
+
+        <div class="faq-item rv">
+          <div class="faq-q">Does the Investment Boost apply if I finance the asset rather than buying it outright?</div>
+          <div class="faq-a">Yes. Whether you pay cash or use asset finance, you can still claim the Investment Boost on the full purchase price. The financing structure does not affect your eligibility.</div>
 
         <p class="rv">The overall tax paid across the asset's life remains similar — but pulling those deductions forward improves your cashflow when it matters most: the year you've just spent money on a major asset.</p>
         <p class="rv">The GST position is separate — GST-registered businesses can still claim the GST on the purchase price back in their GST return, as they always could.</p>
