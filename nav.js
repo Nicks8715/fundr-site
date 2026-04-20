@@ -40,14 +40,13 @@
 
   var html =
     '<nav class="fnd" id="fnd">' +
-      /* Logo — use image */
+      /* Logo */
       '<a href="' + href('/index.html') + '" class="fnd-logo" aria-label="fundr home">' +
         '<img src="' + href('/images/logo.png') + '" alt="fundr." class="fnd-logo-img">' +
       '</a>' +
 
-      /* Desktop centre white bar */
+      /* Desktop centre links */
       '<div class="fnd-centre">' +
-        /* What We Finance dropdown */
         '<div class="fnd-drop-wrap">' +
           '<button class="fnd-drop-btn" id="fnd-drop-btn" aria-haspopup="true" aria-expanded="false">' +
             'What We Finance' +
@@ -62,10 +61,10 @@
         '<a href="' + href('/calculator.html') + '" class="fnd-link">Calculator</a>' +
       '</div>' +
 
-      /* Apply Now pill */
-      '<a href="' + href('/check-eligibility-full.html') + '" class="fnd-apply">Apply Now</a>' +
+      /* Get a Quote pill — desktop */
+      '<a href="' + href('/quick-quote.html') + '" class="fnd-apply">Get a Quote</a>' +
 
-      /* Hamburger circle */
+      /* Hamburger */
       '<button class="fnd-ham" id="fnd-ham" aria-label="Open menu" aria-expanded="false">' +
         '<span></span><span></span><span></span>' +
       '</button>' +
@@ -99,7 +98,8 @@
         '<a href="' + href('/what-we-finance.html') + '" class="fnd-mob-a">All Finance Options</a>' +
       '</div>' +
 
-      '<a href="' + href('/check-eligibility-full.html') + '" class="fnd-mob-apply">Apply Now →</a>' +
+      /* Get a Quote button — mobile */
+      '<a href="' + href('/quick-quote.html') + '" class="fnd-mob-apply">Get a Quote →</a>' +
 
       '<div class="fnd-mob-contact">' +
         '<a href="tel:0211023416">' + icons.phone + '021 102 3416</a>' +
@@ -132,7 +132,7 @@
   window.addEventListener('scroll', function(){ if(nav) nav.classList.toggle('fnd-scrolled', window.scrollY > 10); }, { passive:true });
   window.addEventListener('resize', function(){ if(window.innerWidth > 960) closePanel(); });
 
-  /* Dropdown — hover works via CSS, click toggle for touch */
+  /* Dropdown */
   if (dropBtn) {
     dropBtn.addEventListener('click', function(){
       var open = dropdown.classList.toggle('fnd-dd-open');
