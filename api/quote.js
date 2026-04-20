@@ -63,7 +63,7 @@ export default async function handler(req, res) {
         <table width="100%" cellpadding="0" cellspacing="0" style="background:#f9f6f0;border-radius:8px;padding:20px 24px">
           <tr><td>
             <p style="font-size:13px;font-weight:600;color:#16140f;margin:0 0 8px">What happens next?</p>
-            <p style="font-size:13px;color:#5a5348;line-height:1.7;margin:0">Nick will call you on <strong style="color:#16140f">${phone}</strong> within 1 business hour to confirm your rate and walk you through the best options across our 20+ lender panel.</p>
+            <p style="font-size:13px;color:#5a5348;line-height:1.7;margin:0">Nick will call you on <strong style="color:#16140f">${phone}</strong> within 1 business hour to confirm your rate and walk you through the best options across our 15+ lender panel.</p>
           </td></tr>
         </table>
       </td></tr>
