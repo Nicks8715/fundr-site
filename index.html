@@ -521,11 +521,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 /* =============================================
    RESPONSIVE
    ============================================= */
-
-/* Hero */
-@media(max-width:900px){
-  .hero-inner{padding:60px 24px 120px}
-}
+@media(max-width:900px){.hero-inner{padding:60px 24px 120px}}
 @media(max-width:600px){
   .hero-bg{background-size:130%;background-position:center bottom 5%}
   .hero-overlay{background:linear-gradient(to bottom,rgba(14,13,11,1.0) 0%,rgba(14,13,11,1.0) 45%,rgba(14,13,11,.70) 65%,rgba(14,13,11,.20) 100%)}
@@ -538,113 +534,32 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
   .btn-hero{width:100%;justify-content:center}
   .pill-row{gap:6px}
 }
-@media(max-width:380px){
-  .hero-inner{padding:44px 16px 110px}
-  .hero h1{font-size:2rem}
-}
-
-/* Intro */
-@media(max-width:900px){
-  .intro-inner{grid-template-columns:1fr;gap:48px}
-  .intro-section{padding:72px 24px}
-}
-@media(max-width:600px){
-  .intro-section{padding:56px 20px}
-  .intro-stat-num{font-size:2.6rem;min-width:80px}
-  .intro-inner{gap:40px}
-}
-
-/* Products */
-@media(max-width:900px){
-  .products-section{padding:72px 24px}
-  .products-grid{grid-template-columns:1fr}
-  .section-header{flex-direction:column;align-items:flex-start;gap:12px}
-}
-@media(max-width:600px){
-  .products-section{padding:56px 20px}
-  .product-card{padding:32px 24px}
-}
+@media(max-width:380px){.hero-inner{padding:44px 16px 110px}.hero h1{font-size:2rem}}
+@media(max-width:900px){.intro-inner{grid-template-columns:1fr;gap:48px}.intro-section{padding:72px 24px}}
+@media(max-width:600px){.intro-section{padding:56px 20px}.intro-stat-num{font-size:2.6rem;min-width:80px}.intro-inner{gap:40px}}
+@media(max-width:900px){.products-section{padding:72px 24px}.products-grid{grid-template-columns:1fr}.section-header{flex-direction:column;align-items:flex-start;gap:12px}}
+@media(max-width:600px){.products-section{padding:56px 20px}.product-card{padding:32px 24px}}
 @media(max-width:380px){.product-card{padding:28px 20px}}
-
-/* Who */
 @media(max-width:1024px){.who-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:900px){
-  .who-section{padding:72px 24px}
-  .who-header{flex-direction:column;align-items:flex-start;gap:12px}
-  .who-header p{text-align:left;max-width:100%}
-}
-@media(max-width:600px){
-  .who-section{padding:56px 20px}
-  .who-grid{grid-template-columns:1fr}
-  .who-card{padding:28px 22px}
-}
+@media(max-width:900px){.who-section{padding:72px 24px}.who-header{flex-direction:column;align-items:flex-start;gap:12px}.who-header p{text-align:left;max-width:100%}}
+@media(max-width:600px){.who-section{padding:56px 20px}.who-grid{grid-template-columns:1fr}.who-card{padding:28px 22px}}
 @media(max-width:380px){.who-card{padding:24px 18px}}
-
-/* Process */
-@media(max-width:900px){
-  .process-section{padding:72px 24px}
-  .process-steps{grid-template-columns:1fr;gap:36px}
-  .process-steps::before{display:none}
-  .process-step{padding:0}
-  .process-cta{flex-direction:column;align-items:flex-start}
-}
+@media(max-width:900px){.process-section{padding:72px 24px}.process-steps{grid-template-columns:1fr;gap:36px}.process-steps::before{display:none}.process-step{padding:0}.process-cta{flex-direction:column;align-items:flex-start}}
 @media(max-width:600px){.cta-btns{flex-direction:column;width:100%}.btn-cta-primary,.btn-cta-ghost{width:100%;justify-content:center}}
-
-/* Why */
 @media(max-width:1024px){.why-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.why-section{padding:72px 24px}}
 @media(max-width:600px){.why-grid{grid-template-columns:1fr}}
-
-/* Promise */
-@media(max-width:900px){
-  .promise-section{padding:72px 24px}
-  .promise-header{grid-template-columns:1fr;gap:24px;margin-bottom:52px}
-  .promise-item{grid-template-columns:44px 1fr;gap:20px;padding:32px 0}
-  .promise-num{font-size:1.8rem}
-  .promise-cta{flex-direction:column;align-items:flex-start}
-}
-@media(max-width:600px){
-  .promise-section{padding:56px 20px}
-  .promise-item{grid-template-columns:36px 1fr;gap:16px;padding:28px 0}
-  .promise-num{font-size:1.5rem}
-  .promise-content h3{font-size:1.15rem}
-  .btn-promise{width:100%;justify-content:center}
-}
+@media(max-width:900px){.promise-section{padding:72px 24px}.promise-header{grid-template-columns:1fr;gap:24px;margin-bottom:52px}.promise-item{grid-template-columns:44px 1fr;gap:20px;padding:32px 0}.promise-num{font-size:1.8rem}.promise-cta{flex-direction:column;align-items:flex-start}}
+@media(max-width:600px){.promise-section{padding:56px 20px}.promise-item{grid-template-columns:36px 1fr;gap:16px;padding:28px 0}.promise-num{font-size:1.5rem}.promise-content h3{font-size:1.15rem}.btn-promise{width:100%;justify-content:center}}
 @media(max-width:380px){.promise-item{gap:12px}}
-
-/* Reviews */
-@media(max-width:900px){
-  .reviews-section{padding:72px 24px}
-  .reviews-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:600px){
-  .reviews-section{padding:56px 20px}
-  .reviews-grid{grid-template-columns:1fr}
-  .reviews-header{flex-direction:column;align-items:flex-start}
-  .agg-score{text-align:left}
-}
+@media(max-width:900px){.reviews-section{padding:72px 24px}.reviews-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.reviews-section{padding:56px 20px}.reviews-grid{grid-template-columns:1fr}.reviews-header{flex-direction:column;align-items:flex-start}.agg-score{text-align:left}}
 @media(max-width:380px){.review-card{padding:24px 20px}}
-
-/* Nick */
-@media(max-width:900px){
-  .nick-section{padding:72px 24px}
-  .nick-inner{grid-template-columns:1fr;gap:48px}
-}
-@media(max-width:600px){
-  .nick-section{padding:56px 20px}
-  .nick-actions{flex-direction:column}
-  .btn-cta-primary,.btn-cta-ghost{width:100%;justify-content:center}
-  .cred-card{padding:18px 20px}
-}
+@media(max-width:900px){.nick-section{padding:72px 24px}.nick-inner{grid-template-columns:1fr;gap:48px}}
+@media(max-width:600px){.nick-section{padding:56px 20px}.nick-actions{flex-direction:column}.btn-cta-primary,.btn-cta-ghost{width:100%;justify-content:center}.cred-card{padding:18px 20px}}
 @media(max-width:380px){.cred-card{gap:14px}}
-
-/* Final CTA */
 @media(max-width:900px){.final-cta{padding:64px 24px}}
-@media(max-width:600px){
-  .final-cta{padding:56px 20px}
-  .final-cta-btns{flex-direction:column;align-items:center}
-  .btn-final-white,.btn-final-outline{width:100%;max-width:320px;justify-content:center}
-}
+@media(max-width:600px){.final-cta{padding:56px 20px}.final-cta-btns{flex-direction:column;align-items:center}.btn-final-white,.btn-final-outline{width:100%;max-width:320px;justify-content:center}}
 @media(max-width:380px){.final-cta{padding:48px 16px}}
 </style>
 
@@ -663,9 +578,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 <!-- End Google Tag Manager (noscript) -->
 <div id="header-placeholder"></div>
 
-<!-- =============================================
-     1. HERO
-     ============================================= -->
 <section class="hero" aria-label="fundr — NZ business finance broker">
   <div class="hero-bg" role="img" aria-label="fundr finances vehicles, utes, trucks and equipment across NZ"></div>
   <div class="hero-grain" aria-hidden="true"></div>
@@ -687,8 +599,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <span class="pill" role="listitem">No Credit Impact to Apply</span>
     </div>
     <div class="hero-actions">
-      <button class="btn-hero open-popup" aria-label="Get my finance options">
-        Get My Finance Options
+      <button class="btn-hero" onclick="window.location.href='/quick-quote.html'" aria-label="Get my quote in 60 seconds">
+        Get My Quote in 60 Seconds
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
       <button onclick="window.location.href='/check-eligibility-full.html'" class="btn-ghost-hero" aria-label="Check your eligibility">
@@ -725,9 +637,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
   </div>
 </section>
 
-<!-- =============================================
-     2. ABOUT / INTRO
-     ============================================= -->
 <section class="intro-section" aria-label="About fundr">
   <div class="intro-inner">
     <div>
@@ -757,9 +666,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
   </div>
 </section>
 
-<!-- =============================================
-     3. PRODUCTS / WHAT WE FINANCE
-     ============================================= -->
 <section class="products-section" aria-label="Finance products">
   <div class="products-inner">
     <div class="section-header">
@@ -770,62 +676,38 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <button class="text-link" onclick="window.open('/what-we-finance.html','_blank')" aria-label="View all finance products">View All &rarr;</button>
     </div>
     <div class="products-grid" role="list" aria-label="Finance products">
-
       <article class="product-card" role="listitem" onclick="window.open('/vehicle-finance.html','_blank')">
         <span class="product-num">01</span>
         <h3>Vehicle Finance</h3>
         <p>Cars, SUVs, vans and commercial vehicles for NZ businesses. New or used, dealer or private sale.</p>
-        <div class="product-tags">
-          <span class="product-tag">Cars & SUVs</span>
-          <span class="product-tag">Vans</span>
-          <span class="product-tag">Business Vehicles</span>
-        </div>
+        <div class="product-tags"><span class="product-tag">Cars & SUVs</span><span class="product-tag">Vans</span><span class="product-tag">Business Vehicles</span></div>
         <button class="product-arrow" aria-label="Learn about vehicle finance">Explore Vehicle Finance &rarr;</button>
       </article>
-
       <article class="product-card" role="listitem" onclick="window.open('/ute-finance.html','_blank')">
         <span class="product-num">02</span>
         <h3>Ute Finance</h3>
         <p>Ranger, Hilux, D-Max and every work ute. Built for tradies who need fast approvals, not bank paperwork.</p>
-        <div class="product-tags">
-          <span class="product-tag">Ford Ranger</span>
-          <span class="product-tag">Toyota Hilux</span>
-          <span class="product-tag">Tradies</span>
-        </div>
+        <div class="product-tags"><span class="product-tag">Ford Ranger</span><span class="product-tag">Toyota Hilux</span><span class="product-tag">Tradies</span></div>
         <button class="product-arrow" aria-label="Learn about ute finance">Explore Ute Finance &rarr;</button>
       </article>
-
       <article class="product-card" role="listitem" onclick="window.open('/truck-finance.html','_blank')">
         <span class="product-num">03</span>
         <h3>Truck Finance</h3>
         <p>Prime movers, tippers, curtainsiders, crane trucks and specialist vehicles. Owner-operators and fleets.</p>
-        <div class="product-tags">
-          <span class="product-tag">Prime Movers</span>
-          <span class="product-tag">Tippers</span>
-          <span class="product-tag">Fleet</span>
-        </div>
+        <div class="product-tags"><span class="product-tag">Prime Movers</span><span class="product-tag">Tippers</span><span class="product-tag">Fleet</span></div>
         <button class="product-arrow" aria-label="Learn about truck finance">Explore Truck Finance &rarr;</button>
       </article>
-
       <article class="product-card" role="listitem" onclick="window.open('/equipment-finance.html','_blank')">
         <span class="product-num">04</span>
         <h3>Equipment Finance</h3>
         <p>Any business equipment — construction, medical, kitchen, gym, warehouse and more. Any industry, any asset.</p>
-        <div class="product-tags">
-          <span class="product-tag">Construction</span>
-          <span class="product-tag">Medical</span>
-          <span class="product-tag">Hospitality</span>
-        </div>
+        <div class="product-tags"><span class="product-tag">Construction</span><span class="product-tag">Medical</span><span class="product-tag">Hospitality</span></div>
         <button class="product-arrow" aria-label="Learn about equipment finance">Explore Equipment Finance &rarr;</button>
       </article>
-
     </div>
   </div>
 </section>
 
-<!-- =============================================
-     4. WHO WE HELP
-     ============================================= -->
 <section class="who-section" aria-label="Who fundr helps">
   <div class="who-inner">
     <div class="who-header">
@@ -836,50 +718,34 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <p>We know your industry — not just your credit score. fundr structures finance around how your business actually works.</p>
     </div>
     <div class="who-grid" role="list" aria-label="Types of businesses fundr helps">
-
       <article class="who-card" role="listitem" onclick="window.open('/ute-finance.html','_blank')">
-        <div class="who-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </div>
+        <div class="who-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
         <h3>Tradies</h3>
         <p>Your ute is your office. When it's time to upgrade or add to the fleet, you need finance sorted fast — not in three weeks when the bank finally reviews your application.</p>
         <button class="who-card-link" aria-label="Ute finance for tradies">Ute finance &rarr;</button>
       </article>
-
       <article class="who-card" role="listitem" onclick="window.open('/truck-finance.html','_blank')">
-        <div class="who-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><path d="M10 3v13"/></svg>
-        </div>
+        <div class="who-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><path d="M10 3v13"/></svg></div>
         <h3>Transport Operators</h3>
         <p>Whether you're a single truck owner-operator or running a fleet, we understand the economics of freight. We know what trucks cost, how they hold value, and how to structure finance that works with your cash flow.</p>
         <button class="who-card-link" aria-label="Truck finance for transport operators">Truck finance &rarr;</button>
       </article>
-
       <article class="who-card" role="listitem" onclick="window.open('/equipment-finance.html','_blank')">
-        <div class="who-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M6 20V10l6-7 6 7v10"/><path d="M10 20v-5h4v5"/><rect x="9" y="10" width="6" height="4" rx="1"/></svg>
-        </div>
+        <div class="who-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M6 20V10l6-7 6 7v10"/><path d="M10 20v-5h4v5"/><rect x="9" y="10" width="6" height="4" rx="1"/></svg></div>
         <h3>Contractors &amp; Construction</h3>
         <p>You can't take on that next big job without the right gear. We finance excavators, loaders, compactors — the heavy equipment that keeps construction and civil projects moving.</p>
         <button class="who-card-link" aria-label="Equipment finance for contractors">Equipment finance &rarr;</button>
       </article>
-
       <article class="who-card" role="listitem" onclick="window.open('/business-finance.html','_blank')">
-        <div class="who-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-        </div>
+        <div class="who-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
         <h3>Business Owners</h3>
         <p>From hospitality fitouts to gym equipment to manufacturing machinery, we help businesses across industries get the tools they need without the bank runaround.</p>
         <button class="who-card-link" aria-label="Business finance for NZ businesses">Business finance &rarr;</button>
       </article>
-
     </div>
   </div>
 </section>
 
-<!-- =============================================
-     5. HOW IT WORKS / PROCESS
-     ============================================= -->
 <section class="process-section" aria-label="How fundr works">
   <div class="process-inner">
     <p class="sec-label sec-label--dark">How It Works</p>
@@ -888,8 +754,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <div class="process-step" role="listitem">
         <div class="step-circle active" aria-hidden="true">01</div>
         <h3>Tell Us What You Need</h3>
-        <p>Share a few details about your business and what you're looking to finance. Takes about 3 minutes.</p>
-        <span class="process-pill">3 min</span>
+        <p>Share a few details about your business and what you're looking to finance. Takes about 60 seconds.</p>
+        <span class="process-pill">60 sec</span>
       </div>
       <div class="process-step" role="listitem">
         <div class="step-circle" aria-hidden="true">02</div>
@@ -910,61 +776,42 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <p>No obligation. Just fast, honest finance.</p>
       </div>
       <div class="cta-btns">
-        <button onclick="window.location.href='/apply.html'" class="btn-cta-primary" aria-label="Apply now">Apply Now &rarr;</button>
+        <button onclick="window.location.href='/quick-quote.html'" class="btn-cta-primary" aria-label="Get your quote in 60 seconds">Get My Quote in 60 Seconds &rarr;</button>
         <button class="btn-cta-ghost" onclick="window.location.href='tel:0211023416'" aria-label="Call Nick">&#128222; 021 102 3416</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =============================================
-     6. WHY FUNDR
-     ============================================= -->
 <section class="why-section" aria-label="Why choose fundr">
   <div class="why-inner">
     <p class="sec-label">Why fundr</p>
     <h2>Why NZ businesses choose<br><em>fundr over the banks.</em></h2>
     <div class="why-grid" role="list" aria-label="fundr advantages">
-
       <article class="why-card" role="listitem">
-        <div class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
+        <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>15+ Lenders on Panel</h3>
         <p>We take your deal to our full panel and find the lender that fits your asset, industry and credit profile best.</p>
       </article>
-
       <article class="why-card" role="listitem">
-        <div class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
+        <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <h3>Approved in 24 Hours</h3>
         <p>Most applications receive a decision within 24 hours. Funds released in 1–2 business days.</p>
       </article>
-
       <article class="why-card" role="listitem">
-        <div class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
+        <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
         <h3>Relationship Focused</h3>
         <p>We're in it for the long term. fundr builds lasting relationships with clients — not just one-off transactions.</p>
       </article>
-
       <article class="why-card" role="listitem">
-        <div class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
+        <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <h3>Talk to Nick Directly</h3>
         <p>No call centres, no junior staff. You deal directly with Nick — an experienced broker who knows lending inside out.</p>
       </article>
-
     </div>
   </div>
 </section>
 
-<!-- =============================================
-     7. OUR PROMISE
-     ============================================= -->
 <section class="promise-section" aria-label="fundr's promise to clients">
   <div class="promise-inner">
     <div class="promise-header">
@@ -977,7 +824,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       </div>
     </div>
     <div class="promise-list" role="list" aria-label="fundr's promises">
-
       <div class="promise-item" role="listitem">
         <div class="promise-num" aria-hidden="true">01</div>
         <div class="promise-content">
@@ -985,7 +831,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
           <p>No vague timelines, no waiting days for a callback. You'll know where your application stands at every stage — and if something won't work, we'll tell you upfront, not after wasting your time.</p>
         </div>
       </div>
-
       <div class="promise-item" role="listitem">
         <div class="promise-num" aria-hidden="true">02</div>
         <div class="promise-content">
@@ -993,7 +838,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
           <p>Getting the right finance isn't always straightforward. We know which lenders suit which assets, industries and business profiles — and we structure your application to give it the strongest possible position from the start.</p>
         </div>
       </div>
-
       <div class="promise-item" role="listitem">
         <div class="promise-num" aria-hidden="true">03</div>
         <div class="promise-content">
@@ -1001,7 +845,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
           <p>Yes, fundr is paid by the lender. But our reputation is built on getting you a deal you're happy with — not just any deal. We'll recommend the option that genuinely fits your business, even if it pays us less.</p>
         </div>
       </div>
-
       <div class="promise-item" role="listitem">
         <div class="promise-num" aria-hidden="true">04</div>
         <div class="promise-content">
@@ -1009,9 +852,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
           <p>You won't be handed off to a junior after the first call. Nick handles your application from initial enquiry through to settlement — so nothing gets lost, and you're never repeating yourself.</p>
         </div>
       </div>
-
     </div>
-
     <div class="promise-cta">
       <div>
         <p class="promise-cta-quote">"If I can't get your deal done, I'll tell you why — and point you in the right direction. That's the <strong>fundr way.</strong>"</p>
@@ -1022,9 +863,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
   </div>
 </section>
 
-<!-- =============================================
-     8. REVIEWS
-     ============================================= -->
 <section class="reviews-section" aria-label="Customer reviews" itemscope itemtype="https://schema.org/FinancialService">
   <div class="reviews-inner">
     <div class="reviews-header">
@@ -1038,7 +876,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       </div>
     </div>
     <div class="reviews-grid" role="list" aria-label="Customer testimonials">
-
       <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
         <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="review-text" itemprop="reviewBody">"fundr sorted our excavator finance in under 24 hours. Nick knew exactly what lenders to approach — we'd been knocked back by our bank but fundr got it done."</p>
@@ -1047,7 +884,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
           <span class="reviewer-role">Civil contractor, Auckland</span>
         </div>
       </article>
-
       <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
         <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="review-text" itemprop="reviewBody">"Got our Hilux financed in two days. Nick handled everything, found us a great rate and was easy to deal with the whole way through. Won't use anyone else."</p>
@@ -1056,7 +892,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
           <span class="reviewer-role">Builder, Christchurch</span>
         </div>
       </article>
-
       <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
         <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="review-text" itemprop="reviewBody">"As a new business we weren't sure we'd qualify. Nick built a case for us and got us approved for our first truck. Absolute legend."</p>
@@ -1065,14 +900,10 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
           <span class="reviewer-role">Owner-operator, Wellington</span>
         </div>
       </article>
-
     </div>
   </div>
 </section>
 
-<!-- =============================================
-     9. MEET NICK
-     ============================================= -->
 <section class="nick-section" aria-label="About Nick">
   <div class="nick-inner">
     <div class="nick-text">
@@ -1081,52 +912,36 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <p>No call centres. No passing you from person to person. When you contact fundr, you talk to <strong>Nick</strong> — the owner, the broker, and the person who will structure and settle your deal from start to finish.</p>
       <p>With 15 years of commercial finance experience across vehicles, trucks and equipment, Nick has the relationships and expertise to get your deal done — even if the bank said no.</p>
       <div class="nick-actions">
-        <button onclick="window.location.href='/apply.html'" class="btn-cta-primary" aria-label="Get started">Get Started &rarr;</button>
-        
+        <button onclick="window.location.href='/quick-quote.html'" class="btn-cta-primary" aria-label="Get your quote in 60 seconds">Get My Quote in 60 Seconds &rarr;</button>
       </div>
     </div>
     <div class="nick-creds" aria-label="Nick's credentials">
       <div class="cred-card">
         <div class="cred-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-        <div class="cred-text">
-          <strong>15+ Years Experience</strong>
-          <span>Commercial finance across vehicles, trucks and equipment</span>
-        </div>
+        <div class="cred-text"><strong>15+ Years Experience</strong><span>Commercial finance across vehicles, trucks and equipment</span></div>
       </div>
       <div class="cred-card">
         <div class="cred-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <div class="cred-text">
-          <strong>15+ Lender Relationships</strong>
-          <span>Across banks, credit unions and specialist asset lenders</span>
-        </div>
+        <div class="cred-text"><strong>15+ Lender Relationships</strong><span>Across banks, credit unions and specialist asset lenders</span></div>
       </div>
       <div class="cred-card">
         <div class="cred-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div class="cred-text">
-          <strong>Nationwide NZ Coverage</strong>
-          <span>Kaitaia to Invercargill — we serve businesses across all of NZ</span>
-        </div>
+        <div class="cred-text"><strong>Nationwide NZ Coverage</strong><span>Kaitaia to Invercargill — we serve businesses across all of NZ</span></div>
       </div>
       <div class="cred-card">
         <div class="cred-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-        <div class="cred-text">
-          <strong>Deep Industry Knowledge</strong>
-          <span>Specialist expertise across construction, transport, hospitality and more</span>
-        </div>
+        <div class="cred-text"><strong>Deep Industry Knowledge</strong><span>Specialist expertise across construction, transport, hospitality and more</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =============================================
-     10. FINAL CTA
-     ============================================= -->
 <section class="final-cta" aria-label="Apply for finance">
   <div class="final-cta-inner">
     <h2>Apply for business finance NZ —<br><em>get moving today.</em></h2>
     <p>One application, 15+ lenders, 24-hour approvals. Talk to Nick today.</p>
     <div class="final-cta-btns">
-      <button onclick="window.location.href='/apply.html'" class="btn-final-white" aria-label="Apply now for finance">Apply Now &rarr;</button>
+      <button onclick="window.location.href='/quick-quote.html'" class="btn-final-white" aria-label="Get your quote in 60 seconds">Get My Quote in 60 Seconds &rarr;</button>
       <button class="btn-final-outline" onclick="window.open('/calculator.html','_blank')" aria-label="Use the repayment calculator">Try the Calculator &rarr;</button>
     </div>
   </div>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get an Instant Finance Quote — fundr NZ</title>
+<meta name="description" content="Get an instant indicative finance quote in 60 seconds. No credit check. NZ asset finance broker.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+:root{
+  --orange:#f06c00;
+  --orange-light:#ff8c2a;
+  --orange-dim:rgba(240,108,0,.12);
+  --ink:#16140f;
+  --mid:#5a5348;
+  --faint:#a09890;
+  --sand:#f0ece3;
+  --sand-dark:#e4dfd4;
+  --dark:#0e0d0b;
+  --dark2:#1a1a18;
+  --white:#fff;
+  --border:rgba(22,20,15,.10);
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Geist',system-ui,sans-serif;
+  --logo-font:'League Spartan','Geist',system-ui,sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+body{font-family:var(--sans);color:var(--ink);background:var(--sand);overflow-x:hidden;margin:0}
+
+/* MINIMAL HEADER */
+.site-header{background:var(--dark);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.header-logo{font-family:var(--logo-font);font-size:1.4rem;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-.03em}
+.header-logo span{color:var(--orange)}
+.header-back{font-size:.78rem;color:rgba(255,255,255,.5);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
+.header-back:hover{color:rgba(255,255,255,.85)}
+.header-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* HERO */
+.hero{background:var(--dark);padding:52px 40px 56px;text-align:center;border-bottom:1px solid rgba(255,255,255,.06)}
+.hero-eyebrow{font-size:.62rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);display:inline-block}
+.hero h1{font-family:var(--serif);font-size:clamp(2rem,5vw,2.9rem);font-weight:400;color:#fff;line-height:1.12;margin-bottom:12px}
+.hero h1 em{font-style:italic;color:var(--orange)}
+.hero p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.75;max-width:460px;margin:0 auto 24px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.hero-badge{font-size:.70rem;font-weight:500;color:rgba(255,255,255,.7);padding:5px 14px;border:1px solid rgba(255,255,255,.15);border-radius:100px;display:flex;align-items:center;gap:5px}
+.hero-badge::before{content:'✓';color:var(--orange)}
+
+/* PROGRESS */
+.progress-wrap{max-width:600px;margin:0 auto;padding:32px 24px 0}
+.progress-bar{display:flex;align-items:center;gap:0;margin-bottom:40px}
+.progress-step{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;position:relative}
+.progress-step:not(:last-child)::after{content:'';position:absolute;top:14px;left:calc(50% + 14px);right:calc(-50% + 14px);height:1px;background:var(--border)}
+.progress-step.active:not(:last-child)::after,.progress-step.done:not(:last-child)::after{background:var(--orange)}
+.step-circle{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border);background:var(--white);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:600;color:var(--faint);transition:all .3s;position:relative;z-index:1}
+.progress-step.active .step-circle{border-color:var(--orange);background:var(--orange);color:#fff}
+.progress-step.done .step-circle{border-color:var(--orange);background:var(--orange);color:#fff}
+.step-label{font-size:.62rem;font-weight:500;color:var(--faint);white-space:nowrap}
+.progress-step.active .step-label{color:var(--orange)}
+.progress-step.done .step-label{color:var(--mid)}
+
+/* FORM CARD */
+.form-wrap{max-width:600px;margin:0 auto;padding:0 24px 72px}
+.form-card{background:var(--white);border-radius:12px;border:1px solid var(--border);overflow:hidden}
+.card-head{padding:24px 28px 20px;border-bottom:1px solid var(--border)}
+.card-step-label{font-size:.60rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:4px}
+.card-head h2{font-size:1.05rem;font-weight:600;color:var(--ink)}
+.card-head p{font-size:.78rem;color:var(--mid);margin-top:3px}
+.card-body{padding:26px 28px}
+
+/* TILES */
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:20px}
+.tile{border:1.5px solid var(--border);border-radius:8px;padding:14px 12px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;user-select:none}
+.tile:hover{border-color:rgba(240,108,0,.4);background:rgba(240,108,0,.03)}
+.tile.active{border-color:var(--orange);background:var(--orange-dim)}
+.tile-icon{font-size:1.4rem;margin-bottom:5px}
+.tile-label{font-size:.78rem;font-weight:600;color:var(--ink)}
+.tile-sub{font-size:.68rem;color:var(--mid);margin-top:2px}
+
+/* FIELDS */
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.field{margin-bottom:14px}
+.field:last-child{margin-bottom:0}
+.field label{display:block;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:6px}
+.field label .opt{font-weight:300;color:var(--faint);text-transform:none;letter-spacing:0;margin-left:4px}
+.field input,.field select{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--sans);font-size:.88rem;color:var(--ink);background:var(--white);outline:none;appearance:none;-webkit-appearance:none;transition:border-color .2s,box-shadow .2s}
+.field input:focus,.field select:focus{border-color:var(--orange);box-shadow:0 0 0 3px var(--orange-dim)}
+.field input::placeholder{color:var(--faint)}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a5348' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;cursor:pointer}
+
+/* RADIO CARDS */
+.radio-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:0}
+.radio-card{border:1.5px solid var(--border);border-radius:8px;padding:12px 10px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;user-select:none}
+.radio-card:hover{border-color:rgba(240,108,0,.4);background:rgba(240,108,0,.03)}
+.radio-card.active{border-color:var(--orange);background:var(--orange-dim)}
+.radio-card-label{font-size:.78rem;font-weight:600;color:var(--ink)}
+.radio-card-sub{font-size:.66rem;color:var(--mid);margin-top:2px}
+
+/* YES/NO */
+.yn-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.yn-card{border:1.5px solid var(--border);border-radius:8px;padding:14px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;user-select:none;font-size:.88rem;font-weight:500;color:var(--ink)}
+.yn-card:hover{border-color:rgba(240,108,0,.4);background:rgba(240,108,0,.03)}
+.yn-card.active{border-color:var(--orange);background:var(--orange-dim);color:var(--orange)}
+
+/* NAV BUTTONS */
+.card-footer{padding:20px 28px 24px;border-top:1px solid var(--border);display:flex;gap:10px;justify-content:flex-end}
+.btn-back{font-family:var(--sans);font-size:.82rem;font-weight:500;color:var(--mid);background:none;border:1.5px solid var(--border);padding:11px 22px;border-radius:8px;cursor:pointer;transition:border-color .2s,color .2s}
+.btn-back:hover{border-color:var(--ink);color:var(--ink)}
+.btn-next{font-family:var(--sans);font-size:.82rem;font-weight:600;color:#fff;background:var(--orange);border:none;padding:11px 28px;border-radius:8px;cursor:pointer;transition:background .2s;display:flex;align-items:center;gap:8px}
+.btn-next:hover{background:var(--orange-light)}
+.btn-next svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* SUBMIT CARD */
+.submit-card{background:var(--dark);border-radius:12px;padding:28px;margin-top:12px}
+.submit-btn{width:100%;padding:16px;background:var(--orange);border:none;border-radius:8px;font-family:var(--sans);font-size:.88rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#fff;cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.submit-btn:hover{background:var(--orange-light)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed}
+.submit-btn svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.submit-sub{font-size:.72rem;color:rgba(255,255,255,.4);text-align:center;margin-top:10px;line-height:1.6}
+.submit-trust{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:16px}
+.trust-item{font-size:.70rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:5px}
+.trust-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
+
+/* SUCCESS */
+.success-card{background:var(--white);border-radius:12px;border:1px solid var(--border);padding:56px 36px;text-align:center;display:none}
+.success-icon{width:72px;height:72px;background:var(--orange-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:1.8rem}
+.success-card h2{font-family:var(--serif);font-size:2rem;font-weight:400;margin-bottom:12px;color:var(--ink)}
+.success-card h2 em{font-style:italic;color:var(--orange)}
+.success-card p{font-size:.88rem;color:var(--mid);line-height:1.7;max-width:400px;margin:0 auto}
+.success-home{display:inline-flex;align-items:center;gap:6px;margin-top:28px;font-size:.82rem;font-weight:500;color:var(--orange);text-decoration:none}
+.success-home:hover{text-decoration:underline}
+
+/* STEP VISIBILITY */
+.step-panel{display:none}
+.step-panel.active{display:block}
+
+/* LOADING SPINNER */
+.spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ERROR */
+.field-error{font-size:.70rem;color:#c0392b;margin-top:5px;display:none}
+.field-error.show{display:block}
+
+@media(max-width:600px){
+  .site-header{padding:0 20px}
+  .hero{padding:40px 20px 44px}
+  .card-body{padding:20px}
+  .card-head{padding:20px}
+  .card-footer{padding:16px 20px 20px}
+  .tiles{grid-template-columns:1fr 1fr}
+  .radio-cards{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .submit-card{padding:20px}
+  .submit-trust{gap:12px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="header-logo" href="/">fundr<span>.</span></a>
+  <a class="header-back" href="/">
+    <svg viewBox="0 0 14 14"><path d="M9 2L4 7l5 5"/></svg>
+    Back to site
+  </a>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow"><span class="hero-dot"></span>Instant indicative quote</div>
+  <h1>Your quote in <em>60 seconds.</em></h1>
+  <p>Tell us what you need and get an instant indicative rate emailed to you — no credit check, no obligation.</p>
+  <div class="hero-badges">
+    <span class="hero-badge">No credit check</span>
+    <span class="hero-badge">Response within 1 hour</span>
+    <span class="hero-badge">20+ lender panel</span>
+    <span class="hero-badge">NZ-owned broker</span>
+  </div>
+</div>
+
+<div class="progress-wrap">
+  <div class="progress-bar">
+    <div class="progress-step active" id="ps1">
+      <div class="step-circle">1</div>
+      <div class="step-label">Finance</div>
+    </div>
+    <div class="progress-step" id="ps2">
+      <div class="step-circle">2</div>
+      <div class="step-label">Business</div>
+    </div>
+    <div class="progress-step" id="ps3">
+      <div class="step-circle">3</div>
+      <div class="step-label">Your details</div>
+    </div>
+  </div>
+</div>
+
+<div class="form-wrap">
+
+  <!-- STEP 1: Finance Details -->
+  <div class="step-panel active" id="step1">
+    <div class="form-card">
+      <div class="card-head">
+        <div class="card-step-label">Step 1 of 3</div>
+        <h2>What do you need to finance?</h2>
+        <p>Select the asset type and tell us about the deal</p>
+      </div>
+      <div class="card-body">
+        <div class="tiles" id="assetTiles">
+          <div class="tile active" data-val="Vehicle / Ute">
+            <div class="tile-icon">🚗</div>
+            <div class="tile-label">Vehicle / Ute</div>
+            <div class="tile-sub">Cars, SUVs, utes</div>
+          </div>
+          <div class="tile" data-val="Truck / Trailer">
+            <div class="tile-icon">🚛</div>
+            <div class="tile-label">Truck / Trailer</div>
+            <div class="tile-sub">Heavy transport</div>
+          </div>
+          <div class="tile" data-val="Equipment">
+            <div class="tile-icon">🏗️</div>
+            <div class="tile-label">Equipment</div>
+            <div class="tile-sub">Diggers, forklifts</div>
+          </div>
+          <div class="tile" data-val="Business Finance">
+            <div class="tile-icon">💼</div>
+            <div class="tile-label">Business Finance</div>
+            <div class="tile-sub">Working capital</div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label>Asset Value (approx)</label>
+            <select id="assetValue">
+              <option value="">Select range</option>
+              <option value="15000">Under $20,000</option>
+              <option value="35000">$20,000 – $50,000</option>
+              <option value="75000">$50,000 – $100,000</option>
+              <option value="175000">$100,000 – $250,000</option>
+              <option value="300000">$250,000+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Preferred Loan Term</label>
+            <select id="loanTerm">
+              <option value="">Select</option>
+              <option value="12">12 months</option>
+              <option value="24">24 months</option>
+              <option value="36">36 months</option>
+              <option value="48">48 months</option>
+              <option value="60">60 months</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>New or Used? <span class="opt">optional</span></label>
+          <select id="assetCondition">
+            <option value="">Select</option>
+            <option>New</option>
+            <option>Used</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn-next" onclick="goStep(2)">
+          Next
+          <svg viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: Business Profile -->
+  <div class="step-panel" id="step2">
+    <div class="form-card">
+      <div class="card-head">
+        <div class="card-step-label">Step 2 of 3</div>
+        <h2>About your business</h2>
+        <p>This helps us calculate the most accurate rate for you</p>
+      </div>
+      <div class="card-body">
+        <div class="field">
+          <label>Business Name</label>
+          <input type="text" id="bizName" placeholder="Your trading name">
+        </div>
+
+        <div class="field" style="margin-bottom:18px">
+          <label style="margin-bottom:10px">How long have you been trading?</label>
+          <div class="radio-cards" id="tradingCards">
+            <div class="radio-card active" data-val="under1">
+              <div class="radio-card-label">Under 1 year</div>
+              <div class="radio-card-sub">Start-up / new biz</div>
+            </div>
+            <div class="radio-card" data-val="1to3">
+              <div class="radio-card-label">1–3 years</div>
+              <div class="radio-card-sub">Established</div>
+            </div>
+            <div class="radio-card" data-val="3plus">
+              <div class="radio-card-label">3+ years</div>
+              <div class="radio-card-sub">Well established</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field" style="margin-bottom:18px">
+          <label style="margin-bottom:10px">How would you describe your credit profile?</label>
+          <div class="radio-cards" id="creditCards">
+            <div class="radio-card active" data-val="good">
+              <div class="radio-card-label">Good</div>
+              <div class="radio-card-sub">No issues</div>
+            </div>
+            <div class="radio-card" data-val="fair">
+              <div class="radio-card-label">Fair</div>
+              <div class="radio-card-sub">Minor issues</div>
+            </div>
+            <div class="radio-card" data-val="issues">
+              <div class="radio-card-label">Some issues</div>
+              <div class="radio-card-sub">Defaults / arrears</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label style="margin-bottom:10px">Do you own property?</label>
+          <div class="yn-cards" id="homeownerCards">
+            <div class="yn-card active" data-val="yes">Yes — homeowner</div>
+            <div class="yn-card" data-val="no">No — renting / boarding</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn-back" onclick="goStep(1)">Back</button>
+        <button class="btn-next" onclick="goStep(3)">
+          Next
+          <svg viewBox="0 0 14 14"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: Contact Details -->
+  <div class="step-panel" id="step3">
+    <div class="form-card">
+      <div class="card-head">
+        <div class="card-step-label">Step 3 of 3</div>
+        <h2>Where do we send your quote?</h2>
+        <p>Nick will follow up personally within 1 business hour</p>
+      </div>
+      <div class="card-body">
+        <div class="field-row">
+          <div class="field">
+            <label>First Name</label>
+            <input type="text" id="firstName" placeholder="First name">
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input type="text" id="lastName" placeholder="Last name">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Phone</label>
+            <input type="tel" id="phone" placeholder="021 000 0000">
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="you@business.co.nz">
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn-back" onclick="goStep(2)">Back</button>
+      </div>
+    </div>
+
+    <div class="submit-card">
+      <button class="submit-btn" id="submitBtn" onclick="submitQuote()">
+        <svg viewBox="0 0 16 16"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
+        Get My Indicative Quote
+      </button>
+      <p class="submit-sub">Your quote will be emailed instantly. No credit check performed. Nick will call to confirm within 1 business hour.</p>
+      <div class="submit-trust">
+        <span class="trust-item"><span class="trust-dot"></span>FSP registered broker</span>
+        <span class="trust-item"><span class="trust-dot"></span>NZ-owned & operated</span>
+        <span class="trust-item"><span class="trust-dot"></span>20+ lender panel</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="success-card" id="successCard">
+    <div class="success-icon">✓</div>
+    <h2>Quote on its <em>way!</em></h2>
+    <p>Check your inbox — your indicative quote has been sent. Nick will follow up within 1 business hour to discuss your options.</p>
+    <a class="success-home" href="/">← Back to fundr.co.nz</a>
+  </div>
+
+</div>
+
+<script>
+// State
+const state = {
+  assetType: 'Vehicle / Ute',
+  assetValue: '',
+  loanTerm: '',
+  assetCondition: '',
+  bizName: '',
+  trading: 'under1',
+  credit: 'good',
+  homeowner: 'yes',
+  firstName: '',
+  lastName: '',
+  phone: '',
+  email: ''
+};
+
+// Tile selection
+document.querySelectorAll('#assetTiles .tile').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('#assetTiles .tile').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    state.assetType = t.dataset.val;
+  });
+});
+
+// Radio cards
+function setupRadio(containerId, stateKey) {
+  document.querySelectorAll('#' + containerId + ' .radio-card').forEach(c => {
+    c.addEventListener('click', () => {
+      document.querySelectorAll('#' + containerId + ' .radio-card').forEach(x => x.classList.remove('active'));
+      c.classList.add('active');
+      state[stateKey] = c.dataset.val;
+    });
+  });
+}
+setupRadio('tradingCards', 'trading');
+setupRadio('creditCards', 'credit');
+
+document.querySelectorAll('#homeownerCards .yn-card').forEach(c => {
+  c.addEventListener('click', () => {
+    document.querySelectorAll('#homeownerCards .yn-card').forEach(x => x.classList.remove('active'));
+    c.classList.add('active');
+    state.homeowner = c.dataset.val;
+  });
+});
+
+// Step navigation
+function goStep(n) {
+  // Validate step 1
+  if (n === 2) {
+    if (!document.getElementById('assetValue').value) {
+      alert('Please select an asset value range.');
+      return;
+    }
+    if (!document.getElementById('loanTerm').value) {
+      alert('Please select a preferred loan term.');
+      return;
+    }
+    state.assetValue = document.getElementById('assetValue').value;
+    state.loanTerm = document.getElementById('loanTerm').value;
+    state.assetCondition = document.getElementById('assetCondition').value;
+  }
+
+  // Validate step 2
+  if (n === 3) {
+    if (!document.getElementById('bizName').value.trim()) {
+      alert('Please enter your business name.');
+      return;
+    }
+    state.bizName = document.getElementById('bizName').value.trim();
+  }
+
+  // Show correct panel
+  document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('step' + n).classList.add('active');
+
+  // Update progress
+  for (let i = 1; i <= 3; i++) {
+    const ps = document.getElementById('ps' + i);
+    ps.classList.remove('active', 'done');
+    const circle = ps.querySelector('.step-circle');
+    if (i < n) { ps.classList.add('done'); circle.innerHTML = '✓'; }
+    else if (i === n) { ps.classList.add('active'); circle.innerHTML = i; }
+    else { circle.innerHTML = i; }
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Rate calculation
+function calculateRate() {
+  const { trading, credit, homeowner } = state;
+
+  if (trading === 'under1') {
+    return { low: null, high: null, callUs: true };
+  }
+
+  let low, high;
+
+  if (trading === '3plus') {
+    if (credit === 'good' && homeowner === 'yes')    { low = 7.5;  high = 8.5; }
+    else if (credit === 'good' && homeowner === 'no') { low = 8.99; high = 10.99; }
+    else if (credit === 'fair' && homeowner === 'yes'){ low = 9.99; high = 11.99; }
+    else if (credit === 'fair' && homeowner === 'no') { low = 10.99; high = 12.99; }
+    else if (credit === 'issues')                     { low = 13.99; high = 17.99; }
+  } else { // 1to3
+    if (credit === 'good' && homeowner === 'yes')    { low = 8.99; high = 10.99; }
+    else if (credit === 'good' && homeowner === 'no') { low = 10.49; high = 12.49; }
+    else if (credit === 'fair' && homeowner === 'yes'){ low = 11.49; high = 13.49; }
+    else if (credit === 'fair' && homeowner === 'no') { low = 12.49; high = 14.99; }
+    else if (credit === 'issues')                     { low = 14.99; high = 18.99; }
+  }
+
+  return { low, high, callUs: false };
+}
+
+// Monthly payment estimate
+function calcMonthly(principal, annualRate, months) {
+  const r = annualRate / 100 / 12;
+  if (r === 0) return principal / months;
+  return principal * r * Math.pow(1+r, months) / (Math.pow(1+r, months) - 1);
+}
+
+function formatCurrency(n) {
+  return '$' + Math.round(n).toLocaleString('en-NZ');
+}
+
+// Submit
+async function submitQuote() {
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+
+  if (!firstName || !email || !phone) {
+    alert('Please fill in your name, email and phone number.');
+    return;
+  }
+
+  state.firstName = firstName;
+  state.lastName = lastName;
+  state.phone = phone;
+  state.email = email;
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner"></div> Calculating your quote...';
+
+  const rate = calculateRate();
+
+  // Asset value labels
+  const valueLabels = {
+    '15000': 'Under $20,000',
+    '35000': '$20,000 – $50,000',
+    '75000': '$50,000 – $100,000',
+    '175000': '$100,000 – $250,000',
+    '300000': '$250,000+'
+  };
+
+  const tradingLabels = { under1: 'Under 1 year', '1to3': '1–3 years', '3plus': '3+ years' };
+  const creditLabels = { good: 'Good', fair: 'Fair', issues: 'Some issues' };
+
+  // Monthly estimates
+  let monthlyLow = '', monthlyHigh = '';
+  if (!rate.callUs && state.assetValue && state.loanTerm) {
+    const v = parseFloat(state.assetValue);
+    const m = parseInt(state.loanTerm);
+    monthlyLow = formatCurrency(calcMonthly(v, rate.low, m));
+    monthlyHigh = formatCurrency(calcMonthly(v, rate.high, m));
+  }
+
+  const payload = {
+    ...state,
+    rate,
+    monthlyLow,
+    monthlyHigh,
+    valueLabel: valueLabels[state.assetValue] || state.assetValue,
+    tradingLabel: tradingLabels[state.trading],
+    creditLabel: creditLabels[state.credit]
+  };
+
+  try {
+    const res = await fetch('/api/quote', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      document.querySelectorAll('.step-panel').forEach(p => p.style.display = 'none');
+      document.querySelectorAll('.submit-card').forEach(p => p.style.display = 'none');
+      document.querySelectorAll('.progress-wrap').forEach(p => p.style.display = 'none');
+      document.getElementById('successCard').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (e) {
+    btn.disabled = false;
+    btn.innerHTML = '<svg viewBox="0 0 16 16" width="16" height="16" stroke="#fff" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M8 2l6 6-6 6"/></svg> Get My Indicative Quote';
+    alert('Something went wrong — please try again or call Nick on 021 102 3416.');
+  }
+}
+</script>
+</body>
+</html>
