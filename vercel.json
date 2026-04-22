@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    { "source": "/ute-finance",       "destination": "/ute-finance.html",       "permanent": true },
+    { "source": "/vehicle-finance",   "destination": "/vehicle-finance.html",   "permanent": true },
+    { "source": "/truck-finance",     "destination": "/truck-finance.html",     "permanent": true },
+    { "source": "/equipment-finance", "destination": "/equipment-finance.html", "permanent": true },
+    { "source": "/business-finance",  "destination": "/business-finance.html",  "permanent": true },
+    { "source": "/about",             "destination": "/about.html",             "permanent": true },
+    { "source": "/apply",             "destination": "/apply.html",             "permanent": true },
+    { "source": "/process",           "destination": "/process.html",           "permanent": true },
+    { "source": "/fundr-way",         "destination": "/fundr-way.html",         "permanent": true },
+    { "source": "/blog",              "destination": "/blog/index.html",        "permanent": true },
+    { "source": "/contact",           "destination": "/contact.html",           "permanent": true },
+    { "source": "/what-we-finance",   "destination": "/what-we-finance/index.html", "permanent": true }
+  ]
+}
