@@ -59,6 +59,17 @@
     { "source": "/business-vehicle-finance-nz",          "destination": "/Blog/business-vehicle-finance-nz.html",         "permanent": true },
     { "source": "/investment-boost-for-business-growth", "destination": "/Blog/investment-boost-for-business-growth.html","permanent": true },
     { "source": "/truck-finance-nz-options",             "destination": "/Blog/truck-finance-nz-options.html",            "permanent": true },
-    { "source": "/ute-finance-nz-fleet-upgrade",         "destination": "/Blog/ute-finance-nz-fleet-upgrade.html",        "permanent": true }
+    { "source": "/ute-finance-nz-fleet-upgrade",         "destination": "/Blog/ute-finance-nz-fleet-upgrade.html",        "permanent": true },
+
+    { "source": "/what-we-finance/truck-finance",        "destination": "/truck-finance.html",                            "permanent": true },
+    { "source": "/what-we-finance/ute-finance",          "destination": "/ute-finance.html",                              "permanent": true },
+    { "source": "/what-we-finance/vehicle-finance",      "destination": "/vehicle-finance.html",                          "permanent": true },
+    { "source": "/what-we-finance/equipment-finance",    "destination": "/equipment-finance.html",                        "permanent": true },
+    { "source": "/what-we-finance/business-finance",     "destination": "/business-finance.html",                         "permanent": true },
+
+    { "source": "/copy-of-privacy-policy",               "destination": "/privacy.html",                                  "permanent": true },
+
+    { "source": "/post/truck-finance-nz-optio/:slug*",   "destination": "/Blog/truck-finance-nz-options.html",            "permanent": true },
+    { "source": "/post/:slug*",                          "destination": "/blog.html",                                     "permanent": true }
   ]
 }
