@@ -9,290 +9,131 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FIX: Single title tag (was duplicated) -->
 <title>Apply for Finance | fundr NZ</title>
+<!-- FIX: Added missing meta description -->
+<meta name="description" content="Apply for vehicle, truck or equipment finance in minutes. No credit impact, no obligation. 15+ NZ lenders, 24hr approvals, no broker fee. Talk to Nick today.">
+
 <link rel="canonical" href="https://www.fundr.co.nz/apply.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Apply for Finance | fundr NZ">
 <meta property="og:description" content="Apply for vehicle, truck or equipment finance in minutes. 15+ NZ lenders, 24hr approvals, no broker fee.">
 <meta property="og:url" content="https://www.fundr.co.nz/apply.html">
 <meta property="og:site_name" content="fundr">
-<meta name="twitter:card" content="summary_large_image">
-<title>Apply for Finance | fundr NZ</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-font-smoothing:antialiased}
-:root{
-  --orange:#f06c00;
-  --orange-light:#ff8c2a;
-  --orange-dim:rgba(240,108,0,0.12);
-  --ink:#16140f;
-  --ink-60:rgba(22,20,15,0.6);
-  --ink-20:rgba(22,20,15,0.12);
-  --mid:#5a5348;
-  --faint:#a09890;
-  --sand:#f0ece3;
-  --sand-dark:#e4dfd4;
-  --sand2:#e8e2d8;
-  --dark:#0e0d0b;
-  --dark2:#1a1a18;
-  --white:#fff;
-  --border:rgba(22,20,15,.09);
-  --radius:10px;
-  --transition:0.22s cubic-bezier(0.4,0,0.2,1);
-  --serif:'Instrument Serif',Georgia,serif;
-  --sans:'Geist',system-ui,sans-serif;
-  --ease:cubic-bezier(.25,.46,.45,.94);
-}
-body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;background:var(--sand)}
-
-/* ═══════════════════════════════════════
-   1. HERO
-═══════════════════════════════════════ */
-.hero{
-  background:var(--dark);
-  padding:56px 48px 52px;
-  position:relative;overflow:hidden;
-}
-.hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
-.hero-grain{
-  position:absolute;inset:0;opacity:.038;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:150px;
-}
-.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
-
-.eyebrow{
-  font-size:.68rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;
-  color:rgba(255,255,255,.38);display:flex;align-items:center;gap:10px;margin-bottom:20px;
-}
-.eyebrow::before{content:'◆';color:var(--orange);font-size:.42rem}
-
-.hero h1{
-  font-family:var(--serif);
-  font-size:clamp(2.4rem,5.5vw,3.8rem);
-  font-weight:400;line-height:1.07;
-  color:#fff;letter-spacing:-.02em;margin-bottom:20px;
-}
-.hero h1 em{font-style:italic;color:rgba(255,255,255,.72)}
-
-.hero-desc{
-  font-size:.92rem;font-weight:300;
-  color:rgba(255,255,255,.50);
-  line-height:1.85;max-width:580px;margin-bottom:40px;
-}
-.hero-desc strong{color:rgba(255,255,255,.85);font-weight:500}
-
-.trust-row{display:flex;flex-wrap:wrap;gap:10px}
-.trust-badge{
-  display:flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:100px;padding:8px 16px;
-  font-size:.72rem;font-weight:400;color:rgba(255,255,255,.65);letter-spacing:.02em;
-  transition:background .2s,border-color .2s;
-}
-.trust-badge:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2)}
-.trust-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0}
-
-/* ═══════════════════════════════════════
-   2. FORM
-═══════════════════════════════════════ */
-.form-wrap{
-  background:var(--sand);
-  display:flex;align-items:flex-start;justify-content:center;
-  padding:40px 16px 60px;
-}
-
-.form-shell{width:100%;max-width:580px}
-
-.form-header{text-align:center;margin-bottom:32px}
-.form-header h2{
-  font-family:var(--serif);
-  font-size:clamp(26px,5vw,36px);
-  font-weight:400;line-height:1.15;
-  color:var(--ink);margin-bottom:8px;
-}
-.form-header p{font-size:14px;color:var(--ink-60);font-weight:400}
-
-/* Type Toggle */
-.type-toggle{
-  display:flex;background:var(--sand-dark);border-radius:50px;
-  padding:4px;margin-bottom:28px;position:relative;
-}
-.type-toggle button{
-  flex:1;padding:10px 16px;border:none;background:transparent;border-radius:50px;
-  font-family:var(--sans);font-size:14px;font-weight:500;color:var(--ink-60);
-  cursor:pointer;transition:var(--transition);position:relative;z-index:1;
-}
-.type-toggle button.active{color:var(--white);background:var(--ink)}
-
-/* Progress */
-.progress-wrap{margin-bottom:28px}
-.progress-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.progress-label{font-size:12px;font-weight:500;color:var(--ink-60);text-transform:uppercase;letter-spacing:.06em}
-.progress-count{font-size:12px;font-weight:500;color:var(--ink-60)}
-.progress-bar-bg{height:3px;background:var(--ink-20);border-radius:10px;overflow:hidden}
-.progress-bar-fill{height:100%;background:var(--orange);border-radius:10px;transition:width 0.4s cubic-bezier(0.4,0,0.2,1)}
-
-/* Card */
-.form-card{
-  background:var(--white);border-radius:16px;padding:36px 36px 32px;
-  box-shadow:0 2px 16px rgba(22,20,15,.07),0 1px 4px rgba(22,20,15,.05);
-}
-
-.step{display:none}
-.step.active{display:block;animation:stepIn .28s ease both}
-
-@keyframes stepIn{
-  from{opacity:0;transform:translateY(10px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-.step-title{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink);margin-bottom:4px}
-.step-subtitle{font-size:13px;color:var(--ink-60);margin-bottom:28px}
-
-/* Fields */
-.field-group{margin-bottom:18px}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-
-label{
-  display:block;font-size:12px;font-weight:500;color:var(--ink-60);
-  text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;
-}
-label .req{color:var(--orange);margin-left:2px}
-
-input:not([type="checkbox"]),select,textarea{
-  width:100%;padding:12px 14px;border:1.5px solid var(--ink-20);
-  border-radius:var(--radius);font-family:var(--sans);font-size:15px;
-  color:var(--ink);background:var(--white);
-  transition:border-color var(--transition),box-shadow var(--transition);
-  outline:none;appearance:none;-webkit-appearance:none;
-}
-input::placeholder,textarea::placeholder{color:var(--ink-60)}
-input:focus,select:focus,textarea:focus{
-  border-color:var(--orange);box-shadow:0 0 0 3px var(--orange-dim);
-}
-
-select{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2316140f' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 14px center;
-  padding-right:38px;cursor:pointer;
-}
-textarea{resize:vertical;min-height:90px;line-height:1.5}
-
-.asset-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-.chip{
-  padding:8px 16px;border:1.5px solid var(--ink-20);border-radius:50px;
-  font-size:13px;font-weight:500;color:var(--ink-60);cursor:pointer;
-  transition:var(--transition);background:transparent;font-family:var(--sans);
-}
-.chip:hover{border-color:var(--orange);color:var(--orange)}
-.chip.selected{border-color:var(--orange);background:var(--orange-dim);color:var(--orange)}
-
-.amount-display{display:flex;align-items:center;gap:8px}
-.amount-prefix{font-size:18px;font-weight:500;color:var(--ink-60);padding-top:2px}
-
-/* Buttons */
-.form-nav{display:flex;gap:12px;margin-top:28px}
-
-.btn-back{
-  padding:14px 24px;border:1.5px solid var(--ink-20);border-radius:var(--radius);
-  background:transparent;font-family:var(--sans);font-size:14px;font-weight:500;
-  color:var(--ink-60);cursor:pointer;transition:var(--transition);
-}
-.btn-back:hover{border-color:var(--ink);color:var(--ink)}
-
-.btn-next{
-  flex:1;padding:14px 24px;background:var(--orange);border:none;
-  border-radius:var(--radius);font-family:var(--sans);font-size:15px;font-weight:600;
-  color:var(--white);cursor:pointer;
-  transition:background var(--transition),transform var(--transition);
-  display:flex;align-items:center;justify-content:center;gap:8px;
-}
-.btn-next:hover{background:var(--orange-light);transform:translateY(-1px)}
-.btn-next:active{transform:translateY(0)}
-.btn-next svg{transition:transform var(--transition)}
-.btn-next:hover svg{transform:translateX(3px)}
-
-.btn-submit{
-  flex:1;padding:16px 24px;background:var(--ink);border:none;
-  border-radius:var(--radius);font-family:var(--sans);font-size:15px;font-weight:600;
-  color:var(--white);cursor:pointer;transition:var(--transition);
-  display:flex;align-items:center;justify-content:center;gap:8px;
-}
-.btn-submit:hover{background:#2a2720;transform:translateY(-1px)}
-
-.field-divider{
-  font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase;
-  letter-spacing:.08em;margin:20px 0 14px;padding-bottom:8px;
-  border-bottom:1px solid var(--ink-20);
-}
-
-.consent-block{
-  background:var(--sand);border-radius:var(--radius);padding:16px;margin-bottom:20px;
-  max-height:160px;overflow-y:auto;font-size:12px;color:var(--ink-60);line-height:1.65;
-  border:1px solid var(--ink-20);
-}
-.consent-block p{margin-bottom:8px}
-.consent-block a{color:var(--orange)}
-
-.checkbox-wrap{
-  display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;cursor:pointer;
-  text-transform:none;letter-spacing:0;font-weight:400;
-}
-.checkbox-wrap input[type="checkbox"]{
-  width:18px;height:18px;min-width:18px;flex-shrink:0;margin-top:2px;
-  accent-color:var(--orange);cursor:pointer;
-  appearance:auto;-webkit-appearance:checkbox;opacity:1;pointer-events:auto;
-}
-.checkbox-wrap span{font-size:14px;color:var(--ink);line-height:1.6;text-transform:none;letter-spacing:0}
-
-.success-screen{
-  display:none;text-align:center;padding:20px 0 10px;animation:stepIn .4s ease both;
-}
-.success-icon{
-  width:64px;height:64px;background:var(--orange-dim);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;margin:0 auto 20px;
-}
-.success-screen h2{font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:10px}
-.success-screen p{font-size:15px;color:var(--ink-60);line-height:1.6;max-width:360px;margin:0 auto}
-
-.field-error{font-size:12px;color:#d94040;margin-top:4px;display:none}
-input.error,select.error,textarea.error{border-color:#d94040}
-.hidden{display:none}
-
-/* ═══════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════ */
-@media(max-width:900px){
-  .hero{padding:44px 24px 40px}
-}
-@media(max-width:600px){
-  .hero{padding:36px 20px 32px}
-  .hero h1{font-size:clamp(1.8rem,7.5vw,2.4rem)}
-  .hero-desc{font-size:.86rem;margin-bottom:32px}
-  .trust-badge{font-size:.68rem;padding:7px 13px}
-  .form-wrap{padding:32px 16px 48px}
-}
-@media(max-width:480px){
-  .form-card{padding:24px 20px}
-  .field-row{grid-template-columns:1fr}
-  .trust-row{gap:8px}
-}
-@media(max-width:380px){
-  .hero{padding:32px 16px 28px}
-}
-</style>
-<link rel="stylesheet" href="/shared.css">
 <meta property="og:image" content="https://www.fundr.co.nz/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="fundr. — Vehicles | Equipment | Business finance NZ">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.fundr.co.nz/images/og-image.jpg">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared.css">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+:root{
+  --orange:#f06c00;--orange-light:#ff8c2a;--orange-dim:rgba(240,108,0,0.12);
+  --ink:#16140f;--ink-60:rgba(22,20,15,0.6);--ink-20:rgba(22,20,15,0.12);
+  --mid:#5a5348;--faint:#a09890;--sand:#f0ece3;--sand-dark:#e4dfd4;--sand2:#e8e2d8;
+  --dark:#0e0d0b;--dark2:#1a1a18;--white:#fff;--border:rgba(22,20,15,.09);
+  --radius:10px;--transition:0.22s cubic-bezier(0.4,0,0.2,1);
+  --serif:'Instrument Serif',Georgia,serif;--sans:'Geist',system-ui,sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+}
+body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;background:var(--sand)}
+
+/* HERO */
+.hero{background:var(--dark);padding:56px 48px 52px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
+.hero-grain{position:absolute;inset:0;opacity:.038;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:150px}
+.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+.eyebrow{font-size:.68rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.eyebrow::before{content:'◆';color:var(--orange);font-size:.42rem}
+.hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5.5vw,3.8rem);font-weight:400;line-height:1.07;color:#fff;letter-spacing:-.02em;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:rgba(255,255,255,.72)}
+.hero-desc{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.50);line-height:1.85;max-width:580px;margin-bottom:40px}
+.hero-desc strong{color:rgba(255,255,255,.85);font-weight:500}
+.trust-row{display:flex;flex-wrap:wrap;gap:10px}
+.trust-badge{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:100px;padding:8px 16px;font-size:.72rem;font-weight:400;color:rgba(255,255,255,.65);letter-spacing:.02em;transition:background .2s,border-color .2s}
+.trust-badge:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2)}
+.trust-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0}
+
+/* FORM */
+.form-wrap{background:var(--sand);display:flex;align-items:flex-start;justify-content:center;padding:40px 16px 60px}
+.form-shell{width:100%;max-width:580px}
+.form-header{text-align:center;margin-bottom:32px}
+.form-header h2{font-family:var(--serif);font-size:clamp(26px,5vw,36px);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:8px}
+.form-header p{font-size:14px;color:var(--ink-60);font-weight:400}
+.type-toggle{display:flex;background:var(--sand-dark);border-radius:50px;padding:4px;margin-bottom:28px;position:relative}
+.type-toggle button{flex:1;padding:10px 16px;border:none;background:transparent;border-radius:50px;font-family:var(--sans);font-size:14px;font-weight:500;color:var(--ink-60);cursor:pointer;transition:var(--transition);position:relative;z-index:1}
+.type-toggle button.active{color:var(--white);background:var(--ink)}
+.progress-wrap{margin-bottom:28px}
+.progress-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.progress-label{font-size:12px;font-weight:500;color:var(--ink-60);text-transform:uppercase;letter-spacing:.06em}
+.progress-count{font-size:12px;font-weight:500;color:var(--ink-60)}
+.progress-bar-bg{height:3px;background:var(--ink-20);border-radius:10px;overflow:hidden}
+.progress-bar-fill{height:100%;background:var(--orange);border-radius:10px;transition:width 0.4s cubic-bezier(0.4,0,0.2,1)}
+.form-card{background:var(--white);border-radius:16px;padding:36px 36px 32px;box-shadow:0 2px 16px rgba(22,20,15,.07),0 1px 4px rgba(22,20,15,.05)}
+.step{display:none}
+.step.active{display:block;animation:stepIn .28s ease both}
+@keyframes stepIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.step-title{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--ink);margin-bottom:4px}
+.step-subtitle{font-size:13px;color:var(--ink-60);margin-bottom:28px}
+.field-group{margin-bottom:18px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:12px;font-weight:500;color:var(--ink-60);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+label .req{color:var(--orange);margin-left:2px}
+input:not([type="checkbox"]),select,textarea{width:100%;padding:12px 14px;border:1.5px solid var(--ink-20);border-radius:var(--radius);font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--white);transition:border-color var(--transition),box-shadow var(--transition);outline:none;appearance:none;-webkit-appearance:none}
+input::placeholder,textarea::placeholder{color:var(--ink-60)}
+input:focus,select:focus,textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px var(--orange-dim)}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2316140f' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;cursor:pointer}
+textarea{resize:vertical;min-height:90px;line-height:1.5}
+.asset-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chip{padding:8px 16px;border:1.5px solid var(--ink-20);border-radius:50px;font-size:13px;font-weight:500;color:var(--ink-60);cursor:pointer;transition:var(--transition);background:transparent;font-family:var(--sans)}
+.chip:hover{border-color:var(--orange);color:var(--orange)}
+.chip.selected{border-color:var(--orange);background:var(--orange-dim);color:var(--orange)}
+.amount-display{display:flex;align-items:center;gap:8px}
+.amount-prefix{font-size:18px;font-weight:500;color:var(--ink-60);padding-top:2px}
+.form-nav{display:flex;gap:12px;margin-top:28px}
+.btn-back{padding:14px 24px;border:1.5px solid var(--ink-20);border-radius:var(--radius);background:transparent;font-family:var(--sans);font-size:14px;font-weight:500;color:var(--ink-60);cursor:pointer;transition:var(--transition)}
+.btn-back:hover{border-color:var(--ink);color:var(--ink)}
+.btn-next{flex:1;padding:14px 24px;background:var(--orange);border:none;border-radius:var(--radius);font-family:var(--sans);font-size:15px;font-weight:600;color:var(--white);cursor:pointer;transition:background var(--transition),transform var(--transition);display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-next:hover{background:var(--orange-light);transform:translateY(-1px)}
+.btn-next svg{transition:transform var(--transition)}
+.btn-next:hover svg{transform:translateX(3px)}
+.btn-submit{flex:1;padding:16px 24px;background:var(--ink);border:none;border-radius:var(--radius);font-family:var(--sans);font-size:15px;font-weight:600;color:var(--white);cursor:pointer;transition:var(--transition);display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-submit:hover{background:#2a2720;transform:translateY(-1px)}
+.field-divider{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.08em;margin:20px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}
+.consent-block{background:var(--sand);border-radius:var(--radius);padding:16px;margin-bottom:20px;max-height:160px;overflow-y:auto;font-size:12px;color:var(--ink-60);line-height:1.65;border:1px solid var(--ink-20)}
+.consent-block p{margin-bottom:8px}
+.consent-block a{color:var(--orange)}
+.checkbox-wrap{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;cursor:pointer;text-transform:none;letter-spacing:0;font-weight:400}
+.checkbox-wrap input[type="checkbox"]{width:18px;height:18px;min-width:18px;flex-shrink:0;margin-top:2px;accent-color:var(--orange);cursor:pointer;appearance:auto;-webkit-appearance:checkbox;opacity:1;pointer-events:auto}
+.checkbox-wrap span{font-size:14px;color:var(--ink);line-height:1.6;text-transform:none;letter-spacing:0}
+.success-screen{display:none;text-align:center;padding:20px 0 10px;animation:stepIn .4s ease both}
+.success-icon{width:64px;height:64px;background:var(--orange-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.success-screen h2{font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:10px}
+.success-screen p{font-size:15px;color:var(--ink-60);line-height:1.6;max-width:360px;margin:0 auto}
+.field-error{font-size:12px;color:#d94040;margin-top:4px;display:none}
+input.error,select.error,textarea.error{border-color:#d94040}
+.hidden{display:none}
+
+/* Site links */
+.site-links{background:#0e0d0b;padding:24px 48px;border-top:1px solid rgba(255,255,255,.06)}
+.site-links-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px}
+.site-links a{font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;transition:color .2s}
+.site-links a:hover{color:rgba(255,255,255,.70)}
+
+@media(max-width:900px){.hero{padding:44px 24px 40px}}
+@media(max-width:600px){.hero{padding:36px 20px 32px}.hero h1{font-size:clamp(1.8rem,7.5vw,2.4rem)}.hero-desc{font-size:.86rem;margin-bottom:32px}.form-wrap{padding:32px 16px 48px}.site-links{padding:16px 20px}}
+@media(max-width:480px){.form-card{padding:24px 20px}.field-row{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -300,17 +141,12 @@ input.error,select.error,textarea.error{border-color:#d94040}
 <!-- End Google Tag Manager (noscript) -->
 <div id="header-placeholder"></div>
 
-<!-- ═══════════════════════════════════════
-     1. HERO
-═══════════════════════════════════════ -->
 <section class="hero" aria-label="Apply for finance with fundr">
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="eyebrow">Apply Now</p>
     <h1>Get your finance<br>options <em>fast.</em></h1>
-    <p class="hero-desc">
-      <strong>No obligation. No credit impact.</strong> Fill in a few quick details below and Nick will come back to you with your options — typically within 24 hours.
-    </p>
+    <p class="hero-desc"><strong>No obligation. No credit impact.</strong> Fill in a few quick details below and Nick will come back to you with your options — typically within 24 hours.</p>
     <div class="trust-row" role="list" aria-label="Why apply with fundr">
       <div class="trust-badge" role="listitem"><span class="trust-badge-dot" aria-hidden="true"></span>No credit impact to apply</div>
       <div class="trust-badge" role="listitem"><span class="trust-badge-dot" aria-hidden="true"></span>15+ NZ lenders</div>
@@ -321,46 +157,32 @@ input.error,select.error,textarea.error{border-color:#d94040}
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     2. FORM
-═══════════════════════════════════════ -->
 <div class="form-wrap">
 <div class="form-shell">
-
   <div class="form-header">
     <h2>Apply for Finance</h2>
     <p>Takes around 3 minutes — no credit impact to apply</p>
   </div>
-
-  <!-- Type Toggle -->
   <div class="type-toggle">
     <button class="active" onclick="setType('business')" id="btn-business">Business Finance</button>
     <button onclick="setType('personal')" id="btn-personal">Personal Finance</button>
   </div>
-
-  <!-- Progress -->
   <div class="progress-wrap">
     <div class="progress-meta">
       <span class="progress-label" id="step-name">Finance Details</span>
       <span class="progress-count" id="step-count">Step 1 of 4</span>
     </div>
-    <div class="progress-bar-bg">
-      <div class="progress-bar-fill" id="progress-fill" style="width:25%"></div>
-    </div>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill" style="width:25%"></div></div>
   </div>
-
-  <!-- Form Card -->
   <div class="form-card">
     <form id="loan-form" action="https://formspree.io/f/xnjbveny" method="POST">
-
       <input type="hidden" name="_subject" id="form-subject" value="New Business Finance Application — fundr">
       <input type="hidden" name="application_type" id="application-type-field" value="Business">
 
-      <!-- ===== STEP 1: Finance Details ===== -->
+      <!-- STEP 1 -->
       <div class="step active" id="step-1">
         <div class="step-title">Finance Details</div>
         <div class="step-subtitle">Tell us what you're looking to finance</div>
-
         <div id="business-fields-1">
           <div class="field-group">
             <label>Asset Type <span class="req">*</span></label>
@@ -375,275 +197,98 @@ input.error,select.error,textarea.error{border-color:#d94040}
             <input type="hidden" name="asset_type" id="asset_type_val">
             <div class="field-error" id="asset_type-error">Please select an asset type</div>
           </div>
-          <div class="field-group">
-            <label>Asset Description (year, make, model)</label>
-            <input type="text" name="asset_description" placeholder="e.g. 2023 Ford Ranger XLT">
-          </div>
+          <div class="field-group"><label>Asset Description (year, make, model)</label><input type="text" name="asset_description" placeholder="e.g. 2023 Ford Ranger XLT"></div>
           <div class="field-group">
             <label>Finance Amount Required <span class="req">*</span></label>
-            <div class="amount-display">
-              <span class="amount-prefix">$</span>
-              <input type="number" name="finance_amount" id="finance_amount" placeholder="75,000" min="5000" required>
-            </div>
+            <div class="amount-display"><span class="amount-prefix">$</span><input type="number" name="finance_amount" id="finance_amount" placeholder="75,000" min="5000" required></div>
             <div class="field-error" id="finance_amount-error">Please enter the finance amount</div>
           </div>
           <div class="field-row">
-            <div class="field-group">
-              <label>Repayment Term <span class="req">*</span></label>
-              <select name="repayment_term" required>
-                <option value="" disabled selected>Select term</option>
-                <option>12 months</option><option>24 months</option><option>36 months</option>
-                <option>48 months</option><option>60 months</option><option>72 months</option>
-              </select>
-            </div>
-            <div class="field-group">
-              <label>Asset Purchased?</label>
-              <select name="asset_purchased">
-                <option value="" disabled selected>Select</option>
-                <option>Not yet</option><option>Already purchased</option><option>Deposit paid</option>
-              </select>
-            </div>
+            <div class="field-group"><label>Repayment Term <span class="req">*</span></label><select name="repayment_term" required><option value="" disabled selected>Select term</option><option>12 months</option><option>24 months</option><option>36 months</option><option>48 months</option><option>60 months</option><option>72 months</option></select></div>
+            <div class="field-group"><label>Asset Purchased?</label><select name="asset_purchased"><option value="" disabled selected>Select</option><option>Not yet</option><option>Already purchased</option><option>Deposit paid</option></select></div>
           </div>
-          <div class="field-group">
-            <label>Purpose of Purchase</label>
-            <textarea name="purchase_purpose" placeholder="Briefly describe how this asset will be used in your business…"></textarea>
-          </div>
+          <div class="field-group"><label>Purpose of Purchase</label><textarea name="purchase_purpose" placeholder="Briefly describe how this asset will be used in your business…"></textarea></div>
         </div>
-
         <div id="personal-fields-1" class="hidden">
-          <div class="field-group">
-            <label>Finance Type <span class="req">*</span></label>
-            <select name="personal_finance_type" required>
-              <option value="" disabled selected>Select type</option>
-              <option>Vehicle Finance</option><option>Personal Loan</option>
-              <option>Debt Consolidation</option><option>Home Improvement</option><option>Other</option>
-            </select>
-          </div>
-          <div class="field-group">
-            <label>Vehicle / Asset (if applicable)</label>
-            <input type="text" name="personal_asset" placeholder="e.g. 2021 Toyota Hilux SR5">
-          </div>
-          <div class="field-group">
-            <label>Amount Required <span class="req">*</span></label>
-            <div class="amount-display">
-              <span class="amount-prefix">$</span>
-              <input type="number" name="personal_finance_amount" placeholder="30,000" min="3000">
-            </div>
-          </div>
+          <div class="field-group"><label>Finance Type <span class="req">*</span></label><select name="personal_finance_type" required><option value="" disabled selected>Select type</option><option>Vehicle Finance</option><option>Personal Loan</option><option>Debt Consolidation</option><option>Home Improvement</option><option>Other</option></select></div>
+          <div class="field-group"><label>Vehicle / Asset (if applicable)</label><input type="text" name="personal_asset" placeholder="e.g. 2021 Toyota Hilux SR5"></div>
+          <div class="field-group"><label>Amount Required <span class="req">*</span></label><div class="amount-display"><span class="amount-prefix">$</span><input type="number" name="personal_finance_amount" placeholder="30,000" min="3000"></div></div>
           <div class="field-row">
-            <div class="field-group">
-              <label>Repayment Term</label>
-              <select name="personal_repayment_term">
-                <option value="" disabled selected>Select term</option>
-                <option>12 months</option><option>24 months</option><option>36 months</option>
-                <option>48 months</option><option>60 months</option>
-              </select>
-            </div>
-            <div class="field-group">
-              <label>Employment Status</label>
-              <select name="employment_status">
-                <option value="" disabled selected>Select</option>
-                <option>Full-time employed</option><option>Part-time employed</option>
-                <option>Self-employed</option><option>Contractor</option><option>Other</option>
-              </select>
-            </div>
+            <div class="field-group"><label>Repayment Term</label><select name="personal_repayment_term"><option value="" disabled selected>Select term</option><option>12 months</option><option>24 months</option><option>36 months</option><option>48 months</option><option>60 months</option></select></div>
+            <div class="field-group"><label>Employment Status</label><select name="employment_status"><option value="" disabled selected>Select</option><option>Full-time employed</option><option>Part-time employed</option><option>Self-employed</option><option>Contractor</option><option>Other</option></select></div>
           </div>
         </div>
       </div>
 
-      <!-- ===== STEP 2: Business / Personal Info ===== -->
+      <!-- STEP 2 -->
       <div class="step" id="step-2">
-
         <div id="business-fields-2">
           <div class="step-title">Business Details</div>
           <div class="step-subtitle">Tell us about your business</div>
-          <div class="field-group">
-            <label>Business / Entity Name <span class="req">*</span></label>
-            <input type="text" name="business_name" placeholder="Acme Contracting Ltd">
-          </div>
+          <div class="field-group"><label>Business / Entity Name <span class="req">*</span></label><input type="text" name="business_name" placeholder="Acme Contracting Ltd"></div>
           <div class="field-row">
-            <div class="field-group">
-              <label>Legal Structure <span class="req">*</span></label>
-              <select name="legal_structure">
-                <option value="" disabled selected>Select</option>
-                <option>Limited Company</option><option>Sole Trader</option>
-                <option>Partnership</option><option>Trust</option><option>Other</option>
-              </select>
-            </div>
-            <div class="field-group">
-              <label>Years Trading <span class="req">*</span></label>
-              <select name="years_trading">
-                <option value="" disabled selected>Select</option>
-                <option>Less than 1 year</option><option>1–2 years</option>
-                <option>2–5 years</option><option>5+ years</option>
-              </select>
-            </div>
+            <div class="field-group"><label>Legal Structure <span class="req">*</span></label><select name="legal_structure"><option value="" disabled selected>Select</option><option>Limited Company</option><option>Sole Trader</option><option>Partnership</option><option>Trust</option><option>Other</option></select></div>
+            <div class="field-group"><label>Years Trading <span class="req">*</span></label><select name="years_trading"><option value="" disabled selected>Select</option><option>Less than 1 year</option><option>1–2 years</option><option>2–5 years</option><option>5+ years</option></select></div>
           </div>
-          <div class="field-group">
-            <label>Business Industry <span class="req">*</span></label>
-            <select name="business_industry">
-              <option value="" disabled selected>Select industry</option>
-              <option>Construction / Trades</option><option>Transport / Logistics</option>
-              <option>Agriculture / Farming</option><option>Manufacturing</option>
-              <option>Retail / Hospitality</option><option>Professional Services</option>
-              <option>Healthcare</option><option>Other</option>
-            </select>
-          </div>
+          <div class="field-group"><label>Business Industry <span class="req">*</span></label><select name="business_industry"><option value="" disabled selected>Select industry</option><option>Construction / Trades</option><option>Transport / Logistics</option><option>Agriculture / Farming</option><option>Manufacturing</option><option>Retail / Hospitality</option><option>Professional Services</option><option>Healthcare</option><option>Other</option></select></div>
           <div class="field-row">
-            <div class="field-group">
-              <label>Annual Turnover <span class="req">*</span></label>
-              <select name="annual_turnover">
-                <option value="" disabled selected>Select</option>
-                <option>Under $250k</option><option>$250k – $500k</option>
-                <option>$500k – $1M</option><option>$1M – $5M</option><option>$5M+</option>
-              </select>
-            </div>
-            <div class="field-group">
-              <label>GST Registered?</label>
-              <select name="gst_registered">
-                <option value="" disabled selected>Select</option>
-                <option>Yes</option><option>No</option>
-              </select>
-            </div>
+            <div class="field-group"><label>Annual Turnover <span class="req">*</span></label><select name="annual_turnover"><option value="" disabled selected>Select</option><option>Under $250k</option><option>$250k – $500k</option><option>$500k – $1M</option><option>$1M – $5M</option><option>$5M+</option></select></div>
+            <div class="field-group"><label>GST Registered?</label><select name="gst_registered"><option value="" disabled selected>Select</option><option>Yes</option><option>No</option></select></div>
           </div>
-          <div class="field-group">
-            <label>Business Address</label>
-            <input type="text" name="business_address" placeholder="Street, suburb, city, postcode">
-          </div>
+          <div class="field-group"><label>Business Address</label><input type="text" name="business_address" placeholder="Street, suburb, city, postcode"></div>
         </div>
-
         <div id="personal-fields-2" class="hidden">
           <div class="step-title">Your Details</div>
           <div class="step-subtitle">We just need a few personal details</div>
           <div class="field-row">
-            <div class="field-group">
-              <label>First Name <span class="req">*</span></label>
-              <input type="text" name="personal_first_name" placeholder="Jane">
-            </div>
-            <div class="field-group">
-              <label>Last Name <span class="req">*</span></label>
-              <input type="text" name="personal_last_name" placeholder="Smith">
-            </div>
+            <div class="field-group"><label>First Name <span class="req">*</span></label><input type="text" name="personal_first_name" placeholder="Jane"></div>
+            <div class="field-group"><label>Last Name <span class="req">*</span></label><input type="text" name="personal_last_name" placeholder="Smith"></div>
           </div>
-          <div class="field-group">
-            <label>Date of Birth <span class="req">*</span></label>
-            <input type="date" name="personal_dob">
-          </div>
-          <div class="field-group">
-            <label>Residential Address <span class="req">*</span></label>
-            <input type="text" name="personal_address" placeholder="Street, suburb, city, postcode">
+          <div class="field-group"><label>Date of Birth <span class="req">*</span></label><input type="date" name="personal_dob"></div>
+          <div class="field-group"><label>Residential Address <span class="req">*</span></label><input type="text" name="personal_address" placeholder="Street, suburb, city, postcode"></div>
+          <div class="field-row">
+            <div class="field-group"><label>Marital Status</label><select name="marital_status"><option value="" disabled selected>Select</option><option>Single</option><option>Married / De facto</option><option>Separated / Divorced</option><option>Widowed</option></select></div>
+            <div class="field-group"><label>Dependants</label><input type="number" name="dependants" placeholder="0" min="0" max="20"></div>
           </div>
           <div class="field-row">
-            <div class="field-group">
-              <label>Marital Status</label>
-              <select name="marital_status">
-                <option value="" disabled selected>Select</option>
-                <option>Single</option><option>Married / De facto</option>
-                <option>Separated / Divorced</option><option>Widowed</option>
-              </select>
-            </div>
-            <div class="field-group">
-              <label>Dependants</label>
-              <input type="number" name="dependants" placeholder="0" min="0" max="20">
-            </div>
-          </div>
-          <div class="field-row">
-            <div class="field-group">
-              <label>Annual Income <span class="req">*</span></label>
-              <div class="amount-display">
-                <span class="amount-prefix">$</span>
-                <input type="number" name="personal_income" placeholder="85,000">
-              </div>
-            </div>
-            <div class="field-group">
-              <label>Monthly Housing Cost</label>
-              <div class="amount-display">
-                <span class="amount-prefix">$</span>
-                <input type="number" name="housing_cost" placeholder="1,800">
-              </div>
-            </div>
+            <div class="field-group"><label>Annual Income <span class="req">*</span></label><div class="amount-display"><span class="amount-prefix">$</span><input type="number" name="personal_income" placeholder="85,000"></div></div>
+            <div class="field-group"><label>Monthly Housing Cost</label><div class="amount-display"><span class="amount-prefix">$</span><input type="number" name="housing_cost" placeholder="1,800"></div></div>
           </div>
           <div class="field-divider">Driver Licence</div>
           <div class="field-row">
-            <div class="field-group">
-              <label>Licence Number</label>
-              <input type="text" name="personal_licence_number" placeholder="AB123456">
-            </div>
-            <div class="field-group">
-              <label>Version Number</label>
-              <input type="text" name="personal_licence_version" placeholder="123" maxlength="3">
-            </div>
+            <div class="field-group"><label>Licence Number</label><input type="text" name="personal_licence_number" placeholder="AB123456"></div>
+            <div class="field-group"><label>Version Number</label><input type="text" name="personal_licence_version" placeholder="123" maxlength="3"></div>
           </div>
-          <div class="field-group">
-            <label>Licence Expiry Date</label>
-            <input type="date" name="personal_licence_expiry">
-          </div>
+          <div class="field-group"><label>Licence Expiry Date</label><input type="date" name="personal_licence_expiry"></div>
         </div>
       </div>
 
-      <!-- ===== STEP 3: Director / Contact ===== -->
+      <!-- STEP 3 -->
       <div class="step" id="step-3">
-
         <div id="business-fields-3">
           <div class="step-title">Director Details</div>
           <div class="step-subtitle">Primary applicant completing this form</div>
           <div class="field-row">
-            <div class="field-group">
-              <label>First Name <span class="req">*</span></label>
-              <input type="text" name="director_first_name" placeholder="James">
-            </div>
-            <div class="field-group">
-              <label>Last Name <span class="req">*</span></label>
-              <input type="text" name="director_last_name" placeholder="Wilson">
-            </div>
+            <div class="field-group"><label>First Name <span class="req">*</span></label><input type="text" name="director_first_name" placeholder="James"></div>
+            <div class="field-group"><label>Last Name <span class="req">*</span></label><input type="text" name="director_last_name" placeholder="Wilson"></div>
           </div>
-          <div class="field-group">
-            <label>Date of Birth <span class="req">*</span></label>
-            <input type="date" name="director_dob">
-          </div>
-          <div class="field-group">
-            <label>Residential Address <span class="req">*</span></label>
-            <input type="text" name="director_address" placeholder="Street, suburb, city, postcode">
-          </div>
+          <div class="field-group"><label>Date of Birth <span class="req">*</span></label><input type="date" name="director_dob"></div>
+          <div class="field-group"><label>Residential Address <span class="req">*</span></label><input type="text" name="director_address" placeholder="Street, suburb, city, postcode"></div>
           <div class="field-row">
-            <div class="field-group">
-              <label>Property Ownership <span class="req">*</span></label>
-              <select name="property_ownership">
-                <option value="" disabled selected>Select</option>
-                <option>Own (mortgage-free)</option><option>Own (with mortgage)</option>
-                <option>Renting</option><option>Board / Other</option>
-              </select>
-            </div>
-            <div class="field-group">
-              <label>Are You a Director? <span class="req">*</span></label>
-              <select name="is_director">
-                <option value="" disabled selected>Select</option>
-                <option>Yes</option><option>No</option>
-              </select>
-            </div>
+            <div class="field-group"><label>Property Ownership <span class="req">*</span></label><select name="property_ownership"><option value="" disabled selected>Select</option><option>Own (mortgage-free)</option><option>Own (with mortgage)</option><option>Renting</option><option>Board / Other</option></select></div>
+            <div class="field-group"><label>Are You a Director? <span class="req">*</span></label><select name="is_director"><option value="" disabled selected>Select</option><option>Yes</option><option>No</option></select></div>
           </div>
           <div class="field-divider">Driver Licence</div>
           <div class="field-row">
-            <div class="field-group">
-              <label>Licence Number</label>
-              <input type="text" name="director_licence_number" placeholder="AB123456">
-            </div>
-            <div class="field-group">
-              <label>Version Number</label>
-              <input type="text" name="director_licence_version" placeholder="123" maxlength="3">
-            </div>
+            <div class="field-group"><label>Licence Number</label><input type="text" name="director_licence_number" placeholder="AB123456"></div>
+            <div class="field-group"><label>Version Number</label><input type="text" name="director_licence_version" placeholder="123" maxlength="3"></div>
           </div>
-          <div class="field-group">
-            <label>Licence Expiry Date</label>
-            <input type="date" name="director_licence_expiry">
-          </div>
+          <div class="field-group"><label>Licence Expiry Date</label><input type="date" name="director_licence_expiry"></div>
         </div>
-
         <div id="personal-fields-3" class="hidden">
           <div class="step-title">Contact Details</div>
           <div class="step-subtitle">How can we reach you?</div>
         </div>
-
         <div class="field-group" style="margin-top:20px">
           <label>Email Address <span class="req">*</span></label>
           <input type="email" name="email" placeholder="james@acmecontracting.co.nz" required>
@@ -654,41 +299,26 @@ input.error,select.error,textarea.error{border-color:#d94040}
           <input type="tel" name="phone" placeholder="021 000 0000" required>
           <div class="field-error" id="phone-error">Please enter your phone number</div>
         </div>
-        <div class="field-group">
-          <label>Preferred Contact Method</label>
-          <select name="contact_preference">
-            <option value="" disabled selected>Select</option>
-            <option>Phone call</option><option>Text / SMS</option><option>Email</option>
-          </select>
-        </div>
-        <div class="field-group">
-          <label>Additional Notes</label>
-          <textarea name="notes" placeholder="Anything else you'd like us to know…"></textarea>
-        </div>
+        <div class="field-group"><label>Preferred Contact Method</label><select name="contact_preference"><option value="" disabled selected>Select</option><option>Phone call</option><option>Text / SMS</option><option>Email</option></select></div>
+        <div class="field-group"><label>Additional Notes</label><textarea name="notes" placeholder="Anything else you'd like us to know…"></textarea></div>
       </div>
 
-      <!-- ===== STEP 4: Confirm & Submit ===== -->
+      <!-- STEP 4 -->
       <div class="step" id="step-4">
         <div class="step-title">Authorisation & Acknowledgement</div>
         <div class="step-subtitle">Please read carefully and confirm before submitting</div>
-
         <div class="consent-block">
           <p><strong>To Fundr Limited Trading As fundr:</strong></p>
           <p><strong>I confirm:</strong></p>
           <p>The information in this application is true and accurate. I will notify fundr if there are any changes to the information provided in this application. I have not withheld any information about our financial position that may impact the lender's decision regarding this application.</p>
           <p><strong>Privacy & Information Sharing:</strong></p>
-          <p>fundr will collect and use the information provided in this application to assess whether to grant me/us the loan. fundr will hold the information securely and will only use and share it as permitted herein and/or by the Fundr privacy policy. To view our privacy policy, please visit <a href="https://www.fundr.co.nz/privacy.html" target="_blank">fundr.co.nz/privacy</a>.</p>
-          <p>fundr, any lender, and related parties may collect information, including personal information about me/us, from any persons they deem appropriate, including but not limited to credit reporting agencies, banks, and employers. These persons are authorised to disclose information to fundr, the lender, and related parties for the purpose of considering my/our application, as well as for the administration and protection of any credit provided.</p>
-          <p>fundr and its related organisations can collect and use my/our information for purposes including: verifying my/our identity and address; checking that I/we meet credit criteria and other eligibility requirements; providing accounts, services and offers; protecting and enforcing rights; complying with applicable laws; market research, data processing, and statistical analysis.</p>
-          <p>We have rights under the Privacy Act 2020 to find out what information fundr and its related organisations hold about me/us, to access that information, and to request corrections to our records.</p>
+          <p>fundr will collect and use the information provided in this application to assess whether to grant me/us the loan. fundr will hold the information securely and will only use and share it as permitted herein and/or by the Fundr privacy policy. To view our privacy policy, please visit <a href="/privacy.html">fundr.co.nz/privacy</a>.</p>
+          <p>fundr, any lender, and related parties may collect information, including personal information about me/us, from any persons they deem appropriate, including but not limited to credit reporting agencies, banks, and employers.</p>
           <p><strong>Credit Checks & Agency Authorisation:</strong></p>
-          <p>I/We authorise fundr and any lender or related organisation to collect personal information about me/us from any persons they consider appropriate including, but not limited to, credit reporting agencies, banks and employers. I/We authorise fundr and the lender to make all necessary enquiries regarding my/our credit rating, to disclose and share my/our personal information with credit reporting agencies, and to make enquiries for identity verification purposes. I/We understand that credit reporting agencies may hold and disclose this information to authorised users, including information about my/our creditworthiness and credit history. I/We authorise fundr to give the Financial Markets Authority (FMA) and auditors consent to view my personal information and records when conducting compliance reviews on fundr.</p>
-          <p><strong>Insolvency & Legal Certification:</strong></p>
-          <p>I certify that I am not an undischarged bankrupt, subject to a proposal, summary judgment order, or the no asset procedure under Part 5 of the Insolvency Act 2006. I/We and any entity I/we operate that is applying for a loan have not filed a statement of affairs with the Official Assignee, made a proposal to creditors, applied for a summary instalment order, or had any judgments entered against me/us. I/We and any entity I/we operate have not committed any offences under the Companies Act 1993, Financial Reporting Act 2013, Receivership Act 1993, Crimes Act 1961, Financial Markets Conduct Act 2013, or Takeovers Act 1993.</p>
+          <p>I/We authorise fundr and any lender or related organisation to collect personal information about me/us from any persons they consider appropriate including, but not limited to, credit reporting agencies, banks and employers. I/We authorise fundr and the lender to make all necessary enquiries regarding my/our credit rating.</p>
           <p><strong>Commission Disclosure:</strong></p>
-          <p>Unless agreed in writing, fundr will not charge me for the service but may receive a commission from any lender providing the loan or any other service. I agree that if any lender requires fundr to refund any commission paid to it due to early loan termination, fundr may at its discretion require me to indemnify fundr for the amount of such refund. I understand that any party who referred me to fundr may receive a commission from fundr.</p>
+          <p>Unless agreed in writing, fundr will not charge me for the service but may receive a commission from any lender providing the loan or any other service.</p>
         </div>
-
         <div class="consent-confirm">
           <label class="checkbox-wrap">
             <input type="checkbox" name="consent_all" id="consent-all" required>
@@ -697,147 +327,102 @@ input.error,select.error,textarea.error{border-color:#d94040}
         </div>
       </div>
 
-      <!-- Nav -->
       <div class="form-nav" id="form-nav">
         <button type="button" class="btn-back hidden" id="btn-back" onclick="prevStep()">← Back</button>
-        <button type="button" class="btn-next" id="btn-next" onclick="nextStep()">
-          Continue
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <button type="submit" class="btn-submit hidden" id="btn-submit">
-          Submit Application
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
+        <button type="button" class="btn-next" id="btn-next" onclick="nextStep()">Continue <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button type="submit" class="btn-submit hidden" id="btn-submit">Submit Application <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
-
     </form>
 
-    <!-- Success Screen -->
     <div class="success-screen" id="success-screen">
-      <div class="success-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14l6 6 10-10" stroke="#f06c00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
+      <div class="success-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14l6 6 10-10" stroke="#f06c00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <h2>Application Received</h2>
       <p>Thanks for applying. A fundr broker will be in touch within one business day to discuss your options across 15+ NZ lenders.</p>
     </div>
+  </div>
+</div>
+</div>
 
-  </div><!-- /form-card -->
-</div><!-- /form-shell -->
-</div><!-- /form-wrap -->
+<!-- FIX: Crawlable internal links -->
+<nav class="site-links" aria-label="Site pages">
+  <div class="site-links-inner">
+    <a href="/">Home</a>
+    <a href="/vehicle-finance.html">Vehicle Finance</a>
+    <a href="/ute-finance.html">Ute Finance</a>
+    <a href="/truck-finance.html">Truck Finance</a>
+    <a href="/equipment-finance.html">Equipment Finance</a>
+    <a href="/business-finance.html">Business Finance</a>
+    <a href="/check-eligibility-full.html">Check Eligibility</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/fundr-way.html">How fundr Works</a>
+    <a href="/calculator.html">Repayment Calculator</a>
+  </div>
+</nav>
 
 <script>
-  let currentStep = 1;
-  let loanType = 'business';
-  const totalSteps = 4;
+let currentStep=1,loanType='business';
+const totalSteps=4;
+const stepNames=['Finance Details','Business Details','Director Details','Authorisation'];
+const stepNamesPersonal=['Finance Details','Your Details','Contact Details','Authorisation'];
 
-  const stepNames = ['Finance Details', 'Business Details', 'Director Details', 'Authorisation'];
-  const stepNamesPersonal = ['Finance Details', 'Your Details', 'Contact Details', 'Authorisation'];
-
-  function setType(type) {
-    loanType = type;
-    document.getElementById('btn-business').classList.toggle('active', type === 'business');
-    document.getElementById('btn-personal').classList.toggle('active', type === 'personal');
-    document.getElementById('application-type-field').value = type === 'business' ? 'Business' : 'Personal';
-    document.getElementById('form-subject').value = type === 'business'
-      ? 'New Business Finance Application — fundr'
-      : 'New Personal Finance Application — fundr';
-    updateStepUI();
-    toggleTypeFields();
+function setType(type){
+  loanType=type;
+  document.getElementById('btn-business').classList.toggle('active',type==='business');
+  document.getElementById('btn-personal').classList.toggle('active',type==='personal');
+  document.getElementById('application-type-field').value=type==='business'?'Business':'Personal';
+  document.getElementById('form-subject').value=type==='business'?'New Business Finance Application — fundr':'New Personal Finance Application — fundr';
+  updateStepUI();toggleTypeFields();
+}
+function toggleTypeFields(){
+  const isBusiness=loanType==='business';
+  for(let i=1;i<=3;i++){
+    const bf=document.getElementById(`business-fields-${i}`);
+    const pf=document.getElementById(`personal-fields-${i}`);
+    if(bf)bf.classList.toggle('hidden',!isBusiness);
+    if(pf)pf.classList.toggle('hidden',isBusiness);
   }
-
-  function toggleTypeFields() {
-    const isBusiness = loanType === 'business';
-    for (let i = 1; i <= 3; i++) {
-      const bf = document.getElementById(`business-fields-${i}`);
-      const pf = document.getElementById(`personal-fields-${i}`);
-      if (bf) bf.classList.toggle('hidden', !isBusiness);
-      if (pf) pf.classList.toggle('hidden', isBusiness);
-    }
-  }
-
-  function updateStepUI() {
-    const names = loanType === 'business' ? stepNames : stepNamesPersonal;
-    document.getElementById('step-name').textContent = names[currentStep - 1];
-    document.getElementById('step-count').textContent = `Step ${currentStep} of ${totalSteps}`;
-    document.getElementById('progress-fill').style.width = `${(currentStep / totalSteps) * 100}%`;
-    document.getElementById('btn-back').classList.toggle('hidden', currentStep === 1);
-    document.getElementById('btn-next').classList.toggle('hidden', currentStep === totalSteps);
-    document.getElementById('btn-submit').classList.toggle('hidden', currentStep !== totalSteps);
-  }
-
-  function nextStep() {
-    if (currentStep < totalSteps) {
-      currentStep++;
-      showStep(currentStep);
-      updateStepUI();
-      toggleTypeFields();
-    }
-  }
-
-  function prevStep() {
-    if (currentStep > 1) {
-      currentStep--;
-      showStep(currentStep);
-      updateStepUI();
-      toggleTypeFields();
-    }
-  }
-
-  function showStep(n) {
-    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-    document.getElementById(`step-${n}`).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function selectChip(el, fieldId) {
-    document.querySelectorAll('.chip').forEach(c => {
-      if (c.closest('.asset-chips') === el.closest('.asset-chips')) {
-        c.classList.remove('selected');
-      }
-    });
-    el.classList.add('selected');
-    document.getElementById(`${fieldId}_val`).value = el.textContent.trim();
-  }
-
-  document.getElementById('loan-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const consent = document.getElementById('consent-all').checked;
-    if (!consent) {
-      alert('Please read and confirm the authorisation before submitting.');
-      return;
-    }
-    const btn = document.getElementById('btn-submit');
-    btn.textContent = 'Submitting…';
-    btn.disabled = true;
-    try {
-      const data = new FormData(this);
-      const res = await fetch(this.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        document.getElementById('loan-form').style.display = 'none';
-        document.getElementById('form-nav').style.display = 'none';
-        document.querySelector('.type-toggle').style.display = 'none';
-        document.querySelector('.progress-wrap').style.display = 'none';
-        document.querySelector('.form-header').style.display = 'none';
-        document.getElementById('success-screen').style.display = 'block';
-      } else {
-        btn.textContent = 'Submit Application';
-        btn.disabled = false;
-        alert('There was a problem submitting. Please try again or call us directly.');
-      }
-    } catch {
-      btn.textContent = 'Submit Application';
-      btn.disabled = false;
-      alert('Connection error. Please check your internet and try again.');
-    }
-  });
-
-  updateStepUI();
-  toggleTypeFields();
+}
+function updateStepUI(){
+  const names=loanType==='business'?stepNames:stepNamesPersonal;
+  document.getElementById('step-name').textContent=names[currentStep-1];
+  document.getElementById('step-count').textContent=`Step ${currentStep} of ${totalSteps}`;
+  document.getElementById('progress-fill').style.width=`${(currentStep/totalSteps)*100}%`;
+  document.getElementById('btn-back').classList.toggle('hidden',currentStep===1);
+  document.getElementById('btn-next').classList.toggle('hidden',currentStep===totalSteps);
+  document.getElementById('btn-submit').classList.toggle('hidden',currentStep!==totalSteps);
+}
+function nextStep(){if(currentStep<totalSteps){currentStep++;showStep(currentStep);updateStepUI();toggleTypeFields();}}
+function prevStep(){if(currentStep>1){currentStep--;showStep(currentStep);updateStepUI();toggleTypeFields();}}
+function showStep(n){
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  document.getElementById(`step-${n}`).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function selectChip(el,fieldId){
+  document.querySelectorAll('.chip').forEach(c=>{if(c.closest('.asset-chips')===el.closest('.asset-chips'))c.classList.remove('selected');});
+  el.classList.add('selected');
+  document.getElementById(`${fieldId}_val`).value=el.textContent.trim();
+}
+document.getElementById('loan-form').addEventListener('submit',async function(e){
+  e.preventDefault();
+  if(!document.getElementById('consent-all').checked){alert('Please read and confirm the authorisation before submitting.');return;}
+  const btn=document.getElementById('btn-submit');
+  btn.textContent='Submitting…';btn.disabled=true;
+  try{
+    const res=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+    if(res.ok){
+      document.getElementById('loan-form').style.display='none';
+      document.getElementById('form-nav').style.display='none';
+      document.querySelector('.type-toggle').style.display='none';
+      document.querySelector('.progress-wrap').style.display='none';
+      document.querySelector('.form-header').style.display='none';
+      document.getElementById('success-screen').style.display='block';
+    }else{btn.textContent='Submit Application';btn.disabled=false;alert('There was a problem submitting. Please try again or call us directly.');}
+  }catch{btn.textContent='Submit Application';btn.disabled=false;alert('Connection error. Please check your internet and try again.');}
+});
+updateStepUI();toggleTypeFields();
 </script>
+
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
 <script src="/shared.js"></script>
