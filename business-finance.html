@@ -16,6 +16,14 @@
 <meta property="og:title" content="Business Finance NZ | fundr">
 <meta property="og:description" content="Working capital, business loans and acquisition finance for NZ businesses. Independent broker with 15+ lenders. Talk to Nick today.">
 <meta property="og:url" content="https://www.fundr.co.nz/business-finance.html">
+<meta property="og:image" content="https://www.fundr.co.nz/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="fundr. — Vehicles | Equipment | Business finance NZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.fundr.co.nz/images/og-image.jpg">
+<meta name="robots" content="index, follow">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -23,7 +31,7 @@
     {
       "@type": "WebPage",
       "name": "Business Finance NZ | fundr",
-      "url": "/business-finance.html",
+      "url": "https://www.fundr.co.nz/business-finance.html",
       "description": "fundr arranges working capital, business loans, equipment finance and business acquisition funding for NZ businesses.",
       "provider": {
         "@type": "FinancialService",
@@ -36,90 +44,47 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How can I get a business loan in NZ?",
-          "acceptedAnswer": {"@type":"Answer","text":"Start by understanding why you need the loan and how much you need. There are many types of business loans — secured (using assets as collateral) and unsecured. fundr assesses your situation and matches you to the right lender and structure."}
-        },
-        {
-          "@type": "Question",
-          "name": "Is it hard to get a business loan in NZ?",
-          "acceptedAnswer": {"@type":"Answer","text":"Approval depends on your financial position, trading history, and whether you have collateral. Non-bank lenders offer more flexible approvals than banks, often without requiring security. If the numbers stack up, getting approved through fundr is usually straightforward."}
-        },
-        {
-          "@type": "Question",
-          "name": "Can I get a business loan without collateral?",
-          "acceptedAnswer": {"@type":"Answer","text":"Yes — unsecured business loans are available in NZ. They typically come with higher interest rates and lower borrowing limits, but are faster to arrange. Equipment finance uses the asset itself as security, keeping rates low without extra collateral."}
-        },
-        {
-          "@type": "Question",
-          "name": "What is a secured business loan?",
-          "acceptedAnswer": {"@type":"Answer","text":"A secured loan uses an existing asset — property, a vehicle, or business equipment — as collateral. Most traditional lenders prefer secured loans as they carry less risk. They typically offer higher limits and lower interest rates."}
-        },
-        {
-          "@type": "Question",
-          "name": "What is an unsecured business loan?",
-          "acceptedAnswer": {"@type":"Answer","text":"An unsecured business loan doesn't require collateral, though most lenders will ask for a personal guarantee. They're faster to arrange and suited to businesses that don't have assets to pledge as security."}
-        }
+        {"@type":"Question","name":"How can I get a business loan in NZ?","acceptedAnswer":{"@type":"Answer","text":"Start by understanding why you need the loan and how much you need. fundr assesses your situation and matches you to the right lender and structure."}},
+        {"@type":"Question","name":"Is it hard to get a business loan in NZ?","acceptedAnswer":{"@type":"Answer","text":"Approval depends on your financial position, trading history, and whether you have collateral. Non-bank lenders offer more flexible approvals than banks. If the numbers stack up, getting approved through fundr is usually straightforward."}},
+        {"@type":"Question","name":"Can I get a business loan without collateral?","acceptedAnswer":{"@type":"Answer","text":"Yes — unsecured business loans are available in NZ. Equipment finance uses the asset itself as security, keeping rates low without extra collateral."}},
+        {"@type":"Question","name":"What is a secured business loan?","acceptedAnswer":{"@type":"Answer","text":"A secured loan uses an existing asset as collateral. They typically offer higher limits and lower interest rates."}},
+        {"@type":"Question","name":"What is an unsecured business loan?","acceptedAnswer":{"@type":"Answer","text":"An unsecured business loan doesn't require collateral, though most lenders will ask for a personal guarantee. They're faster to arrange."}}
       ]
     }
   ]
 }
 </script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared.css">
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-font-smoothing:antialiased}
-:root{
-  --orange:#f06c00;
-  --ink:#16140f;
-  --mid:#5a5348;
-  --faint:#a09890;
-  --sand:#f0ece3;
-  --sand2:#e8e2d8;
-  --dark:#0e0d0b;
-  --dark2:#1a1a18;
-  --white:#fff;
-  --border:rgba(22,20,15,.09);
-  --serif:'Instrument Serif',Georgia,serif;
-  --sans:'Geist',system-ui,sans-serif;
-  --ease:cubic-bezier(.25,.46,.45,.94);
-}
+:root{--orange:#f06c00;--ink:#16140f;--mid:#5a5348;--faint:#a09890;--sand:#f0ece3;--sand2:#e8e2d8;--dark:#0e0d0b;--dark2:#1a1a18;--white:#fff;--border:rgba(22,20,15,.09);--serif:'Instrument Serif',Georgia,serif;--sans:'Geist',system-ui,sans-serif;--ease:cubic-bezier(.25,.46,.45,.94)}
 body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
-
 .sec-label{font-size:.68rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:10px;margin-bottom:18px}
 .sec-label::before{content:'◆';color:var(--orange);font-size:.42rem;flex-shrink:0}
 .sec-label.light{color:rgba(255,255,255,.40)}
 
-/* ═══ 1. HERO ═══ */
+/* HERO */
 .hero{background:var(--dark);padding:96px 48px 80px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
-.hero-bg{
-  position:absolute;inset:0;
-  background-image:url('https://static.wixstatic.com/media/11062b_2e86bbca292248fb9882ceeb4035853a~mv2.jpg/v1/fill/w_1400,h_900,al_c,q_80,enc_avif,quality_auto/11062b_2e86bbca292248fb9882ceeb4035853a~mv2.jpg');
-  background-size:cover;background-position:center 40%;opacity:.35;
-}
-.hero-gradient{
-  position:absolute;inset:0;
-  background:linear-gradient(105deg,var(--dark) 0%,var(--dark) 32%,rgba(14,13,11,.78) 52%,rgba(14,13,11,.18) 100%);
-}
-.hero-grain{position:absolute;inset:0;opacity:.035;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:150px}
+.hero-bg{position:absolute;inset:0;background-image:url('https://static.wixstatic.com/media/11062b_2e86bbca292248fb9882ceeb4035853a~mv2.jpg/v1/fill/w_1400,h_900,al_c,q_80,enc_avif,quality_auto/11062b_2e86bbca292248fb9882ceeb4035853a~mv2.jpg');background-size:cover;background-position:center 40%;opacity:.35}
+.hero-gradient{position:absolute;inset:0;background:linear-gradient(105deg,var(--dark) 0%,var(--dark) 32%,rgba(14,13,11,.78) 52%,rgba(14,13,11,.18) 100%)}
+.hero-grain{position:absolute;inset:0;opacity:.035;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:150px}
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
 .hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,4rem);font-weight:400;line-height:1.06;color:#fff;margin-bottom:22px;letter-spacing:-.02em}
 .hero h1 em{font-style:italic;color:rgba(255,255,255,.72)}
 .hero-desc{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.50);line-height:1.85;margin-bottom:36px}
 .hero-desc strong{color:rgba(255,255,255,.85);font-weight:500}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);padding:15px 26px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background .25s,color .25s;white-space:nowrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);padding:15px 26px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background .25s,color .25s;white-space:nowrap;text-decoration:none}
 .btn-primary:hover{background:var(--orange);color:#fff}
-.btn-ghost{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.45);background:none;border:none;border-bottom:1px solid rgba(255,255,255,.18);padding:0 0 2px;font-family:var(--sans);font-size:.78rem;cursor:pointer;transition:color .2s,border-color .2s}
+.btn-ghost{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.45);border-bottom:1px solid rgba(255,255,255,.18);padding:0 0 2px;font-family:var(--sans);font-size:.78rem;transition:color .2s,border-color .2s;text-decoration:none}
 .btn-ghost:hover{color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.5)}
-
-/* Hero right — stat stack */
 .hero-stats{display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
 .hero-stat{padding:22px 28px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:18px;transition:background .2s}
 .hero-stat:last-child{border-bottom:none}
@@ -128,7 +93,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 .hero-stat-text strong{display:block;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.82);margin-bottom:2px}
 .hero-stat-text span{font-size:.72rem;font-weight:300;color:rgba(255,255,255,.38)}
 
-/* ═══ 2. PRODUCTS ═══ */
+/* PRODUCTS */
 .products{background:var(--white);padding:96px 48px}
 .products-inner{max-width:1200px;margin:0 auto}
 .products-header{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px}
@@ -137,17 +102,18 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 .products-intro{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.85}
 .products-intro strong{color:var(--ink);font-weight:500}
 .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.product-card{background:#fff;padding:36px 32px;display:flex;flex-direction:column;gap:14px;position:relative;cursor:pointer;transition:background .25s var(--ease)}
+/* FIX: product-card as <a> block */
+.product-card{background:#fff;padding:36px 32px;display:flex;flex-direction:column;gap:14px;position:relative;transition:background .25s var(--ease);text-decoration:none;color:inherit}
 .product-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 .product-card:hover{background:var(--sand)}
 .product-card:hover::after{transform:scaleX(1)}
 .product-card-icon{font-size:1.8rem;margin-bottom:4px}
 .product-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--ink);line-height:1.2}
 .product-card p{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.78;flex:1}
-.product-card-link{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);background:none;border:none;padding:0;cursor:pointer;margin-top:8px;transition:gap .2s}
-.product-card-link:hover{gap:10px}
+.product-card-link{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-top:8px;transition:gap .2s}
+.product-card:hover .product-card-link{gap:10px}
 
-/* ═══ 3. ACQUISITION ═══ */
+/* ACQUISITION */
 .acquisition{background:var(--dark2);padding:96px 48px}
 .acquisition-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .acquisition h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;color:#fff;margin-bottom:20px}
@@ -155,10 +121,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 .acquisition-body{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.50);line-height:1.88;margin-bottom:32px}
 .acquisition-body p+p{margin-top:16px}
 .acquisition-body strong{color:rgba(255,255,255,.85);font-weight:500}
-.btn-acq{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;padding:15px 26px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background .2s;white-space:nowrap}
+.btn-acq{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;padding:15px 26px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background .2s;white-space:nowrap;text-decoration:none}
 .btn-acq:hover{background:#d45f00}
-
-/* Acquisition checklist */
 .acq-checklist{display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,.07);border-radius:6px;overflow:hidden}
 .acq-check{padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;gap:14px;transition:background .2s}
 .acq-check:last-child{border-bottom:none}
@@ -168,7 +132,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 .acq-check-text strong{display:block;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.82);margin-bottom:2px}
 .acq-check-text span{font-size:.74rem;font-weight:300;color:rgba(255,255,255,.38);line-height:1.6}
 
-/* ═══ 4. PROMISE ═══ */
+/* PROMISE */
 .promise{background:var(--sand);padding:96px 48px}
 .promise-inner{max-width:1200px;margin:0 auto}
 .promise h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:12px}
@@ -182,13 +146,13 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 .promise-card h3{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:8px}
 .promise-card p{font-size:.78rem;font-weight:300;color:var(--mid);line-height:1.72}
 
-/* ═══ 5. FAQ ═══ */
+/* FAQ */
 .faq{background:var(--white);padding:96px 48px}
 .faq-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start}
 .faq h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:16px}
 .faq h2 em{font-style:italic}
 .faq-intro{font-size:.84rem;font-weight:300;color:var(--mid);line-height:1.8;margin-bottom:28px}
-.faq-cta{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:none;border:none;border-bottom:1px solid var(--ink);padding:0 0 2px;cursor:pointer;transition:color .2s,border-color .2s}
+.faq-cta{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding:0 0 2px;transition:color .2s,border-color .2s;text-decoration:none}
 .faq-cta:hover{color:var(--orange);border-color:var(--orange)}
 .faq-list{display:flex;flex-direction:column;gap:0}
 .faq-item{border-bottom:1px solid var(--border)}
@@ -203,7 +167,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 .faq-a{display:none;padding:0 0 22px;font-size:.84rem;font-weight:300;color:var(--mid);line-height:1.85}
 .faq-item.open .faq-a{display:block}
 
-/* ═══ 6. CTA ═══ */
+/* CTA */
 .cta{background:var(--orange);padding:80px 48px;position:relative;overflow:hidden}
 .cta::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.06;pointer-events:none}
 .cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;position:relative;z-index:1}
@@ -211,72 +175,23 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 .cta h2 em{font-style:italic}
 .cta p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.72);line-height:1.7}
 .cta-btns{display:flex;flex-direction:column;gap:12px;flex-shrink:0}
-.btn-white{display:inline-flex;align-items:center;gap:8px;justify-content:center;background:#fff;color:var(--orange);padding:15px 28px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap}
+.btn-white{display:inline-flex;align-items:center;gap:8px;justify-content:center;background:#fff;color:var(--orange);padding:15px 28px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap;text-decoration:none}
 .btn-white:hover{background:var(--ink);color:#fff}
-.btn-outline-white{display:inline-flex;align-items:center;gap:8px;justify-content:center;background:transparent;color:#fff;padding:14px 28px;font-family:var(--sans);font-size:.78rem;font-weight:500;border:1px solid rgba(255,255,255,.45);border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s;white-space:nowrap}
+.btn-outline-white{display:inline-flex;align-items:center;gap:8px;justify-content:center;background:transparent;color:#fff;padding:14px 28px;font-family:var(--sans);font-size:.78rem;font-weight:500;border:1px solid rgba(255,255,255,.45);border-radius:2px;cursor:pointer;transition:background .2s,border-color .2s;white-space:nowrap;text-decoration:none}
 .btn-outline-white:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.8)}
 
-/* ── RESPONSIVE ── */
-@media(max-width:1024px){
-  .product-grid{grid-template-columns:1fr 1fr}
-  .promise-grid{grid-template-columns:1fr 1fr}
-  .products-header{grid-template-columns:1fr;gap:24px}
-  .faq-inner{grid-template-columns:1fr;gap:40px}
-}
-@media(max-width:900px){
-  .hero{padding:72px 24px 64px}
-  .hero-inner{grid-template-columns:1fr;gap:44px}
-  .hero-stats{display:grid;grid-template-columns:1fr 1fr}
-  .hero-stat{padding:20px 22px;flex-direction:column;align-items:flex-start;gap:6px}
-  .hero-stat-num{font-size:2rem;min-width:unset}
-  .products{padding:72px 24px}
-  .acquisition{padding:72px 24px}
-  .acquisition-inner{grid-template-columns:1fr;gap:48px}
-  .promise{padding:72px 24px}
-  .faq{padding:72px 24px}
-  .cta{padding:64px 24px}
-  .cta-inner{grid-template-columns:1fr;gap:28px}
-  .cta-btns{flex-direction:row;flex-wrap:wrap}
-}
-@media(max-width:600px){
-  .hero{padding:56px 20px 52px}
-  .hero h1{font-size:clamp(2rem,8.5vw,2.8rem)}
-  .hero-stats{grid-template-columns:1fr 1fr}
-  .hero-stat{padding:16px 14px;flex-direction:column;align-items:flex-start;gap:5px}
-  .hero-stat-num{font-size:1.8rem;min-width:unset}
-  .hero-stat-text strong{font-size:.74rem}
-  .hero-stat-text span{font-size:.67rem;line-height:1.5}
-  .products{padding:56px 20px}
-  .product-grid{grid-template-columns:1fr}
-  .acquisition{padding:56px 20px}
-  .promise{padding:56px 20px}
-  .promise-grid{grid-template-columns:1fr}
-  .faq{padding:56px 20px}
-  .cta{padding:52px 20px}
-  .cta-btns{flex-direction:column;width:100%}
-  .btn-white,.btn-outline-white{width:100%;justify-content:center}
-}
-@media(max-width:380px){
-  .hero{padding:44px 16px 40px}
-  .hero-stats{grid-template-columns:1fr 1fr}
-  .hero-stat{padding:14px 12px;flex-direction:column;align-items:flex-start;gap:4px}
-  .hero-stat-num{font-size:1.5rem;min-width:unset}
-  .products{padding:44px 16px}
-  .acquisition{padding:44px 16px}
-  .promise{padding:44px 16px}
-  .faq{padding:44px 16px}
-  .cta{padding:40px 16px}
-}
+/* Site links */
+.site-links{background:#0e0d0b;padding:24px 48px;border-top:1px solid rgba(255,255,255,.06)}
+.site-links-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px}
+.site-links a{font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;transition:color .2s}
+.site-links a:hover{color:rgba(255,255,255,.70)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.product-grid{grid-template-columns:1fr 1fr}.promise-grid{grid-template-columns:1fr 1fr}.products-header{grid-template-columns:1fr;gap:24px}.faq-inner{grid-template-columns:1fr;gap:40px}}
+@media(max-width:900px){.hero{padding:72px 24px 64px}.hero-inner{grid-template-columns:1fr;gap:44px}.hero-stats{display:grid;grid-template-columns:1fr 1fr}.hero-stat{padding:20px 22px;flex-direction:column;align-items:flex-start;gap:6px}.hero-stat-num{font-size:2rem;min-width:unset}.products{padding:72px 24px}.acquisition{padding:72px 24px}.acquisition-inner{grid-template-columns:1fr;gap:48px}.promise{padding:72px 24px}.faq{padding:72px 24px}.cta{padding:64px 24px}.cta-inner{grid-template-columns:1fr;gap:28px}.cta-btns{flex-direction:row;flex-wrap:wrap}.site-links{padding:20px 24px}}
+@media(max-width:600px){.hero{padding:56px 20px 52px}.hero h1{font-size:clamp(2rem,8.5vw,2.8rem)}.hero-stats{grid-template-columns:1fr 1fr}.hero-stat{padding:16px 14px}.hero-stat-num{font-size:1.8rem}.products{padding:56px 20px}.product-grid{grid-template-columns:1fr}.acquisition{padding:56px 20px}.promise{padding:56px 20px}.promise-grid{grid-template-columns:1fr}.faq{padding:56px 20px}.cta{padding:52px 20px}.cta-btns{flex-direction:column;width:100%}.btn-white,.btn-outline-white{width:100%;justify-content:center}.site-links{padding:16px 20px}}
+@media(max-width:380px){.hero{padding:44px 16px 40px}.products{padding:44px 16px}.acquisition{padding:44px 16px}.promise{padding:44px 16px}.faq{padding:44px 16px}.cta{padding:40px 16px}}
 </style>
-
-<link rel="stylesheet" href="/shared.css">
-
-<meta name="robots" content="index, follow"><meta property="og:image" content="https://www.fundr.co.nz/images/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="fundr. — Vehicles | Equipment | Business finance NZ">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.fundr.co.nz/images/og-image.jpg">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -284,7 +199,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 <!-- End Google Tag Manager (noscript) -->
 <div id="header-placeholder"></div>
 
-<!-- ═══ 1. HERO ═══ -->
+<!-- HERO -->
 <section class="hero" aria-label="Business Finance NZ">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-gradient" aria-hidden="true"></div>
@@ -295,32 +210,21 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <h1>Funding to grow<br>your NZ<br><em>business.</em></h1>
       <p class="hero-desc"><strong>fundr arranges business finance for Kiwi companies</strong> — from working capital and cashflow solutions to full business acquisition funding. Independent broker, 15+ lenders, decisions fast.</p>
       <div class="hero-actions">
-        <button class="btn-primary" onclick="window.location.href='/apply.html'" aria-label="Apply for business finance">Get My Options &rarr;</button>
-        <button class="btn-ghost" onclick="window.open('/calculator.html','_self')" aria-label="Calculate repayments">Calculate repayments &rarr;</button>
+        <!-- FIX: <a> tags -->
+        <a href="/apply.html" class="btn-primary" aria-label="Apply for business finance">Get My Options &rarr;</a>
+        <a href="/calculator.html" class="btn-ghost" aria-label="Calculate repayments">Calculate repayments &rarr;</a>
       </div>
     </div>
     <div class="hero-stats" aria-label="fundr at a glance">
-      <div class="hero-stat">
-        <div class="hero-stat-num">15+</div>
-        <div class="hero-stat-text"><strong>NZ Lenders on Panel</strong><span>We find the right lender for your deal</span></div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">24hr</div>
-        <div class="hero-stat-text"><strong>Typical Decision Time</strong><span>Most applications decided same or next day</span></div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">15yr</div>
-        <div class="hero-stat-text"><strong>Commercial Experience</strong><span>BNZ, GE Capital, Wells Fargo &amp; more</span></div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">$0</div>
-        <div class="hero-stat-text"><strong>Cost to Enquire</strong><span>No obligation, no credit impact to apply</span></div>
-      </div>
+      <div class="hero-stat"><div class="hero-stat-num">15+</div><div class="hero-stat-text"><strong>NZ Lenders on Panel</strong><span>We find the right lender for your deal</span></div></div>
+      <div class="hero-stat"><div class="hero-stat-num">24hr</div><div class="hero-stat-text"><strong>Typical Decision Time</strong><span>Most applications decided same or next day</span></div></div>
+      <div class="hero-stat"><div class="hero-stat-num">15yr</div><div class="hero-stat-text"><strong>Commercial Experience</strong><span>BNZ, GE Capital, Wells Fargo &amp; more</span></div></div>
+      <div class="hero-stat"><div class="hero-stat-num">$0</div><div class="hero-stat-text"><strong>Cost to Enquire</strong><span>No obligation, no credit impact to apply</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ 2. PRODUCTS ═══ -->
+<!-- PRODUCTS -->
 <section class="products" aria-label="Business finance products">
   <div class="products-inner">
     <div class="products-header">
@@ -331,54 +235,48 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <p class="products-intro">fundr works across the full range of business finance — whether you need to free up cashflow, fund a new asset, or finance a business acquisition. <strong>We match your situation to the right lender and structure</strong>, not the other way around.</p>
     </div>
     <div class="product-grid" role="list">
-
-      <article class="product-card" role="listitem" onclick="window.open('/check-eligibility-full.html','_blank')">
+      <!-- FIX: onclick article → <a> block -->
+      <a href="/check-eligibility-full.html" class="product-card" role="listitem">
         <span class="product-card-icon" aria-hidden="true">💼</span>
         <h3>Working Capital</h3>
         <p>Need cash to cover day-to-day operations, bridge a gap between invoices, or take on a bigger contract? Working capital finance gives your business the breathing room to operate and grow without the wait.</p>
-        <button class="product-card-link" aria-label="Enquire about working capital">Enquire now &rarr;</button>
-      </article>
-
-      <article class="product-card" role="listitem" onclick="window.open('/equipment-finance.html','_self')">
+        <span class="product-card-link">Enquire now &rarr;</span>
+      </a>
+      <a href="/equipment-finance.html" class="product-card" role="listitem">
         <span class="product-card-icon" aria-hidden="true">⚙️</span>
         <h3>Equipment Finance</h3>
         <p>Finance the tools, plant and machinery your business runs on — without tying up working capital. Equipment finance uses the asset itself as security, keeping rates competitive and the application straightforward.</p>
-        <button class="product-card-link" aria-label="Learn about equipment finance">Learn more &rarr;</button>
-      </article>
-
-      <article class="product-card" role="listitem" onclick="window.open('/what-we-finance.html','_self')">
+        <span class="product-card-link">Learn more &rarr;</span>
+      </a>
+      <a href="/what-we-finance.html" class="product-card" role="listitem">
         <span class="product-card-icon" aria-hidden="true">🏢</span>
         <h3>Business Acquisition</h3>
         <p>Buying an existing business? Acquisition finance is complex — it often involves multiple funding layers including business loans, equipment finance and debtor finance. fundr structures the whole package.</p>
-        <button class="product-card-link" aria-label="Learn about business acquisition finance">Learn more &rarr;</button>
-      </article>
-
-      <article class="product-card" role="listitem" onclick="window.open('/check-eligibility-full.html','_blank')">
+        <span class="product-card-link">Learn more &rarr;</span>
+      </a>
+      <a href="/check-eligibility-full.html" class="product-card" role="listitem">
         <span class="product-card-icon" aria-hidden="true">📈</span>
         <h3>Growth Finance</h3>
         <p>Ready to scale? Whether you're opening a second location, hiring staff, investing in stock or launching a new product line — fundr can structure the funding to support your next move.</p>
-        <button class="product-card-link" aria-label="Enquire about growth finance">Enquire now &rarr;</button>
-      </article>
-
-      <article class="product-card" role="listitem" onclick="window.open('/check-eligibility-full.html','_blank')">
+        <span class="product-card-link">Enquire now &rarr;</span>
+      </a>
+      <a href="/check-eligibility-full.html" class="product-card" role="listitem">
         <span class="product-card-icon" aria-hidden="true">🔄</span>
         <h3>Cashflow Finance</h3>
         <p>Invoice finance and debtor solutions that let you access the money you're already owed — without waiting 30, 60 or 90 days. Keep operations moving while your customers pay on their terms.</p>
-        <button class="product-card-link" aria-label="Enquire about cashflow finance">Enquire now &rarr;</button>
-      </article>
-
-      <article class="product-card" role="listitem" onclick="window.open('/check-eligibility-full.html','_blank')">
+        <span class="product-card-link">Enquire now &rarr;</span>
+      </a>
+      <a href="/check-eligibility-full.html" class="product-card" role="listitem">
         <span class="product-card-icon" aria-hidden="true">🏦</span>
         <h3>Unsecured Business Loans</h3>
         <p>No property or assets to pledge as security? Unsecured business loans are available through non-bank lenders in our panel — faster approvals, flexible criteria, and no collateral required.</p>
-        <button class="product-card-link" aria-label="Enquire about unsecured loans">Enquire now &rarr;</button>
-      </article>
-
+        <span class="product-card-link">Enquire now &rarr;</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ═══ 3. ACQUISITION ═══ -->
+<!-- ACQUISITION -->
 <section class="acquisition" aria-label="Business acquisition finance">
   <div class="acquisition-inner">
     <div>
@@ -388,132 +286,76 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <p>Business acquisition finance is one of the most complex deals a broker can work on. It's rarely a single loan — it typically involves <strong>multiple funding layers</strong> including business loans, equipment finance, and sometimes debtor finance, all structured together to make the purchase work.</p>
         <p>fundr has experience across NZ business acquisitions of all sizes. We know which lenders have appetite for acquisition deals, how to present the opportunity, and how to structure finance packages that give you the best possible chance of getting the deal across the line.</p>
       </div>
-      <button class="btn-acq" onclick="window.open('/check-eligibility-full.html','_blank')" aria-label="Discuss business acquisition finance">Talk to Nick &rarr;</button>
+      <!-- FIX: <a> tag -->
+      <a href="/check-eligibility-full.html" class="btn-acq" aria-label="Discuss business acquisition finance">Talk to Nick &rarr;</a>
     </div>
     <div class="acq-checklist" aria-label="What fundr does for business acquisitions">
-      <div class="acq-check">
-        <div class="acq-check-tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-        <div class="acq-check-text"><strong>Multi-lender deal structuring</strong><span>We combine products across multiple lenders to fund the full acquisition</span></div>
-      </div>
-      <div class="acq-check">
-        <div class="acq-check-tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-        <div class="acq-check-text"><strong>Lender matching for acquisition deals</strong><span>Not every lender does acquisitions — we know who does and what they look for</span></div>
-      </div>
-      <div class="acq-check">
-        <div class="acq-check-tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-        <div class="acq-check-text"><strong>Application structuring &amp; packaging</strong><span>We present your deal in the strongest possible light to maximise approval chances</span></div>
-      </div>
-      <div class="acq-check">
-        <div class="acq-check-tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-        <div class="acq-check-text"><strong>End-to-end management</strong><span>From first conversation to settlement — Nick handles every step personally</span></div>
-      </div>
-      <div class="acq-check">
-        <div class="acq-check-tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-        <div class="acq-check-text"><strong>No obligation to enquire</strong><span>Tell us about your deal — we'll tell you honestly what's possible</span></div>
-      </div>
+      <div class="acq-check"><div class="acq-check-tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><div class="acq-check-text"><strong>Multi-lender deal structuring</strong><span>We combine products across multiple lenders to fund the full acquisition</span></div></div>
+      <div class="acq-check"><div class="acq-check-tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><div class="acq-check-text"><strong>Lender matching for acquisition deals</strong><span>Not every lender does acquisitions — we know who does and what they look for</span></div></div>
+      <div class="acq-check"><div class="acq-check-tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><div class="acq-check-text"><strong>Application structuring &amp; packaging</strong><span>We present your deal in the strongest possible light to maximise approval chances</span></div></div>
+      <div class="acq-check"><div class="acq-check-tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><div class="acq-check-text"><strong>End-to-end management</strong><span>From first conversation to settlement — Nick handles every step personally</span></div></div>
+      <div class="acq-check"><div class="acq-check-tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><div class="acq-check-text"><strong>No obligation to enquire</strong><span>Tell us about your deal — we'll tell you honestly what's possible</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ 4. PROMISE ═══ -->
+<!-- PROMISE -->
 <section class="promise" aria-label="Our promise">
   <div class="promise-inner">
     <p class="sec-label">Our Promise</p>
     <h2>What you can always<br><em>expect from fundr.</em></h2>
     <p class="promise-sub">Every business finance deal we work on comes with the same commitment to service, transparency and results.</p>
     <div class="promise-grid" role="list">
-      <div class="promise-card" role="listitem">
-        <h3>15+ Lenders on Panel</h3>
-        <p>We're not tied to any single lender. We go to the market and find the right fit for your deal — better rates, better terms, better outcomes.</p>
-      </div>
-      <div class="promise-card" role="listitem">
-        <h3>24hr Decision</h3>
-        <p>Most business finance applications receive a decision the same or next business day. No waiting weeks for a bank to come back with a maybe.</p>
-      </div>
-      <div class="promise-card" role="listitem">
-        <h3>Honest Advice</h3>
-        <p>We tell you what's possible and what isn't — clearly, without spin. If a deal can't be done, we'll tell you why and what to do next.</p>
-      </div>
-      <div class="promise-card" role="listitem">
-        <h3>Right Structuring</h3>
-        <p>Nick knows what each lender looks for. We structure your application to give it the strongest possible position from the start.</p>
-      </div>
-      <div class="promise-card" role="listitem">
-        <h3>One Point of Contact</h3>
-        <p>No call centres, no being passed around. Nick handles your deal personally from first enquiry through to settlement and beyond.</p>
-      </div>
-      <div class="promise-card" role="listitem">
-        <h3>Lifetime Support</h3>
-        <p>Our relationship doesn't end at settlement. We stay in touch, review your finance as your business grows, and are always available when you need us.</p>
-      </div>
+      <div class="promise-card" role="listitem"><h3>15+ Lenders on Panel</h3><p>We're not tied to any single lender. We go to the market and find the right fit for your deal — better rates, better terms, better outcomes.</p></div>
+      <div class="promise-card" role="listitem"><h3>24hr Decision</h3><p>Most business finance applications receive a decision the same or next business day. No waiting weeks for a bank to come back with a maybe.</p></div>
+      <div class="promise-card" role="listitem"><h3>Honest Advice</h3><p>We tell you what's possible and what isn't — clearly, without spin. If a deal can't be done, we'll tell you why and what to do next.</p></div>
+      <div class="promise-card" role="listitem"><h3>Right Structuring</h3><p>Nick knows what each lender looks for. We structure your application to give it the strongest possible position from the start.</p></div>
+      <div class="promise-card" role="listitem"><h3>One Point of Contact</h3><p>No call centres, no being passed around. Nick handles your deal personally from first enquiry through to settlement and beyond.</p></div>
+      <div class="promise-card" role="listitem"><h3>Lifetime Support</h3><p>Our relationship doesn't end at settlement. We stay in touch, review your finance as your business grows, and are always available when you need us.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ 5. FAQ ═══ -->
+<!-- FAQ -->
 <section class="faq" aria-label="Frequently asked questions about business finance">
   <div class="faq-inner">
     <div>
       <p class="sec-label">FAQ</p>
       <h2>Business finance<br><em>questions answered.</em></h2>
       <p class="faq-intro">Common questions about business loans, working capital and acquisition finance in New Zealand. Can't find what you need?</p>
-      <button class="faq-cta" onclick="window.open('/faq.html','_self')" aria-label="View all FAQs">View all FAQs &rarr;</button>
+      <!-- FIX: <a> tag -->
+      <a href="/faq.html" class="faq-cta" aria-label="View all FAQs">View all FAQs &rarr;</a>
     </div>
     <div class="faq-list" role="list">
-
       <div class="faq-item" role="listitem">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          How can I get a business loan in NZ?
-          <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
-        </button>
-        <div class="faq-a">The key is to understand why you need the loan, how much you need to borrow, and whether your business can comfortably manage repayments. fundr always starts with two questions: what do you need the funds for, and how much? From there we guide you to the right product and lender. Secured loans (backed by assets) offer higher limits and lower rates. Unsecured loans are faster but typically cost more. The right answer depends on your situation — that's what we're here to work out with you.</div>
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How can I get a business loan in NZ?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span></button>
+        <div class="faq-a">The key is to understand why you need the loan, how much you need to borrow, and whether your business can comfortably manage repayments. fundr always starts with two questions: what do you need the funds for, and how much? From there we guide you to the right product and lender. Secured loans (backed by assets) offer higher limits and lower rates. Unsecured loans are faster but typically cost more.</div>
       </div>
-
       <div class="faq-item" role="listitem">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          Is it hard to get a business loan in NZ?
-          <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
-        </button>
-        <div class="faq-a">Approval depends on your financial position, how long you've been in business, whether you have collateral, and the type of finance you're after. Non-bank lenders aren't bound by the same rules as banks — they can offer more flexible approvals, often without requiring security. If your business is generating revenue and the numbers stack up, getting approved through fundr is usually straightforward. The main challenge arises when a business is struggling or not yet profitable.</div>
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is it hard to get a business loan in NZ?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span></button>
+        <div class="faq-a">Approval depends on your financial position, how long you've been in business, whether you have collateral, and the type of finance you're after. Non-bank lenders aren't bound by the same rules as banks — they can offer more flexible approvals, often without requiring security. If your business is generating revenue and the numbers stack up, getting approved through fundr is usually straightforward.</div>
       </div>
-
       <div class="faq-item" role="listitem">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          Can I get a business loan without collateral?
-          <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
-        </button>
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Can I get a business loan without collateral?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span></button>
         <div class="faq-a">Yes — unsecured business loans are available in NZ. They typically come with higher interest rates and lower borrowing limits due to the added risk for the lender, but the process is faster and more flexible. Equipment finance is a good middle ground — the asset being purchased acts as security, keeping interest rates lower without requiring you to pledge additional collateral.</div>
       </div>
-
       <div class="faq-item" role="listitem">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          What is a secured business loan?
-          <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
-        </button>
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What is a secured business loan?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span></button>
         <div class="faq-a">A secured business loan uses an existing asset — such as property, a vehicle, or business equipment — as collateral. This reduces the lender's risk, which usually means higher borrowing limits and lower interest rates for you. Most traditional lenders prefer secured loans. If the loan isn't repaid, the lender has the right to sell the asset to recover the funds.</div>
       </div>
-
       <div class="faq-item" role="listitem">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          What is an unsecured business loan?
-          <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
-        </button>
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What is an unsecured business loan?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span></button>
         <div class="faq-a">An unsecured business loan doesn't require you to put up an asset as collateral. Most lenders will still ask for a personal guarantee from the business owner. Unsecured loans are faster to arrange and are suited to businesses that don't have significant assets to pledge — though interest rates are typically higher to reflect the added risk.</div>
       </div>
-
       <div class="faq-item" role="listitem">
-        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
-          How does business acquisition finance work?
-          <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
-        </button>
-        <div class="faq-a">Buying a business typically requires multiple layers of finance — a business loan for goodwill and intangibles, equipment finance for physical assets, and sometimes debtor finance for receivables. fundr works with you to structure the full package, identify the right lenders for each component, and present the deal in the strongest possible way. The goal is to get you to settlement with the right funding in place at the right cost.</div>
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How does business acquisition finance work?<span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span></button>
+        <div class="faq-a">Buying a business typically requires multiple layers of finance — a business loan for goodwill and intangibles, equipment finance for physical assets, and sometimes debtor finance for receivables. fundr works with you to structure the full package, identify the right lenders for each component, and present the deal in the strongest possible way.</div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══ 6. CTA ═══ -->
+<!-- CTA -->
 <section class="cta" aria-label="Get started with business finance">
   <div class="cta-inner">
     <div>
@@ -521,29 +363,38 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <p>One conversation with Nick is usually all it takes. Tell us what you need — we'll work out the right structure and get you options fast. No obligation, no credit impact to enquire.</p>
     </div>
     <div class="cta-btns">
-      <button class="btn-white" onclick="window.location.href='/apply.html'" aria-label="Apply for business finance">Get My Options &rarr;</button>
-      <button class="btn-outline-white" onclick="window.location.href='tel:0211023416'" aria-label="Call Nick">Call Nick — 021 102 3416</button>
+      <!-- FIX: <a> tags -->
+      <a href="/apply.html" class="btn-white" aria-label="Apply for business finance">Get My Options &rarr;</a>
+      <a href="tel:0211023416" class="btn-outline-white" aria-label="Call Nick">Call Nick — 021 102 3416</a>
     </div>
   </div>
 </section>
+
+<!-- FIX: Crawlable site-links nav -->
+<nav class="site-links" aria-label="Site pages">
+  <div class="site-links-inner">
+    <a href="/">Home</a>
+    <a href="/vehicle-finance.html">Vehicle Finance</a>
+    <a href="/ute-finance.html">Ute Finance</a>
+    <a href="/truck-finance.html">Truck Finance</a>
+    <a href="/equipment-finance.html">Equipment Finance</a>
+    <a href="/what-we-finance.html">What We Finance</a>
+    <a href="/fundr-way.html">How fundr Works</a>
+    <a href="/about.html">About Nick</a>
+    <a href="/process.html">Our Process</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/check-eligibility-full.html">Check Eligibility</a>
+    <a href="/calculator.html">Repayment Calculator</a>
+  </div>
+</nav>
 
 <script>
 function toggleFaq(btn){
   const item=btn.closest('.faq-item');
   const isOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(el=>{
-    el.classList.remove('open');
-    el.querySelector('.faq-q').setAttribute('aria-expanded','false');
-  });
-  if(!isOpen){
-    item.classList.add('open');
-    btn.setAttribute('aria-expanded','true');
-  }
+  document.querySelectorAll('.faq-item.open').forEach(el=>{el.classList.remove('open');el.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+  if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
 }
-function reportHeight(){window.parent.postMessage({type:'setHeight',height:document.body.scrollHeight},'*')}
-window.addEventListener('load',reportHeight);
-window.addEventListener('resize',reportHeight);
-new ResizeObserver(reportHeight).observe(document.body);
 </script>
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
