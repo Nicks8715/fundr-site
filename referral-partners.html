@@ -278,6 +278,12 @@ h2 em{font-style:italic}
 footer{background:var(--dark);padding:44px 5%;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid var(--border-dark)}
   /* Footer — handled by /footer.html */
 
+/* Site links */
+.site-links{background:#0e0d0b;padding:24px 48px;border-top:1px solid rgba(255,255,255,.06)}
+.site-links-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px}
+.site-links a{font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;transition:color .2s}
+.site-links a:hover{color:rgba(255,255,255,.70)}
+
 /* RESPONSIVE — tablet */
 @media(max-width:960px){
   .ins-grid{grid-template-columns:1fr;gap:40px}
@@ -601,6 +607,24 @@ footer{background:var(--dark);padding:44px 5%;display:flex;flex-wrap:wrap;justif
     </div>
   </div>
 </section>
+
+<nav class="site-links" aria-label="Site pages">
+  <div class="site-links-inner">
+    <a href="/">Home</a>
+    <a href="/vehicle-finance.html">Vehicle Finance</a>
+    <a href="/ute-finance.html">Ute Finance</a>
+    <a href="/truck-finance.html">Truck Finance</a>
+    <a href="/equipment-finance.html">Equipment Finance</a>
+    <a href="/business-finance.html">Business Finance</a>
+    <a href="/fundr-way.html">How fundr Works</a>
+    <a href="/about.html">About</a>
+    <a href="/process.html">Our Process</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/check-eligibility-full.html">Check Eligibility</a>
+    <a href="/calculator.html">Repayment Calculator</a>
+    <a href="/referral-partners.html">Referral Partners</a>
+  </div>
+</nav>
 
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
