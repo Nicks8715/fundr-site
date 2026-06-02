@@ -50,6 +50,7 @@
             '<li><a href="' + href('/process.html') + '">Our Process</a></li>' +
             '<li><a href="' + href('/Blog/') + '">Blog</a></li>' +
             '<li><a href="' + href('/faq.html') + '">FAQ</a></li>' +
+            '<li><a href="' + href('/referral-partners.html') + '">Referral Partners</a></li>' +
           '</ul>' +
         '</div>' +
 
@@ -133,7 +134,7 @@
     document.head.appendChild(styleEl);
   }
 
-  /* Inject footer before </body> */
+  /* Inject footer */
   var target = document.getElementById('fundr-footer');
   if (target) {
     target.innerHTML = footerHTML;
