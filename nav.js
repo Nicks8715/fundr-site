@@ -20,6 +20,7 @@
     chevron: '<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>',
     blog:    '<svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>',
     faq:     '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+    partners:'<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>',
   };
 
   /* Detect if we're in the Blog subfolder */
@@ -40,6 +41,7 @@
 
   var html =
     '<nav class="fnd" id="fnd">' +
+
       /* Logo */
       '<a href="' + href('/index.html') + '" class="fnd-logo" aria-label="fundr home">' +
         '<img src="' + href('/images/logo.png') + '" alt="fundr." class="fnd-logo-img">' +
@@ -59,6 +61,7 @@
         '<a href="' + href('/about.html') + '" class="fnd-link">About</a>' +
         '<a href="' + href('/process.html') + '" class="fnd-link">Process</a>' +
         '<a href="' + href('/calculator.html') + '" class="fnd-link">Calculator</a>' +
+        '<a href="' + href('/referral-partners.html') + '" class="fnd-link">Partners</a>' +
       '</div>' +
 
       /* Get a Quote pill — desktop */
@@ -96,6 +99,7 @@
         '<a href="' + href('/Blog/') + '" class="fnd-mob-a">Blog</a>' +
         '<a href="' + href('/faq.html') + '" class="fnd-mob-a">FAQ</a>' +
         '<a href="' + href('/what-we-finance.html') + '" class="fnd-mob-a">All Finance Options</a>' +
+        '<a href="' + href('/referral-partners.html') + '" class="fnd-mob-a">Referral Partners</a>' +
       '</div>' +
 
       /* Get a Quote button — mobile */
