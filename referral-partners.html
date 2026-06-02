@@ -597,18 +597,7 @@ footer{background:var(--dark);padding:44px 5%;display:flex;flex-wrap:wrap;justif
 
 <!-- FOOTER -->
 <div id="fundr-footer"></div>
-<script>
-  fetch('/footer.html')
-    .then(function(r){ return r.text(); })
-    .then(function(html){
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(html, 'text/html');
-      var footer = doc.querySelector('footer');
-      var style = doc.querySelector('style');
-      if(style){ document.head.appendChild(document.adoptNode(style)); }
-      if(footer){ document.getElementById('fundr-footer').appendChild(document.adoptNode(footer)); }
-    });
-</script>
+<script src="/footer.js"></script>
 
 <script>
 function toggleFaq(btn) {
