@@ -83,6 +83,7 @@
     { "source": "/Blog/truck-finance-nz-options",             "destination": "/Blog/truck-finance-nz-options.html",             "permanent": true },
 
     { "source": "/post/truck-finance-nz-optio/:slug*",        "destination": "/Blog/truck-finance-nz-options.html",             "permanent": true },
-    { "source": "/post/:slug*",                               "destination": "/blog.html",                                      "permanent": true }
+    { "source": "/post/:slug*",                               "destination": "/blog.html",                                      "permanent": true },
+    { "source": "/referral-partners", "destination": "/referral-partners.html", "permanent": true }
   ]
 }
