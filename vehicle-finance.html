@@ -35,7 +35,26 @@
       "areaServed": "NZ",
       "priceRange": "$0 broker fee",
       "serviceType": ["Vehicle Finance","Car Finance","Ute Finance","Truck Finance","Van Finance","Fleet Finance"],
-      "aggregateRating": {"@type":"AggregateRating","ratingValue":"5","reviewCount":"4"}
+      "aggregateRating": {"@type":"AggregateRating","ratingValue":"5","reviewCount":"4"},
+      "broker": {
+        "@type": "Person",
+        "name": "Nick",
+        "jobTitle": "Finance Broker",
+        "url": "https://www.fundr.co.nz/about.html",
+        "worksFor": {
+          "@type": "FinancialService",
+          "name": "fundr",
+          "url": "https://www.fundr.co.nz"
+        },
+        "knowsAbout": ["Vehicle Finance","Asset Finance","Commercial Lending","Business Car Loans","Ute Finance","Truck Finance"]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://www.fundr.co.nz/"},
+        {"@type":"ListItem","position":2,"name":"Vehicle Finance","item":"https://www.fundr.co.nz/vehicle-finance.html"}
+      ]
     },
     {
       "@type": "FAQPage",
@@ -125,7 +144,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .view-all{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px;white-space:nowrap;flex-shrink:0;transition:color .2s,border-color .2s}
 .view-all:hover{color:var(--orange);border-color:var(--orange)}
 .vehicles-grid{display:grid;grid-template-columns:repeat(6,1fr);max-width:1200px;margin:0 auto}
-/* FIX: vehicle cards as <a> tags */
 .vehicle-card{padding:28px 24px 32px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:10px;background:var(--white);transition:background .25s var(--ease);position:relative;text-decoration:none;color:inherit}
 .vehicle-card:last-child{border-right:none}
 .vehicle-card:hover{background:var(--sand)}
@@ -325,7 +343,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   <div class="hero-overlay-bottom" aria-hidden="true"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">NZ Business Vehicle Finance</p>
-    <h1>Business Vehicle Finance —<br><em>Fast, Simple.</em></h1>
+    <h1>Business Vehicle Finance NZ —<br><em>Fast, Simple.</em></h1>
     <p class="hero-sub"><strong>Cars, utes, vans, trucks and full fleets.</strong> We arrange business vehicle finance from 15+ NZ lenders — with approvals in 24 hours and no broker fee charged to you.</p>
     <div class="hero-pills" role="list">
       <span class="hero-pill" role="listitem">✓ 24hr Approvals</span>
@@ -356,7 +374,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       <div class="about-copy">
         <p>fundr is a specialist finance broker — which means we work for you, not the lender. When you apply, we take your deal to our panel of 15+ NZ lenders and find the one that's the right fit for your business and your situation.</p>
         <p>One application. One point of contact. No repeated credit checks, no chasing multiple banks, and no broker fee charged to you. Just straight-up vehicle finance, sorted fast.</p>
-        <!-- FIX: removed target="_blank" on internal links -->
         <a href="/fundr-way.html" class="cta-link" aria-label="Learn how fundr works">How fundr works <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="about-stats" aria-label="Key statistics">
@@ -377,7 +394,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       <a href="/what-we-finance.html" class="view-all" aria-label="View all finance products">View All Products <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
-  <!-- FIX: vehicle cards as <a> tags — Google can now crawl these -->
   <div class="vehicles-grid" role="list">
     <a href="/check-eligibility-full.html" class="vehicle-card" role="listitem" aria-label="Cars and SUVs finance">
       <span class="vehicle-num">01</span>
@@ -647,7 +663,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   </div>
 </section>
 
-<!-- FIX: Crawlable site-links nav -->
+<!-- Crawlable site-links nav -->
 <nav class="site-links" aria-label="Site pages">
   <div class="site-links-inner">
     <a href="/">Home</a>
