@@ -378,8 +378,14 @@ function toggleTypeFields(){
   for(let i=1;i<=3;i++){
     const bf=document.getElementById(`business-fields-${i}`);
     const pf=document.getElementById(`personal-fields-${i}`);
-    if(bf)bf.classList.toggle('hidden',!isBusiness);
-    if(pf)pf.classList.toggle('hidden',isBusiness);
+    if(bf){
+      bf.classList.toggle('hidden',!isBusiness);
+      bf.querySelectorAll('input,select,textarea').forEach(el=>{el.disabled=!isBusiness;});
+    }
+    if(pf){
+      pf.classList.toggle('hidden',isBusiness);
+      pf.querySelectorAll('input,select,textarea').forEach(el=>{el.disabled=isBusiness;});
+    }
   }
 }
 function updateStepUI(){
