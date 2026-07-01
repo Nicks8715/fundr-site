@@ -79,7 +79,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 
 /* HERO */
 .hero{position:relative;min-height:72vh;display:flex;align-items:center;padding:80px 0 60px;overflow:hidden;background:var(--dark2)}
-.hero-bg{position:absolute;inset:0;background-image:url('https://static.wixstatic.com/media/c80c61_73cb101f92c3427aa2e97299a13f6640~mv2.png');background-size:cover;background-position:center}
+.hero-bg{position:absolute;inset:0;background-image:url('/images/what-we-finance-hero.jpg');background-size:cover;background-position:center}
 .hero-bg::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
 .hero-overlay-left{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,rgba(6,5,3,.96) 0%,rgba(6,5,3,.85) 30%,rgba(6,5,3,.50) 52%,rgba(6,5,3,.10) 72%,transparent 100%)}
 .hero-overlay-top{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(6,5,3,.55) 0%,transparent 25%)}
@@ -188,7 +188,9 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 
 <!-- HERO -->
 <section class="hero" aria-label="What We Finance">
-  <div class="hero-bg" role="img" aria-label="Business asset finance NZ — fundr"></div>
+  <div class="hero-bg" role="img" aria-label="Business asset finance NZ — fundr">
+    <img src="/images/what-we-finance-hero.jpg" alt="NZ commercial precinct at dusk with ute, tipper truck and excavator — financed by fundr" style="width:100%;height:100%;object-fit:cover;display:block">
+  </div>
   <div class="hero-overlay-left" aria-hidden="true"></div>
   <div class="hero-overlay-top" aria-hidden="true"></div>
   <div class="hero-overlay-bottom" aria-hidden="true"></div>
