@@ -13,7 +13,7 @@
 <meta name="description" content="Finance any truck your business needs — prime movers, tippers, curtainsiders, crane trucks and more. 15+ NZ lenders, 24hr approvals, no broker fee. Talk to Nick today.">
 <link rel="canonical" href="https://www.fundr.co.nz/truck-finance.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Truck Finance NZ | Fast Approvals | fundr">
+<meta property="og:title" content="Truck Finance NZ | Prime Movers, Tippers & More | fundr">
 <meta property="og:description" content="Finance any truck for your NZ business. 15+ lenders, 24hr approvals. fundr makes truck finance simple.">
 <meta property="og:url" content="https://www.fundr.co.nz/truck-finance.html">
 <meta property="og:site_name" content="fundr">
@@ -29,6 +29,14 @@
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://www.fundr.co.nz/"},
+        {"@type":"ListItem","position":2,"name":"Vehicle Finance","item":"https://www.fundr.co.nz/vehicle-finance.html"},
+        {"@type":"ListItem","position":3,"name":"Truck Finance","item":"https://www.fundr.co.nz/truck-finance.html"}
+      ]
+    },
     {
       "@type": "FinancialService",
       "name": "fundr — Truck Finance NZ",
@@ -81,9 +89,9 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .sec-label::before{content:'◆';color:var(--orange);font-size:.42rem;flex-shrink:0}
 .sec-label--dark{color:rgba(255,255,255,.35)}
 
-/* ═══ 1. HERO ═══ */
 .hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;padding:80px 0 60px;overflow:hidden;background:var(--dark2)}
 .hero-bg{position:absolute;inset:0;background-image:url('https://static.wixstatic.com/media/c80c61_aecc1a017b584a8f8354f56a5e8d89bf~mv2.png');background-size:cover;background-position:center;background-repeat:no-repeat}
+.hero-bg img{width:100%;height:100%;object-fit:cover;display:block}
 .hero-bg::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
 .hero-overlay-left{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,rgba(6,5,3,.96) 0%,rgba(6,5,3,.85) 30%,rgba(6,5,3,.50) 52%,rgba(6,5,3,.10) 72%,rgba(6,5,3,.00) 100%)}
 .hero-overlay-top{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(6,5,3,.55) 0%,rgba(6,5,3,.00) 25%)}
@@ -100,7 +108,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .pill{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:100px;background:rgba(255,255,255,.06);font-size:.72rem;color:rgba(255,255,255,.60);letter-spacing:.04em;white-space:nowrap}
 .pill::before{content:'✓';color:var(--orange);font-size:.65rem;font-weight:700}
 .hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:nowrap;margin-bottom:20px}
-/* FIX: btn styles work for both <a> and <button> */
 .btn-hero-primary{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);padding:14px 24px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .25s,color .25s;text-decoration:none}
 .btn-hero-primary:hover{background:var(--orange);color:#fff}
 .btn-hero-primary svg{width:12px;height:12px;flex-shrink:0}
@@ -119,7 +126,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .hero-content>*:nth-child(3){animation-delay:.28s}.hero-content>*:nth-child(4){animation-delay:.38s}
 .hero-content>*:nth-child(5){animation-delay:.48s}.hero-content>*:nth-child(6){animation-delay:.58s}
 
-/* ═══ 2. ABOUT ═══ */
 .about-section{background:var(--white);padding:88px 48px}
 .about-inner{max-width:1200px;margin:0 auto}
 .about-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink)}
@@ -136,7 +142,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .stat-num{font-family:var(--serif);font-size:3rem;font-style:italic;font-weight:400;color:var(--ink);line-height:1;margin-bottom:6px}
 .stat-label{font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
 
-/* ═══ 3. TRUCKS ═══ */
 .trucks-section{background:var(--sand);padding:80px 48px}
 .trucks-inner{max-width:1200px;margin:0 auto}
 .trucks-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;gap:24px}
@@ -154,14 +159,14 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .finance-btn{font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid transparent;padding:0 0 1px;transition:color .2s,border-color .2s;margin-top:auto;text-decoration:none}
 .truck-card:hover .finance-btn{color:var(--orange);border-color:var(--orange)}
 
-/* ═══ 4. SOLUTIONS ═══ */
 .solutions-section{background:var(--white);padding:80px 48px}
 .solutions-inner{max-width:1200px;margin:0 auto}
 .solutions-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:12px}
 .solutions-section h2 em{font-style:italic}
 .solutions-intro{font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.8;max-width:560px;margin-bottom:52px}
-.solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.solutions-bottom{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+/* FIX: top row 3 cols, bottom row 2 cols — was repeat(3,1fr) for both */
+.solutions-top{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px}
+.solutions-bottom{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .sol-card{background:var(--sand);border:1px solid var(--border);border-radius:10px;padding:32px 28px;display:flex;flex-direction:column;gap:0;min-height:260px;transition:box-shadow .25s var(--ease),transform .25s var(--ease),border-color .25s,background .25s}
 .sol-card:hover{background:#fff;box-shadow:0 10px 40px rgba(22,20,15,.09);transform:translateY(-4px);border-color:rgba(240,108,0,.22)}
 .sol-icon{width:44px;height:44px;background:#fff;border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-bottom:20px;transition:background .25s,border-color .25s}
@@ -171,7 +176,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .sol-title{font-size:.92rem;font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:12px}
 .sol-desc{font-size:.84rem;font-weight:300;color:var(--mid);line-height:1.75;flex:1}
 
-/* ═══ 5. WHY ═══ */
 .why-section{background:#f5f2ed;padding:80px 48px}
 .why-inner{max-width:1200px;margin:0 auto}
 .why-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:48px}
@@ -186,7 +190,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .why-card-title{font-size:.9rem;font-weight:600;color:var(--ink);line-height:1.3}
 .why-card-desc{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.72;flex:1}
 
-/* ═══ 6. REVIEWS ═══ */
 .reviews-section{background:var(--white);padding:80px 48px}
 .reviews-inner{max-width:1200px;margin:0 auto}
 .reviews-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:48px}
@@ -201,7 +204,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .reviewer-name{font-size:.88rem;font-weight:600;color:var(--ink);line-height:1.3}
 .reviewer-role{font-size:.75rem;font-weight:300;color:var(--faint);margin-top:2px}
 
-/* ═══ 7. PROCESS ═══ */
 .process-section{background:var(--ink);padding:80px 48px 0}
 .process-inner{max-width:1200px;margin:0 auto;padding-bottom:72px}
 .process-header-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:56px}
@@ -228,7 +230,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .cta-phone{font-family:var(--sans);font-size:.78rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;white-space:nowrap}
 .cta-phone:hover{color:var(--white)}
 
-/* ═══ 8. CALCULATOR ═══ */
 .calc-section{background:var(--sand);padding:80px 48px}
 .calc-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .calc-section h2{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,2.9rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:20px}
@@ -247,7 +248,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .calc-btn{width:100%;margin-top:16px;font-family:var(--sans);font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--white);border:none;border-radius:4px;padding:15px 20px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .22s;min-height:48px;text-decoration:none}
 .calc-btn:hover{background:var(--orange)}
 
-/* ═══ 9. FAQ ═══ */
 .faq-section{background:var(--white);padding:80px 48px}
 .faq-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;gap:80px;align-items:start}
 .faq-left h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:400;line-height:1.12;color:var(--ink);margin-bottom:20px}
@@ -266,7 +266,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .faq-answer{overflow:hidden;max-height:0;transition:max-height .35s var(--ease)}
 .faq-answer-inner{padding:0 40px 24px 0;font-size:.875rem;font-weight:300;color:var(--mid);line-height:1.8}
 
-/* ═══ 10. PROMISE ═══ */
 .promise-section{background:var(--dark4);padding:80px 48px}
 .promise-inner{max-width:1100px;margin:0 auto}
 .promise-header{text-align:center;margin-bottom:56px}
@@ -285,7 +284,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .promise-card-title{font-size:.9rem;font-weight:600;color:var(--white);line-height:1.3}
 .promise-card-desc{font-size:.82rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.72}
 
-/* ═══ 11. FINAL CTA ═══ */
 .final-cta-section{background:var(--sand);padding:100px 48px 80px;text-align:center}
 .final-cta-inner{max-width:1000px;margin:0 auto}
 .final-sec-label{display:flex;align-items:center;justify-content:center;gap:16px;font-size:.65rem;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);margin-bottom:28px}
@@ -304,26 +302,21 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .call-line{font-size:.82rem;font-weight:300;color:var(--mid)}
 .call-phone{font-family:var(--sans);font-size:.82rem;font-weight:500;color:var(--orange);text-decoration:none;transition:color .2s}
 .call-phone:hover{color:var(--orange2)}
-
-/* Related bar */
 .related-bar{border-top:1px solid rgba(22,20,15,.15);padding:28px 48px;max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .related-label{font-size:.62rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);flex-shrink:0;margin-right:4px}
 .related-links{display:flex;flex-wrap:wrap;gap:8px}
 .related-link{font-family:var(--sans);font-size:.75rem;font-weight:400;color:var(--mid);border:1px solid rgba(22,20,15,.15);border-radius:100px;padding:7px 16px;transition:color .2s,border-color .2s,background .2s;white-space:nowrap;text-decoration:none}
 .related-link:hover{color:var(--ink);border-color:rgba(22,20,15,.3);background:rgba(22,20,15,.04)}
-
-/* Site links */
 .site-links{background:#0e0d0b;padding:24px 48px;border-top:1px solid rgba(255,255,255,.06)}
 .site-links-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px}
 .site-links a{font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;transition:color .2s}
 .site-links a:hover{color:rgba(255,255,255,.70)}
 
-/* ═══ RESPONSIVE ═══ */
 @media(max-width:768px){.hero{align-items:flex-start}.hero-content{padding:72px 24px 0;max-width:100%}.hero h1{font-size:clamp(2rem,9vw,3rem)}.hero-sub{font-size:.88rem;max-width:100%}.hero-actions{flex-wrap:wrap;gap:14px}.btn-hero-primary{width:100%;justify-content:center}}
 @media(max-width:860px){.about-cols{grid-template-columns:1fr;gap:40px}.about-section{padding:64px 24px}}
 @media(max-width:1024px){.trucks-grid{grid-template-columns:repeat(2,1fr)}.truck-card{border-right:none;border-bottom:1px solid var(--border)}.truck-card:nth-child(odd){border-right:1px solid var(--border)}}
 @media(max-width:640px){.trucks-section{padding:56px 20px}.trucks-header{flex-direction:column;align-items:flex-start}.trucks-grid{grid-template-columns:1fr}.truck-card{border-right:none}}
-@media(max-width:900px){.solutions-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.solutions-top{grid-template-columns:1fr}.solutions-bottom{grid-template-columns:1fr}}
 @media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.reviews-grid{grid-template-columns:1fr;gap:16px}.reviews-section{padding:60px 24px}}
 @media(max-width:900px){.steps{grid-template-columns:1fr;gap:40px}.step{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.07);padding:0 0 40px!important}.step:last-child{border-bottom:none;padding-bottom:0!important}.process-cta-inner{flex-direction:column;align-items:flex-start}.process-cta-actions{align-items:flex-start}}
@@ -335,20 +328,27 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4XH9MNM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <div id="header-placeholder"></div>
 
-<!-- ═══ 1. HERO ═══ -->
+<!-- HERO -->
 <section class="hero" aria-label="Truck Finance Hero">
-  <div class="hero-bg" role="img" aria-label="Commercial truck finance NZ — fundr"></div>
+  <div class="hero-bg" role="img" aria-label="Commercial truck finance NZ — fundr">
+    <img src="https://static.wixstatic.com/media/c80c61_aecc1a017b584a8f8354f56a5e8d89bf~mv2.png" alt="Commercial trucks financed for NZ businesses by fundr" style="width:100%;height:100%;object-fit:cover;display:block">
+  </div>
   <div class="hero-overlay-left" aria-hidden="true"></div>
   <div class="hero-overlay-top" aria-hidden="true"></div>
   <div class="hero-overlay-bottom" aria-hidden="true"></div>
   <div class="hero-content">
+    <nav aria-label="Breadcrumb" style="margin-bottom:14px">
+      <a href="/" style="font-size:.7rem;color:rgba(255,255,255,.4);text-decoration:none">Home</a>
+      <span style="color:rgba(255,255,255,.25);margin:0 6px;font-size:.7rem">/</span>
+      <a href="/vehicle-finance.html" style="font-size:.7rem;color:rgba(255,255,255,.4);text-decoration:none">Vehicle Finance</a>
+      <span style="color:rgba(255,255,255,.25);margin:0 6px;font-size:.7rem">/</span>
+      <span style="font-size:.7rem;color:rgba(255,255,255,.65)">Truck Finance</span>
+    </nav>
     <div class="eyebrow"><span>NZ Commercial Truck Finance</span></div>
-    <h1>Truck Finance —<br><em>Built for Business.</em></h1>
+    <h1>Truck Finance NZ —<br><em>Built for Business.</em></h1>
     <p class="hero-sub">
       <strong>Prime movers, tippers, curtainsiders and more.</strong>
       We arrange commercial truck finance from 15+ NZ lenders — approvals in 24 hours, no deposit required, and no broker fee charged to you.
@@ -360,7 +360,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       <span class="pill" role="listitem">Owner-Operator &amp; Fleet</span>
     </div>
     <div class="hero-actions">
-      <!-- FIX: <a> tags -->
       <a href="/quick-quote.html" class="btn-hero-primary" aria-label="Get my quote in 60 seconds">
         Get My Quote in 60 Seconds
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -379,7 +378,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   </div>
 </section>
 
-<!-- ═══ 2. ABOUT ═══ -->
+<!-- ABOUT -->
 <section class="about-section" aria-label="About fundr truck finance">
   <div class="about-inner">
     <p class="sec-label">About fundr</p>
@@ -392,7 +391,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
           <p>Whether you're an owner-operator buying your first prime mover or a fleet business adding another tipper, Nick has the experience to structure your finance properly — right loan, right term, right rate. No messing around.</p>
           <p>One application, one point of contact, from enquiry through to the keys in your hand.</p>
         </div>
-        <!-- FIX: <a> tag -->
         <a href="/fundr-way.html" class="fundr-way-btn" aria-label="Learn how fundr works">How fundr works &rarr;</a>
       </div>
       <div class="about-stats" aria-label="fundr key stats">
@@ -404,7 +402,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   </div>
 </section>
 
-<!-- ═══ 3. TRUCK TYPES ═══ -->
+<!-- TRUCK TYPES -->
 <section class="trucks-section" aria-label="Truck types we finance">
   <div class="trucks-inner">
     <div class="trucks-header">
@@ -412,30 +410,28 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <p class="sec-label">What We Finance</p>
         <h2>We finance any truck<br><em>your business needs.</em></h2>
       </div>
-      <!-- FIX: <a> tag -->
       <a href="/what-we-finance.html" class="btn-text" aria-label="View all finance products">View All Products &rarr;</a>
     </div>
     <div class="trucks-grid" role="list">
-      <!-- FIX: truck cards as <a> tags pointing to eligibility -->
-      <a href="/check-eligibility-full.html" class="truck-card" role="listitem">
+      <a href="/quick-quote.html" class="truck-card" role="listitem">
         <span class="card-num">01</span>
         <h3>Prime Movers</h3>
         <p>Finance new or used prime movers for owner-operators and fleet businesses. Kenworth, Volvo, Mack, Freightliner and more.</p>
         <span class="finance-btn">Finance This &rarr;</span>
       </a>
-      <a href="/check-eligibility-full.html" class="truck-card" role="listitem">
+      <a href="/quick-quote.html" class="truck-card" role="listitem">
         <span class="card-num">02</span>
         <h3>Tipper Trucks</h3>
         <p>Finance tipper trucks for earthmoving, construction and landscaping businesses. Single, tandem and dog trailer combinations.</p>
         <span class="finance-btn">Finance This &rarr;</span>
       </a>
-      <a href="/check-eligibility-full.html" class="truck-card" role="listitem">
+      <a href="/quick-quote.html" class="truck-card" role="listitem">
         <span class="card-num">03</span>
         <h3>Curtainsiders &amp; Pantechs</h3>
         <p>Finance curtainsiders, pantechs and refrigerated trucks for freight and logistics businesses throughout NZ.</p>
         <span class="finance-btn">Finance This &rarr;</span>
       </a>
-      <a href="/check-eligibility-full.html" class="truck-card" role="listitem">
+      <a href="/quick-quote.html" class="truck-card" role="listitem">
         <span class="card-num">04</span>
         <h3>Crane &amp; Specialist</h3>
         <p>Crane trucks, concrete agitators, tilt trays, pump trucks — if it's a commercial vehicle, we can finance it.</p>
@@ -445,13 +441,14 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   </div>
 </section>
 
-<!-- ═══ 4. SOLUTIONS ═══ -->
+<!-- SOLUTIONS -->
 <section class="solutions-section" aria-label="Truck finance solutions">
   <div class="solutions-inner">
     <p class="sec-label">Finance Solutions</p>
     <h2>Truck financing solutions<br><em>at fundr.</em></h2>
     <p class="solutions-intro">Whether you need to buy, refinance, lease or unlock equity — fundr structures the right solution for your business. One broker, 15+ lenders, all truck types.</p>
-    <div class="solutions-grid" role="list">
+    <!-- FIX: split into top (3) and bottom (2) with correct column counts -->
+    <div class="solutions-top" role="list">
       <article class="sol-card" role="listitem">
         <div class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
         <h3 class="sol-title">Truck Loans</h3>
@@ -467,23 +464,23 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <h3 class="sol-title">Truck Leasing</h3>
         <p class="sol-desc">Access new trucks without the upfront cost of ownership. A flexible, cost-effective solution for smarter asset management and cash preservation.</p>
       </article>
-      <div class="solutions-bottom" role="list">
-        <article class="sol-card" role="listitem">
-          <div class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          <h3 class="sol-title">Equity Release</h3>
-          <p class="sol-desc">Unlock 50–80% of the value of your wholly-owned truck to boost cash flow or fund new assets. Keep your truck working — and your capital working too.</p>
-        </article>
-        <article class="sol-card" role="listitem">
-          <div class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3 class="sol-title">New Business Finance</h3>
-          <p class="sol-desc">Secure funding using a written contract or letter of intent. We build a cash flow forecast to prove serviceability — don't assume you won't qualify.</p>
-        </article>
-      </div>
+    </div>
+    <div class="solutions-bottom" role="list">
+      <article class="sol-card" role="listitem">
+        <div class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3 class="sol-title">Equity Release</h3>
+        <p class="sol-desc">Unlock 50–80% of the value of your wholly-owned truck to boost cash flow or fund new assets. Keep your truck working — and your capital working too.</p>
+      </article>
+      <article class="sol-card" role="listitem">
+        <div class="sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3 class="sol-title">New Business Finance</h3>
+        <p class="sol-desc">Secure funding using a written contract or letter of intent. We build a cash flow forecast to prove serviceability — don't assume you won't qualify.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ═══ 5. WHY FUNDR ═══ -->
+<!-- WHY FUNDR -->
 <section class="why-section" aria-label="Why choose fundr for truck finance">
   <div class="why-inner">
     <p class="sec-label">Why Choose fundr</p>
@@ -513,7 +510,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   </div>
 </section>
 
-<!-- ═══ 6. REVIEWS ═══ -->
+<!-- REVIEWS -->
 <section class="reviews-section" aria-label="Customer reviews">
   <div class="reviews-inner">
     <p class="sec-label">Customer Reviews</p>
@@ -547,13 +544,12 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   </div>
 </section>
 
-<!-- ═══ 7. HOW IT WORKS ═══ -->
+<!-- HOW IT WORKS -->
 <section class="process-section" aria-label="How truck finance works">
   <div class="process-inner">
     <p class="sec-label sec-label--dark">How It Works</p>
     <div class="process-header-row">
       <h2>Three steps to get<br><em>your truck financed.</em></h2>
-      <!-- FIX: <a> tag -->
       <a href="/process.html" class="btn-text-light" aria-label="View full process page">Full Process &rarr;</a>
     </div>
     <div class="steps" role="list">
@@ -584,7 +580,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <p>One application. 15+ lenders. A decision in 24 hours. fundr makes truck finance straightforward for NZ businesses.</p>
       </div>
       <div class="process-cta-actions">
-        <!-- FIX: <a> tags -->
         <a href="/quick-quote.html" class="btn-orange" aria-label="Apply for truck finance">Apply Now — Free, No Obligation &rarr;</a>
         <a href="tel:0211023416" class="cta-phone" aria-label="Call Nick">Or call Nick: 021 102 3416</a>
       </div>
@@ -592,7 +587,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   </div>
 </section>
 
-<!-- ═══ 8. CALCULATOR ═══ -->
+<!-- CALCULATOR -->
 <section class="calc-section" aria-label="Truck finance repayment calculator">
   <div class="calc-inner">
     <div>
@@ -611,20 +606,18 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <span class="calc-result-num" id="c-result">$0</span>
       </div>
       <p class="calc-disclaimer">Figures are estimates only. Actual rates and repayments vary based on your credit profile, lender, and loan structure. No credit check performed.</p>
-      <!-- FIX: <a> tag -->
       <a href="/check-eligibility-full.html" class="calc-btn" aria-label="Get a real truck finance quote">Get a Real Quote &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- ═══ 9. FAQ ═══ -->
+<!-- FAQ -->
 <section class="faq-section" aria-label="Truck finance FAQ">
   <div class="faq-inner">
     <div class="faq-left">
       <p class="sec-label">Common Questions</p>
       <h2>Truck finance<br><em>FAQs.</em></h2>
       <p class="faq-body-copy">Everything NZ operators ask before applying. Still have questions? Call Nick directly.</p>
-      <!-- FIX: <a> tag -->
       <a href="tel:0211023416" class="phone-btn" aria-label="Call Nick on 021 102 3416"><span>📞</span>021 102 3416 &rarr;</a>
     </div>
     <ul class="faq-list" role="list">
@@ -638,7 +631,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       </li>
       <li class="faq-item">
         <button class="faq-trigger" aria-expanded="false"><span class="faq-q">How long does truck finance approval take?</span><span class="faq-icon" aria-hidden="true">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Most applications receive a decision within 24 hours. In many cases we can get same-day approval. Once approved, funds are typically released within 1–2 business days so you can pick up your truck quickly.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">Most applications receive a decision within 24 hours. In many cases we can get same-day approval. Once approved, funds are typically released within 1–2 business days so you can get your truck on the road quickly.</div></div>
       </li>
       <li class="faq-item">
         <button class="faq-trigger" aria-expanded="false"><span class="faq-q">Can I finance a used truck or private sale?</span><span class="faq-icon" aria-hidden="true">+</span></button>
@@ -660,7 +653,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   </div>
 </section>
 
-<!-- ═══ 10. PROMISE ═══ -->
+<!-- PROMISE -->
 <section class="promise-section" aria-label="Our promise to you">
   <div class="promise-inner">
     <div class="promise-header">
@@ -669,47 +662,22 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       <p class="promise-subtitle">No runaround, no endless waiting. Just straight-up truck finance that actually works for your business.</p>
     </div>
     <div class="promise-grid" role="list">
-      <article class="promise-card" role="listitem">
-        <div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3 class="promise-card-title">15+ Lenders on Panel</h3>
-        <p class="promise-card-desc">We shop your deal to the right lender — not just whoever your bank is. More choice means better rates.</p>
-      </article>
-      <article class="promise-card" role="listitem">
-        <div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h3 class="promise-card-title">Decision in 24 Hours</h3>
-        <p class="promise-card-desc">Not three weeks. Most applications get an answer the same day or next business day.</p>
-      </article>
-      <article class="promise-card" role="listitem">
-        <div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
-        <h3 class="promise-card-title">Flexible Loan Terms</h3>
-        <p class="promise-card-desc">Repayments structured around your cash flow — not the lender's preference.</p>
-      </article>
-      <article class="promise-card" role="listitem">
-        <div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <h3 class="promise-card-title">Talk to Nick Directly</h3>
-        <p class="promise-card-desc">You deal with one person — Nick — from enquiry through to settlement. No 0800 numbers.</p>
-      </article>
-      <article class="promise-card" role="listitem">
-        <div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-        <h3 class="promise-card-title">Expert Finance Knowledge</h3>
-        <p class="promise-card-desc">15 years in commercial lending. We know what lenders need and how to get your deal across the line.</p>
-      </article>
-      <article class="promise-card" role="listitem">
-        <div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <h3 class="promise-card-title">Lifetime Support</h3>
-        <p class="promise-card-desc">Ongoing admin and support long after your loan settles. We're here when you need us — always.</p>
-      </article>
+      <article class="promise-card" role="listitem"><div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3 class="promise-card-title">15+ Lenders on Panel</h3><p class="promise-card-desc">We shop your deal to the right lender — not just whoever your bank is. More choice means better rates.</p></article>
+      <article class="promise-card" role="listitem"><div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3 class="promise-card-title">Decision in 24 Hours</h3><p class="promise-card-desc">Not three weeks. Most applications get an answer the same day or next business day.</p></article>
+      <article class="promise-card" role="listitem"><div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div><h3 class="promise-card-title">Flexible Loan Terms</h3><p class="promise-card-desc">Repayments structured around your cash flow — not the lender's preference.</p></article>
+      <article class="promise-card" role="listitem"><div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3 class="promise-card-title">Talk to Nick Directly</h3><p class="promise-card-desc">You deal with one person — Nick — from enquiry through to settlement. No 0800 numbers.</p></article>
+      <article class="promise-card" role="listitem"><div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><h3 class="promise-card-title">Expert Finance Knowledge</h3><p class="promise-card-desc">15 years in commercial lending. We know what lenders need and how to get your deal across the line.</p></article>
+      <article class="promise-card" role="listitem"><div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3 class="promise-card-title">Lifetime Support</h3><p class="promise-card-desc">Ongoing admin and support long after your loan settles. We're here when you need us — always.</p></article>
     </div>
   </div>
 </section>
 
-<!-- ═══ 11. FINAL CTA ═══ -->
+<!-- FINAL CTA -->
 <section class="final-cta-section" aria-label="Apply for truck finance">
   <div class="final-cta-inner">
     <p class="final-sec-label">Get Started</p>
     <h2>Ready to get your<br><em>truck financed?</em></h2>
     <div class="final-cta-buttons">
-      <!-- FIX: <a> tags -->
       <a href="/quick-quote.html" class="btn-final-primary" aria-label="Apply now for truck finance">Apply Now — It's Free &rarr;</a>
       <a href="/check-eligibility-full.html" class="btn-final-ghost" aria-label="Check eligibility">Check eligibility</a>
     </div>
@@ -720,27 +688,25 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     </p>
     <p class="call-line">Prefer to talk first? <a href="tel:0211023416" class="call-phone" aria-label="Call Nick">Call Nick: 021 102 3416</a></p>
   </div>
-
-  <!-- FIX: Related links as <a> tags -->
   <div class="related-bar" aria-label="Related finance pages">
     <span class="related-label">Related</span>
     <nav class="related-links" aria-label="Related finance products">
       <a href="/vehicle-finance.html" class="related-link">Vehicle Finance</a>
       <a href="/ute-finance.html" class="related-link">Ute Finance</a>
+      <a href="/luxury-vehicle-finance.html" class="related-link">Luxury Vehicle Finance</a>
       <a href="/equipment-finance.html" class="related-link">Equipment Finance</a>
       <a href="/business-finance.html" class="related-link">Business Finance</a>
       <a href="/calculator.html" class="related-link">Finance Calculator</a>
-      <a href="/fundr-way.html" class="related-link">How fundr Works</a>
     </nav>
   </div>
 </section>
 
-<!-- FIX: Crawlable site-links nav -->
 <nav class="site-links" aria-label="Site pages">
   <div class="site-links-inner">
     <a href="/">Home</a>
     <a href="/vehicle-finance.html">Vehicle Finance</a>
     <a href="/ute-finance.html">Ute Finance</a>
+    <a href="/luxury-vehicle-finance.html">Luxury Vehicle Finance</a>
     <a href="/equipment-finance.html">Equipment Finance</a>
     <a href="/business-finance.html">Business Finance</a>
     <a href="/fundr-way.html">How fundr Works</a>
@@ -753,7 +719,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 </nav>
 
 <script>
-/* Calculator */
 function calcRepay(){
   const amt=parseFloat(document.getElementById('c-amount').value)||0;
   const months=parseInt(document.getElementById('c-term').value)||48;
@@ -765,7 +730,6 @@ function calcRepay(){
 ['c-amount','c-term','c-rate'].forEach(id=>document.getElementById(id).addEventListener('input',calcRepay));
 calcRepay();
 
-/* FAQ Accordion */
 document.querySelectorAll('.faq-trigger').forEach(trigger=>{
   trigger.addEventListener('click',()=>{
     const item=trigger.closest('.faq-item');
@@ -776,11 +740,7 @@ document.querySelectorAll('.faq-trigger').forEach(trigger=>{
       i.querySelector('.faq-trigger').setAttribute('aria-expanded','false');
       i.querySelector('.faq-answer').style.maxHeight='0';
     });
-    if(!isOpen){
-      item.classList.add('open');
-      trigger.setAttribute('aria-expanded','true');
-      answer.style.maxHeight=answer.scrollHeight+'px';
-    }
+    if(!isOpen){item.classList.add('open');trigger.setAttribute('aria-expanded','true');answer.style.maxHeight=answer.scrollHeight+'px';}
   });
 });
 </script>
