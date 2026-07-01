@@ -9,12 +9,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ute Finance NZ | Ranger, Hilux & D-Max | fundr</title>
-<meta name="description" content="fundr arranges business ute finance across NZ — Ranger, Hilux, D-Max and more. 15+ lenders, no broker fee, approvals in 24 hours. Apply in 3 minutes.">
+<title>Ute Finance NZ | 15+ Lenders, 24hr Approval | fundr</title>
+<meta name="description" content="fundr arranges business ute finance across NZ — any make or model. 15+ lenders, no broker fee, approvals in 24 hours. Apply in 3 minutes.">
 <link rel="canonical" href="https://www.fundr.co.nz/ute-finance.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ute Finance NZ | Ranger, Hilux & D-Max | fundr">
-<meta property="og:description" content="fundr arranges business ute finance across NZ — Ranger, Hilux, D-Max and more. 15+ lenders, no broker fee, approvals in 24 hours.">
+<meta property="og:title" content="Ute Finance NZ | 15+ Lenders, 24hr Approval | fundr">
+<meta property="og:description" content="fundr arranges business ute finance across NZ — any make or model. 15+ lenders, no broker fee, approvals in 24 hours.">
 <meta property="og:url" content="https://www.fundr.co.nz/ute-finance.html">
 <meta property="og:site_name" content="fundr">
 <meta property="og:image" content="https://www.fundr.co.nz/images/og-image.jpg">
@@ -29,6 +29,13 @@
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://www.fundr.co.nz/"},
+        {"@type":"ListItem","position":2,"name":"Ute Finance","item":"https://www.fundr.co.nz/ute-finance.html"}
+      ]
+    },
     {
       "@type": "FinancialService",
       "name": "fundr — Ute Finance NZ",
@@ -81,7 +88,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .sec-label--dark{color:rgba(255,255,255,.35)}
 .sec-label--center{justify-content:center;color:rgba(255,255,255,.3)}
 
-/* HERO */
 .hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;padding:80px 0 60px;overflow:hidden;background:var(--dark2)}
 .hero-bg{position:absolute;inset:0;background-image:url('https://static.wixstatic.com/media/c80c61_51b3adf6ffca4b3691940ca7c2a05a62~mv2.jpg');background-size:cover;background-position:center}
 .hero-bg::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
@@ -118,7 +124,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .hero-content>*:nth-child(3){animation-delay:.28s}.hero-content>*:nth-child(4){animation-delay:.38s}
 .hero-content>*:nth-child(5){animation-delay:.48s}.hero-content>*:nth-child(6){animation-delay:.58s}
 
-/* ABOUT */
 .about-section{background:var(--white);padding:80px 48px}
 .about-inner{max-width:1200px;margin:0 auto}
 .about-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink)}
@@ -133,7 +138,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .stat-num{font-family:var(--serif);font-size:2.8rem;font-weight:400;font-style:italic;color:var(--ink);line-height:1}
 .stat-label{font-size:.68rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:6px}
 
-/* MODELS */
 .models-section{background:var(--sand);padding:80px 48px}
 .models-inner{max-width:1200px;margin:0 auto}
 .models-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;gap:24px}
@@ -151,7 +155,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .finance-btn{font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid transparent;padding:0 0 1px;transition:color .2s,border-color .2s;margin-top:auto}
 .model-card:hover .finance-btn{color:var(--orange);border-color:var(--orange)}
 
-/* WHY */
 .why-section{background:#f5f2ed;padding:80px 48px}
 .why-inner{max-width:1200px;margin:0 auto}
 .why-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:48px}
@@ -166,7 +169,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .why-card-title{font-size:.9rem;font-weight:600;color:var(--ink);line-height:1.3}
 .why-card-desc{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.72;flex:1}
 
-/* REVIEWS */
 .reviews-section{background:var(--white);padding:80px 48px}
 .reviews-inner{max-width:1200px;margin:0 auto}
 .reviews-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:48px}
@@ -181,7 +183,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .reviewer-name{font-size:.88rem;font-weight:600;color:var(--ink);line-height:1.3}
 .reviewer-role{font-size:.75rem;font-weight:300;color:var(--faint);margin-top:2px}
 
-/* PROCESS */
 .process-section{background:var(--ink);padding:80px 48px 0}
 .process-inner{max-width:1200px;margin:0 auto;padding-bottom:72px}
 .process-header-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:56px}
@@ -208,7 +209,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .cta-phone{font-family:var(--sans);font-size:.78rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;white-space:nowrap}
 .cta-phone:hover{color:var(--white)}
 
-/* CALCULATOR */
 .calc-section{background:var(--sand);padding:80px 48px}
 .calc-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .calc-section h2{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,2.9rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:20px}
@@ -227,7 +227,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .calc-btn{width:100%;margin-top:16px;font-family:var(--sans);font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--white);border:none;border-radius:4px;padding:15px 20px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .22s;min-height:48px;text-decoration:none}
 .calc-btn:hover{background:var(--orange)}
 
-/* FAQ */
 .faq-section{background:var(--white);padding:80px 48px}
 .faq-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;gap:80px;align-items:start}
 .faq-left h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:400;line-height:1.12;color:var(--ink);margin-bottom:20px}
@@ -246,7 +245,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .faq-answer{overflow:hidden;max-height:0;transition:max-height .35s var(--ease)}
 .faq-answer-inner{padding:0 40px 24px 0;font-size:.875rem;font-weight:300;color:var(--mid);line-height:1.8}
 
-/* PROMISE */
 .promise-section{background:var(--dark4);padding:80px 48px}
 .promise-inner{max-width:1100px;margin:0 auto}
 .promise-header{text-align:center;margin-bottom:56px}
@@ -263,7 +261,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .promise-card-title{font-size:.9rem;font-weight:600;color:var(--white);line-height:1.3}
 .promise-card-desc{font-size:.82rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.72}
 
-/* FINAL CTA */
 .final-cta-section{background:var(--sand);padding:100px 48px 80px;text-align:center}
 .final-cta-inner{max-width:1000px;margin:0 auto}
 .final-sec-label{display:flex;align-items:center;justify-content:center;gap:16px;font-size:.65rem;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);margin-bottom:28px}
@@ -292,7 +289,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .site-links a{font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;transition:color .2s}
 .site-links a:hover{color:rgba(255,255,255,.70)}
 
-/* RESPONSIVE */
 @media(max-width:768px){.hero{align-items:flex-start;padding:40px 0;min-height:auto}.hero-content{padding:24px 20px 0;max-width:100%}.hero h1{font-size:clamp(1.9rem,8.5vw,2.8rem)}.hero-sub{font-size:.84rem;max-width:100%}.hero-actions{flex-direction:column;align-items:flex-start;gap:12px}.btn-hero-primary{width:100%;justify-content:center}}
 @media(max-width:768px){.about-section{padding:60px 24px}.about-cols{grid-template-columns:1fr;gap:40px}.about-stats{grid-template-columns:1fr 1fr;gap:28px 20px}}
 @media(max-width:1024px){.models-grid{grid-template-columns:repeat(2,1fr)}.model-card{border-right:none;border-bottom:1px solid #d8d4cc}.model-card:nth-child(odd){border-right:1px solid #d8d4cc}}
@@ -310,18 +306,23 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4XH9MNM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <div id="header-placeholder"></div>
 
 <!-- HERO -->
 <section class="hero" aria-label="Ute Finance Hero">
-  <div class="hero-bg" role="img" aria-label="Business ute finance NZ — fundr"></div>
+  <div class="hero-bg" role="img" aria-label="Business ute finance NZ — fundr">
+    <img src="https://static.wixstatic.com/media/c80c61_51b3adf6ffca4b3691940ca7c2a05a62~mv2.jpg" alt="Business ute financed for an NZ tradie by fundr" style="width:100%;height:100%;object-fit:cover;display:block">
+  </div>
   <div class="hero-overlay-left" aria-hidden="true"></div>
   <div class="hero-overlay-top" aria-hidden="true"></div>
   <div class="hero-overlay-bottom" aria-hidden="true"></div>
   <div class="hero-content">
+    <nav aria-label="Breadcrumb" style="margin-bottom:14px">
+      <a href="/" style="font-size:.7rem;color:rgba(255,255,255,.4);text-decoration:none">Home</a>
+      <span style="color:rgba(255,255,255,.25);margin:0 6px;font-size:.7rem">/</span>
+      <span style="font-size:.7rem;color:rgba(255,255,255,.65)">Ute Finance</span>
+    </nav>
     <div class="eyebrow"><span>NZ Business Ute Finance</span></div>
     <h1>Ute Finance —<br><em>Built for Tradies.</em></h1>
     <p class="hero-sub"><strong>Ranger, Hilux, D-Max and more.</strong> We arrange business ute finance from 15+ NZ lenders — approvals in 24 hours, no deposit required, and no broker fee charged to you.</p>
@@ -382,13 +383,13 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       <a href="/what-we-finance.html" class="btn-text" aria-label="View all finance products">View All Products &rarr;</a>
     </div>
     <div class="models-grid" role="list">
-      <a href="/check-eligibility-full.html" class="model-card" role="listitem">
+      <a href="/ford-ranger-finance.html" class="model-card" role="listitem">
         <span class="model-num">01</span>
         <h3>Ford Ranger</h3>
         <p>NZ's best-selling work ute. Finance new or used Rangers — XL, XLS, XLT, Wildtrak and Raptor variants.</p>
         <span class="finance-btn">Finance This &rarr;</span>
       </a>
-      <a href="/check-eligibility-full.html" class="model-card" role="listitem">
+      <a href="/toyota-hilux-finance.html" class="model-card" role="listitem">
         <span class="model-num">02</span>
         <h3>Toyota Hilux</h3>
         <p>The trade favourite. SR, SR5 and Rogue — single, extra and double cab. New dealer stock or used.</p>
@@ -641,12 +642,12 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   <div class="related-bar" aria-label="Related finance pages">
     <span class="related-label">Related</span>
     <nav class="related-links" aria-label="Related finance products">
+      <a href="/ford-ranger-finance.html" class="related-link">Ford Ranger Finance</a>
+      <a href="/toyota-hilux-finance.html" class="related-link">Toyota Hilux Finance</a>
       <a href="/vehicle-finance.html" class="related-link">Vehicle Finance</a>
       <a href="/truck-finance.html" class="related-link">Truck Finance</a>
       <a href="/equipment-finance.html" class="related-link">Equipment Finance</a>
-      <a href="/business-finance.html" class="related-link">Business Finance</a>
       <a href="/calculator.html" class="related-link">Finance Calculator</a>
-      <a href="/fundr-way.html" class="related-link">How fundr Works</a>
     </nav>
   </div>
 </section>
