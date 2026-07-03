@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>fundr | Vehicle, Truck & Equipment Finance NZ — Business Finance Broker</title>
-<meta name="description" content="fundr is NZ's specialist asset finance broker. Vehicle, ute, truck and equipment finance from 15+ lenders. Approvals in 24 hours. Talk to Nick directly.">
+<meta name="description" content="fundr is NZ's specialist asset finance broker. Vehicle, ute, truck, equipment and luxury prestige vehicle finance from 15+ lenders. Approvals in 24 hours. Talk to Nick directly.">
 <link rel="canonical" href="https://www.fundr.co.nz/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="fundr | Vehicle, Truck & Equipment Finance NZ">
@@ -23,10 +23,10 @@
   "name": "fundr",
   "description": "NZ specialist asset finance broker for vehicle, ute, truck and equipment finance. 15+ lenders, 24hr approvals.",
   "url": "https://www.fundr.co.nz",
-  "telephone": "+6421102341",
+  "telephone": "+64211023416",
   "email": "nick@fundr.co.nz",
   "areaServed": "NZ",
-  "serviceType": ["Vehicle Finance", "Ute Finance", "Truck Finance", "Equipment Finance", "Business Finance"],
+  "serviceType": ["Vehicle Finance", "Ute Finance", "Truck Finance", "Equipment Finance", "Business Finance", "Luxury Vehicle Finance"],
   "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "bestRating": "5", "worstRating": "1", "ratingCount": "15", "reviewCount": "15"},
   "review": [
     {"@type":"Review","author":{"@type":"Person","name":"Jason M."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"fundr sorted our excavator finance in under 24 hours. Nick knew exactly what lenders to approach — we'd been knocked back by our bank but fundr got it done."},
@@ -103,11 +103,11 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 }
 .hero-bg{
   position:absolute;inset:0;
-  background-image:url(/images/hero-vehicles.png);
-  background-size:72%;
-  background-position:right 2% center;
-  background-repeat:no-repeat;
-  background-color:var(--dark);
+  background-image:url(/images/hero-showroom.jpg);
+  
+  
+  
+  background-size:cover;background-position:center;background-repeat:no-repeat;
 }
 .hero-grain{position:absolute;inset:0;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:150px;}
 .hero-accent{position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
@@ -189,7 +189,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 .section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;gap:24px}
 .products-inner h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.12;color:var(--ink)}
 .products-inner h2 em{font-style:italic}
-.products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
 .product-card{
   background:var(--sand2);padding:44px 40px;
   display:flex;flex-direction:column;gap:16px;
@@ -365,13 +365,13 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
    RESPONSIVE
    ============================================= */
 @media(max-width:900px){.hero-inner{padding:60px 24px 120px}}
-@media(max-width:600px){.hero-bg{background-size:130%;background-position:center bottom 5%}.hero-overlay{background:linear-gradient(to bottom,rgba(14,13,11,1.0) 0%,rgba(14,13,11,1.0) 45%,rgba(14,13,11,.70) 65%,rgba(14,13,11,.20) 100%)}.hero-overlay-img,.hero-overlay-bottom{display:none}.hero h1{font-size:clamp(2.2rem,9vw,3rem)}.hero-inner{padding:48px 20px 120px}.hero-stats{grid-template-columns:1fr 1fr 1fr}.hero-stat{padding:14px 16px}.hero-stat-num{font-size:1.3rem}.btn-hero{width:100%;justify-content:center}.pill-row{gap:6px}}
+@media(max-width:600px){.hero-overlay{background:linear-gradient(to bottom,rgba(14,13,11,.97) 0%,rgba(14,13,11,.88) 35%,rgba(14,13,11,.65) 58%,rgba(14,13,11,.55) 100%)}.hero-overlay-img{display:none}.hero-overlay-bottom{display:none}.hero h1{font-size:clamp(2.2rem,9vw,3rem)}.hero-bg{background-position:center 35%}.hero-inner{padding:48px 20px 120px}.hero-sub{font-size:1rem;font-weight:400}.hero-stats{grid-template-columns:1fr 1fr 1fr}.hero-stat{padding:14px 16px}.hero-stat-num{font-size:1.3rem}.btn-hero{width:100%;justify-content:center}.pill-row{gap:6px}}
 @media(max-width:380px){.hero-inner{padding:44px 16px 110px}.hero h1{font-size:2rem}}
 @media(max-width:900px){.intro-inner{grid-template-columns:1fr;gap:48px}.intro-section{padding:72px 24px}}
 @media(max-width:600px){.intro-section{padding:56px 20px}.intro-stat-num{font-size:2.6rem;min-width:80px}.intro-inner{gap:40px}}
-@media(max-width:900px){.products-section{padding:72px 24px}.products-grid{grid-template-columns:1fr}.section-header{flex-direction:column;align-items:flex-start;gap:12px}}
+@media(max-width:1024px){.products-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:900px){.products-section{padding:72px 24px}.products-grid{grid-template-columns:1fr}.section-header{flex-direction:column;align-items:flex-start;gap:12px}}
 @media(max-width:600px){.products-section{padding:56px 20px}.product-card{padding:32px 24px}}
-@media(max-width:1024px){.who-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1200px){.who-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:768px){.who-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.who-section{padding:72px 24px}.who-header{flex-direction:column;align-items:flex-start;gap:12px}.who-header p{text-align:left;max-width:100%}}
 @media(max-width:600px){.who-section{padding:56px 20px}.who-grid{grid-template-columns:1fr}.who-card{padding:28px 22px}}
 @media(max-width:900px){.process-section{padding:72px 24px}.process-steps{grid-template-columns:1fr;gap:36px}.process-steps::before{display:none}.process-step{padding:0}.process-cta{flex-direction:column;align-items:flex-start}}
@@ -417,12 +417,13 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
     <h1>Vehicle, Truck &amp; Equipment<br>Finance NZ —<br><em>built for business.</em></h1>
     <p class="hero-sub">
       <strong>One broker. 15+ NZ lenders. Approvals in 24 hours.</strong>
-      Cars, utes, trucks, equipment and business assets — fundr finds the right lender for your deal, fast.
+      Cars, utes, trucks, equipment, luxury vehicles and business assets — fundr finds the right lender for your deal, fast.
     </p>
     <div class="pill-row" role="list" aria-label="Key benefits">
       <span class="pill" role="listitem">24hr Approvals</span>
       <span class="pill" role="listitem">15+ NZ Lenders</span>
       <span class="pill" role="listitem">No Credit Impact to Apply</span>
+      <span class="pill" role="listitem">Luxury &amp; Prestige Vehicles</span>
     </div>
     <div class="hero-actions">
       <!-- FIX: <a> tag so Google can crawl this link -->
@@ -500,7 +501,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
     <div class="section-header">
       <div>
         <p class="sec-label">What We Finance</p>
-        <h2>Vehicle, truck &amp; equipment<br>finance for <em>every Kiwi business.</em></h2>
+        <h2>Vehicle, truck, equipment<br>&amp; <em>luxury finance NZ.</em></h2>
       </div>
       <!-- FIX: <a> tag -->
       <a href="/what-we-finance.html" class="text-link" aria-label="View all finance products">View All &rarr;</a>
@@ -534,6 +535,13 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <p>Any business equipment — construction, medical, kitchen, gym, warehouse and more. Any industry, any asset.</p>
         <div class="product-tags"><span class="product-tag">Construction</span><span class="product-tag">Medical</span><span class="product-tag">Hospitality</span></div>
         <span class="product-arrow">Explore Equipment Finance &rarr;</span>
+      </a>
+      <a href="/luxury-vehicle-finance.html" class="product-card" role="listitem">
+        <span class="product-num">05</span>
+        <h3>Luxury &amp; Prestige</h3>
+        <p>Range Rover, BMW, Mercedes-Benz and Porsche. Director and business-owner vehicles with balloon payment structuring and specialist lenders.</p>
+        <div class="product-tags"><span class="product-tag">Range Rover</span><span class="product-tag">BMW</span><span class="product-tag">Balloon Options</span></div>
+        <span class="product-arrow">Explore Luxury Finance &rarr;</span>
       </a>
     </div>
   </div>
@@ -573,6 +581,12 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <h3>Business Owners</h3>
         <p>From hospitality fitouts to gym equipment to manufacturing machinery, we help businesses across industries get the tools they need without the bank runaround.</p>
         <span class="who-card-link">Business finance &rarr;</span>
+      </a>
+      <a href="/luxury-vehicle-finance.html" class="who-card" role="listitem">
+        <div class="who-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 17H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2z"/><circle cx="7.5" cy="17" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/><path d="M5 9l2-4h10l2 4"/></svg></div>
+        <h3>Directors &amp; Executives</h3>
+        <p>A Range Rover or BMW for a director isn't a luxury — it's a business asset. We structure prestige vehicle finance with balloon payments so repayments work for your cash flow.</p>
+        <span class="who-card-link">Luxury vehicle finance &rarr;</span>
       </a>
     </div>
   </div>
@@ -788,6 +802,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 <nav aria-label="Site links" style="background:#0e0d0b;padding:24px 48px;border-top:1px solid rgba(255,255,255,.06);">
   <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;">
     <a href="/vehicle-finance.html" style="font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;">Vehicle Finance</a>
+    <a href="/luxury-vehicle-finance.html" style="font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;">Luxury Vehicle Finance</a>
     <a href="/ute-finance.html" style="font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;">Ute Finance</a>
     <a href="/truck-finance.html" style="font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;">Truck Finance</a>
     <a href="/equipment-finance.html" style="font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;">Equipment Finance</a>
