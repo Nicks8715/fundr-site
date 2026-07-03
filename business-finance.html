@@ -29,26 +29,30 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "name": "Business Finance NZ | fundr",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://www.fundr.co.nz/"},
+        {"@type":"ListItem","position":2,"name":"Business Finance","item":"https://www.fundr.co.nz/business-finance.html"}
+      ]
+    },
+    {
+      "@type": "FinancialService",
+      "name": "fundr — Business Finance NZ",
+      "description": "Business finance broker for NZ companies. Working capital, business loans, acquisition finance, equipment finance and cashflow solutions. 15+ lenders, 24hr decisions.",
       "url": "https://www.fundr.co.nz/business-finance.html",
-      "description": "fundr arranges working capital, business loans, equipment finance and business acquisition funding for NZ businesses.",
-      "provider": {
-        "@type": "FinancialService",
-        "name": "fundr",
-        "url": "https://www.fundr.co.nz",
-        "areaServed": "NZ",
-        "serviceType": ["Working Capital","Business Loans","Business Acquisition Finance","Equipment Finance","Cashflow Finance"]
-      }
+      "telephone": "+64211023416",
+      "areaServed": "NZ",
+      "serviceType": ["Working Capital","Business Loans","Business Acquisition Finance","Equipment Finance","Cashflow Finance","Growth Finance","Unsecured Business Loans"]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type":"Question","name":"How can I get a business loan in NZ?","acceptedAnswer":{"@type":"Answer","text":"Start by understanding why you need the loan and how much you need. fundr assesses your situation and matches you to the right lender and structure."}},
+        {"@type":"Question","name":"How can I get a business loan in NZ?","acceptedAnswer":{"@type":"Answer","text":"Start by understanding why you need the loan and how much you need. fundr assesses your situation and matches you to the right lender and structure. Secured loans offer higher limits and lower rates; unsecured loans are faster but typically cost more."}},
         {"@type":"Question","name":"Is it hard to get a business loan in NZ?","acceptedAnswer":{"@type":"Answer","text":"Approval depends on your financial position, trading history, and whether you have collateral. Non-bank lenders offer more flexible approvals than banks. If the numbers stack up, getting approved through fundr is usually straightforward."}},
-        {"@type":"Question","name":"Can I get a business loan without collateral?","acceptedAnswer":{"@type":"Answer","text":"Yes — unsecured business loans are available in NZ. Equipment finance uses the asset itself as security, keeping rates low without extra collateral."}},
-        {"@type":"Question","name":"What is a secured business loan?","acceptedAnswer":{"@type":"Answer","text":"A secured loan uses an existing asset as collateral. They typically offer higher limits and lower interest rates."}},
-        {"@type":"Question","name":"What is an unsecured business loan?","acceptedAnswer":{"@type":"Answer","text":"An unsecured business loan doesn't require collateral, though most lenders will ask for a personal guarantee. They're faster to arrange."}}
+        {"@type":"Question","name":"Can I get a business loan without collateral?","acceptedAnswer":{"@type":"Answer","text":"Yes — unsecured business loans are available in NZ. Equipment finance uses the asset itself as security, keeping rates low without extra collateral required."}},
+        {"@type":"Question","name":"What is a secured business loan?","acceptedAnswer":{"@type":"Answer","text":"A secured loan uses an existing asset — such as property, a vehicle, or business equipment — as collateral. This reduces the lender's risk, which usually means higher borrowing limits and lower interest rates for you."}},
+        {"@type":"Question","name":"What is an unsecured business loan?","acceptedAnswer":{"@type":"Answer","text":"An unsecured business loan doesn't require collateral, though most lenders will ask for a personal guarantee. Unsecured loans are faster to arrange and suited to businesses without significant assets to pledge."}},
+        {"@type":"Question","name":"How does business acquisition finance work?","acceptedAnswer":{"@type":"Answer","text":"Buying a business typically requires multiple layers of finance — a business loan for goodwill, equipment finance for physical assets, and sometimes debtor finance for receivables. fundr structures the full package and identifies the right lenders for each component."}}
       ]
     }
   ]
@@ -107,7 +111,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 .product-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 .product-card:hover{background:var(--sand)}
 .product-card:hover::after{transform:scaleX(1)}
-.product-card-icon{font-size:1.8rem;margin-bottom:4px}
+.product-card-icon{width:44px;height:44px;background:#f5f2ed;border:1px solid rgba(22,20,15,.09);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:4px;flex-shrink:0;transition:background .25s,border-color .25s}.product-card:hover .product-card-icon{background:rgba(240,108,0,.08);border-color:rgba(240,108,0,.2)}.product-card-icon svg{width:18px;height:18px;stroke:var(--mid);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}.product-card:hover .product-card-icon svg{stroke:var(--orange)}
 .product-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--ink);line-height:1.2}
 .product-card p{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.78;flex:1}
 .product-card-link{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-top:8px;transition:gap .2s}
@@ -189,7 +193,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 /* RESPONSIVE */
 @media(max-width:1024px){.product-grid{grid-template-columns:1fr 1fr}.promise-grid{grid-template-columns:1fr 1fr}.products-header{grid-template-columns:1fr;gap:24px}.faq-inner{grid-template-columns:1fr;gap:40px}}
 @media(max-width:900px){.hero{padding:72px 24px 64px}.hero-inner{grid-template-columns:1fr;gap:44px}.hero-stats{display:grid;grid-template-columns:1fr 1fr}.hero-stat{padding:20px 22px;flex-direction:column;align-items:flex-start;gap:6px}.hero-stat-num{font-size:2rem;min-width:unset}.products{padding:72px 24px}.acquisition{padding:72px 24px}.acquisition-inner{grid-template-columns:1fr;gap:48px}.promise{padding:72px 24px}.faq{padding:72px 24px}.cta{padding:64px 24px}.cta-inner{grid-template-columns:1fr;gap:28px}.cta-btns{flex-direction:row;flex-wrap:wrap}.site-links{padding:20px 24px}}
-@media(max-width:600px){.hero{padding:56px 20px 52px}.hero h1{font-size:clamp(2rem,8.5vw,2.8rem)}.hero-stats{grid-template-columns:1fr 1fr}.hero-stat{padding:16px 14px}.hero-stat-num{font-size:1.8rem}.products{padding:56px 20px}.product-grid{grid-template-columns:1fr}.acquisition{padding:56px 20px}.promise{padding:56px 20px}.promise-grid{grid-template-columns:1fr}.faq{padding:56px 20px}.cta{padding:52px 20px}.cta-btns{flex-direction:column;width:100%}.btn-white,.btn-outline-white{width:100%;justify-content:center}.site-links{padding:16px 20px}}
+@media(max-width:600px){.hero-desc{font-size:1rem;font-weight:400}.hero{padding:56px 20px 52px}.hero h1{font-size:clamp(2rem,8.5vw,2.8rem)}.hero-stats{grid-template-columns:1fr 1fr}.hero-stat{padding:16px 14px}.hero-stat-num{font-size:1.8rem}.products{padding:56px 20px}.product-grid{grid-template-columns:1fr}.acquisition{padding:56px 20px}.promise{padding:56px 20px}.promise-grid{grid-template-columns:1fr}.faq{padding:56px 20px}.cta{padding:52px 20px}.cta-btns{flex-direction:column;width:100%}.btn-white,.btn-outline-white{width:100%;justify-content:center}.site-links{padding:16px 20px}}
 @media(max-width:380px){.hero{padding:44px 16px 40px}.products{padding:44px 16px}.acquisition{padding:44px 16px}.promise{padding:44px 16px}.faq{padding:44px 16px}.cta{padding:40px 16px}}
 </style>
 </head>
@@ -206,12 +210,17 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-inner">
     <div>
+      <nav aria-label="Breadcrumb" style="margin-bottom:14px">
+        <a href="/" style="font-size:.7rem;color:rgba(255,255,255,.4);text-decoration:none">Home</a>
+        <span style="color:rgba(255,255,255,.25);margin:0 6px;font-size:.7rem">/</span>
+        <span style="font-size:.7rem;color:rgba(255,255,255,.65)">Business Finance</span>
+      </nav>
       <p class="sec-label light">Business Finance</p>
       <h1>Funding to grow<br>your NZ<br><em>business.</em></h1>
       <p class="hero-desc"><strong>fundr arranges business finance for Kiwi companies</strong> — from working capital and cashflow solutions to full business acquisition funding. Independent broker, 15+ lenders, decisions fast.</p>
       <div class="hero-actions">
         <!-- FIX: <a> tags -->
-        <a href="/apply.html" class="btn-primary" aria-label="Apply for business finance">Get My Options &rarr;</a>
+        <a href="/quick-quote.html" class="btn-primary" aria-label="Get my quote in 60 seconds">Get My Quote in 60 Seconds &rarr;</a>
         <a href="/calculator.html" class="btn-ghost" aria-label="Calculate repayments">Calculate repayments &rarr;</a>
       </div>
     </div>
@@ -236,38 +245,38 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
     </div>
     <div class="product-grid" role="list">
       <!-- FIX: onclick article → <a> block -->
-      <a href="/check-eligibility-full.html" class="product-card" role="listitem">
-        <span class="product-card-icon" aria-hidden="true">💼</span>
+      <a href="/quick-quote.html" class="product-card" role="listitem">
+        <span class="product-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></span>
         <h3>Working Capital</h3>
         <p>Need cash to cover day-to-day operations, bridge a gap between invoices, or take on a bigger contract? Working capital finance gives your business the breathing room to operate and grow without the wait.</p>
         <span class="product-card-link">Enquire now &rarr;</span>
       </a>
       <a href="/equipment-finance.html" class="product-card" role="listitem">
-        <span class="product-card-icon" aria-hidden="true">⚙️</span>
+        <span class="product-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
         <h3>Equipment Finance</h3>
         <p>Finance the tools, plant and machinery your business runs on — without tying up working capital. Equipment finance uses the asset itself as security, keeping rates competitive and the application straightforward.</p>
         <span class="product-card-link">Learn more &rarr;</span>
       </a>
       <a href="/what-we-finance.html" class="product-card" role="listitem">
-        <span class="product-card-icon" aria-hidden="true">🏢</span>
+        <span class="product-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
         <h3>Business Acquisition</h3>
         <p>Buying an existing business? Acquisition finance is complex — it often involves multiple funding layers including business loans, equipment finance and debtor finance. fundr structures the whole package.</p>
         <span class="product-card-link">Learn more &rarr;</span>
       </a>
-      <a href="/check-eligibility-full.html" class="product-card" role="listitem">
-        <span class="product-card-icon" aria-hidden="true">📈</span>
+      <a href="/quick-quote.html" class="product-card" role="listitem">
+        <span class="product-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
         <h3>Growth Finance</h3>
         <p>Ready to scale? Whether you're opening a second location, hiring staff, investing in stock or launching a new product line — fundr can structure the funding to support your next move.</p>
         <span class="product-card-link">Enquire now &rarr;</span>
       </a>
-      <a href="/check-eligibility-full.html" class="product-card" role="listitem">
-        <span class="product-card-icon" aria-hidden="true">🔄</span>
+      <a href="/quick-quote.html" class="product-card" role="listitem">
+        <span class="product-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4-4.64 4.36A9 9 0 0 1 3.51 15"/></svg></span>
         <h3>Cashflow Finance</h3>
         <p>Invoice finance and debtor solutions that let you access the money you're already owed — without waiting 30, 60 or 90 days. Keep operations moving while your customers pay on their terms.</p>
         <span class="product-card-link">Enquire now &rarr;</span>
       </a>
-      <a href="/check-eligibility-full.html" class="product-card" role="listitem">
-        <span class="product-card-icon" aria-hidden="true">🏦</span>
+      <a href="/quick-quote.html" class="product-card" role="listitem">
+        <span class="product-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
         <h3>Unsecured Business Loans</h3>
         <p>No property or assets to pledge as security? Unsecured business loans are available through non-bank lenders in our panel — faster approvals, flexible criteria, and no collateral required.</p>
         <span class="product-card-link">Enquire now &rarr;</span>
@@ -287,7 +296,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <p>fundr has experience across NZ business acquisitions of all sizes. We know which lenders have appetite for acquisition deals, how to present the opportunity, and how to structure finance packages that give you the best possible chance of getting the deal across the line.</p>
       </div>
       <!-- FIX: <a> tag -->
-      <a href="/check-eligibility-full.html" class="btn-acq" aria-label="Discuss business acquisition finance">Talk to Nick &rarr;</a>
+      <a href="/quick-quote.html" class="btn-acq" aria-label="Discuss business acquisition finance">Talk to Nick &rarr;</a>
     </div>
     <div class="acq-checklist" aria-label="What fundr does for business acquisitions">
       <div class="acq-check"><div class="acq-check-tick" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><div class="acq-check-text"><strong>Multi-lender deal structuring</strong><span>We combine products across multiple lenders to fund the full acquisition</span></div></div>
@@ -364,7 +373,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
     </div>
     <div class="cta-btns">
       <!-- FIX: <a> tags -->
-      <a href="/apply.html" class="btn-white" aria-label="Apply for business finance">Get My Options &rarr;</a>
+      <a href="/quick-quote.html" class="btn-white" aria-label="Get my quote in 60 seconds">Get My Quote in 60 Seconds &rarr;</a>
       <a href="tel:0211023416" class="btn-outline-white" aria-label="Call Nick">Call Nick — 021 102 3416</a>
     </div>
   </div>
@@ -375,6 +384,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
   <div class="site-links-inner">
     <a href="/">Home</a>
     <a href="/vehicle-finance.html">Vehicle Finance</a>
+    <a href="/luxury-vehicle-finance.html">Luxury Vehicle Finance</a>
     <a href="/ute-finance.html">Ute Finance</a>
     <a href="/truck-finance.html">Truck Finance</a>
     <a href="/equipment-finance.html">Equipment Finance</a>
