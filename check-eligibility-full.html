@@ -35,17 +35,24 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Check Finance Eligibility | fundr NZ",
-  "url": "https://www.fundr.co.nz/check-eligibility-full.html",
-  "description": "Check if your NZ business qualifies for asset finance. fundr works with 15+ lenders for vehicle, truck, ute and equipment finance.",
-  "provider": {
-    "@type": "FinancialService",
-    "name": "fundr",
-    "url": "https://www.fundr.co.nz",
-    "areaServed": "NZ",
-    "serviceType": ["Vehicle Finance","Ute Finance","Truck Finance","Equipment Finance","Business Finance"]
-  }
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://www.fundr.co.nz/"},
+        {"@type":"ListItem","position":2,"name":"Check Eligibility","item":"https://www.fundr.co.nz/check-eligibility-full.html"}
+      ]
+    },
+    {
+      "@type": "FinancialService",
+      "name": "fundr — Asset Finance Broker NZ",
+      "description": "Check if your NZ business qualifies for asset finance. fundr works with 15+ lenders for vehicle, ute, truck, luxury vehicle, equipment and business finance. 24hr response.",
+      "url": "https://www.fundr.co.nz/check-eligibility-full.html",
+      "telephone": "+64211023416",
+      "areaServed": "NZ",
+      "serviceType": ["Vehicle Finance","Ute Finance","Truck Finance","Luxury Vehicle Finance","Equipment Finance","Business Finance"]
+    }
+  ]
 }
 </script>
 
@@ -82,7 +89,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 /* ═══ 1. HERO ═══ */
 .hero{background:var(--dark);padding:96px 48px 80px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
-.hero-bg{position:absolute;inset:0;background-image:url('Tractor_and_Digger.jpeg');background-size:cover;background-position:center 40%;opacity:.55}
+.hero-bg{position:absolute;inset:0;background-image:url('/images/Tractor_and_Digger.jpeg');background-size:cover;background-position:center 40%;opacity:.55}
 .hero-gradient{position:absolute;inset:0;background:linear-gradient(105deg,var(--dark) 0%,var(--dark) 28%,rgba(14,13,11,.70) 48%,rgba(14,13,11,.10) 100%)}
 .hero-grain{position:absolute;inset:0;opacity:.035;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:150px}
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
@@ -307,6 +314,11 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
   </a>
   <div class="hero-inner">
     <div>
+      <nav aria-label="Breadcrumb" style="margin-bottom:14px">
+        <a href="/" style="font-size:.7rem;color:rgba(255,255,255,.4);text-decoration:none">Home</a>
+        <span style="color:rgba(255,255,255,.25);margin:0 6px;font-size:.7rem">/</span>
+        <span style="font-size:.7rem;color:rgba(255,255,255,.65)">Check Eligibility</span>
+      </nav>
       <p class="sec-label light">Check Eligibility</p>
       <h1>Find out if you<br>qualify for asset<br><em>finance — fast.</em></h1>
       <p class="hero-desc"><strong>No credit check. No obligation.</strong> Vehicles, trucks, utes, diggers, trailers, machinery and more — fundr arranges finance from 15+ NZ lenders with approvals typically within 24 hours.</p>
@@ -400,6 +412,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
         <p style="font-size:.75rem;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);font-weight:500;">What we finance</p>
         <div style="display:flex;flex-wrap:wrap;gap:10px">
           <a href="/vehicle-finance.html" style="font-size:.80rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;transition:color .2s,border-color .2s">Vehicle Finance</a>
+          <a href="/luxury-vehicle-finance.html" style="font-size:.80rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;transition:color .2s,border-color .2s">Luxury Vehicle Finance</a>
           <a href="/ute-finance.html" style="font-size:.80rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;transition:color .2s,border-color .2s">Ute Finance</a>
           <a href="/truck-finance.html" style="font-size:.80rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;transition:color .2s,border-color .2s">Truck Finance</a>
           <a href="/equipment-finance.html" style="font-size:.80rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1px;transition:color .2s,border-color .2s">Equipment Finance</a>
@@ -517,6 +530,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
               <option value="" disabled selected>Select an option</option>
               <option value="Vehicle">Vehicle (car, SUV)</option>
               <option value="Ute">Ute (Hilux, Ranger, BT-50 etc)</option>
+              <option value="Luxury Vehicle">Luxury / Prestige Vehicle (Range Rover, BMW, Mercedes etc)</option>
               <option value="Truck">Truck / Heavy Vehicle</option>
               <option value="Equipment">Equipment / Machinery</option>
               <option value="Business Finance">Business Finance / Working Capital</option>
@@ -595,6 +609,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
   <div class="site-links-inner">
     <a href="/">Home</a>
     <a href="/vehicle-finance.html">Vehicle Finance</a>
+    <a href="/luxury-vehicle-finance.html">Luxury Vehicle Finance</a>
     <a href="/ute-finance.html">Ute Finance</a>
     <a href="/truck-finance.html">Truck Finance</a>
     <a href="/equipment-finance.html">Equipment Finance</a>
@@ -640,6 +655,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
               <option value="" disabled selected>Select an option</option>
               <option value="Vehicle">Vehicle (car, SUV)</option>
               <option value="Ute">Ute (Hilux, Ranger, BT-50 etc)</option>
+              <option value="Luxury Vehicle">Luxury / Prestige Vehicle (Range Rover, BMW, Mercedes etc)</option>
               <option value="Truck">Truck / Heavy Vehicle</option>
               <option value="Equipment">Equipment / Machinery</option>
               <option value="Business Finance">Business Finance / Working Capital</option>
