@@ -320,25 +320,6 @@ input.error,select.error,textarea.error{border-color:#d94040}
 
       <!-- STEP 4 -->
       <div class="step" id="step-4">
-        <div class="step-title">Supporting Documents</div>
-        <div class="step-subtitle">Used only to assess your application — uploaded securely</div>
-        <div class="field-group">
-          <label>Driver Licence — front &amp; back <span class="req">*</span></label>
-          <input type="file" id="doc-licence" accept="image/*,application/pdf" multiple>
-        </div>
-        <div class="field-group">
-          <label>Bank Statements (last 3 months)</label>
-          <input type="file" id="doc-bank" accept="image/*,application/pdf" multiple>
-        </div>
-        <div class="field-group">
-          <label>Payslips (last 2)</label>
-          <input type="file" id="doc-payslip" accept="image/*,application/pdf" multiple>
-        </div>
-        <div id="upload-status" style="font-size:13px;color:var(--ink-60);margin-top:4px"></div>
-      </div>
-
-      <!-- STEP 5 -->
-      <div class="step" id="step-5">
         <div class="step-title">Authorisation & Acknowledgement</div>
         <div class="step-subtitle">Please read carefully and confirm before submitting</div>
         <div class="consent-block">
@@ -405,15 +386,11 @@ input.error,select.error,textarea.error{border-color:#d94040}
   </div>
 </nav>
 
-<script type="module">
-import { upload } from 'https://esm.sh/@vercel/blob@0.27.1/client';
-window.__blobUpload = upload;
-</script>
 <script>
 let currentStep=1,loanType='business';
-const totalSteps=5;
-const stepNames=['Finance Details','Business Details','Director Details','Documents','Authorisation'];
-const stepNamesPersonal=['Finance Details','Your Details','Contact Details','Documents','Authorisation'];
+const totalSteps=4;
+const stepNames=['Finance Details','Business Details','Director Details','Authorisation'];
+const stepNamesPersonal=['Finance Details','Your Details','Contact Details','Authorisation'];
 const applicationId=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():('app-'+Date.now()+'-'+Math.random().toString(36).slice(2));
 document.getElementById('application-id-field').value=applicationId;
 
@@ -449,38 +426,7 @@ function updateStepUI(){
   document.getElementById('btn-next').classList.toggle('hidden',currentStep===totalSteps);
   document.getElementById('btn-submit').classList.toggle('hidden',currentStep!==totalSteps);
 }
-async function uploadAllDocuments(){
-  const groups=[['doc-licence','licence'],['doc-bank','bank-statement'],['doc-payslip','payslip']];
-  const statusEl=document.getElementById('upload-status');
-  let count=0;
-  for(const [inputId,label] of groups){
-    const input=document.getElementById(inputId);
-    for(const file of input.files){
-      statusEl.textContent=`Uploading ${file.name}…`;
-      const pathname=`applications/${applicationId}/${label}-${Date.now()}-${file.name}`;
-      await window.__blobUpload(pathname,file,{access:'public',handleUploadUrl:'/api/upload-token'});
-      count++;
-    }
-  }
-  statusEl.textContent=count?`${count} document(s) uploaded.`:'';
-}
-async function nextStep(){
-  if(currentStep===4){
-    const licenceInput=document.getElementById('doc-licence');
-    if(!licenceInput.files.length){alert('Please upload your driver licence before continuing.');return;}
-    const btn=document.getElementById('btn-next');
-    btn.disabled=true;btn.textContent='Uploading…';
-    try{
-      await uploadAllDocuments();
-    }catch(err){
-      document.getElementById('upload-status').textContent='Upload failed — please try again.';
-      btn.disabled=false;btn.textContent='Continue';
-      return;
-    }
-    btn.disabled=false;btn.textContent='Continue';
-  }
-  if(currentStep<totalSteps){currentStep++;showStep(currentStep);updateStepUI();toggleTypeFields();}
-}
+function nextStep(){if(currentStep<totalSteps){currentStep++;showStep(currentStep);updateStepUI();toggleTypeFields();}}
 function prevStep(){if(currentStep>1){currentStep--;showStep(currentStep);updateStepUI();toggleTypeFields();}}
 function showStep(n){
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
