@@ -431,6 +431,7 @@ function prevStep(){if(currentStep>1){currentStep--;showStep(currentStep);update
 function showStep(n){
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
   document.getElementById(`step-${n}`).classList.add('active');
+  if(n===totalSteps)resizeSigCanvas();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function updatePropertyFields(){
@@ -458,14 +459,13 @@ let sigDrawing=false,sigHasContent=false;
 function resizeSigCanvas(){
   const ratio=Math.max(window.devicePixelRatio||1,1);
   const rect=sigCanvas.getBoundingClientRect();
-  const prev=sigHasContent?sigCanvas.toDataURL():null;
+  if(rect.width===0)return;
   sigCanvas.width=rect.width*ratio;
   sigCanvas.height=150*ratio;
   sigCtx.scale(ratio,ratio);
   sigCtx.lineWidth=2;sigCtx.lineCap='round';sigCtx.strokeStyle='#16140f';
 }
 window.addEventListener('resize',resizeSigCanvas);
-resizeSigCanvas();
 function sigPos(e){
   const rect=sigCanvas.getBoundingClientRect();
   const t=e.touches&&e.touches[0]?e.touches[0]:e;
