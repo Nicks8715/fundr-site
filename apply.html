@@ -178,6 +178,7 @@ input.error,select.error,textarea.error{border-color:#d94040}
     <form id="loan-form" action="https://formspree.io/f/xnjbveny" method="POST">
       <input type="hidden" name="_subject" id="form-subject" value="New Business Finance Application — fundr">
       <input type="hidden" name="application_type" id="application-type-field" value="Business">
+      <input type="hidden" name="application_id" id="application-id-field" value="">
 
       <!-- STEP 1 -->
       <div class="step active" id="step-1">
@@ -275,15 +276,29 @@ input.error,select.error,textarea.error{border-color:#d94040}
           <div class="field-group"><label>Date of Birth <span class="req">*</span></label><input type="date" name="director_dob"></div>
           <div class="field-group"><label>Residential Address <span class="req">*</span></label><input type="text" name="director_address" placeholder="Street, suburb, city, postcode"></div>
           <div class="field-row">
-            <div class="field-group"><label>Property Ownership <span class="req">*</span></label><select name="property_ownership"><option value="" disabled selected>Select</option><option>Own (mortgage-free)</option><option>Own (with mortgage)</option><option>Renting</option><option>Board / Other</option></select></div>
-            <div class="field-group"><label>Are You a Director? <span class="req">*</span></label><select name="is_director"><option value="" disabled selected>Select</option><option>Yes</option><option>No</option></select></div>
+            <div class="field-group"><label>Property Ownership <span class="req">*</span></label><select name="property_ownership" id="property_ownership" onchange="updatePropertyFields()"><option value="" disabled selected>Select</option><option value="own-free">Own (mortgage-free)</option><option value="own-mortgage">Own (with mortgage)</option><option value="renting">Renting</option><option value="board">Board / Other</option></select></div>
+            <div class="field-group"><label>Time at This Address</label><select name="time_at_address"><option value="" disabled selected>Select</option><option>Less than 1 year</option><option>1–2 years</option><option>2–5 years</option><option>5–10 years</option><option>10+ years</option></select></div>
           </div>
+          <div id="property-owner-fields" class="hidden">
+            <div class="field-group"><label>Estimated Property Value</label><div class="amount-display"><span class="amount-prefix">$</span><input type="number" name="property_value" placeholder="650,000"></div></div>
+            <div id="property-mortgage-fields" class="hidden">
+              <div class="field-row">
+                <div class="field-group"><label>Outstanding Mortgage Balance</label><div class="amount-display"><span class="amount-prefix">$</span><input type="number" name="mortgage_balance" placeholder="380,000"></div></div>
+                <div class="field-group"><label>Monthly Repayment</label><div class="amount-display"><span class="amount-prefix">$</span><input type="number" name="mortgage_repayment" placeholder="2,400"></div></div>
+              </div>
+            </div>
+            <p style="font-size:12px;color:var(--ink-60);margin-top:-8px;margin-bottom:16px">Approximate figures are fine — just give us a ballpark.</p>
+          </div>
+          <div id="property-rent-fields" class="hidden">
+            <div class="field-group"><label>Monthly Rent / Board Amount</label><div class="amount-display"><span class="amount-prefix">$</span><input type="number" name="monthly_rent" placeholder="1,800"></div></div>
+          </div>
+          <div class="field-group"><label>Are You a Director? <span class="req">*</span></label><select name="is_director"><option value="" disabled selected>Select</option><option>Yes</option><option>No</option></select></div>
           <div class="field-divider">Driver Licence</div>
           <div class="field-row">
-            <div class="field-group"><label>Licence Number</label><input type="text" name="director_licence_number" placeholder="AB123456"></div>
-            <div class="field-group"><label>Version Number</label><input type="text" name="director_licence_version" placeholder="123" maxlength="3"></div>
+            <div class="field-group"><label>Licence Number <span class="req">*</span></label><input type="text" name="director_licence_number" placeholder="AB123456" required></div>
+            <div class="field-group"><label>Version Number <span class="req">*</span></label><input type="text" name="director_licence_version" placeholder="123" maxlength="3" required></div>
           </div>
-          <div class="field-group"><label>Licence Expiry Date</label><input type="date" name="director_licence_expiry"></div>
+          <div class="field-group"><label>Licence Expiry Date <span class="req">*</span></label><input type="date" name="director_licence_expiry" required></div>
         </div>
         <div id="personal-fields-3" class="hidden">
           <div class="step-title">Contact Details</div>
@@ -305,25 +320,56 @@ input.error,select.error,textarea.error{border-color:#d94040}
 
       <!-- STEP 4 -->
       <div class="step" id="step-4">
+        <div class="step-title">Supporting Documents</div>
+        <div class="step-subtitle">Used only to assess your application — uploaded securely</div>
+        <div class="field-group">
+          <label>Driver Licence — front &amp; back <span class="req">*</span></label>
+          <input type="file" id="doc-licence" accept="image/*,application/pdf" multiple>
+        </div>
+        <div class="field-group">
+          <label>Bank Statements (last 3 months)</label>
+          <input type="file" id="doc-bank" accept="image/*,application/pdf" multiple>
+        </div>
+        <div class="field-group">
+          <label>Payslips (last 2)</label>
+          <input type="file" id="doc-payslip" accept="image/*,application/pdf" multiple>
+        </div>
+        <div id="upload-status" style="font-size:13px;color:var(--ink-60);margin-top:4px"></div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="step" id="step-5">
         <div class="step-title">Authorisation & Acknowledgement</div>
         <div class="step-subtitle">Please read carefully and confirm before submitting</div>
         <div class="consent-block">
-          <p><strong>To Fundr Limited Trading As fundr:</strong></p>
-          <p><strong>I confirm:</strong></p>
-          <p>The information in this application is true and accurate. I will notify fundr if there are any changes to the information provided in this application. I have not withheld any information about our financial position that may impact the lender's decision regarding this application.</p>
-          <p><strong>Privacy & Information Sharing:</strong></p>
-          <p>fundr will collect and use the information provided in this application to assess whether to grant me/us the loan. fundr will hold the information securely and will only use and share it as permitted herein and/or by the Fundr privacy policy. To view our privacy policy, please visit <a href="/privacy.html">fundr.co.nz/privacy</a>.</p>
-          <p>fundr, any lender, and related parties may collect information, including personal information about me/us, from any persons they deem appropriate, including but not limited to credit reporting agencies, banks, and employers.</p>
-          <p><strong>Credit Checks & Agency Authorisation:</strong></p>
-          <p>I/We authorise fundr and any lender or related organisation to collect personal information about me/us from any persons they consider appropriate including, but not limited to, credit reporting agencies, banks and employers. I/We authorise fundr and the lender to make all necessary enquiries regarding my/our credit rating.</p>
-          <p><strong>Commission Disclosure:</strong></p>
-          <p>Unless agreed in writing, fundr will not charge me for the service but may receive a commission from any lender providing the loan or any other service.</p>
+          <p><strong>I Confirm</strong></p>
+          <p>The information in this application is true, accurate and complete. I will notify fundr of any changes. I have not withheld any information about our financial position that may impact the lender's decision.</p>
+          <p><strong>I/We Acknowledge</strong></p>
+          <p>fundr will collect and use the information in this application to assess our loan request, held securely and used in accordance with the Fundr Privacy Policy. fundr and its related organisations may collect, use and share personal information for purposes including verifying identity, assessing credit eligibility, managing our account, complying with applicable laws, and conducting market research. Information may be shared with financiers, credit reporting and debt collection agencies, guarantors, and relevant authorities.</p>
+          <p><strong>Credit Reporting – Equifax Authorisation</strong></p>
+          <p>I/We authorise fundr and any lender to use the services of Equifax (<a href="https://www.equifax.co.nz" target="_blank">www.equifax.co.nz</a>) and other credit reporting agencies in connection with this application and the ongoing provision of credit. Personal information will be provided to Equifax, who will retain it on their systems and use it to provide reporting services. Default information may be disclosed to other Equifax customers. fundr or any lender may use Equifax's services in the future for e-Alert monitoring services.</p>
+          <p><strong>I/We Authorise</strong></p>
+          <p>fundr, any lender and related parties to collect personal information about me/us from credit reporting agencies, banks, employers and other appropriate sources for the purposes of assessing this application and administering any credit provided.</p>
+          <p>Unless agreed in writing, fundr will not charge me for its service but may receive a commission from any lender.</p>
+          <p><strong>I Certify That I Am Not</strong></p>
+          <p>An undischarged bankrupt, nor subject to a proposal, summary judgment order, or no asset procedure under Part 5 of the Insolvency Act 2006. I/We have not committed offences under the Companies Act 1993, Financial Reporting Act 2013, Receivership Act 1993, Crimes Act 1961, Financial Markets Conduct Act 2013, or Takeovers Act 1993.</p>
         </div>
         <div class="consent-confirm">
           <label class="checkbox-wrap">
             <input type="checkbox" name="consent_all" id="consent-all" required>
             <span>I confirm I have read and understood the authorisation above in full, and agree to all sections.</span>
           </label>
+        </div>
+        <div class="field-group">
+          <label>Signature <span class="req">*</span></label>
+          <div style="border:1.5px solid var(--ink-20);border-radius:var(--radius);background:#fff;overflow:hidden">
+            <canvas id="sig-pad" style="width:100%;height:150px;display:block;cursor:crosshair;touch-action:none"></canvas>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
+            <span style="font-size:12px;color:var(--ink-60)">Sign using your mouse or finger</span>
+            <button type="button" onclick="clearSignature()" style="font-size:12px;color:var(--orange);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0">Clear</button>
+          </div>
+          <div class="field-error" id="signature-error">Please sign before submitting</div>
         </div>
       </div>
 
@@ -359,11 +405,17 @@ input.error,select.error,textarea.error{border-color:#d94040}
   </div>
 </nav>
 
+<script type="module">
+import { upload } from 'https://esm.sh/@vercel/blob@0.27.1/client';
+window.__blobUpload = upload;
+</script>
 <script>
 let currentStep=1,loanType='business';
-const totalSteps=4;
-const stepNames=['Finance Details','Business Details','Director Details','Authorisation'];
-const stepNamesPersonal=['Finance Details','Your Details','Contact Details','Authorisation'];
+const totalSteps=5;
+const stepNames=['Finance Details','Business Details','Director Details','Documents','Authorisation'];
+const stepNamesPersonal=['Finance Details','Your Details','Contact Details','Documents','Authorisation'];
+const applicationId=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():('app-'+Date.now()+'-'+Math.random().toString(36).slice(2));
+document.getElementById('application-id-field').value=applicationId;
 
 function setType(type){
   loanType=type;
@@ -397,26 +449,110 @@ function updateStepUI(){
   document.getElementById('btn-next').classList.toggle('hidden',currentStep===totalSteps);
   document.getElementById('btn-submit').classList.toggle('hidden',currentStep!==totalSteps);
 }
-function nextStep(){if(currentStep<totalSteps){currentStep++;showStep(currentStep);updateStepUI();toggleTypeFields();}}
+async function uploadAllDocuments(){
+  const groups=[['doc-licence','licence'],['doc-bank','bank-statement'],['doc-payslip','payslip']];
+  const statusEl=document.getElementById('upload-status');
+  let count=0;
+  for(const [inputId,label] of groups){
+    const input=document.getElementById(inputId);
+    for(const file of input.files){
+      statusEl.textContent=`Uploading ${file.name}…`;
+      const pathname=`applications/${applicationId}/${label}-${Date.now()}-${file.name}`;
+      await window.__blobUpload(pathname,file,{access:'public',handleUploadUrl:'/api/upload-token'});
+      count++;
+    }
+  }
+  statusEl.textContent=count?`${count} document(s) uploaded.`:'';
+}
+async function nextStep(){
+  if(currentStep===4){
+    const licenceInput=document.getElementById('doc-licence');
+    if(!licenceInput.files.length){alert('Please upload your driver licence before continuing.');return;}
+    const btn=document.getElementById('btn-next');
+    btn.disabled=true;btn.textContent='Uploading…';
+    try{
+      await uploadAllDocuments();
+    }catch(err){
+      document.getElementById('upload-status').textContent='Upload failed — please try again.';
+      btn.disabled=false;btn.textContent='Continue';
+      return;
+    }
+    btn.disabled=false;btn.textContent='Continue';
+  }
+  if(currentStep<totalSteps){currentStep++;showStep(currentStep);updateStepUI();toggleTypeFields();}
+}
 function prevStep(){if(currentStep>1){currentStep--;showStep(currentStep);updateStepUI();toggleTypeFields();}}
 function showStep(n){
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
   document.getElementById(`step-${n}`).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
+function updatePropertyFields(){
+  const val=document.getElementById('property_ownership').value;
+  const ownerFields=document.getElementById('property-owner-fields');
+  const mortgageFields=document.getElementById('property-mortgage-fields');
+  const rentFields=document.getElementById('property-rent-fields');
+  ownerFields.classList.add('hidden');
+  mortgageFields.classList.add('hidden');
+  rentFields.classList.add('hidden');
+  if(val==='own-free'){ownerFields.classList.remove('hidden');}
+  else if(val==='own-mortgage'){ownerFields.classList.remove('hidden');mortgageFields.classList.remove('hidden');}
+  else if(val==='renting'||val==='board'){rentFields.classList.remove('hidden');}
+}
 function selectChip(el,fieldId){
   document.querySelectorAll('.chip').forEach(c=>{if(c.closest('.asset-chips')===el.closest('.asset-chips'))c.classList.remove('selected');});
   el.classList.add('selected');
   document.getElementById(`${fieldId}_val`).value=el.textContent.trim();
 }
+
+// Signature pad
+const sigCanvas=document.getElementById('sig-pad');
+const sigCtx=sigCanvas.getContext('2d');
+let sigDrawing=false,sigHasContent=false;
+function resizeSigCanvas(){
+  const ratio=Math.max(window.devicePixelRatio||1,1);
+  const rect=sigCanvas.getBoundingClientRect();
+  const prev=sigHasContent?sigCanvas.toDataURL():null;
+  sigCanvas.width=rect.width*ratio;
+  sigCanvas.height=150*ratio;
+  sigCtx.scale(ratio,ratio);
+  sigCtx.lineWidth=2;sigCtx.lineCap='round';sigCtx.strokeStyle='#16140f';
+}
+window.addEventListener('resize',resizeSigCanvas);
+resizeSigCanvas();
+function sigPos(e){
+  const rect=sigCanvas.getBoundingClientRect();
+  const t=e.touches&&e.touches[0]?e.touches[0]:e;
+  return {x:t.clientX-rect.left,y:t.clientY-rect.top};
+}
+function sigStart(e){sigDrawing=true;sigHasContent=true;const p=sigPos(e);sigCtx.beginPath();sigCtx.moveTo(p.x,p.y);e.preventDefault();}
+function sigMove(e){if(!sigDrawing)return;const p=sigPos(e);sigCtx.lineTo(p.x,p.y);sigCtx.stroke();e.preventDefault();}
+function sigEnd(){sigDrawing=false;}
+sigCanvas.addEventListener('mousedown',sigStart);
+sigCanvas.addEventListener('mousemove',sigMove);
+sigCanvas.addEventListener('mouseup',sigEnd);
+sigCanvas.addEventListener('mouseleave',sigEnd);
+sigCanvas.addEventListener('touchstart',sigStart,{passive:false});
+sigCanvas.addEventListener('touchmove',sigMove,{passive:false});
+sigCanvas.addEventListener('touchend',sigEnd);
+function clearSignature(){sigCtx.clearRect(0,0,sigCanvas.width,sigCanvas.height);sigHasContent=false;}
+
 document.getElementById('loan-form').addEventListener('submit',async function(e){
   e.preventDefault();
   if(!document.getElementById('consent-all').checked){alert('Please read and confirm the authorisation before submitting.');return;}
+  if(!sigHasContent){alert('Please sign before submitting.');return;}
   const btn=document.getElementById('btn-submit');
   btn.textContent='Submitting…';btn.disabled=true;
   try{
     const res=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
     if(res.ok){
+      try{
+        const jsonData={};
+        new FormData(this).forEach((value,key)=>{jsonData[key]=value;});
+        jsonData.consent_all=document.getElementById('consent-all').checked;
+        jsonData.signature=sigCanvas.toDataURL('image/png');
+        fetch('/api/submit-application',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(jsonData)}).catch(()=>{});
+      }catch(_){}
       document.getElementById('loan-form').style.display='none';
       document.getElementById('form-nav').style.display='none';
       document.querySelector('.type-toggle').style.display='none';
