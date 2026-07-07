@@ -114,7 +114,13 @@ async function buildPdf(d, meta) {
     row('Name', `${d.director_first_name || ''} ${d.director_last_name || ''}`.trim());
     row('Date of birth', d.director_dob);
     row('Residential address', d.director_address);
-    row('Property ownership', d.property_ownership);
+    const ownershipLabels={'own-free':'Own (mortgage-free)','own-mortgage':'Own (with mortgage)','renting':'Renting','board':'Board / Other'};
+    row('Property ownership', ownershipLabels[d.property_ownership] || d.property_ownership);
+    row('Time at address', d.time_at_address);
+    row('Estimated property value', d.property_value ? `$${d.property_value}` : '');
+    row('Outstanding mortgage balance', d.mortgage_balance ? `$${d.mortgage_balance}` : '');
+    row('Monthly mortgage repayment', d.mortgage_repayment ? `$${d.mortgage_repayment}` : '');
+    row('Monthly rent / board', d.monthly_rent ? `$${d.monthly_rent}` : '');
     row('Is director?', d.is_director);
     row('Licence number', d.director_licence_number);
     row('Licence version', d.director_licence_version);
