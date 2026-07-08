@@ -221,6 +221,20 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 .form-success h3{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--ink);margin-bottom:10px}
 .form-success p{font-size:.84rem;font-weight:300;color:var(--mid);line-height:1.75}
 
+/* Multi-step quiz additions */
+.quiz-progress{margin-bottom:26px}
+.quiz-progress-track{height:3px;background:var(--border);border-radius:2px;overflow:hidden;margin-bottom:10px}
+.quiz-progress-fill{height:100%;background:var(--orange);width:33.33%;transition:width .35s var(--ease)}
+.quiz-step-label{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.quiz-step{display:none}
+.quiz-step.active{display:block}
+.form-group label .opt{font-weight:300;text-transform:none;letter-spacing:0;color:var(--faint);font-size:.72rem}
+.field-hint{font-size:.7rem;font-weight:300;color:var(--faint);line-height:1.5;margin-top:2px}
+.quiz-nav{display:flex;gap:10px;margin-top:8px}
+.quiz-nav .btn-submit{margin-top:0}
+.btn-quiz-back{flex:0 0 auto;background:transparent;color:var(--mid);border:1px solid var(--border);border-radius:2px;padding:15px 22px;font-family:var(--sans);font-size:.78rem;font-weight:500;cursor:pointer;transition:background .2s}
+.btn-quiz-back:hover{background:var(--sand)}
+
 /* ═══ 6. CTA ═══ */
 .cta{background:var(--orange);padding:80px 48px;position:relative;overflow:hidden}
 .cta::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;opacity:.06;pointer-events:none}
@@ -511,72 +525,98 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
       <h3>Check my eligibility</h3>
       <p>Takes under 2 minutes. <strong>No credit check at this stage.</strong></p>
       <div class="form-fields">
+        <div class="quiz-progress">
+          <div class="quiz-progress-track"><div class="quiz-progress-fill" id="qProgressFill"></div></div>
+          <p class="quiz-step-label" id="qStepLabel">Step 1 of 3</p>
+        </div>
         <form id="eligibilityForm">
-          <div class="form-row">
-            <div class="form-group"><label for="firstName">First Name</label><input type="text" id="firstName" name="firstName" placeholder="John" required></div>
-            <div class="form-group"><label for="lastName">Last Name</label><input type="text" id="lastName" name="lastName" placeholder="Smith" required></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label for="company">Company Name</label><input type="text" id="company" name="company" placeholder="Smith Contracting Ltd" required></div>
-            <div class="form-group"><label for="nzbn">NZBN (optional)</label><input type="text" id="nzbn" name="nzbn" placeholder="9429000000000"></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="john@business.co.nz" required></div>
-            <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="021 000 0000" required></div>
-          </div>
-          <div class="form-group">
-            <label for="financeType">What do you want to finance?</label>
-            <select id="financeType" name="financeType" required>
-              <option value="" disabled selected>Select an option</option>
-              <option value="Vehicle">Vehicle (car, SUV)</option>
-              <option value="Ute">Ute (Hilux, Ranger, BT-50 etc)</option>
-              <option value="Luxury Vehicle">Luxury / Prestige Vehicle (Range Rover, BMW, Mercedes etc)</option>
-              <option value="Truck">Truck / Heavy Vehicle</option>
-              <option value="Equipment">Equipment / Machinery</option>
-              <option value="Business Finance">Business Finance / Working Capital</option>
-              <option value="Other">Other — I'll explain below</option>
-            </select>
-          </div>
-          <div class="form-row">
+
+          <div class="quiz-step active" data-step="1">
             <div class="form-group">
-              <label for="amount">Approximate Amount</label>
-              <select id="amount" name="amount">
-                <option value="" disabled selected>Select range</option>
-                <option value="Under $20k">Under $20,000</option>
-                <option value="$20k–$50k">$20,000 – $50,000</option>
-                <option value="$50k–$100k">$50,000 – $100,000</option>
-                <option value="$100k–$250k">$100,000 – $250,000</option>
-                <option value="$250k+">$250,000+</option>
+              <label for="financeType">What do you want to finance?</label>
+              <select id="financeType" name="financeType" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Vehicle">Vehicle (car, SUV)</option>
+                <option value="Ute">Ute (Hilux, Ranger, BT-50 etc)</option>
+                <option value="Luxury Vehicle">Luxury / Prestige Vehicle (Range Rover, BMW, Mercedes etc)</option>
+                <option value="Truck">Truck / Heavy Vehicle</option>
+                <option value="Equipment">Equipment / Machinery</option>
+                <option value="Business Finance">Business Finance / Working Capital</option>
+                <option value="Other">Other — I'll explain below</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="trading">How long trading?</label>
-              <select id="trading" name="trading">
-                <option value="" disabled selected>Select</option>
-                <option value="Start-up / New business">Start-up / New</option>
-                <option value="Less than 1 year">Less than 1 year</option>
-                <option value="1–2 years">1–2 years</option>
-                <option value="2–5 years">2–5 years</option>
-                <option value="5+ years">5+ years</option>
-              </select>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="amount">Approximate Amount</label>
+                <select id="amount" name="amount">
+                  <option value="" disabled selected>Select range</option>
+                  <option value="Under $20k">Under $20,000</option>
+                  <option value="$20k–$50k">$20,000 – $50,000</option>
+                  <option value="$50k–$100k">$50,000 – $100,000</option>
+                  <option value="$100k–$250k">$100,000 – $250,000</option>
+                  <option value="$250k+">$250,000+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="trading">How long trading?</label>
+                <select id="trading" name="trading">
+                  <option value="" disabled selected>Select</option>
+                  <option value="Start-up / New business">Start-up / New</option>
+                  <option value="Less than 1 year">Less than 1 year</option>
+                  <option value="1–2 years">1–2 years</option>
+                  <option value="2–5 years">2–5 years</option>
+                  <option value="5+ years">5+ years</option>
+                </select>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <label for="property">Do you own property?</label>
-            <select id="property" name="property">
-              <option value="" disabled selected>Select</option>
-              <option value="Yes — residential">Yes — residential</option>
-              <option value="Yes — commercial">Yes — commercial</option>
-              <option value="Yes — both">Yes — both</option>
-              <option value="No">No</option>
-              <option value="Prefer not to say">Prefer not to say</option>
-            </select>
+
+          <div class="quiz-step" data-step="2">
+            <div class="form-row">
+              <div class="form-group"><label for="company">Company Name</label><input type="text" id="company" name="company" placeholder="Smith Contracting Ltd" required></div>
+              <div class="form-group"><label for="nzbn">NZBN <span class="opt">(optional)</span></label><input type="text" id="nzbn" name="nzbn" placeholder="9429000000000"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="creditHistory">How would you describe your credit history?</label>
+                <select id="creditHistory" name="Credit history">
+                  <option value="" selected>Prefer not to say yet</option>
+                  <option value="Excellent">Excellent</option>
+                  <option value="Good">Good</option>
+                  <option value="Poor">Poor</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="property">Do you own property?</label>
+                <select id="property" name="property">
+                  <option value="" selected>Prefer not to say yet</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+            </div>
+            <p class="field-hint" style="margin-top:-8px;margin-bottom:14px;">This helps Nick match you with lenders offering the best rates for your situation.</p>
+            <div class="form-group">
+              <label for="message">Anything else we should know? <span class="opt">(optional)</span></label>
+              <textarea id="message" name="message" placeholder="Tell us more about the asset, your business, or any specific requirements..."></textarea>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="message">Anything else we should know? (optional)</label>
-            <textarea id="message" name="message" placeholder="Tell us more about the asset, your business, or any specific requirements..."></textarea>
+
+          <div class="quiz-step" data-step="3">
+            <div class="form-row">
+              <div class="form-group"><label for="firstName">First Name</label><input type="text" id="firstName" name="firstName" placeholder="John" required></div>
+              <div class="form-group"><label for="lastName">Last Name</label><input type="text" id="lastName" name="lastName" placeholder="Smith" required></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="john@business.co.nz" required></div>
+              <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="021 000 0000" required></div>
+            </div>
           </div>
-          <button type="submit" class="btn-submit" id="submitBtn">Check My Eligibility &rarr;</button>
+
+          <div class="quiz-nav">
+            <button type="button" class="btn-quiz-back" id="qBackBtn" style="display:none;">Back</button>
+            <button type="button" class="btn-submit" id="qNextBtn">Continue &rarr;</button>
+          </div>
           <p class="form-disclaimer">By submitting you agree to be contacted by fundr regarding your finance enquiry. No credit check is performed at this stage.</p>
         </form>
       </div>
@@ -636,72 +676,98 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
     </div>
     <div class="modal-body">
       <div id="modalFormFields">
+        <div class="quiz-progress">
+          <div class="quiz-progress-track"><div class="quiz-progress-fill" id="mqProgressFill"></div></div>
+          <p class="quiz-step-label" id="mqStepLabel">Step 1 of 3</p>
+        </div>
         <form id="modalForm">
-          <div class="form-row">
-            <div class="form-group"><label for="m_firstName">First Name</label><input type="text" id="m_firstName" name="firstName" placeholder="John" required></div>
-            <div class="form-group"><label for="m_lastName">Last Name</label><input type="text" id="m_lastName" name="lastName" placeholder="Smith" required></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label for="m_company">Company Name</label><input type="text" id="m_company" name="company" placeholder="Smith Contracting Ltd" required></div>
-            <div class="form-group"><label for="m_nzbn">NZBN (optional)</label><input type="text" id="m_nzbn" name="nzbn" placeholder="9429000000000"></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label for="m_email">Email Address</label><input type="email" id="m_email" name="email" placeholder="john@business.co.nz" required></div>
-            <div class="form-group"><label for="m_phone">Phone Number</label><input type="tel" id="m_phone" name="phone" placeholder="021 000 0000" required></div>
-          </div>
-          <div class="form-group">
-            <label for="m_financeType">What do you want to finance?</label>
-            <select id="m_financeType" name="financeType" required>
-              <option value="" disabled selected>Select an option</option>
-              <option value="Vehicle">Vehicle (car, SUV)</option>
-              <option value="Ute">Ute (Hilux, Ranger, BT-50 etc)</option>
-              <option value="Luxury Vehicle">Luxury / Prestige Vehicle (Range Rover, BMW, Mercedes etc)</option>
-              <option value="Truck">Truck / Heavy Vehicle</option>
-              <option value="Equipment">Equipment / Machinery</option>
-              <option value="Business Finance">Business Finance / Working Capital</option>
-              <option value="Other">Other — I'll explain below</option>
-            </select>
-          </div>
-          <div class="form-row">
+
+          <div class="quiz-step active" data-step="1">
             <div class="form-group">
-              <label for="m_amount">Approximate Amount</label>
-              <select id="m_amount" name="amount">
-                <option value="" disabled selected>Select range</option>
-                <option value="Under $20k">Under $20,000</option>
-                <option value="$20k–$50k">$20,000 – $50,000</option>
-                <option value="$50k–$100k">$50,000 – $100,000</option>
-                <option value="$100k–$250k">$100,000 – $250,000</option>
-                <option value="$250k+">$250,000+</option>
+              <label for="m_financeType">What do you want to finance?</label>
+              <select id="m_financeType" name="financeType" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Vehicle">Vehicle (car, SUV)</option>
+                <option value="Ute">Ute (Hilux, Ranger, BT-50 etc)</option>
+                <option value="Luxury Vehicle">Luxury / Prestige Vehicle (Range Rover, BMW, Mercedes etc)</option>
+                <option value="Truck">Truck / Heavy Vehicle</option>
+                <option value="Equipment">Equipment / Machinery</option>
+                <option value="Business Finance">Business Finance / Working Capital</option>
+                <option value="Other">Other — I'll explain below</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="m_trading">How long trading?</label>
-              <select id="m_trading" name="trading">
-                <option value="" disabled selected>Select</option>
-                <option value="Start-up / New business">Start-up / New</option>
-                <option value="Less than 1 year">Less than 1 year</option>
-                <option value="1–2 years">1–2 years</option>
-                <option value="2–5 years">2–5 years</option>
-                <option value="5+ years">5+ years</option>
-              </select>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="m_amount">Approximate Amount</label>
+                <select id="m_amount" name="amount">
+                  <option value="" disabled selected>Select range</option>
+                  <option value="Under $20k">Under $20,000</option>
+                  <option value="$20k–$50k">$20,000 – $50,000</option>
+                  <option value="$50k–$100k">$50,000 – $100,000</option>
+                  <option value="$100k–$250k">$100,000 – $250,000</option>
+                  <option value="$250k+">$250,000+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="m_trading">How long trading?</label>
+                <select id="m_trading" name="trading">
+                  <option value="" disabled selected>Select</option>
+                  <option value="Start-up / New business">Start-up / New</option>
+                  <option value="Less than 1 year">Less than 1 year</option>
+                  <option value="1–2 years">1–2 years</option>
+                  <option value="2–5 years">2–5 years</option>
+                  <option value="5+ years">5+ years</option>
+                </select>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <label for="m_property">Do you own property?</label>
-            <select id="m_property" name="property">
-              <option value="" disabled selected>Select</option>
-              <option value="Yes — residential">Yes — residential</option>
-              <option value="Yes — commercial">Yes — commercial</option>
-              <option value="Yes — both">Yes — both</option>
-              <option value="No">No</option>
-              <option value="Prefer not to say">Prefer not to say</option>
-            </select>
+
+          <div class="quiz-step" data-step="2">
+            <div class="form-row">
+              <div class="form-group"><label for="m_company">Company Name</label><input type="text" id="m_company" name="company" placeholder="Smith Contracting Ltd" required></div>
+              <div class="form-group"><label for="m_nzbn">NZBN <span class="opt">(optional)</span></label><input type="text" id="m_nzbn" name="nzbn" placeholder="9429000000000"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="m_creditHistory">How would you describe your credit history?</label>
+                <select id="m_creditHistory" name="Credit history">
+                  <option value="" selected>Prefer not to say yet</option>
+                  <option value="Excellent">Excellent</option>
+                  <option value="Good">Good</option>
+                  <option value="Poor">Poor</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="m_property">Do you own property?</label>
+                <select id="m_property" name="property">
+                  <option value="" selected>Prefer not to say yet</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+            </div>
+            <p class="field-hint" style="margin-top:-8px;margin-bottom:14px;">This helps Nick match you with lenders offering the best rates for your situation.</p>
+            <div class="form-group">
+              <label for="m_message">Anything else? <span class="opt">(optional)</span></label>
+              <textarea id="m_message" name="message" placeholder="Tell us more about the asset or your business..."></textarea>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="m_message">Anything else? (optional)</label>
-            <textarea id="m_message" name="message" placeholder="Tell us more about the asset or your business..."></textarea>
+
+          <div class="quiz-step" data-step="3">
+            <div class="form-row">
+              <div class="form-group"><label for="m_firstName">First Name</label><input type="text" id="m_firstName" name="firstName" placeholder="John" required></div>
+              <div class="form-group"><label for="m_lastName">Last Name</label><input type="text" id="m_lastName" name="lastName" placeholder="Smith" required></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label for="m_email">Email Address</label><input type="email" id="m_email" name="email" placeholder="john@business.co.nz" required></div>
+              <div class="form-group"><label for="m_phone">Phone Number</label><input type="tel" id="m_phone" name="phone" placeholder="021 000 0000" required></div>
+            </div>
           </div>
-          <button type="submit" class="btn-submit" id="modalSubmitBtn">Check My Eligibility &rarr;</button>
+
+          <div class="quiz-nav">
+            <button type="button" class="btn-quiz-back" id="mqBackBtn" style="display:none;">Back</button>
+            <button type="button" class="btn-submit" id="mqNextBtn">Continue &rarr;</button>
+          </div>
           <p class="form-disclaimer">By submitting you agree to be contacted by fundr. No credit check at this stage.</p>
         </form>
       </div>
@@ -717,13 +783,48 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 <script>
 const FORMSPREE_ID = 'xnjbveny';
 
-// Main form
-document.getElementById('eligibilityForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const btn = document.getElementById('submitBtn');
-  btn.disabled = true;
-  btn.textContent = 'Submitting...';
-  const formData = new FormData(this);
+// Main form — multi-step
+const eligibilityForm = document.getElementById('eligibilityForm');
+eligibilityForm.addEventListener('submit', e => e.preventDefault()); // block native submit (e.g. Enter key)
+
+const qSteps = [...eligibilityForm.querySelectorAll('.quiz-step')];
+const qProgressFill = document.getElementById('qProgressFill');
+const qStepLabel = document.getElementById('qStepLabel');
+const qNextBtn = document.getElementById('qNextBtn');
+const qBackBtn = document.getElementById('qBackBtn');
+const qTotal = qSteps.length;
+let qCurrent = 1;
+
+function qRender() {
+  qSteps.forEach(s => s.classList.toggle('active', +s.dataset.step === qCurrent));
+  qProgressFill.style.width = (qCurrent / qTotal * 100) + '%';
+  qStepLabel.textContent = `Step ${qCurrent} of ${qTotal}`;
+  qBackBtn.style.display = qCurrent === 1 ? 'none' : 'inline-flex';
+  qNextBtn.textContent = qCurrent === qTotal ? 'Check My Eligibility →' : 'Continue →';
+}
+
+function qValidateStep() {
+  const activeStep = qSteps.find(s => +s.dataset.step === qCurrent);
+  const requiredFields = [...activeStep.querySelectorAll('[required]')];
+  for (const f of requiredFields) {
+    if (!f.checkValidity()) { f.reportValidity(); return false; }
+  }
+  return true;
+}
+
+qNextBtn.addEventListener('click', async () => {
+  if (!qValidateStep()) return;
+
+  if (qCurrent < qTotal) {
+    qCurrent++;
+    qRender();
+    return;
+  }
+
+  // Final step — submit
+  qNextBtn.disabled = true;
+  qNextBtn.textContent = 'Submitting...';
+  const formData = new FormData(eligibilityForm);
   try {
     const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
       method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
@@ -732,16 +833,22 @@ document.getElementById('eligibilityForm').addEventListener('submit', async func
       document.querySelector('.form-fields').classList.add('hide');
       document.getElementById('formSuccess').classList.add('show');
     } else {
-      btn.disabled = false;
-      btn.textContent = 'Check My Eligibility →';
+      qNextBtn.disabled = false;
+      qNextBtn.textContent = 'Check My Eligibility →';
       alert('Something went wrong. Please try again or call Nick on 021 102 3416.');
     }
-  } catch(err) {
-    btn.disabled = false;
-    btn.textContent = 'Check My Eligibility →';
+  } catch (err) {
+    qNextBtn.disabled = false;
+    qNextBtn.textContent = 'Check My Eligibility →';
     alert('Something went wrong. Please try again or call Nick on 021 102 3416.');
   }
 });
+
+qBackBtn.addEventListener('click', () => {
+  if (qCurrent > 1) { qCurrent--; qRender(); }
+});
+
+qRender();
 
 // Modal
 function openModal() {
@@ -759,13 +866,47 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
 });
 
-// Modal form
-document.getElementById('modalForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const btn = document.getElementById('modalSubmitBtn');
-  btn.disabled = true;
-  btn.textContent = 'Submitting...';
-  const formData = new FormData(this);
+// Modal form — multi-step
+const modalForm = document.getElementById('modalForm');
+modalForm.addEventListener('submit', e => e.preventDefault());
+
+const mqSteps = [...modalForm.querySelectorAll('.quiz-step')];
+const mqProgressFill = document.getElementById('mqProgressFill');
+const mqStepLabel = document.getElementById('mqStepLabel');
+const mqNextBtn = document.getElementById('mqNextBtn');
+const mqBackBtn = document.getElementById('mqBackBtn');
+const mqTotal = mqSteps.length;
+let mqCurrent = 1;
+
+function mqRender() {
+  mqSteps.forEach(s => s.classList.toggle('active', +s.dataset.step === mqCurrent));
+  mqProgressFill.style.width = (mqCurrent / mqTotal * 100) + '%';
+  mqStepLabel.textContent = `Step ${mqCurrent} of ${mqTotal}`;
+  mqBackBtn.style.display = mqCurrent === 1 ? 'none' : 'inline-flex';
+  mqNextBtn.textContent = mqCurrent === mqTotal ? 'Check My Eligibility →' : 'Continue →';
+}
+
+function mqValidateStep() {
+  const activeStep = mqSteps.find(s => +s.dataset.step === mqCurrent);
+  const requiredFields = [...activeStep.querySelectorAll('[required]')];
+  for (const f of requiredFields) {
+    if (!f.checkValidity()) { f.reportValidity(); return false; }
+  }
+  return true;
+}
+
+mqNextBtn.addEventListener('click', async () => {
+  if (!mqValidateStep()) return;
+
+  if (mqCurrent < mqTotal) {
+    mqCurrent++;
+    mqRender();
+    return;
+  }
+
+  mqNextBtn.disabled = true;
+  mqNextBtn.textContent = 'Submitting...';
+  const formData = new FormData(modalForm);
   try {
     const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
       method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
@@ -774,16 +915,22 @@ document.getElementById('modalForm').addEventListener('submit', async function(e
       document.getElementById('modalFormFields').style.display = 'none';
       document.getElementById('modalSuccess').classList.add('show');
     } else {
-      btn.disabled = false;
-      btn.textContent = 'Check My Eligibility →';
+      mqNextBtn.disabled = false;
+      mqNextBtn.textContent = 'Check My Eligibility →';
       alert('Something went wrong. Please try again or call Nick on 021 102 3416.');
     }
-  } catch(err) {
-    btn.disabled = false;
-    btn.textContent = 'Check My Eligibility →';
+  } catch (err) {
+    mqNextBtn.disabled = false;
+    mqNextBtn.textContent = 'Check My Eligibility →';
     alert('Something went wrong. Please try again or call Nick on 021 102 3416.');
   }
 });
+
+mqBackBtn.addEventListener('click', () => {
+  if (mqCurrent > 1) { mqCurrent--; mqRender(); }
+});
+
+mqRender();
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href="#eligibility-form"]').forEach(link => {
