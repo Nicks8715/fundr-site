@@ -175,7 +175,7 @@ input.error,select.error,textarea.error{border-color:#d94040}
     <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill" style="width:25%"></div></div>
   </div>
   <div class="form-card">
-    <form id="loan-form" action="https://formspree.io/f/xnjbveny" method="POST">
+    <form id="loan-form" action="https://formspree.io/f/xnjbveny" method="POST" novalidate>
       <input type="hidden" name="_subject" id="form-subject" value="New Business Finance Application — fundr">
       <input type="hidden" name="application_type" id="application-type-field" value="Business">
       <input type="hidden" name="application_id" id="application-id-field" value="">
@@ -486,7 +486,11 @@ function clearSignature(){sigCtx.clearRect(0,0,sigCanvas.width,sigCanvas.height)
 document.getElementById('loan-form').addEventListener('submit',async function(e){
   e.preventDefault();
   if(!document.getElementById('consent-all').checked){alert('Please read and confirm the authorisation before submitting.');return;}
-  if(!sigHasContent){alert('Please sign before submitting.');return;}
+  if(!sigHasContent){alert('Please add your signature before submitting.');return;}
+  const email=this.querySelector('[name="email"]');
+  const phone=this.querySelector('[name="phone"]');
+  if(!email.value.trim()){alert('Please enter your email address.');email.focus();return;}
+  if(!phone.value.trim()){alert('Please enter your phone number.');phone.focus();return;}
   const btn=document.getElementById('btn-submit');
   btn.textContent='Submitting…';btn.disabled=true;
   try{
