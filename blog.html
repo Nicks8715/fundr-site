@@ -151,11 +151,11 @@ body{background:var(--sand)}
       <p>Guides, tips and industry news to help Kiwi businesses make smarter finance decisions — from vehicle loans to equipment and business funding.</p>
     </div>
     <div class="blog-hero-right">
-      <a href="#" class="blog-category-pill" onclick="filterArticles('vehicles',this)"><span class="blog-category-pill-dot"></span>Vehicles &amp; Utes</a>
-      <a href="#" class="blog-category-pill" onclick="filterArticles('trucks',this)"><span class="blog-category-pill-dot"></span>Trucks &amp; Transport</a>
-      <a href="#" class="blog-category-pill" onclick="filterArticles('equipment',this)"><span class="blog-category-pill-dot"></span>Equipment Finance</a>
-      <a href="#" class="blog-category-pill" onclick="filterArticles('business',this)"><span class="blog-category-pill-dot"></span>Business Finance</a>
-      <a href="#" class="blog-category-pill" onclick="filterArticles('guides',this)"><span class="blog-category-pill-dot"></span>Finance Guides</a>
+      <a href="#" class="blog-category-pill" onclick="event.preventDefault();filterArticles('vehicles',this)"><span class="blog-category-pill-dot"></span>Vehicles &amp; Utes</a>
+      <a href="#" class="blog-category-pill" onclick="event.preventDefault();filterArticles('trucks',this)"><span class="blog-category-pill-dot"></span>Trucks &amp; Transport</a>
+      <a href="#" class="blog-category-pill" onclick="event.preventDefault();filterArticles('equipment',this)"><span class="blog-category-pill-dot"></span>Equipment Finance</a>
+      <a href="#" class="blog-category-pill" onclick="event.preventDefault();filterArticles('business',this)"><span class="blog-category-pill-dot"></span>Business Finance</a>
+      <a href="#" class="blog-category-pill" onclick="event.preventDefault();filterArticles('guides',this)"><span class="blog-category-pill-dot"></span>Finance Guides</a>
     </div>
   </div>
 </section>
@@ -322,6 +322,38 @@ body{background:var(--sand)}
 
 <script src="/shared.js"></script>
 <script>
+/* ── FILTER ── */
+function filterArticles(category, triggeredEl) {
+
+  // 1. Update active state on ALL filter buttons (bar + hero pills)
+  document.querySelectorAll('.filter-btn, .blog-category-pill').forEach(function(el) {
+    el.classList.remove('active');
+  });
+  if (triggeredEl) triggeredEl.classList.add('active');
+
+  // 2. Show / hide grid cards
+  var cards = document.querySelectorAll('#articles-grid .article-card');
+  var visibleCount = 0;
+  cards.forEach(function(card) {
+    var match = (category === 'all') || (card.getAttribute('data-category') === category);
+    card.style.display = match ? 'flex' : 'none';
+    if (match) visibleCount++;
+  });
+
+  // 3. Show / hide featured card (hide if it doesn't match the filter)
+  var featured = document.querySelector('.featured-wrap');
+  if (featured) {
+    var featuredCat = document.querySelector('.featured-card') && document.querySelector('.featured-card').getAttribute('data-category');
+    featured.style.display = (category === 'all' || featuredCat === category) ? '' : 'none';
+  }
+
+  // 4. Smooth-scroll to grid so user sees the result
+  if (category !== 'all') {
+    document.querySelector('.articles-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+/* ── NEWSLETTER ── */
 function handleNewsletterSubmit(e) {
   e.preventDefault();
   var form = e.target;
