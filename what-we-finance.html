@@ -88,6 +88,13 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .btn-hero-primary:hover{background:var(--orange);color:#fff}
 .btn-hero-ghost{display:inline;color:rgba(255,255,255,.45);font-size:.78rem;font-weight:400;border-bottom:1px solid rgba(255,255,255,.20);padding-bottom:1px;white-space:nowrap;transition:color .2s,border-color .2s;text-decoration:none}
 .btn-hero-ghost:hover{color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.50)}
+.hero-proof{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.avatar-stack{display:flex}
+.avatar{width:28px;height:28px;border-radius:50%;border:2px solid var(--dark2);background:#252520;margin-left:-6px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:.8rem;color:rgba(255,255,255,.65)}
+.avatar:first-child{margin-left:0}
+.proof-text{font-size:.72rem;color:rgba(255,255,255,.38);line-height:1.4}
+.proof-text strong{color:rgba(255,255,255,.70);display:block}
+.stars{color:var(--orange);letter-spacing:1px}
 .quick-nav{background:var(--ink);padding:0 48px;border-bottom:1px solid rgba(255,255,255,.06)}
 .quick-nav-inner{max-width:1200px;margin:0 auto;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
 .quick-nav-inner::-webkit-scrollbar{display:none}
@@ -187,6 +194,15 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="/calculator.html" class="btn-hero-ghost" aria-label="Calculate repayments">Calculate repayments →</a>
+    </div>
+    <div class="hero-proof" aria-label="Social proof">
+      <div class="avatar-stack" aria-hidden="true">
+        <div class="avatar">M</div><div class="avatar">T</div><div class="avatar">J</div><div class="avatar">R</div>
+      </div>
+      <div class="proof-text">
+        <strong><span class="stars">★★★★★</span> 5.0 on Google</strong>
+        Trusted by NZ businesses
+      </div>
     </div>
   </div>
 </section>
