@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>What We Finance | Business Asset Finance NZ | fundr</title>
-<meta name="description" content="fundr finances vehicles, utes, trucks, luxury vehicles, equipment and business assets for NZ businesses. 15+ lenders, 24hr approvals, no broker fee. Get your options today.">
+<meta name="description" content="fundr finances vehicles, utes, trucks, luxury vehicles, equipment and business assets for NZ businesses. 15+ lenders, 24hr approvals.">
 <link rel="canonical" href="https://www.fundr.co.nz/what-we-finance.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="What We Finance | Business Asset Finance NZ | fundr">
@@ -95,11 +95,21 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .proof-text{font-size:.72rem;color:rgba(255,255,255,.38);line-height:1.4}
 .proof-text strong{color:rgba(255,255,255,.70);display:block}
 .stars{color:var(--orange);letter-spacing:1px}
-.quick-nav{background:var(--ink);padding:0 48px;border-bottom:1px solid rgba(255,255,255,.06)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:fadeUp .7s ease both}
+.hero-content>*:nth-child(1){animation-delay:.05s}
+.hero-content>*:nth-child(2){animation-delay:.18s}
+.hero-content>*:nth-child(3){animation-delay:.28s}
+.hero-content>*:nth-child(4){animation-delay:.38s}
+.hero-content>*:nth-child(5){animation-delay:.48s}
+.hero-content>*:nth-child(6){animation-delay:.58s}
+.hero-content>*:nth-child(7){animation-delay:.68s}
+.quick-nav{background:var(--ink);padding:0 48px;border-bottom:1px solid rgba(255,255,255,.06);position:relative}
 .quick-nav-inner{max-width:1200px;margin:0 auto;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
 .quick-nav-inner::-webkit-scrollbar{display:none}
 .quick-nav-link{font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;padding:18px 24px;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;flex-shrink:0}
 .quick-nav-link:hover{color:var(--white);border-color:var(--orange)}
+.quick-nav::after{content:'';position:absolute;top:0;right:0;bottom:0;width:36px;background:linear-gradient(to right,rgba(14,13,11,0),rgba(14,13,11,.95));pointer-events:none}
 .products-section{background:var(--white);padding:80px 48px}
 .products-inner{max-width:1200px;margin:0 auto}
 .products-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:14px}
