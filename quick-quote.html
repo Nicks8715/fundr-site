@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M4XH9MNM');</script>
+<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Get an Instant Finance Quote — fundr NZ</title>
 <meta name="description" content="Get an instant indicative finance quote in 60 seconds. No credit check. NZ asset finance broker.">
@@ -169,6 +172,9 @@ body{font-family:var(--sans);color:var(--ink);background:var(--sand);overflow-x:
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4XH9MNM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <header class="site-header">
   <a class="header-logo" href="/">fundr<span>.</span></a>
@@ -499,6 +505,10 @@ function goStep(n) {
     else { circle.innerHTML = i; }
   }
 
+  /* Track step progression — lets you see where people drop off in the funnel */
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({ event: 'quick_quote_step', step_number: n });
+
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -602,6 +612,22 @@ async function submitQuote() {
     });
 
     if (res.ok) {
+      /* ── CONVERSION TRACKING ──
+         Fires once the quote request has actually succeeded server-side.
+         GTM should listen for a Custom Event trigger named "generate_lead"
+         and fire a GA4 event tag with these parameters. Mark generate_lead
+         as a Key Event in GA4 (Admin → Events) once it's confirmed firing. */
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'generate_lead',
+        lead_type: 'quick_quote',
+        asset_type: state.assetType,
+        asset_value_range: valueLabels[state.assetValue] || state.assetValue,
+        loan_term_months: state.loanTerm,
+        trading_length: tradingLabels[state.trading],
+        credit_profile: creditLabels[state.credit]
+      });
+
       document.querySelectorAll('.step-panel').forEach(p => p.style.display = 'none');
       document.querySelectorAll('.submit-card').forEach(p => p.style.display = 'none');
       document.querySelectorAll('.progress-wrap').forEach(p => p.style.display = 'none');
