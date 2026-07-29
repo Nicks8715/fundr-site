@@ -10,9 +10,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- FIX: Single title tag (was duplicated) -->
 <title>Apply for Finance | fundr NZ</title>
-<!-- FIX: Added missing meta description -->
 <meta name="description" content="Apply for vehicle, truck or equipment finance in minutes. No credit impact, no obligation. 15+ NZ lenders, 24hr approvals, no broker fee. Talk to Nick today.">
 
 <link rel="canonical" href="https://www.fundr.co.nz/apply.html">
@@ -370,7 +368,7 @@ input.error,select.error,textarea.error{border-color:#d94040}
 </div>
 </div>
 
-<!-- FIX: Crawlable internal links -->
+<!-- Crawlable internal links -->
 <nav class="site-links" aria-label="Site pages">
   <div class="site-links-inner">
     <a href="/">Home</a>
@@ -426,7 +424,17 @@ function updateStepUI(){
   document.getElementById('btn-next').classList.toggle('hidden',currentStep===totalSteps);
   document.getElementById('btn-submit').classList.toggle('hidden',currentStep!==totalSteps);
 }
-function nextStep(){if(currentStep<totalSteps){currentStep++;showStep(currentStep);updateStepUI();toggleTypeFields();}}
+function nextStep(){
+  if(currentStep<totalSteps){
+    currentStep++;
+    showStep(currentStep);
+    updateStepUI();
+    toggleTypeFields();
+    /* Track step progression — lets you see where people drop off in the funnel */
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({ event: 'application_step', step_number: currentStep, application_type: loanType });
+  }
+}
 function prevStep(){if(currentStep>1){currentStep--;showStep(currentStep);updateStepUI();toggleTypeFields();}}
 function showStep(n){
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
@@ -503,6 +511,22 @@ document.getElementById('loan-form').addEventListener('submit',async function(e)
         jsonData.signature=sigCanvas.toDataURL('image/png');
         fetch('/api/submit-application',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(jsonData)}).catch(()=>{});
       }catch(_){}
+
+      /* ── CONVERSION TRACKING ──
+         Fires once Formspree has actually accepted the application (res.ok).
+         GTM should listen for a Custom Event trigger named "generate_lead"
+         and fire a GA4 event tag with these parameters. Mark generate_lead
+         as a Key Event in GA4 (Admin → Events) once it's confirmed firing.
+         Uses the same event name as quick-quote.html so both funnels roll
+         up into one Key Event, distinguished by lead_type. */
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'generate_lead',
+        lead_type: 'full_application',
+        application_type: loanType,
+        application_id: applicationId
+      });
+
       document.getElementById('loan-form').style.display='none';
       document.getElementById('form-nav').style.display='none';
       document.querySelector('.type-toggle').style.display='none';
