@@ -40,7 +40,7 @@
     {
       "@type": "FinancialService",
       "name": "fundr — Equipment Finance NZ",
-      "description": "Equipment finance broker for NZ businesses. Finance construction machinery, forklifts, medical equipment, kitchen fit-outs and any business equipment. 15+ lenders, 24hr approvals.",
+      "description": "Equipment finance broker for NZ businesses. Finance construction machinery, forklifts, cranes, medical equipment, kitchen fit-outs, manufacturing machinery, gym equipment, printing equipment and any business equipment. 15+ lenders, 24hr approvals.",
       "url": "https://www.fundr.co.nz/equipment-finance.html",
       "telephone": "+64211023416",
       "areaServed": "NZ",
@@ -55,7 +55,7 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type":"Question","name":"What types of equipment can fundr finance?","acceptedAnswer":{"@type":"Answer","text":"fundr can finance virtually any business equipment — construction and earthmoving machinery, forklifts, medical and dental equipment, commercial kitchen and hospitality gear, gym equipment, manufacturing machinery, printing equipment and more. If your business needs it, we can likely finance it."}},
+        {"@type":"Question","name":"What types of equipment can fundr finance?","acceptedAnswer":{"@type":"Answer","text":"fundr can finance virtually any business equipment — construction and earthmoving machinery, forklifts and warehouse equipment, cranes and specialist lifting gear, medical and dental equipment, commercial kitchen and hospitality gear, manufacturing and workshop machinery, gym equipment, printing and signage equipment and more. If your business needs it, we can likely finance it."}},
         {"@type":"Question","name":"Can I get equipment finance with no deposit?","acceptedAnswer":{"@type":"Answer","text":"Yes — many of our lenders offer 100% finance on business equipment, meaning no deposit required. Approval and rate will depend on your business trading history, credit profile and the type of equipment."}},
         {"@type":"Question","name":"How long does equipment finance approval take?","acceptedAnswer":{"@type":"Answer","text":"Most applications receive a decision within 24 hours. In many cases we can get same-day approval. Once approved, funds are typically released within 1–2 business days."}},
         {"@type":"Question","name":"Can I finance used or second-hand equipment?","acceptedAnswer":{"@type":"Answer","text":"Yes. fundr can finance both new and used equipment, including private sales. Used equipment finance is subject to the age, condition and type of equipment."}},
@@ -151,13 +151,14 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .btn-text{font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);text-decoration:none;border-bottom:1px solid transparent;padding:0 0 2px;white-space:nowrap;transition:color .2s,border-color .2s}
 .btn-text:hover{color:var(--ink);border-color:var(--ink)}
 .equip-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border)}
-.equip-card{background:var(--sand);padding:32px 28px 28px;border-right:1px solid var(--border);display:flex;flex-direction:column;transition:background .2s;text-decoration:none;color:inherit}
-.equip-card:last-child{border-right:none}
+.equip-card{background:var(--sand);padding:28px 24px 24px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;flex-direction:column;transition:background .2s;text-decoration:none;color:inherit}
+.equip-card:nth-child(4n){border-right:none}
+.equip-card:nth-last-child(-n+4){border-bottom:none}
 .equip-card:hover{background:var(--white)}
-.card-num{font-size:.68rem;font-weight:400;letter-spacing:.1em;color:var(--faint);margin-bottom:20px;display:block}
-.equip-card h3{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--ink);line-height:1.2;margin-bottom:14px}
-.equip-card p{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7;flex-grow:1;margin-bottom:28px}
-.finance-btn{font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid transparent;padding:0 0 1px;transition:color .2s,border-color .2s;margin-top:auto}
+.card-num{font-size:.68rem;font-weight:400;letter-spacing:.1em;color:var(--faint);margin-bottom:16px;display:block}
+.equip-card h3{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--ink);line-height:1.2;margin-bottom:10px}
+.equip-card p{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.65;flex-grow:1;margin-bottom:20px}
+.finance-btn{font-family:var(--sans);font-size:.66rem;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid transparent;padding:0 0 1px;transition:color .2s,border-color .2s;margin-top:auto}
 .equip-card:hover .finance-btn{color:var(--orange);border-color:var(--orange)}
 
 .solutions-section{background:var(--white);padding:80px 48px}
@@ -314,8 +315,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 
 @media(max-width:768px){.hero{align-items:flex-start}.hero-content{padding:72px 24px 0;max-width:100%}.hero h1{font-size:clamp(2rem,9vw,3rem)}.hero-sub{font-size:1rem;font-weight:400;max-width:100%}.hero-actions{flex-wrap:wrap;gap:14px}.btn-hero-primary{width:100%;justify-content:center}}
 @media(max-width:860px){.about-cols{grid-template-columns:1fr;gap:40px}.about-section{padding:64px 24px}}
-@media(max-width:1024px){.equip-grid{grid-template-columns:repeat(2,1fr)}.equip-card{border-right:none;border-bottom:1px solid var(--border)}.equip-card:nth-child(odd){border-right:1px solid var(--border)}}
-@media(max-width:640px){.equip-section{padding:56px 20px}.equip-header{flex-direction:column;align-items:flex-start}.equip-grid{grid-template-columns:1fr}.equip-card{border-right:none}}
+@media(max-width:1024px){.equip-grid{grid-template-columns:repeat(2,1fr)}.equip-card{border-right:1px solid var(--border);border-bottom:1px solid var(--border)}.equip-card:nth-child(4n){border-right:1px solid var(--border)}.equip-card:nth-child(2n){border-right:none}.equip-card:nth-last-child(-n+4){border-bottom:1px solid var(--border)}.equip-card:nth-last-child(-n+2){border-bottom:none}}
+@media(max-width:640px){.equip-section{padding:56px 20px}.equip-header{flex-direction:column;align-items:flex-start}.equip-grid{grid-template-columns:1fr}.equip-card{border-right:none}.equip-card:nth-last-child(-n+2){border-bottom:1px solid var(--border)}.equip-card:last-child{border-bottom:none}}
 @media(max-width:900px){.solutions-top{grid-template-columns:repeat(2,1fr)}.solutions-bottom{grid-template-columns:1fr}}
 @media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.reviews-grid{grid-template-columns:1fr;gap:16px}.reviews-section{padding:60px 24px}}
@@ -350,7 +351,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     </nav>
     <div class="eyebrow"><span>NZ Business Equipment Finance</span></div>
     <h1>Equipment Finance NZ —<br><em>For Every Industry.</em></h1>
-    <p class="hero-sub"><strong>Excavators, forklifts, medical, kitchen, gym and more.</strong> We arrange equipment finance from 15+ NZ lenders — approvals in 24 hours, no deposit required, and no broker fee charged to you.</p>
+    <p class="hero-sub"><strong>Excavators, forklifts, cranes, medical, kitchen, manufacturing, gym and more.</strong> We arrange equipment finance from 15+ NZ lenders — approvals in 24 hours, no deposit required, and no broker fee charged to you.</p>
     <div class="pill-row" role="list">
       <span class="pill" role="listitem">24hr Approvals</span>
       <span class="pill" role="listitem">No Credit Impact to Apply</span>
@@ -414,25 +415,49 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       <a href="/quick-quote.html" class="equip-card" role="listitem">
         <span class="card-num">01</span>
         <h3>Construction &amp; Earthmoving</h3>
-        <p>Excavators, bulldozers, graders, compactors, scrapers and all earthmoving machinery. New or used, dealer or private sale.</p>
+        <p>Excavators, mini excavators, bulldozers, graders, rollers, compactors, wheel loaders and tracked loaders. New or used, dealer or private sale.</p>
         <span class="finance-btn">Finance This &rarr;</span>
       </a>
       <a href="/quick-quote.html" class="equip-card" role="listitem">
         <span class="card-num">02</span>
         <h3>Forklifts &amp; Warehouse</h3>
-        <p>Forklifts, reach stackers, order pickers, pallet jacks and warehouse racking systems. Electric, LPG or diesel — all configurations considered.</p>
+        <p>Forklifts, reach trucks, container handlers, order pickers, pallet jacks and warehouse racking systems. Electric, LPG or diesel.</p>
         <span class="finance-btn">Finance This &rarr;</span>
       </a>
       <a href="/quick-quote.html" class="equip-card" role="listitem">
         <span class="card-num">03</span>
-        <h3>Medical &amp; Dental</h3>
-        <p>Medical imaging, dental chairs, surgical equipment, diagnostic devices and full clinic fit-outs. Specialist lenders who understand healthcare businesses.</p>
+        <h3>Cranes &amp; Specialist Lifting</h3>
+        <p>Crane trucks, mobile cranes, telehandlers, scissor lifts and boom lifts. Specialist lenders who understand heavy lifting equipment.</p>
         <span class="finance-btn">Finance This &rarr;</span>
       </a>
       <a href="/quick-quote.html" class="equip-card" role="listitem">
         <span class="card-num">04</span>
+        <h3>Medical &amp; Dental</h3>
+        <p>Medical imaging, dental chairs, surgical equipment, diagnostic devices and full clinic fit-outs for healthcare businesses.</p>
+        <span class="finance-btn">Finance This &rarr;</span>
+      </a>
+      <a href="/quick-quote.html" class="equip-card" role="listitem">
+        <span class="card-num">05</span>
         <h3>Kitchen &amp; Hospitality</h3>
-        <p>Commercial ovens, refrigeration, coffee machines, full kitchen fit-outs and front-of-house equipment. Finance for cafes, restaurants and caterers across NZ.</p>
+        <p>Commercial ovens, refrigeration, coffee machines, full kitchen fit-outs and front-of-house equipment for cafes and restaurants.</p>
+        <span class="finance-btn">Finance This &rarr;</span>
+      </a>
+      <a href="/quick-quote.html" class="equip-card" role="listitem">
+        <span class="card-num">06</span>
+        <h3>Manufacturing &amp; Workshop</h3>
+        <p>CNC machines, lathes, presses, production lines and workshop machinery for NZ manufacturers, built around real asset life.</p>
+        <span class="finance-btn">Finance This &rarr;</span>
+      </a>
+      <a href="/quick-quote.html" class="equip-card" role="listitem">
+        <span class="card-num">07</span>
+        <h3>Gym &amp; Fitness</h3>
+        <p>Cardio and strength equipment, studio fit-outs and specialist training gear for gyms and fitness businesses opening or upgrading.</p>
+        <span class="finance-btn">Finance This &rarr;</span>
+      </a>
+      <a href="/quick-quote.html" class="equip-card" role="listitem">
+        <span class="card-num">08</span>
+        <h3>Printing &amp; Signage</h3>
+        <p>Digital and offset presses, large-format printers, laminators and signage equipment for print shops and signage businesses.</p>
         <span class="finance-btn">Finance This &rarr;</span>
       </a>
     </div>
@@ -620,7 +645,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <ul class="faq-list" role="list">
       <li class="faq-item">
         <button class="faq-trigger" aria-expanded="false"><span class="faq-q">What types of equipment can fundr finance?</span><span class="faq-icon" aria-hidden="true">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">fundr can finance virtually any business equipment — construction and earthmoving machinery, forklifts, medical and dental equipment, commercial kitchen and hospitality gear, gym equipment, manufacturing machinery, printing equipment and more. If your business needs it, we can likely finance it.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">fundr can finance virtually any business equipment — construction and earthmoving machinery, forklifts and warehouse equipment, cranes and specialist lifting gear, medical and dental equipment, commercial kitchen and hospitality gear, manufacturing and workshop machinery, gym equipment, printing and signage equipment and more. If your business needs it, we can likely finance it.</div></div>
       </li>
       <li class="faq-item">
         <button class="faq-trigger" aria-expanded="false"><span class="faq-q">Can I get equipment finance with no deposit?</span><span class="faq-icon" aria-hidden="true">+</span></button>
