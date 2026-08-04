@@ -43,13 +43,7 @@
       "url": "https://www.fundr.co.nz/ute-finance.html",
       "telephone": "+64211023416",
       "areaServed": "NZ",
-      "serviceType": "Ute Finance",
-      "aggregateRating": {"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"3","bestRating":"5"},
-      "review": [
-        {"@type":"Review","author":{"@type":"Person","name":"James M."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Nick sorted our Ranger finance in under 24 hours. Way easier than going to the bank — and we got a better rate."},
-        {"@type":"Review","author":{"@type":"Person","name":"Shane R."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Bought my Hilux through fundr. Nick was straight up about what we'd qualify for, no messing around."},
-        {"@type":"Review","author":{"@type":"Person","name":"Danny K."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"We've financed three utes through Nick now. No broker fee, fast turnaround — I tell every tradie I know to call fundr first."}
-      ]
+      "serviceType": "Ute Finance"
     },
     {
       "@type": "FAQPage",
@@ -89,7 +83,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .sec-label--center{justify-content:center;color:rgba(255,255,255,.3)}
 
 .hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;padding:80px 0 60px;overflow:hidden;background:var(--dark2)}
-.hero-bg{position:absolute;inset:0;background-image:url('/images/ute-finance-hero.jpg');background-size:cover;background-position:center}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;display:block}
 .hero-bg::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
 .hero-overlay-left{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,rgba(6,5,3,.96) 0%,rgba(6,5,3,.85) 30%,rgba(6,5,3,.50) 52%,rgba(6,5,3,.10) 72%,transparent 100%)}
 .hero-overlay-top{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(6,5,3,.55) 0%,transparent 25%)}
@@ -105,7 +100,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
 .pill{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:100px;background:rgba(255,255,255,.06);font-size:.72rem;color:rgba(255,255,255,.60);letter-spacing:.04em;white-space:nowrap}
 .pill::before{content:'✓';color:var(--orange);font-size:.65rem;font-weight:700}
-.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:nowrap;margin-bottom:20px}
+.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:20px}
 .btn-hero-primary{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);padding:14px 24px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .25s,color .25s;text-decoration:none}
 .btn-hero-primary:hover{background:var(--orange);color:#fff}
 .btn-hero-primary svg{width:12px;height:12px;flex-shrink:0}
@@ -118,11 +113,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .proof-text{font-size:.72rem;color:rgba(255,255,255,.38);line-height:1.4}
 .proof-text strong{color:rgba(255,255,255,.70);display:block}
 .stars{color:var(--orange);letter-spacing:1px}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.hero-content>*{animation:fadeUp .7s ease both}
-.hero-content>*:nth-child(1){animation-delay:.05s}.hero-content>*:nth-child(2){animation-delay:.18s}
-.hero-content>*:nth-child(3){animation-delay:.28s}.hero-content>*:nth-child(4){animation-delay:.38s}
-.hero-content>*:nth-child(5){animation-delay:.48s}.hero-content>*:nth-child(6){animation-delay:.58s}
 
 .about-section{background:var(--white);padding:80px 48px}
 .about-inner{max-width:1200px;margin:0 auto}
@@ -303,6 +293,44 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 @media(max-width:560px){.promise-grid{grid-template-columns:1fr}}
 @media(max-width:768px){.final-cta-section{padding:72px 24px 60px}.final-cta-buttons{flex-direction:column;align-items:center}.btn-final-primary{width:100%;max-width:340px;justify-content:center}.related-bar{padding:24px}}
 @media(max-width:600px){.site-links{padding:16px 20px}}
+
+/* ═══════════ ANIMATION LAYER ═══════════ */
+
+@keyframes kenBurns{from{transform:scale(1.06) translateY(-4px)}to{transform:scale(1) translateY(0)}}
+.hero-bg img{animation:kenBurns 9s var(--ease) both;will-change:transform}
+
+.hl{display:block;overflow:hidden}
+.hl-in{display:block;transform:translateY(110%);animation:lineUp .9s cubic-bezier(.22,1,.36,1) both}
+@keyframes lineUp{to{transform:translateY(0)}}
+.hl:nth-child(1) .hl-in{animation-delay:.25s}
+.hl:nth-child(2) .hl-in{animation-delay:.4s}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:fadeUp .7s ease both}
+.hero-content>*:nth-child(1){animation-delay:.05s}.hero-content>*:nth-child(2){animation-delay:.18s}
+.hero-content>*:nth-child(3){animation-delay:.65s}.hero-content>*:nth-child(4){animation-delay:.78s}
+.hero-content>*:nth-child(5){animation-delay:.90s}.hero-content>*:nth-child(6){animation-delay:1.0s}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv-g .rv-i{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv-g.in .rv-i{opacity:1;transform:translateY(0)}
+.rv-g.in .rv-i:nth-child(1){transition-delay:.04s}
+.rv-g.in .rv-i:nth-child(2){transition-delay:.10s}
+.rv-g.in .rv-i:nth-child(3){transition-delay:.16s}
+.rv-g.in .rv-i:nth-child(4){transition-delay:.22s}
+.rv-g.in .rv-i:nth-child(5){transition-delay:.28s}
+.rv-g.in .rv-i:nth-child(6){transition-delay:.34s}
+
+@keyframes diamondIn{from{opacity:0;transform:scale(.4) rotate(-90deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.rv.in .sec-label::before{animation:diamondIn .5s var(--ease) .12s both}
+
+.counting{color:var(--orange)}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg img,.hero-content>*,.hl-in{animation:none!important;transform:none!important;opacity:1!important}
+  .rv,.rv-g .rv-i{opacity:1!important;transform:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -311,7 +339,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 
 <!-- HERO -->
 <section class="hero" aria-label="Ute Finance Hero">
-  <div class="hero-bg" role="img" aria-label="Business ute finance NZ — fundr">
+  <div class="hero-bg">
     <img src="/images/ute-finance-hero.jpg" alt="Orange Ford Ranger Raptor ute on an NZ construction site at dusk, financed by fundr" style="width:100%;height:100%;object-fit:cover;display:block">
   </div>
   <div class="hero-overlay-left" aria-hidden="true"></div>
@@ -693,6 +721,70 @@ document.querySelectorAll('.faq-trigger').forEach(trigger=>{
     if(!isOpen){item.classList.add('open');trigger.setAttribute('aria-expanded','true');answer.style.maxHeight=answer.scrollHeight+'px';}
   });
 });
+
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduced) {
+    var h1 = document.querySelector('.hero-content h1');
+    if (h1) {
+      var parts = h1.innerHTML.split(/<br\s*\/?>/i);
+      h1.innerHTML = parts.map(function(line){
+        return '<span class="hl"><span class="hl-in">' + line + '</span></span>';
+      }).join('');
+    }
+  }
+
+  if (!reduced && 'IntersectionObserver' in window) {
+    var singles = document.querySelectorAll(
+      '.about-inner > .sec-label, .about-inner > h2, .about-divider, .about-copy, ' +
+      '.models-header, .why-inner > .sec-label, .why-inner > h2, ' +
+      '.reviews-inner > .sec-label, .reviews-inner > h2, .process-header-row, ' +
+      '.calc-inner > div:first-child, .calc-card, .faq-left, .promise-header, .final-cta-inner > *'
+    );
+    singles.forEach(function(el){ el.classList.add('rv'); });
+
+    var groups = document.querySelectorAll(
+      '.about-stats, .models-grid, .why-grid, .reviews-grid, .steps, .promise-grid, .faq-list'
+    );
+    groups.forEach(function(g){
+      g.classList.add('rv-g');
+      Array.prototype.forEach.call(g.children, function(c){ c.classList.add('rv-i'); });
+    });
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -6% 0px'});
+
+    document.querySelectorAll('.rv, .rv-g').forEach(function(el){ io.observe(el); });
+
+    function animateCount(el){
+      var raw = el.textContent.trim();
+      var m = raw.match(/^(\d+)(.*)$/);
+      if (!m) return;
+      var target = parseInt(m[1], 10), suffix = m[2];
+      var dur = 1100, start = null;
+      el.classList.add('counting');
+      function step(ts){
+        if (!start) start = ts;
+        var p = Math.min(1, (ts - start) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.classList.remove('counting');
+      }
+      requestAnimationFrame(step);
+    }
+    var statIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { animateCount(e.target); statIO.unobserve(e.target); }
+      });
+    }, {threshold: 0.6});
+    document.querySelectorAll('.stat-num').forEach(function(el){ statIO.observe(el); });
+  }
+})();
 </script>
 
 <div id="footer-placeholder"></div>
