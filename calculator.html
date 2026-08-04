@@ -9,11 +9,11 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.fundr.co.nz/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.fundr.co.nz/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Car Finance Calculator NZ | Car Loan Calculator | Vehicle & Equipment Loans | fundr</title>
+<title>Car Finance Calculator NZ | fundr</title>
 <meta name="description" content="Use fundr's free car finance calculator NZ to estimate monthly repayments on vehicle, truck, equipment or business loans. Rates from 7.99–14.95%. Instant results, no credit check.">
 <link rel="canonical" href="https://www.fundr.co.nz/calculator.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Finance Repayment Calculator NZ | fundr">
+<meta property="og:title" content="Car Finance Calculator NZ | fundr">
 <meta property="og:description" content="Free NZ finance repayment calculator. Estimate monthly repayments instantly — no credit check.">
 <meta property="og:url" content="https://www.fundr.co.nz/calculator.html">
 <script type="application/ld+json">
@@ -32,9 +32,6 @@
    FUNDR SHARED STYLES
    shared.css — include on every page
    ============================================= */
-
-/* ── FONTS ── */
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap');
 
 /* ── RESET & ROOT ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -504,6 +501,7 @@ body{background:var(--sand)}
 .field input,.field select{width:100%;font-family:var(--sans);font-size:.95rem;font-weight:300;color:var(--ink);background:var(--sand);border:1px solid var(--border);border-radius:8px;padding:13px 16px;outline:none;-webkit-appearance:none;appearance:none;transition:border-color .2s,box-shadow .2s}
 .field input:focus,.field select:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(240,108,0,.10)}
 .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a5348' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer}
+.field-hint{font-size:.72rem;color:var(--faint);margin-top:6px;display:block}
 
 /* ── RESULT ── */
 .result-box{background:var(--sand);border-radius:10px;padding:22px 24px;margin:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;border:1px solid var(--border)}
@@ -726,17 +724,25 @@ body{background:var(--sand)}
         </div>
       </div>
 
-      <div class="field field-full">
-        <label for="c-rate">Interest Rate (Est. %)</label>
-        <input id="c-rate" type="number" value="7.9" min="1" max="30" step="0.1"
-          aria-label="Estimated interest rate percentage" inputmode="decimal" oninput="calcRepay()">
+      <div class="calc-row">
+        <div class="field">
+          <label for="c-rate">Interest Rate (Est. %)</label>
+          <input id="c-rate" type="number" value="7.9" min="1" max="30" step="0.1"
+            aria-label="Estimated interest rate percentage" inputmode="decimal" oninput="calcRepay()">
+        </div>
+        <div class="field">
+          <label for="c-deposit">Deposit ($)</label>
+          <input id="c-deposit" type="number" value="0" min="0" max="2000000" step="500"
+            aria-label="Deposit amount" inputmode="numeric" oninput="calcRepay()">
+          <span class="field-hint">Optional — reduces the amount you finance</span>
+        </div>
       </div>
 
       <div class="field field-full" id="balloon-field" style="display:none">
         <label for="c-balloon">Balloon Payment (%)</label>
         <input id="c-balloon" type="number" value="30" min="0" max="60" step="5"
           aria-label="Balloon payment percentage of loan amount" inputmode="decimal" oninput="calcRepay()">
-        <span style="font-size:.72rem;color:var(--faint);margin-top:6px;display:block">Reduces monthly payments — balloon amount due at end of term</span>
+        <span class="field-hint">Reduces monthly payments — balloon amount due at end of term</span>
       </div>
 
       <div class="result-box" aria-live="polite">
@@ -746,8 +752,16 @@ body{background:var(--sand)}
 
       <div class="breakdown">
         <div class="breakdown-item">
-          <div class="breakdown-label">Loan Amount</div>
+          <div class="breakdown-label">Vehicle Price</div>
           <div class="breakdown-val" id="b-principal">$45,000</div>
+        </div>
+        <div class="breakdown-item" id="b-deposit-row" style="display:none">
+          <div class="breakdown-label">Deposit</div>
+          <div class="breakdown-val" id="b-deposit">—</div>
+        </div>
+        <div class="breakdown-item">
+          <div class="breakdown-label">Amount Financed</div>
+          <div class="breakdown-val" id="b-financed">$45,000</div>
         </div>
         <div class="breakdown-item">
           <div class="breakdown-label">Total Interest</div>
@@ -779,6 +793,7 @@ body{background:var(--sand)}
         <li>Select your finance type using the tabs above the calculator.</li>
         <li>Enter the purchase price or loan amount for your asset.</li>
         <li>Choose your preferred loan term — longer terms mean lower monthly payments but more total interest.</li>
+        <li>Add a deposit if you're putting money down — it reduces the amount you finance.</li>
         <li>Adjust the interest rate. fundr clients typically see rates between 7.99–14.95% depending on their profile.</li>
         <li>Your estimated monthly repayment updates instantly.</li>
       </ul>
@@ -939,7 +954,7 @@ body{background:var(--sand)}
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">Do I need a deposit for a car loan in NZ?</button>
         <div class="faq-answer">
-          <p>No deposit is required for many applications, particularly for borrowers with good credit profiles. However, a deposit of <strong>10–20%</strong> can help you secure a lower interest rate, reduce monthly repayments, and improve approval chances if your credit history is limited. fundr can advise whether a deposit would benefit your situation.</p>
+          <p>No deposit is required for many applications, particularly for borrowers with good credit profiles. However, a deposit of <strong>10–20%</strong> can help you secure a lower interest rate, reduce monthly repayments, and improve approval chances if your credit history is limited. Use the deposit field in the calculator above to see how a deposit changes your repayments.</p>
         </div>
       </div>
 
@@ -1465,22 +1480,36 @@ body{background:var(--sand)}
 
   /* Update display */
   window.calcRepay = function () {
-    var principal = parseFloat(document.getElementById('c-amount').value) || 0;
+    var price     = parseFloat(document.getElementById('c-amount').value) || 0;
     var months    = parseInt(document.getElementById('c-term').value)    || 48;
     var rate      = parseFloat(document.getElementById('c-rate').value)  || 0;
 
+    var depositInput = document.getElementById('c-deposit');
+    var deposit       = Math.min(parseFloat(depositInput && depositInput.value) || 0, price);
+
     var resultEl    = document.getElementById('c-result');
-    var principalEl = document.getElementById('b-principal');
+    var priceEl     = document.getElementById('b-principal');
+    var financedEl  = document.getElementById('b-financed');
+    var depositEl   = document.getElementById('b-deposit');
+    var depositRow  = document.getElementById('b-deposit-row');
     var interestEl  = document.getElementById('b-interest');
     var totalEl     = document.getElementById('b-total');
 
     if (!resultEl) return;
 
+    /* Show/hide the deposit breakdown row depending on whether one is entered */
+    if (depositRow) depositRow.style.display = deposit > 0 ? '' : 'none';
+    if (depositEl)  depositEl.textContent    = deposit > 0 ? fmt(deposit) : '—';
+
+    var principal = price - deposit; /* amount actually financed, before balloon */
+
+    if (priceEl)    priceEl.textContent    = fmt(price);
+    if (financedEl) financedEl.textContent = fmt(principal);
+
     if (principal <= 0 || rate <= 0) {
       resultEl.textContent = '$0';
-      if (principalEl) principalEl.textContent = fmt(principal);
-      if (interestEl)  interestEl.textContent  = '—';
-      if (totalEl)     totalEl.textContent      = '—';
+      if (interestEl) interestEl.textContent = '—';
+      if (totalEl)    totalEl.textContent    = '—';
       return;
     }
 
@@ -1492,15 +1521,14 @@ body{background:var(--sand)}
     var balloonAmt   = principal * (balloonPct / 100);
     var loanAmt      = principal - balloonAmt;
 
-    var monthly      = balloonPct > 0 ? calcPMT(loanAmt, rate, months) : calcPMT(principal, rate, months);
-    var totalRepaid  = monthly * months + balloonAmt;
-    var totalInterest = totalRepaid - principal;
+    var monthly       = balloonPct > 0 ? calcPMT(loanAmt, rate, months) : calcPMT(principal, rate, months);
+    var totalRepaid   = monthly * months + balloonAmt + deposit;
+    var totalInterest = totalRepaid - price;
 
     resultEl.textContent = fmt(monthly);
-    if (principalEl) principalEl.textContent = fmt(principal);
-    if (interestEl)  interestEl.textContent  = fmt(totalInterest);
-    if (totalEl)     totalEl.textContent      = fmt(totalRepaid);
-    if (balloonEl)   balloonEl.textContent    = balloonPct > 0 ? fmt(balloonAmt) : '—';
+    if (interestEl) interestEl.textContent = fmt(totalInterest);
+    if (totalEl)    totalEl.textContent    = fmt(totalRepaid);
+    if (balloonEl)  balloonEl.textContent  = balloonPct > 0 ? fmt(balloonAmt) : '—';
   };
 
   /* Switch finance type tab */
@@ -1526,10 +1554,12 @@ body{background:var(--sand)}
     if (amtLabel) amtLabel.textContent = config.amountLabel;
 
     /* Set defaults for this type */
-    var amtInput  = document.getElementById('c-amount');
-    var rateInput = document.getElementById('c-rate');
-    if (amtInput)  amtInput.value  = config.amount;
-    if (rateInput) rateInput.value = config.rate;
+    var amtInput     = document.getElementById('c-amount');
+    var rateInput    = document.getElementById('c-rate');
+    var depositInput = document.getElementById('c-deposit');
+    if (amtInput)     amtInput.value     = config.amount;
+    if (rateInput)    rateInput.value    = config.rate;
+    if (depositInput) depositInput.value = 0;
 
     /* Show/hide balloon field for luxury */
     var balloonField = document.getElementById('balloon-field');
