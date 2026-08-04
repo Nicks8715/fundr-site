@@ -117,8 +117,8 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
 }
 .hero-bg{
   position:absolute;inset:0;
-  background-image:url(images/primemover-hero.jpg);
-  background-size:cover;background-position:center;background-repeat:no-repeat;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
 }
 .hero-grain{position:absolute;inset:0;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:150px;}
 .hero-accent{position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
@@ -208,9 +208,10 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
   border:1px solid var(--border);border-radius:10px;text-decoration:none;color:inherit;
 }
 .product-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(22,20,15,.10)}
-.product-photo{position:relative;height:200px;background-size:cover;background-position:center;background-color:var(--sand2);filter:grayscale(1) contrast(1.05) brightness(.95);transition:filter .5s var(--ease)}
+.product-photo{position:relative;height:200px;overflow:hidden;background-color:var(--sand2)}
+.product-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05) brightness(.95);transition:filter .5s var(--ease)}
+.product-card:hover .product-photo img{filter:grayscale(0) contrast(1.05) brightness(1)}
 .product-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(14,13,11,.75) 0%,rgba(14,13,11,.30) 38%,transparent 62%)}
-.product-card:hover .product-photo{filter:grayscale(0) contrast(1.05) brightness(1)}
 .product-photo-tag{position:absolute;bottom:12px;left:16px;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;font-weight:600;text-shadow:0 1px 3px rgba(0,0,0,.4)}
 .product-body{padding:0 28px;display:flex;flex-direction:column;gap:10px}
 .product-num{font-size:.65rem;font-weight:400;letter-spacing:.12em;color:var(--faint)}
@@ -222,9 +223,7 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
 .product-card:hover .product-arrow{color:var(--orange);border-color:var(--orange)}
 
 /* Placeholder-photo variant (same structure as real photos, gradient stand-in until sourced) */
-.product-photo.placeholder{background-image:none}
-.product-photo.placeholder-1{background:linear-gradient(155deg,#8a8378 0%,#5c564c 55%,#332f28 100%)}
-.product-photo.placeholder-2{background:linear-gradient(155deg,#7d8a7e 0%,#4d5a4e 55%,#2a332b 100%)}
+
 
 /* =============================================
    5. WHO WE HELP
@@ -341,26 +340,15 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
 .agg-num{font-family:var(--serif);font-size:2.4rem;font-style:italic;color:var(--ink);line-height:1}
 .agg-stars{color:var(--orange);font-size:.9rem;letter-spacing:2px;display:block;margin:4px 0}
 .agg-label{font-size:.68rem;color:var(--faint);letter-spacing:.08em;text-transform:uppercase}
-.reviews-head-right{display:flex;align-items:center;gap:24px}
-.reviews-nav{display:flex;gap:8px}
-.reviews-nav-btn{
-  width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:#fff;color:var(--ink);
-  font-size:.9rem;display:flex;align-items:center;justify-content:center;cursor:none;
-  transition:background .2s,border-color .2s,color .2s;
-}
-.reviews-nav-btn:hover{background:var(--orange);border-color:var(--orange);color:#fff}
-.reviews-nav-btn:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
-.reviews-track-wrap{overflow:hidden;padding:4px 0}
-.reviews-track{display:flex;gap:20px;padding:0 48px;cursor:grab;user-select:none;scroll-behavior:smooth}
-.reviews-track:focus-visible{outline:2px solid var(--orange);outline-offset:-2px}
-.reviews-track.dragging{cursor:grabbing}
+.reviews-track-wrap{padding:4px 0}
+.reviews-track{display:flex;gap:20px;padding:0 48px;justify-content:center;flex-wrap:wrap;max-width:1200px;margin:0 auto}
 .review-card{flex:0 0 340px;background:#fff;border:1px solid var(--border-light);border-radius:10px;padding:32px 28px;display:flex;flex-direction:column;gap:20px}
 .review-stars{color:var(--orange);font-size:.85rem;letter-spacing:2px}
 .review-text{font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--ink);line-height:1.65;flex:1}
 .reviewer{display:flex;flex-direction:column;gap:3px;padding-top:16px;border-top:1px solid var(--border-light)}
 .reviewer-name{font-size:.82rem;font-weight:500;color:var(--ink)}
 .reviewer-role{font-size:.75rem;color:var(--faint)}
-.reviews-hint{max-width:1200px;margin:16px auto 0;padding:0 48px;font-size:.7rem;color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
+
 
 /* =============================================
    10. MEET NICK
@@ -401,7 +389,7 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
    RESPONSIVE
    ============================================= */
 @media(max-width:900px){.hero-inner{padding:60px 24px 120px}}
-@media(max-width:600px){.hero-overlay{background:linear-gradient(to bottom,rgba(14,13,11,.97) 0%,rgba(14,13,11,.92) 28%,rgba(14,13,11,.72) 46%,rgba(14,13,11,.40) 62%,rgba(14,13,11,.18) 78%,rgba(14,13,11,.08) 100%)}.hero-overlay-img{display:none}.hero-overlay-bottom{display:none}.hero h1{font-size:clamp(2.2rem,9vw,3rem)}.hero-bg{background-position:center 35%}.hero-inner{padding:48px 20px 120px}.hero-sub{font-size:1rem;font-weight:400}.hero-stats{grid-template-columns:1fr 1fr 1fr}.hero-stat{padding:14px 16px}.hero-stat-num{font-size:1.3rem}.btn-hero{width:100%;justify-content:center}}
+@media(max-width:600px){.hero-overlay{background:linear-gradient(to bottom,rgba(14,13,11,.97) 0%,rgba(14,13,11,.92) 28%,rgba(14,13,11,.72) 46%,rgba(14,13,11,.40) 62%,rgba(14,13,11,.18) 78%,rgba(14,13,11,.08) 100%)}.hero-overlay-img{display:none}.hero-overlay-bottom{display:none}.hero h1{font-size:clamp(2.2rem,9vw,3rem)}.hero-bg{object-position:center 35%}.hero-inner{padding:48px 20px 120px}.hero-sub{font-size:1rem;font-weight:400}.hero-stats{grid-template-columns:1fr 1fr 1fr}.hero-stat{padding:14px 16px}.hero-stat-num{font-size:1.3rem}.btn-hero{width:100%;justify-content:center}}
 @media(max-width:380px){.hero-inner{padding:44px 16px 110px}.hero h1{font-size:2rem}}
 @media(max-width:900px){.statement{padding:80px 24px}}
 @media(max-width:900px){.intro-inner{grid-template-columns:1fr;gap:48px}.intro-section{padding:72px 24px}}
@@ -416,10 +404,10 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
 @media(max-width:1024px){.why-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.why-section{padding:72px 24px}}
 @media(max-width:600px){.why-grid{grid-template-columns:1fr}}
-@media(max-width:900px){.promise-section{padding:72px 24px}.promise-header{grid-template-columns:1fr;gap:24px;margin-bottom:52px}.promise-item{grid-template-columns:56px 1fr;gap:20px;padding:28px 0}.promise-cta{flex-direction:column;align-items:flex-start}}
-@media(max-width:600px){.promise-section{padding:56px 20px}.promise-item{grid-template-columns:48px 1fr;gap:16px;padding:24px 0}.promise-content h3{font-size:1.15rem}.btn-promise{width:100%;justify-content:center}}
+@media(max-width:900px){.promise-section{padding:72px 24px}.promise-header{grid-template-columns:1fr;gap:24px;margin-bottom:52px}.promise-item{grid-template-columns:56px 1fr;gap:20px;padding:28px 0}.promise-num-wrap svg{width:56px;height:56px}.promise-num-wrap text{font-size:18px}.promise-cta{flex-direction:column;align-items:flex-start}}
+@media(max-width:600px){.promise-section{padding:56px 20px}.promise-item{grid-template-columns:48px 1fr;gap:16px;padding:24px 0}.promise-num-wrap svg{width:48px;height:48px}.promise-num-wrap text{font-size:16px}.promise-content h3{font-size:1.15rem}.btn-promise{width:100%;justify-content:center}}
 @media(max-width:900px){.reviews-header{padding:0 24px}.review-card{flex:0 0 300px}}
-@media(max-width:600px){.reviews-header{flex-direction:column;align-items:flex-start;padding:0 20px}.agg-score{text-align:left}.reviews-track{padding:0 20px}.reviews-head-right{width:100%;justify-content:space-between}}
+@media(max-width:600px){.reviews-header{flex-direction:column;align-items:flex-start;padding:0 20px}.agg-score{text-align:left}.reviews-track{padding:0 20px}}
 @media(max-width:900px){.nick-section{padding:72px 24px}.nick-inner{grid-template-columns:1fr;gap:48px}}
 @media(max-width:600px){.nick-section{padding:56px 20px}.nick-actions{flex-direction:column}.btn-cta-primary,.btn-cta-ghost{width:100%;justify-content:center}.cred-card{padding:18px 20px}}
 @media(max-width:900px){.final-cta{padding:64px 24px}}
@@ -493,7 +481,7 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
 <div id="header-placeholder"></div>
 
 <section class="hero" aria-label="fundr — NZ business finance broker">
-  <div class="hero-bg" role="img" aria-label="fundr finances vehicles, utes, trucks and equipment across NZ"></div>
+  <img class="hero-bg" src="images/primemover-hero.jpg" alt="Mercedes-Benz prime mover truck driving along a New Zealand coastal highway at dusk — fundr finances vehicles, utes, trucks and equipment for NZ businesses" fetchpriority="high">
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-accent" aria-hidden="true"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
@@ -579,13 +567,13 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
     <div class="section-header">
       <div>
         <p class="sec-label">What We Finance</p>
-        <h2>Vehicle, truck, equipment<br>&amp; <em>luxury finance NZ.</em></h2>
+        <h2>Vehicle, truck, equipment<br>&amp; <em>luxury vehicle finance NZ.</em></h2>
       </div>
       <a href="/what-we-finance.html" class="text-link" data-cursor="" aria-label="View all finance products">View All &rarr;</a>
     </div>
     <div class="products-grid" role="list" aria-label="Finance products">
       <a href="/vehicle-finance.html" class="product-card" role="listitem" data-cursor="view">
-        <div class="product-photo" style="background-image:url('images/vehicle-finance.jpg')"><span class="product-photo-tag">Vehicle finance</span></div>
+        <div class="product-photo"><img src="images/vehicle-finance.jpg" alt="Business vehicle fleet including a van, box truck and SUV parked outside a warehouse in New Zealand" loading="lazy" width="640" height="200"><span class="product-photo-tag">Vehicle finance</span></div>
         <div class="product-body">
           <span class="product-num">01</span>
           <h3>Vehicle Finance</h3>
@@ -594,7 +582,7 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
         </div>
       </a>
       <a href="/ute-finance.html" class="product-card" role="listitem" data-cursor="view">
-        <div class="product-photo" style="background-image:url('images/toyota-hilux-hero.jpg')"><span class="product-photo-tag">Ute finance</span></div>
+        <div class="product-photo"><img src="images/toyota-hilux-hero.jpg" alt="Toyota Hilux ute parked on a New Zealand farm building site, financed through fundr" loading="lazy" width="640" height="200"><span class="product-photo-tag">Ute finance</span></div>
         <div class="product-body">
           <span class="product-num">02</span>
           <h3>Ute Finance</h3>
@@ -603,7 +591,7 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
         </div>
       </a>
       <a href="/truck-finance.html" class="product-card" role="listitem" data-cursor="view">
-        <div class="product-photo" style="background-image:url('images/truck-finance-hero-v2.jpg')"><span class="product-photo-tag">Truck finance</span></div>
+        <div class="product-photo"><img src="images/truck-finance-hero-v2.jpg" alt="Prime mover truck parked in a warehouse yard at dusk, financed through fundr NZ" loading="lazy" width="640" height="200"><span class="product-photo-tag">Truck finance</span></div>
         <div class="product-body">
           <span class="product-num">03</span>
           <h3>Truck Finance</h3>
@@ -612,7 +600,7 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
         </div>
       </a>
       <a href="/equipment-finance.html" class="product-card" role="listitem" data-cursor="view">
-        <div class="product-photo" style="background-image:url('images/Digger.png')"><span class="product-photo-tag">Equipment finance</span></div>
+        <div class="product-photo"><img src="images/Digger.png" alt="CAT excavator loading a dump truck on a construction site, financed through fundr NZ" loading="lazy" width="640" height="200"><span class="product-photo-tag">Equipment finance</span></div>
         <div class="product-body">
           <span class="product-num">04</span>
           <h3>Equipment Finance</h3>
@@ -621,12 +609,12 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
         </div>
       </a>
       <a href="/luxury-vehicle-finance.html" class="product-card span-2" role="listitem" data-cursor="view">
-        <div class="product-photo" style="background-image:url('images/luxury-vehicle-finance.jpg')"><span class="product-photo-tag">Luxury &amp; prestige</span></div>
+        <div class="product-photo"><img src="images/luxury-vehicle-finance.jpg" alt="Porsche 911 in a concrete garage, an example of luxury and prestige vehicle finance NZ" loading="lazy" width="1280" height="200"><span class="product-photo-tag">Luxury &amp; prestige</span></div>
         <div class="product-body">
           <span class="product-num">05</span>
           <h3>Luxury &amp; Prestige</h3>
           <p>Range Rover, BMW, Mercedes-Benz and Porsche. Director and business-owner vehicles with balloon payment structuring and specialist lenders.</p>
-          <span class="product-arrow">Explore Luxury Finance &rarr;</span>
+          <span class="product-arrow">Explore Luxury Vehicle Finance &rarr;</span>
         </div>
       </a>
     </div>
@@ -805,14 +793,10 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
         <div class="agg-num">5.0</div>
         <span class="agg-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
       </div>
-      <div class="reviews-nav">
-        <button class="reviews-nav-btn" id="reviewsPrev" data-cursor="" aria-label="Previous reviews">&larr;</button>
-        <button class="reviews-nav-btn" id="reviewsNext" data-cursor="" aria-label="Next reviews">&rarr;</button>
-      </div>
     </div>
   </div>
   <div class="reviews-track-wrap">
-    <div class="reviews-track" id="reviewsTrack" role="list" aria-label="Customer testimonials" tabindex="0">
+    <div class="reviews-track" id="reviewsTrack" role="list" aria-label="Customer testimonials">
       <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
         <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p class="review-text" itemprop="reviewBody">"fundr sorted our excavator finance in under 24 hours. Nick knew exactly what lenders to approach — we'd been knocked back by our bank but fundr got it done."</p>
@@ -839,7 +823,6 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
       </article>
     </div>
   </div>
-  <p class="reviews-hint">Drag to browse &rarr;</p>
 </section>
 
 <section class="nick-section" aria-label="About Nick">
@@ -1057,45 +1040,6 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
     });
   } else {
     document.querySelectorAll('.promise-item, .wipe-wrap').forEach(function(el){ el.classList.add('in'); });
-  }
-
-  /* ── Reviews drag-to-browse + keyboard/button nav ── */
-  var track = document.getElementById('reviewsTrack');
-  if (track) {
-    var prevBtn = document.getElementById('reviewsPrev');
-    var nextBtn = document.getElementById('reviewsNext');
-    var cardStep = function(){
-      var card = track.querySelector('.review-card');
-      return card ? card.getBoundingClientRect().width + 20 : 340;
-    };
-    if (prevBtn) prevBtn.addEventListener('click', function(){ track.scrollLeft -= cardStep(); });
-    if (nextBtn) nextBtn.addEventListener('click', function(){ track.scrollLeft += cardStep(); });
-    track.addEventListener('keydown', function(e){
-      if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollLeft += cardStep(); }
-      if (e.key === 'ArrowLeft') { e.preventDefault(); track.scrollLeft -= cardStep(); }
-    });
-
-    var isDown = false, startX, scrollLeft;
-    track.addEventListener('mousedown', function(e){
-      isDown = true; track.classList.add('dragging');
-      startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft;
-    });
-    window.addEventListener('mouseup', function(){ isDown = false; track.classList.remove('dragging'); });
-    track.addEventListener('mousemove', function(e){
-      if (!isDown) return;
-      e.preventDefault();
-      var x = e.pageX - track.offsetLeft;
-      track.scrollLeft = scrollLeft - (x - startX) * 1.4;
-    });
-    var touchStartX, touchScrollLeft;
-    track.addEventListener('touchstart', function(e){
-      touchStartX = e.touches[0].pageX - track.offsetLeft;
-      touchScrollLeft = track.scrollLeft;
-    }, {passive:true});
-    track.addEventListener('touchmove', function(e){
-      var x = e.touches[0].pageX - track.offsetLeft;
-      track.scrollLeft = touchScrollLeft - (x - touchStartX) * 1.2;
-    }, {passive:true});
   }
 })();
 </script>
