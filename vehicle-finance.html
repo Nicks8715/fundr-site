@@ -42,7 +42,6 @@
       "areaServed": "NZ",
       "priceRange": "$0 broker fee",
       "serviceType": ["Vehicle Finance","Car Finance","Ute Finance","Truck Finance","Van Finance","Fleet Finance","Luxury Vehicle Finance"],
-      "aggregateRating": {"@type":"AggregateRating","ratingValue":"5","reviewCount":"4"},
       "broker": {
         "@type": "Person",
         "name": "Nick",
@@ -91,7 +90,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 
 /* HERO */
 #hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;overflow:hidden;background:#000}
-.hero-bg{position:absolute;inset:0;background-image:url('/images/vehicle-finance-hero.jpg');background-size:cover;background-position:center}
+.hero-bg{position:absolute;inset:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;display:block}
 .hero-overlay-left{position:absolute;inset:0;background:linear-gradient(to right,rgba(6,5,3,.96) 0%,rgba(6,5,3,.85) 30%,rgba(6,5,3,.50) 52%,rgba(6,5,3,.10) 72%,transparent 100%)}
 .hero-overlay-top{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,5,3,.55) 0%,transparent 25%)}
@@ -312,7 +311,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .site-links a:hover{color:rgba(255,255,255,.70)}
 
 /* RESPONSIVE */
-@media(max-width:768px){#hero{align-items:flex-start;min-height:100svh}.hero-content{padding:72px 24px 48px}#hero h1{font-size:clamp(2rem,8vw,3rem)}.hero-sub{font-size:1rem;font-weight:400;max-width:100%}.hero-ctas{flex-direction:column;align-items:flex-start;gap:12px}.btn-hero-primary{width:100%;justify-content:center}}
+@media(max-width:768px){#hero{align-items:flex-start;min-height:100svh}.hero-bg img{object-position:60% center}.hero-content{padding:72px 24px 48px}#hero h1{font-size:clamp(2rem,8vw,3rem)}.hero-sub{font-size:1rem;font-weight:400;max-width:100%}.hero-ctas{flex-direction:column;align-items:flex-start;gap:12px}.btn-hero-primary{width:100%;justify-content:center}}
+@media(max-width:520px){.hero-bg img{object-position:65% center}}
 @media(max-width:768px){.about-section{padding:60px 24px}.about-cols{grid-template-columns:1fr;gap:40px}.about-stats{grid-template-columns:1fr 1fr;gap:28px 20px}}
 @media(max-width:1024px){.models-grid{grid-template-columns:repeat(2,1fr)}.model-card{border-right:none;border-bottom:1px solid #d8d4cc}.model-card:nth-child(odd){border-right:1px solid #d8d4cc}}
 @media(max-width:640px){.models-section{padding:56px 20px}.models-header{flex-direction:column;align-items:flex-start}.models-grid{grid-template-columns:1fr}.model-card{border-right:none}}
@@ -329,6 +329,57 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 @media(max-width:560px){.promise-grid{grid-template-columns:1fr}.promise-section{padding:60px 24px}}
 @media(max-width:768px){.final-cta-section{padding:72px 24px 60px}.final-cta-buttons{flex-direction:column;align-items:center}.btn-final-primary{width:100%;max-width:340px;justify-content:center}.related-bar{padding:24px}}
 @media(max-width:600px){.site-links{padding:16px 20px}}
+
+/* ═══════════ ANIMATION LAYER ═══════════ */
+
+/* Hero: slow Ken Burns zoom on the image */
+@keyframes kenBurns{from{transform:scale(1.06) translateY(-4px)}to{transform:scale(1) translateY(0)}}
+.hero-bg img{animation:kenBurns 9s var(--ease) both;will-change:transform}
+
+/* Hero: headline line-mask reveal (JS wraps each line in .hl > .hl-in) */
+.hl{display:block;overflow:hidden}
+.hl-in{display:block;transform:translateY(110%);animation:lineUp .9s cubic-bezier(.22,1,.36,1) both}
+@keyframes lineUp{to{transform:translateY(0)}}
+.hl:nth-child(1) .hl-in{animation-delay:.25s}
+.hl:nth-child(2) .hl-in{animation-delay:.4s}
+
+/* Hero: staggered rise for content below the headline */
+@keyframes riseSoft{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:riseSoft .85s cubic-bezier(.22,1,.36,1) both}
+.hero-content>nav{animation-delay:.1s}
+.hero-content>.hero-eyebrow{animation-delay:.18s}
+.hero-content>h1{animation-delay:.3s}
+.hero-content>.hero-sub{animation-delay:.75s}
+.hero-content>.hero-pills{animation-delay:.85s}
+.hero-content>.hero-ctas{animation-delay:.95s}
+.hero-content>.hero-trust{animation-delay:1.05s}
+
+/* Scroll reveals: single elements and staggered groups */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv-g .rv-i{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv-g.in .rv-i{opacity:1;transform:translateY(0)}
+.rv-g.in .rv-i:nth-child(1){transition-delay:.04s}
+.rv-g.in .rv-i:nth-child(2){transition-delay:.10s}
+.rv-g.in .rv-i:nth-child(3){transition-delay:.16s}
+.rv-g.in .rv-i:nth-child(4){transition-delay:.22s}
+.rv-g.in .rv-i:nth-child(5){transition-delay:.28s}
+.rv-g.in .rv-i:nth-child(6){transition-delay:.34s}
+.rv-g.in .rv-i:nth-child(7){transition-delay:.40s}
+
+/* Section labels: diamond pulses in on reveal */
+@keyframes diamondIn{from{opacity:0;transform:scale(.4) rotate(-90deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.rv.in .sec-label::before,.rv.in .promise-sec-label::before{animation:diamondIn .5s var(--ease) .12s both}
+
+/* Stat count-up */
+.counting{color:var(--orange)}
+
+/* Card lift refinements already exist via hover transitions — leave as-is */
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg img,.hero-content>*,.hl-in{animation:none!important;transform:none!important;opacity:1!important}
+  .rv,.rv-g .rv-i{opacity:1!important;transform:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -337,8 +388,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 
 <!-- HERO -->
 <section id="hero" aria-label="Vehicle Finance Hero">
-  <div class="hero-bg" role="img" aria-label="Business vehicle finance NZ — fundr">
-    <img src="/images/vehicle-finance-hero.jpg" alt="Black Audi RS6 Avant parked on a residential Auckland street, financed by fundr" style="width:100%;height:100%;object-fit:cover;display:block">
+  <div class="hero-bg">
+    <img src="/images/vehicle-finance-hero.jpg" alt="Ford Ranger ute and Mercedes-Benz Sprinter van parked outside a villa on an Auckland street at dusk, financed by fundr" style="width:100%;height:100%;object-fit:cover;display:block">
   </div>
   <div class="hero-overlay-left" aria-hidden="true"></div>
   <div class="hero-overlay-top" aria-hidden="true"></div>
@@ -720,6 +771,78 @@ document.querySelectorAll('.faq-trigger').forEach(trigger=>{
     if(!isOpen){item.classList.add('open');trigger.setAttribute('aria-expanded','true');answer.style.maxHeight=answer.scrollHeight+'px';}
   });
 });
+
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Hero headline line-mask reveal */
+  if (!reduced) {
+    var h1 = document.querySelector('.hero-content h1');
+    if (h1) {
+      var parts = h1.innerHTML.split(/<br\s*\/?>/i);
+      h1.innerHTML = parts.map(function(line){
+        return '<span class="hl"><span class="hl-in">' + line + '</span></span>';
+      }).join('');
+    }
+  }
+
+  if (!reduced && 'IntersectionObserver' in window) {
+    /* Single-element reveals: section intros and headers */
+    var singles = document.querySelectorAll(
+      '.about-inner > .sec-label, .about-inner > h2, .about-divider, .about-copy, ' +
+      '.models-header, .why-inner > .sec-label, .why-inner > h2, ' +
+      '.reviews-header, .process-header-row, .calc-inner > div:first-child, .calc-card, ' +
+      '.faq-left, .promise-header, .final-cta-inner > *'
+    );
+    singles.forEach(function(el){ el.classList.add('rv'); });
+
+    /* Grouped/staggered reveals */
+    var groups = document.querySelectorAll(
+      '.about-stats, .models-grid, .secondary-vehicles, .why-grid, ' +
+      '.reviews-grid, .steps, .promise-grid, .faq-list'
+    );
+    groups.forEach(function(g){
+      g.classList.add('rv-g');
+      Array.prototype.forEach.call(g.children, function(c){ c.classList.add('rv-i'); });
+    });
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -6% 0px'});
+
+    document.querySelectorAll('.rv, .rv-g').forEach(function(el){ io.observe(el); });
+
+    /* Stat count-up for the About section numbers */
+    function animateCount(el){
+      var raw = el.textContent.trim();
+      var m = raw.match(/^(\d+)(.*)$/);
+      if (!m) return;
+      var target = parseInt(m[1], 10), suffix = m[2];
+      var dur = 1100, start = null;
+      el.classList.add('counting');
+      function step(ts){
+        if (!start) start = ts;
+        var p = Math.min(1, (ts - start) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.classList.remove('counting');
+      }
+      requestAnimationFrame(step);
+    }
+    var statIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { animateCount(e.target); statIO.unobserve(e.target); }
+      });
+    }, {threshold: 0.6});
+    document.querySelectorAll('.stat-num').forEach(function(el){ statIO.observe(el); });
+  }
+})();
 </script>
 
 <div id="footer-placeholder"></div>
