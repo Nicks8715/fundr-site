@@ -13,8 +13,8 @@
 <meta name="description" content="fundr arranges business finance for NZ companies — working capital, equipment finance, acquisition funding and cashflow solutions. 15+ lenders, fast approvals.">
 <link rel="canonical" href="https://www.fundr.co.nz/business-finance.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Business Finance NZ | fundr">
-<meta property="og:description" content="Working capital, business loans and acquisition finance for NZ businesses. Independent broker with 15+ lenders. Talk to Nick today.">
+<meta property="og:title" content="Business Finance NZ | Loans & Working Capital | fundr">
+<meta property="og:description" content="fundr arranges business finance for NZ companies — working capital, equipment finance, acquisition funding and cashflow solutions. 15+ lenders, fast approvals.">
 <meta property="og:url" content="https://www.fundr.co.nz/business-finance.html">
 <meta property="og:image" content="https://www.fundr.co.nz/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -206,6 +206,35 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 @media(max-width:900px){.hero{padding:72px 24px 64px}.hero-inner{grid-template-columns:1fr;gap:44px}.hero-stats{display:grid;grid-template-columns:1fr 1fr}.hero-stat{padding:20px 22px;flex-direction:column;align-items:flex-start;gap:6px}.hero-stat-num{font-size:2rem;min-width:unset}.products{padding:72px 24px}.acquisition{padding:72px 24px}.acquisition-inner{grid-template-columns:1fr;gap:48px}.promise{padding:72px 24px}.faq{padding:72px 24px}.cta{padding:64px 24px}.cta-inner{grid-template-columns:1fr;gap:28px}.cta-btns{flex-direction:row;flex-wrap:wrap}.site-links{padding:20px 24px}}
 @media(max-width:600px){.hero-desc{font-size:1rem;font-weight:400}.hero{padding:56px 20px 52px}.hero h1{font-size:clamp(2rem,8.5vw,2.8rem)}.hero-stats{grid-template-columns:1fr 1fr}.hero-stat{padding:16px 14px}.hero-stat-num{font-size:1.8rem}.products{padding:56px 20px}.product-grid{grid-template-columns:1fr}.acquisition{padding:56px 20px}.promise{padding:56px 20px}.promise-grid{grid-template-columns:1fr}.faq{padding:56px 20px}.cta{padding:52px 20px}.cta-btns{flex-direction:column;width:100%}.btn-white,.btn-outline-white{width:100%;justify-content:center}.site-links{padding:16px 20px}}
 @media(max-width:380px){.hero{padding:44px 16px 40px}.products{padding:44px 16px}.acquisition{padding:44px 16px}.promise{padding:44px 16px}.faq{padding:44px 16px}.cta{padding:40px 16px}}
+
+/* ═══════════ ANIMATION LAYER ═══════════ */
+
+.hl{display:block;overflow:hidden}
+.hl-in{display:block;transform:translateY(110%);animation:lineUp .9s cubic-bezier(.22,1,.36,1) both}
+@keyframes lineUp{to{transform:translateY(0)}}
+.hl:nth-child(1) .hl-in{animation-delay:.25s}
+.hl:nth-child(2) .hl-in{animation-delay:.38s}
+.hl:nth-child(3) .hl-in{animation-delay:.51s}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv-g .rv-i{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv-g.in .rv-i{opacity:1;transform:translateY(0)}
+.rv-g.in .rv-i:nth-child(1){transition-delay:.04s}
+.rv-g.in .rv-i:nth-child(2){transition-delay:.09s}
+.rv-g.in .rv-i:nth-child(3){transition-delay:.14s}
+.rv-g.in .rv-i:nth-child(4){transition-delay:.19s}
+.rv-g.in .rv-i:nth-child(5){transition-delay:.24s}
+.rv-g.in .rv-i:nth-child(6){transition-delay:.29s}
+
+@keyframes diamondIn{from{opacity:0;transform:scale(.4) rotate(-90deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.rv.in .sec-label::before{animation:diamondIn .5s var(--ease) .12s both}
+
+@media(prefers-reduced-motion:reduce){
+  .hl-in{animation:none!important;transform:none!important;opacity:1!important}
+  .hero-inner>div:first-child>*,.hero-stat{animation:none!important;opacity:1!important;transform:none!important}
+  .rv,.rv-g .rv-i{opacity:1!important;transform:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -413,6 +442,45 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-item.open').forEach(el=>{el.classList.remove('open');el.querySelector('.faq-q').setAttribute('aria-expanded','false');});
   if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
 }
+
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduced) {
+    var h1 = document.querySelector('.hero-inner h1');
+    if (h1) {
+      var parts = h1.innerHTML.split(/<br\s*\/?>/i);
+      h1.innerHTML = parts.map(function(line){
+        return '<span class="hl"><span class="hl-in">' + line + '</span></span>';
+      }).join('');
+    }
+  }
+
+  if (!reduced && 'IntersectionObserver' in window) {
+    var singles = document.querySelectorAll(
+      '.products-header, .acquisition-inner > div:first-child, ' +
+      '.promise-inner > .sec-label, .promise-inner > h2, .promise-sub, ' +
+      '.faq-inner > div:first-child, .cta-inner > div:first-child'
+    );
+    singles.forEach(function(el){ el.classList.add('rv'); });
+
+    var groups = document.querySelectorAll(
+      '.product-grid, .acq-checklist, .promise-grid, .faq-list'
+    );
+    groups.forEach(function(g){
+      g.classList.add('rv-g');
+      Array.prototype.forEach.call(g.children, function(c){ c.classList.add('rv-i'); });
+    });
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -6% 0px'});
+
+    document.querySelectorAll('.rv, .rv-g').forEach(function(el){ io.observe(el); });
+  }
+})();
 </script>
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
