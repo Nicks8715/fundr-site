@@ -83,7 +83,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .sec-label--dark{color:rgba(255,255,255,.35)}
 
 .hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;padding:80px 0 60px;overflow:hidden;background:var(--dark2)}
-.hero-bg{position:absolute;inset:0;background-image:url('/images/unsecured-business-loans-hero.jpg');background-size:cover;background-position:center;background-repeat:no-repeat}
+.hero-bg{position:absolute;inset:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;display:block}
 .hero-bg::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
 .hero-overlay-left{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,rgba(6,5,3,.96) 0%,rgba(6,5,3,.85) 30%,rgba(6,5,3,.50) 52%,rgba(6,5,3,.10) 72%,rgba(6,5,3,.00) 100%)}
@@ -100,7 +100,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
 .pill{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:100px;background:rgba(255,255,255,.06);font-size:.72rem;color:rgba(255,255,255,.60);letter-spacing:.04em;white-space:nowrap}
 .pill::before{content:'✓';color:var(--orange);font-size:.65rem;font-weight:700}
-.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:nowrap;margin-bottom:20px}
+.hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:20px}
 .btn-hero-primary{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);padding:14px 24px;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .25s,color .25s;text-decoration:none}
 .btn-hero-primary:hover{background:var(--orange);color:#fff}
 .btn-hero-primary svg{width:12px;height:12px;flex-shrink:0}
@@ -345,6 +345,35 @@ table.lender-table tr:last-child td{border-bottom:none}
 @media(max-width:768px){.final-cta-section{padding:72px 24px 60px}.final-cta-buttons{flex-direction:column;align-items:center}.btn-final-primary{width:100%;max-width:340px;justify-content:center}.related-bar{padding:24px}}
 @media(max-width:600px){.site-links{padding:16px 20px}}
 @media(max-width:700px){.lender-table-section{padding:0 20px 60px}}
+
+/* ═══════════ ANIMATION LAYER ═══════════ */
+
+.hl{display:block;overflow:hidden}
+.hl-in{display:block;transform:translateY(110%);animation:lineUp .9s cubic-bezier(.22,1,.36,1) both}
+@keyframes lineUp{to{transform:translateY(0)}}
+.hl:nth-child(1) .hl-in{animation-delay:.25s}
+.hl:nth-child(2) .hl-in{animation-delay:.4s}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv-g .rv-i{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv-g.in .rv-i{opacity:1;transform:translateY(0)}
+.rv-g.in .rv-i:nth-child(1){transition-delay:.04s}
+.rv-g.in .rv-i:nth-child(2){transition-delay:.09s}
+.rv-g.in .rv-i:nth-child(3){transition-delay:.14s}
+.rv-g.in .rv-i:nth-child(4){transition-delay:.19s}
+.rv-g.in .rv-i:nth-child(5){transition-delay:.24s}
+.rv-g.in .rv-i:nth-child(6){transition-delay:.29s}
+.rv-g.in .rv-i:nth-child(7){transition-delay:.34s}
+.rv-g.in .rv-i:nth-child(8){transition-delay:.39s}
+
+@keyframes diamondIn{from{opacity:0;transform:scale(.4) rotate(-90deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.rv.in .sec-label::before{animation:diamondIn .5s var(--ease) .12s both}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-content>*,.hl-in{animation:none!important;transform:none!important;opacity:1!important}
+  .rv,.rv-g .rv-i{opacity:1!important;transform:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -796,6 +825,47 @@ document.querySelectorAll('.faq-trigger').forEach(trigger=>{
     if(!isOpen){item.classList.add('open');trigger.setAttribute('aria-expanded','true');answer.style.maxHeight=answer.scrollHeight+'px';}
   });
 });
+
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduced) {
+    var h1 = document.querySelector('.hero-content h1');
+    if (h1) {
+      var parts = h1.innerHTML.split(/<br\s*\/?>/i);
+      h1.innerHTML = parts.map(function(line){
+        return '<span class="hl"><span class="hl-in">' + line + '</span></span>';
+      }).join('');
+    }
+  }
+
+  if (!reduced && 'IntersectionObserver' in window) {
+    var singles = document.querySelectorAll(
+      '.about-inner > .sec-label, .about-inner > h2, .about-divider, .about-cols > div:first-child, ' +
+      '.equip-header, .lender-table-inner > *, ' +
+      '.solutions-inner > .sec-label, .solutions-inner > h2, .solutions-intro, ' +
+      '.why-inner > .sec-label, .why-inner > h2, .process-header-row, ' +
+      '.calc-inner > div:first-child, .calc-card, .faq-left, .promise-header, .final-cta-inner > *'
+    );
+    singles.forEach(function(el){ el.classList.add('rv'); });
+
+    var groups = document.querySelectorAll(
+      '.about-stats, .equip-grid, .solutions-top, .solutions-bottom, .why-grid, .steps, .promise-grid, .faq-list, .glance-card'
+    );
+    groups.forEach(function(g){
+      g.classList.add('rv-g');
+      Array.prototype.forEach.call(g.children, function(c){ c.classList.add('rv-i'); });
+    });
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -6% 0px'});
+
+    document.querySelectorAll('.rv, .rv-g').forEach(function(el){ io.observe(el); });
+  }
+})();
 </script>
 
 <div id="footer-placeholder"></div>
