@@ -14,7 +14,7 @@
 <link rel="canonical" href="https://www.fundr.co.nz/process.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.fundr.co.nz/process.html">
-<meta property="og:title" content="Our Process — How fundr Works | fundr NZ">
+<meta property="og:title" content="Our Process | How fundr Works | fundr NZ">
 <meta property="og:description" content="See how fundr works — three simple steps to get your NZ business financed. Tell us what you need, we find the right lender, you get approved in 24 hours.">
 <meta property="og:image" content="https://www.fundr.co.nz/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -166,6 +166,28 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 @media(max-width:900px){.hero{padding:72px 24px 64px}.hero-inner{grid-template-columns:1fr;gap:44px}.hero-stats{display:grid;grid-template-columns:1fr 1fr}.hero-stat{padding:20px 22px;flex-direction:column;align-items:flex-start;gap:6px}.hero-stat-num{font-size:2rem;min-width:unset}.steps{padding:72px 24px}.promise{padding:72px 24px}.cta{padding:64px 24px}.cta-inner{grid-template-columns:1fr;gap:28px}.cta-btns{flex-direction:row;flex-wrap:wrap}.step-item{grid-template-columns:60px 1fr;gap:24px}.step-item:not(:last-child)::after{left:29px}.site-links{padding:20px 24px}}
 @media(max-width:600px){.hero{padding:56px 20px 52px}.hero h1{font-size:clamp(2rem,8.5vw,2.8rem)}.hero-stats{grid-template-columns:1fr 1fr}.hero-stat{padding:16px 14px}.hero-stat-num{font-size:1.7rem}.steps{padding:56px 20px}.step-item{grid-template-columns:48px 1fr;gap:20px;padding:36px 0}.step-item:not(:last-child)::after{left:23px;top:40px}.step-num{width:38px;height:38px;font-size:1rem}.step-body h3{font-size:1.25rem}.promise{padding:56px 20px}.promise-grid{grid-template-columns:1fr}.cta{padding:52px 20px}.cta-btns{flex-direction:column;width:100%}.btn-white,.btn-outline-white{width:100%;justify-content:center}.site-links{padding:16px 20px}}
 @media(max-width:380px){.hero{padding:44px 16px 40px}.steps{padding:44px 16px}.promise{padding:44px 16px}.cta{padding:40px 16px}}
+
+/* ═══════════ ANIMATION LAYER ═══════════ */
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv-g .rv-i{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv-g.in .rv-i{opacity:1;transform:translateY(0)}
+.rv-g.in .rv-i:nth-child(1){transition-delay:.04s}
+.rv-g.in .rv-i:nth-child(2){transition-delay:.09s}
+.rv-g.in .rv-i:nth-child(3){transition-delay:.14s}
+.rv-g.in .rv-i:nth-child(4){transition-delay:.19s}
+.rv-g.in .rv-i:nth-child(5){transition-delay:.24s}
+.rv-g.in .rv-i:nth-child(6){transition-delay:.29s}
+
+@keyframes diamondIn{from{opacity:0;transform:scale(.4) rotate(-90deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.rv.in .sec-label::before{animation:diamondIn .5s var(--ease) .12s both}
+
+.counting{color:var(--orange)}
+
+@media(prefers-reduced-motion:reduce){
+  .rv,.rv-g .rv-i{opacity:1!important;transform:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -303,6 +325,57 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduced && 'IntersectionObserver' in window) {
+
+    var singles = document.querySelectorAll(
+      '.steps-header, .promise-inner > .sec-label, .promise-inner > h2, .promise-sub, .cta-inner > *'
+    );
+    singles.forEach(function(el){ el.classList.add('rv'); });
+
+    var groups = document.querySelectorAll('.step-list, .promise-grid');
+    groups.forEach(function(g){
+      g.classList.add('rv-g');
+      Array.prototype.forEach.call(g.children, function(c){ c.classList.add('rv-i'); });
+    });
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -6% 0px'});
+
+    document.querySelectorAll('.rv, .rv-g').forEach(function(el){ io.observe(el); });
+
+    /* Hero stat count-up — target parsed from the real static text, so if this never runs, the correct value stays visible */
+    function animateCount(el){
+      var raw = el.textContent.trim();
+      var m = raw.match(/^(\d+)(.*)$/);
+      if (!m) return;
+      var target = parseInt(m[1], 10), suffix = m[2];
+      var dur = 1200, start = null;
+      el.classList.add('counting');
+      function step(ts){
+        if (!start) start = ts;
+        var p = Math.min(1, (ts - start) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.classList.remove('counting');
+      }
+      requestAnimationFrame(step);
+    }
+    var statIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { animateCount(e.target); statIO.unobserve(e.target); }
+      });
+    }, {threshold: 0.6});
+    document.querySelectorAll('.hero-stat-num').forEach(function(el){ statIO.observe(el); });
+  }
+})();
+</script>
 <script src="/shared.js"></script>
 </body>
 </html>
