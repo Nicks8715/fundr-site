@@ -14,7 +14,7 @@
 <link rel="canonical" href="https://www.fundr.co.nz/about.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.fundr.co.nz/about.html">
-<meta property="og:title" content="About fundr — NZ Business Finance Broker">
+<meta property="og:title" content="About Nick Sevta | fundr — NZ Business Finance Broker">
 <meta property="og:description" content="fundr is Nick Sevta's NZ asset finance brokerage. 15+ years commercial finance experience, 15+ lender relationships. Fast, honest finance for Kiwi businesses.">
 <meta property="og:image" content="https://www.fundr.co.nz/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@
       },
       "alumniOf": ["Bank of New Zealand","Bank of Queensland","GE Capital","Wells Fargo","flexicommercial"],
       "knowsAbout": ["Vehicle Finance","Asset Finance","Commercial Lending","Equipment Finance","Truck Finance","Luxury Vehicle Finance","Business Finance"],
-      "sameAs": []
+      "sameAs": ["https://www.linkedin.com/in/nicksevta/"]
     },
     {
       "@type": "FinancialService",
@@ -56,7 +56,8 @@
       "url": "https://www.fundr.co.nz/about.html",
       "telephone": "+64211023416",
       "areaServed": "NZ",
-      "founder": {"@type":"Person","name":"Nick Sevta"}
+      "founder": {"@type":"Person","name":"Nick Sevta"},
+      "sameAs": ["https://www.linkedin.com/company/fundrnz/"]
     }
   ]
 }
@@ -178,6 +179,25 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 @media(max-width:900px){.hero{padding:72px 24px 64px}.hero-inner{grid-template-columns:1fr;gap:48px}.story{padding:72px 24px}.story-inner{grid-template-columns:1fr;gap:48px}.nick{padding:72px 24px}.nick-inner{grid-template-columns:1fr;gap:48px}.nick-right{flex-direction:row;gap:24px}.values{padding:72px 24px}.cta{padding:64px 24px}.cta-inner{grid-template-columns:1fr;gap:28px}.cta-btns{flex-direction:row;flex-wrap:wrap}.site-links{padding:20px 24px}}
 @media(max-width:600px){.hero{padding:56px 20px 52px}.hero h1{font-size:clamp(2.2rem,9vw,3rem)}.story{padding:56px 20px}.nick{padding:56px 20px}.nick-right{flex-direction:column}.nick-cred-grid{grid-template-columns:1fr 1fr}.values{padding:56px 20px}.values-grid{grid-template-columns:1fr}.cta{padding:52px 20px}.cta-btns{flex-direction:column;width:100%}.btn-white,.btn-outline{width:100%;justify-content:center}.site-links{padding:16px 20px}}
 @media(max-width:380px){.hero{padding:48px 16px 44px}.story{padding:48px 16px}.nick{padding:48px 16px}.values{padding:48px 16px}.cta{padding:44px 16px}.nick-cred-grid{grid-template-columns:1fr}}
+
+/* ═══════════ ANIMATION LAYER ═══════════ */
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv-g .rv-i{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv-g.in .rv-i{opacity:1;transform:translateY(0)}
+.rv-g.in .rv-i:nth-child(1){transition-delay:.04s}
+.rv-g.in .rv-i:nth-child(2){transition-delay:.09s}
+.rv-g.in .rv-i:nth-child(3){transition-delay:.14s}
+.rv-g.in .rv-i:nth-child(4){transition-delay:.19s}
+
+@keyframes diamondIn{from{opacity:0;transform:scale(.4) rotate(-90deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.rv.in .sec-label::before{animation:diamondIn .5s var(--ease) .12s both}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-left>*{animation:none!important;opacity:1!important;transform:none!important}
+  .rv,.rv-g .rv-i{opacity:1!important;transform:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -350,6 +370,33 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
 
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduced && 'IntersectionObserver' in window) {
+
+    var singles = document.querySelectorAll(
+      '.story-inner > div:first-child, .story-stats, .nick-inner > div:first-child, ' +
+      '.nick-right, .values-inner > .sec-label, .values-inner > h2, .values-sub, .cta-inner > *'
+    );
+    singles.forEach(function(el){ el.classList.add('rv'); });
+
+    var groups = document.querySelectorAll('.values-grid, .nick-cred-grid');
+    groups.forEach(function(g){
+      g.classList.add('rv-g');
+      Array.prototype.forEach.call(g.children, function(c){ c.classList.add('rv-i'); });
+    });
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -6% 0px'});
+
+    document.querySelectorAll('.rv, .rv-g').forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
 <script src="/shared.js"></script>
 </body>
 </html>
