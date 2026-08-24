@@ -35,6 +35,7 @@
           '<h4>What We Finance</h4>' +
           '<ul>' +
             '<li><a href="' + href('/vehicle-finance.html') + '">Vehicle Finance</a></li>' +
+            '<li><a href="' + href('/luxury-vehicle-finance.html') + '">Luxury Vehicle Finance</a></li>' +
             '<li><a href="' + href('/ute-finance.html') + '">Ute Finance</a></li>' +
             '<li><a href="' + href('/truck-finance.html') + '">Truck Finance</a></li>' +
             '<li><a href="' + href('/equipment-finance.html') + '">Equipment Finance</a></li>' +
