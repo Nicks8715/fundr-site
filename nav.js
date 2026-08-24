@@ -3,6 +3,7 @@
 
   var financeLinks = [
     { label: 'Vehicle Finance', sub: 'Cars, SUVs, vans & business vehicles', href: '/vehicle-finance.html', icon: 'vehicle' },
+    { label: 'Luxury Vehicle Finance', sub: 'Audi, BMW, Porsche & more', href: '/luxury-vehicle-finance.html', icon: 'luxury' },
     { label: 'Ute Finance',     sub: 'Ranger, Hilux, D-Max & work utes',     href: '/ute-finance.html',     icon: 'ute' },
     { label: 'Truck Finance',   sub: 'Prime movers, tippers & fleets',        href: '/truck-finance.html',   icon: 'truck' },
     { label: 'Equipment Finance', sub: 'Construction, medical, hospitality',  href: '/equipment-finance.html', icon: 'equip' },
@@ -11,6 +12,7 @@
 
   var icons = {
     vehicle: '<svg viewBox="0 0 24 24"><rect x="1" y="11" width="22" height="7" rx="1"/><path d="M5 11V9a2 2 0 012-2h6l3 4"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>',
+    luxury:  '<svg viewBox="0 0 24 24"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg>',
     ute:     '<svg viewBox="0 0 24 24"><rect x="1" y="11" width="22" height="7" rx="1"/><path d="M5 11V9a2 2 0 012-2h8l2 4"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>',
     truck:   '<svg viewBox="0 0 24 24"><rect x="1" y="9" width="15" height="10" rx="1"/><path d="M16 13h4l3 3v3h-7V13z"/><circle cx="5.5" cy="19" r="1.5"/><circle cx="18.5" cy="19" r="1.5"/></svg>',
     equip:   '<svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
