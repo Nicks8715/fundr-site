@@ -134,7 +134,8 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
 #header-placeholder.on-dark .nav-link,
 #header-placeholder.on-dark .header-phone{color:rgba(255,255,255,.85)}
 #header-placeholder.on-dark .nav-link:hover{color:#fff}
-#header-placeholder.is-scrolled .site-header{background:rgba(240,236,227,.90);backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid var(--border)}
+#header-placeholder.is-scrolled .site-header{position:relative;background:transparent;border-bottom:1px solid var(--border)}
+#header-placeholder.is-scrolled .site-header::before{content:'';position:absolute;inset:0;z-index:-1;background:rgba(240,236,227,.90);backdrop-filter:blur(14px) saturate(140%);}
 #header-placeholder.is-scrolled .header-logo,
 #header-placeholder.is-scrolled .nav-link,
 #header-placeholder.is-scrolled .header-phone{color:var(--ink)}
