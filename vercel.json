@@ -60,6 +60,19 @@
     { "source": "/what-we-finance/equipment-finance",         "destination": "/equipment-finance.html",                         "permanent": true },
     { "source": "/what-we-finance/business-finance",          "destination": "/business-finance.html",                          "permanent": true },
 
+    { "source": "/whatwefinance/truck-finance",               "destination": "/truck-finance.html",                             "permanent": true },
+    { "source": "/whatwefinance/ute-finance",                 "destination": "/ute-finance.html",                               "permanent": true },
+    { "source": "/whatwefinance/vehicle-finance",             "destination": "/vehicle-finance.html",                           "permanent": true },
+    { "source": "/whatwefinance/equipment-finance",           "destination": "/equipment-finance.html",                         "permanent": true },
+    { "source": "/whatwefinance/business-finance",            "destination": "/business-finance.html",                          "permanent": true },
+
+    { "source": "/services",                                  "destination": "/what-we-finance.html",                           "permanent": true },
+    { "source": "/services/truck-finance",                    "destination": "/truck-finance.html",                             "permanent": true },
+    { "source": "/services/ute-finance",                      "destination": "/ute-finance.html",                               "permanent": true },
+    { "source": "/services/vehicle-finance",                  "destination": "/vehicle-finance.html",                           "permanent": true },
+    { "source": "/services/equipment-finance",                "destination": "/equipment-finance.html",                         "permanent": true },
+    { "source": "/services/business-finance",                 "destination": "/business-finance.html",                          "permanent": true },
+
     { "source": "/how-to-finance-a-work-ute",                 "destination": "/Blog/how-to-finance-a-work-ute-nz.html",         "permanent": true },
     { "source": "/how-to-finance-a-work-ute-in-nz",           "destination": "/Blog/how-to-finance-a-work-ute-nz.html",         "permanent": true },
     { "source": "/asset-finance-broker-nz",                   "destination": "/Blog/asset-finance-broker-nz.html",              "permanent": true },
@@ -83,6 +96,7 @@
     { "source": "/Blog/truck-finance-nz-options",             "destination": "/Blog/truck-finance-nz-options.html",             "permanent": true },
 
     { "source": "/post/truck-finance-nz-optio/:slug*",        "destination": "/Blog/truck-finance-nz-options.html",             "permanent": true },
+    { "source": "/post/ute-finance-nz-fleet-upgrade",         "destination": "/Blog/ute-finance-nz-fleet-upgrade.html",         "permanent": true },
     { "source": "/post/:slug*",                               "destination": "/blog.html",                                      "permanent": true },
     { "source": "/referral-partners", "destination": "/referral-partners.html", "permanent": true }
   ]
