@@ -122,7 +122,8 @@ body.cur-link .cur-ring{width:52px;height:52px;background:transparent;border-col
 .hero-overlay{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,rgba(14,13,11,1.0) 0%,rgba(14,13,11,.97) 25%,rgba(14,13,11,.85) 42%,rgba(14,13,11,.55) 58%,rgba(14,13,11,.20) 76%,rgba(14,13,11,.05) 90%,transparent 100%);}
 .hero-overlay-img{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(14,13,11,.75) 0%,transparent 18%,transparent 72%,rgba(14,13,11,.90) 100%),linear-gradient(to right,transparent 50%,rgba(14,13,11,.15) 80%,rgba(14,13,11,.60) 100%);}
 .hero-overlay-bottom{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(14,13,11,.95) 0%,rgba(14,13,11,.4) 18%,transparent 40%);}
-.hero-inner{position:relative;z-index:2;padding:80px 48px 120px;max-width:700px;}
+.hero-inner{position:relative;z-index:2;padding:80px 48px 140px;max-width:1180px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:start;}
+.hero-text{max-width:600px;}
 
 /* Transparent header floating over the hero, solidifying once scrolled past it.
    Targets #header-placeholder's injected markup by the class names used
@@ -176,6 +177,25 @@ body{padding-top:0}
 .hero-stat:last-child{border-right:none}
 .hero-stat-num{font-family:var(--serif);font-size:1.8rem;font-style:italic;color:#fff;line-height:1;}
 .hero-stat-label{font-size:.68rem;font-weight:400;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+
+/* ---- hero repayment calculator card ---- */
+.hero-calc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:30px;backdrop-filter:blur(20px) saturate(140%);}
+.hero-calc-eyebrow{font-size:.66rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px;}
+.hero-calc h3{font-family:var(--serif);font-size:1.35rem;font-weight:400;font-style:italic;color:#fff;margin-bottom:22px;line-height:1.25;}
+.hero-calc-field{margin-bottom:18px;}
+.hero-calc-field label{display:block;font-size:.72rem;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.03em;margin-bottom:8px;}
+.hero-calc-toggle{display:flex;gap:6px;}
+.hero-calc-toggle button{flex:1;padding:9px 6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:4px;color:rgba(255,255,255,.6);font-family:var(--sans);font-size:.74rem;font-weight:500;cursor:none;}
+.hero-calc-toggle button.active{background:var(--orange);border-color:var(--orange);color:#fff;}
+.hero-calc-slider-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
+.hero-calc-slider-row span{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:#fff;}
+.hero-calc input[type=range]{width:100%;accent-color:var(--orange);height:3px;}
+.hero-calc-result{margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;align-items:flex-end;}
+.hero-calc-result-label{font-size:.66rem;color:rgba(255,255,255,.45);letter-spacing:.03em;}
+.hero-calc-result-value{font-family:var(--serif);font-size:2rem;font-style:italic;color:#fff;line-height:1;}
+.hero-calc-result-value span{font-family:var(--sans);font-style:normal;font-size:.78rem;color:rgba(255,255,255,.45);}
+.hero-calc-cta{display:block;text-align:center;background:var(--orange);color:#fff;padding:13px;border-radius:4px;margin-top:22px;font-family:var(--sans);font-weight:600;font-size:.76rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;}
+.hero-calc-fine{font-size:.66rem;color:rgba(255,255,255,.35);text-align:center;margin-top:10px;}
 
 /* =============================================
    2. STATEMENT (new — big type breather)
@@ -240,6 +260,22 @@ body{padding-top:0}
 .product-card:hover .product-arrow{color:var(--orange);border-color:var(--orange)}
 
 /* Placeholder-photo variant (same structure as real photos, gradient stand-in until sourced) */
+
+/* =============================================
+   4b. CONTENT / GUIDES (SEO surfacing)
+   ============================================= */
+.content-section{background:#fff;padding:96px 48px}
+.content-inner{max-width:1200px;margin:0 auto}
+.content-inner h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.12;color:var(--ink)}
+.content-inner h2 em{font-style:italic}
+.content-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.content-card{border:1px solid var(--border);border-radius:10px;background:var(--sand);text-decoration:none;color:inherit;padding:28px 26px;display:flex;flex-direction:column;gap:12px;transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
+.content-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(22,20,15,.08)}
+.content-cat{font-size:.65rem;font-weight:600;letter-spacing:.10em;text-transform:uppercase;color:var(--orange)}
+.content-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--ink);line-height:1.3}
+.content-card p{font-size:.85rem;font-weight:300;color:var(--mid);line-height:1.7}
+@media(max-width:900px){.content-section{padding:72px 24px}}
+@media(max-width:760px){.content-grid{grid-template-columns:1fr}}
 
 
 /* =============================================
@@ -400,11 +436,29 @@ body{padding-top:0}
 .btn-final-outline:hover{border-color:#fff;color:#fff}
 
 /* =============================================
+   12. STICKY MOBILE CTA
+   ============================================= */
+.mobile-cta-bar{display:none;}
+@media(max-width:640px){
+  .mobile-cta-bar{
+    display:block;position:fixed;bottom:0;left:0;right:0;z-index:250;
+    padding:12px 16px;background:rgba(14,13,11,.94);backdrop-filter:blur(10px);
+    box-shadow:0 -6px 20px rgba(0,0,0,.18);
+  }
+  .mobile-cta-bar a{
+    display:block;text-align:center;background:var(--orange);color:#fff;
+    padding:14px;border-radius:4px;font-family:var(--sans);font-weight:600;
+    font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;
+  }
+  body{padding-bottom:76px;}
+}
+
+/* =============================================
    RESPONSIVE
    ============================================= */
-@media(max-width:900px){.hero-inner{padding:60px 24px 120px}.hero-bg{object-position:68% 40%}}
+@media(max-width:900px){.hero-inner{padding:60px 24px 120px;grid-template-columns:1fr;gap:36px}.hero-bg{object-position:68% 40%}}
 @media(max-width:600px){.hero-overlay{background:linear-gradient(to bottom,rgba(14,13,11,.97) 0%,rgba(14,13,11,.92) 28%,rgba(14,13,11,.72) 46%,rgba(14,13,11,.40) 62%,rgba(14,13,11,.18) 78%,rgba(14,13,11,.08) 100%)}.hero-overlay-img{display:none}.hero-overlay-bottom{display:none}.hero h1{font-size:clamp(2.2rem,9vw,3rem)}.hero-bg{object-position:78% 42%}.hero-inner{padding:48px 20px 120px}.hero-sub{font-size:1rem;font-weight:400}.hero-stats{grid-template-columns:1fr 1fr 1fr}.hero-stat{padding:14px 16px}.hero-stat-num{font-size:1.3rem}.btn-hero{width:100%;justify-content:center}}
-@media(max-width:380px){.hero-inner{padding:44px 16px 110px}.hero h1{font-size:2rem}}
+@media(max-width:380px){.hero-inner{padding:44px 16px 110px}.hero h1{font-size:2rem}.hero-calc{padding:22px}}
 @media(max-width:900px){.statement{padding:80px 24px}}
 @media(max-width:900px){.intro-inner{grid-template-columns:1fr;gap:48px}.intro-section{padding:72px 24px}}
 @media(max-width:600px){.intro-section{padding:56px 20px}.intro-stat-num{font-size:2.6rem;min-width:80px}.intro-inner{gap:40px}}
@@ -438,11 +492,12 @@ body{padding-top:0}
 .hl:nth-child(2) .hl-in{animation-delay:.42s}
 .hl:nth-child(3) .hl-in{animation-delay:.56s}
 @keyframes riseSoft{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
-.hero-inner>*{animation:riseSoft .85s cubic-bezier(.22,1,.36,1) both}
-.hero-inner>*:nth-child(1){animation-delay:.15s}
-.hero-inner>*:nth-child(2){animation-delay:.25s}
-.hero-inner>*:nth-child(3){animation-delay:.72s}
-.hero-inner>*:nth-child(4){animation-delay:.84s}
+.hero-text>*{animation:riseSoft .85s cubic-bezier(.22,1,.36,1) both}
+.hero-text>*:nth-child(1){animation-delay:.15s}
+.hero-text>*:nth-child(2){animation-delay:.25s}
+.hero-text>*:nth-child(3){animation-delay:.72s}
+.hero-text>*:nth-child(4){animation-delay:.84s}
+.hero-calc{animation:riseSoft .9s cubic-bezier(.22,1,.36,1) .95s both}
 .hero-stats{animation:riseSoft .9s cubic-bezier(.22,1,.36,1) 1.25s both}
 @keyframes drawDown{from{transform:scaleY(0)}to{transform:scaleY(1)}}
 .hero-accent{transform-origin:top;animation:drawDown 1.1s var(--ease) .9s both}
@@ -502,20 +557,56 @@ body{padding-top:0}
   <div class="hero-overlay-bottom" aria-hidden="true"></div>
 
   <div class="hero-inner">
-    <p class="eyebrow" aria-label="NZ Business Finance Broker"><span>NZ Business Finance Broker</span></p>
-    <h1>Vehicle, Truck &amp; Equipment<br>Finance NZ —<br><em>built for business.</em></h1>
-    <p class="hero-sub">
-      <strong>One broker. 15+ NZ lenders. Approvals in 24 hours.</strong>
-      fundr finds the right lender for your deal, fast.
-    </p>
-    <div class="hero-actions">
-      <a href="/quick-quote.html" class="btn-hero" data-magnetic data-cursor="" aria-label="Get my quote in 60 seconds">
-        Get My Quote in 60 Seconds
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="/check-eligibility-full.html" class="btn-ghost-hero" data-magnetic data-cursor="" aria-label="Check your eligibility">
-        Check my eligibility &rarr;
-      </a>
+    <div class="hero-text">
+      <p class="eyebrow" aria-label="NZ Business Finance Broker"><span>NZ Business Finance Broker</span></p>
+      <h1>Vehicle, Truck &amp; Equipment<br>Finance NZ —<br><em>built for business.</em></h1>
+      <p class="hero-sub">
+        <strong>One broker. 15+ NZ lenders. Approvals in 24 hours.</strong>
+        fundr finds the right lender for your deal, fast.
+      </p>
+      <div class="hero-actions">
+        <a href="/quick-quote.html" class="btn-hero" data-magnetic data-cursor="" aria-label="Get my quote in 60 seconds">
+          Get My Quote in 60 Seconds
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/check-eligibility-full.html" class="btn-ghost-hero" data-magnetic data-cursor="" aria-label="Check your eligibility">
+          Check my eligibility &rarr;
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-calc" aria-label="Repayment calculator">
+      <div class="hero-calc-eyebrow">Repayment calculator</div>
+      <h3>What could your repayments look like?</h3>
+
+      <div class="hero-calc-field">
+        <label>Asset type</label>
+        <div class="hero-calc-toggle">
+          <button type="button" class="active">Vehicle</button>
+          <button type="button">Truck</button>
+          <button type="button">Equipment</button>
+        </div>
+      </div>
+
+      <div class="hero-calc-field">
+        <div class="hero-calc-slider-row"><label style="margin:0;">Purchase price</label><span>$65,000</span></div>
+        <input type="range" min="10000" max="300000" value="65000" aria-label="Purchase price">
+      </div>
+
+      <div class="hero-calc-field" style="margin-bottom:0;">
+        <div class="hero-calc-slider-row"><label style="margin:0;">Term</label><span>5 yrs</span></div>
+        <input type="range" min="1" max="7" value="5" aria-label="Loan term in years">
+      </div>
+
+      <div class="hero-calc-result">
+        <div>
+          <div class="hero-calc-result-label">Est. weekly repayment</div>
+          <div class="hero-calc-result-value">$298<span>/week</span></div>
+        </div>
+      </div>
+
+      <a href="/quick-quote.html" class="hero-calc-cta">Get my real rate &rarr;</a>
+      <div class="hero-calc-fine">Indicative at 8.99% p.a. Final rate confirmed once we assess your deal.</div>
     </div>
   </div>
 
@@ -591,7 +682,8 @@ body{padding-top:0}
         <div class="product-body">
           <span class="product-num">01</span>
           <h3>Vehicle Finance</h3>
-          <p>Cars, SUVs, vans and commercial vehicles for NZ businesses. New or used, dealer or private sale.</p>
+          <p>Cars, SUVs, vans and commercial vehicles — new or used, dealer or private sale. For business owners fitting out a hospitality, retail or trade fleet.</p>
+          <div class="product-tags"><span class="product-tag">Business owners</span></div>
           <span class="product-arrow">Explore Vehicle Finance &rarr;</span>
         </div>
       </a>
@@ -600,7 +692,8 @@ body{padding-top:0}
         <div class="product-body">
           <span class="product-num">02</span>
           <h3>Ute Finance</h3>
-          <p>Ranger, Hilux, D-Max and every work ute. Built for tradies who need fast approvals, not bank paperwork.</p>
+          <p>Ranger, Hilux, D-Max and every work ute — fast approvals, not bank paperwork. Built for tradies whose ute is their office.</p>
+          <div class="product-tags"><span class="product-tag">Tradies</span></div>
           <span class="product-arrow">Explore Ute Finance &rarr;</span>
         </div>
       </a>
@@ -609,7 +702,8 @@ body{padding-top:0}
         <div class="product-body">
           <span class="product-num">03</span>
           <h3>Truck Finance</h3>
-          <p>Prime movers, tippers, curtainsiders, crane trucks and specialist vehicles. Owner-operators and fleets.</p>
+          <p>Prime movers, tippers, curtainsiders, crane trucks and specialist vehicles. For owner-operators and fleets who know the economics of freight.</p>
+          <div class="product-tags"><span class="product-tag">Transport operators</span></div>
           <span class="product-arrow">Explore Truck Finance &rarr;</span>
         </div>
       </a>
@@ -618,7 +712,8 @@ body{padding-top:0}
         <div class="product-body">
           <span class="product-num">04</span>
           <h3>Equipment Finance</h3>
-          <p>Any business equipment — construction, medical, kitchen, gym, warehouse and more. Any industry, any asset.</p>
+          <p>Excavators, loaders, compactors and any business equipment — construction, medical, kitchen, gym and more. For contractors who can't take the next job without the right gear.</p>
+          <div class="product-tags"><span class="product-tag">Contractors &amp; construction</span></div>
           <span class="product-arrow">Explore Equipment Finance &rarr;</span>
         </div>
       </a>
@@ -627,64 +722,11 @@ body{padding-top:0}
         <div class="product-body">
           <span class="product-num">05</span>
           <h3>Luxury &amp; Prestige</h3>
-          <p>Range Rover, BMW, Mercedes-Benz and Porsche. Director and business-owner vehicles with balloon payment structuring and specialist lenders.</p>
+          <p>Range Rover, BMW, Mercedes-Benz and Porsche, structured with balloon payments and specialist lenders. For directors and business owners — a vehicle that's also a business asset.</p>
+          <div class="product-tags"><span class="product-tag">Directors &amp; executives</span></div>
           <span class="product-arrow">Explore Luxury Vehicle Finance &rarr;</span>
         </div>
       </a>
-    </div>
-  </div>
-</section>
-
-<section class="who-section" aria-label="Who fundr helps">
-  <div class="who-inner">
-    <div class="who-header">
-      <div>
-        <p class="sec-label">Who We Help</p>
-        <h2>Built for the businesses<br><em>that build NZ.</em></h2>
-      </div>
-      <p>We know your industry — not just your credit score. fundr structures finance around how your business actually works.</p>
-    </div>
-    <div class="industries">
-      <div class="industry-list" id="industryList" role="list" aria-label="Types of businesses fundr helps">
-        <div class="industry-item is-active" data-img="/images/toyota-hilux-hero.jpg" data-alt="Toyota Hilux ute on an NZ farm building site, financed through fundr — ute finance for tradies" role="listitem">
-          <div class="industry-item-head"><h3>Tradies</h3><span class="industry-item-num">01</span></div>
-          <div class="industry-item-body"><div class="industry-item-body-inner">
-            <p>Your ute is your office. When it's time to upgrade or add to the fleet, you need finance sorted fast — not in three weeks when the bank finally reviews your application.</p>
-            <a href="/ute-finance.html" data-cursor="">Ute finance &rarr;</a>
-          </div></div>
-        </div>
-        <div class="industry-item" data-img="/images/truck-finance-hero-v2.jpg" data-alt="Prime mover truck parked in a warehouse yard at dusk, financed through fundr NZ — truck finance for transport operators" role="listitem">
-          <div class="industry-item-head"><h3>Transport Operators</h3><span class="industry-item-num">02</span></div>
-          <div class="industry-item-body"><div class="industry-item-body-inner">
-            <p>Whether you're a single truck owner-operator or running a fleet, we understand the economics of freight. We know what trucks cost, how they hold value, and how to structure finance that works with your cash flow.</p>
-            <a href="/truck-finance.html" data-cursor="">Truck finance &rarr;</a>
-          </div></div>
-        </div>
-        <div class="industry-item" data-img="/images/Digger.jpg" data-alt="CAT excavator loading a dump truck on a construction site, financed through fundr NZ — equipment finance for contractors" role="listitem">
-          <div class="industry-item-head"><h3>Contractors &amp; Construction</h3><span class="industry-item-num">03</span></div>
-          <div class="industry-item-body"><div class="industry-item-body-inner">
-            <p>You can't take on that next big job without the right gear. We finance excavators, loaders, compactors — the heavy equipment that keeps construction and civil projects moving.</p>
-            <a href="/equipment-finance.html" data-cursor="">Equipment finance &rarr;</a>
-          </div></div>
-        </div>
-        <div class="industry-item" data-img="/images/vehicle-finance.jpg" data-alt="Business vehicle fleet including a van, box truck and SUV parked outside a warehouse in New Zealand — business finance from fundr" role="listitem">
-          <div class="industry-item-head"><h3>Business Owners</h3><span class="industry-item-num">04</span></div>
-          <div class="industry-item-body"><div class="industry-item-body-inner">
-            <p>From hospitality fitouts to gym equipment to manufacturing machinery, we help businesses across industries get the tools they need without the bank runaround.</p>
-            <a href="/business-finance.html" data-cursor="">Business finance &rarr;</a>
-          </div></div>
-        </div>
-        <div class="industry-item" data-img="/images/luxury-vehicle-finance.jpg" data-alt="Porsche 911 in a concrete garage, an example of luxury and prestige vehicle finance NZ for directors" role="listitem">
-          <div class="industry-item-head"><h3>Directors &amp; Executives</h3><span class="industry-item-num">05</span></div>
-          <div class="industry-item-body"><div class="industry-item-body-inner">
-            <p>A Range Rover or BMW for a director isn't a luxury — it's a business asset. We structure prestige vehicle finance with balloon payments so repayments work for your cash flow.</p>
-            <a href="/luxury-vehicle-finance.html" data-cursor="">Luxury vehicle finance &rarr;</a>
-          </div></div>
-        </div>
-      </div>
-      <div class="industry-media">
-        <img src="/images/toyota-hilux-hero.jpg" alt="Toyota Hilux ute on an NZ farm building site, financed through fundr — ute finance for tradies" class="is-active" id="industryImgActive">
-      </div>
     </div>
   </div>
 </section>
@@ -733,13 +775,13 @@ body{padding-top:0}
     <div class="why-grid" role="list" aria-label="fundr advantages">
       <article class="why-card" role="listitem">
         <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>15+ Lenders on Panel</h3>
-        <p>We take your deal to our full panel and find the lender that fits your asset, industry and credit profile best.</p>
+        <h3>Full Lender Panel</h3>
+        <p>We take your deal to every lender likely to say yes — not just the one bank you'd have called yourself.</p>
       </article>
       <article class="why-card" role="listitem">
         <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h3>Approved in 24 Hours</h3>
-        <p>Most applications receive a decision within 24 hours. Funds released in 1–2 business days.</p>
+        <h3>Fast, Clear Timelines</h3>
+        <p>You'll know where your application stands at every stage, without chasing us for updates.</p>
       </article>
       <article class="why-card" role="listitem">
         <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
@@ -771,28 +813,28 @@ body{padding-top:0}
         <div class="promise-num-wrap" aria-hidden="true"><svg viewBox="0 0 70 70"><circle cx="35" cy="35" r="33"/><circle class="fill" cx="35" cy="35" r="33"/><text x="35" y="42" text-anchor="middle">01</text></svg></div>
         <div class="promise-content">
           <h3>Straight answers, fast.</h3>
-          <p>No vague timelines, no waiting days for a callback. You'll know where your application stands at every stage — and if something won't work, we'll tell you upfront, not after wasting your time.</p>
+          <p>No vague timelines. If something won't work, we'll tell you upfront — not after wasting your time.</p>
         </div>
       </div>
       <div class="promise-item" role="listitem">
         <div class="promise-num-wrap" aria-hidden="true"><svg viewBox="0 0 70 70"><circle cx="35" cy="35" r="33"/><circle class="fill" cx="35" cy="35" r="33"/><text x="35" y="42" text-anchor="middle">02</text></svg></div>
         <div class="promise-content">
           <h3>We fight for your deal.</h3>
-          <p>Getting the right finance isn't always straightforward. We know which lenders suit which assets, industries and business profiles — and we structure your application to give it the strongest possible position from the start.</p>
+          <p>We know which lenders suit which assets and industries — and structure your application to give it the strongest position from the start.</p>
         </div>
       </div>
       <div class="promise-item" role="listitem">
         <div class="promise-num-wrap" aria-hidden="true"><svg viewBox="0 0 70 70"><circle cx="35" cy="35" r="33"/><circle class="fill" cx="35" cy="35" r="33"/><text x="35" y="42" text-anchor="middle">03</text></svg></div>
         <div class="promise-content">
           <h3>Your interests, not the lender's.</h3>
-          <p>Yes, fundr is paid by the lender. But our reputation is built on getting you a deal you're happy with — not just any deal. We'll recommend the option that genuinely fits your business, even if it pays us less.</p>
+          <p>fundr is paid by the lender, but our reputation is built on your deal being right — even if the better option pays us less.</p>
         </div>
       </div>
       <div class="promise-item" role="listitem">
         <div class="promise-num-wrap" aria-hidden="true"><svg viewBox="0 0 70 70"><circle cx="35" cy="35" r="33"/><circle class="fill" cx="35" cy="35" r="33"/><text x="35" y="42" text-anchor="middle">04</text></svg></div>
         <div class="promise-content">
           <h3>One person, start to finish.</h3>
-          <p>You won't be handed off to a junior after the first call. Nick handles your application from initial enquiry through to settlement — so nothing gets lost, and you're never repeating yourself.</p>
+          <p>No hand-off to a junior after the first call. Nick runs your deal from enquiry to settlement — nothing gets lost.</p>
         </div>
       </div>
     </div>
@@ -845,6 +887,35 @@ body{padding-top:0}
           <span class="reviewer-role">Owner-operator, Wellington</span>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="content-section" aria-label="Guides and resources">
+  <div class="content-inner">
+    <div class="section-header">
+      <div>
+        <p class="sec-label">Know Before You Buy</p>
+        <h2>Straight answers to what<br><em>NZ businesses actually ask.</em></h2>
+      </div>
+      <a href="/blog.html" class="text-link" data-cursor="" aria-label="View all guides">View All Guides &rarr;</a>
+    </div>
+    <div class="content-grid" role="list" aria-label="Finance guides">
+      <a href="/Blog/lock-in-asset-finance-before-ocr-september-2026.html" class="content-card" role="listitem" data-cursor="view">
+        <div class="content-cat">Finance Guides</div>
+        <h3>Should you lock in asset finance before September's OCR decision?</h3>
+        <p>The OCR sits at 2.50% with the next review on 2 September 2026 — what a rising-rate environment means for your next purchase.</p>
+      </a>
+      <a href="/Blog/how-to-finance-a-work-ute-nz.html" class="content-card" role="listitem" data-cursor="view">
+        <div class="content-cat">Vehicles &amp; Utes</div>
+        <h3>How to finance a work ute in NZ — what tradies need to know</h3>
+        <p>What lenders look at, what tax benefits you can claim, and how to get approved fast.</p>
+      </a>
+      <a href="/Blog/investment-boost-for-business-growth.html" class="content-card" role="listitem" data-cursor="view">
+        <div class="content-cat">Finance Guides</div>
+        <h3>IRD Investment Boost NZ — what business owners need to know</h3>
+        <p>Claim 20% of new asset costs upfront from May 2025, and how to combine it with asset finance.</p>
+      </a>
     </div>
   </div>
 </section>
@@ -907,7 +978,6 @@ body{padding-top:0}
     <a href="/about.html" style="font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;">About</a>
     <a href="/process.html" style="font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;">Our Process</a>
     <a href="/faq.html" style="font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;">FAQ</a>
-    <a href="/check-eligibility-full.html" style="font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;">Check Eligibility</a>
     <a href="/quick-quote.html" style="font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;">Get a Quote</a>
     <a href="/calculator.html" style="font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;">Repayment Calculator</a>
   </div>
@@ -915,6 +985,11 @@ body{padding-top:0}
 
 <div id="footer-placeholder"></div>
 <div id="popup-placeholder"></div>
+
+<div class="mobile-cta-bar" aria-label="Quick apply">
+  <a href="/quick-quote.html">Get My Quote — 60 Sec</a>
+</div>
+
 <script>
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1035,35 +1110,53 @@ body{padding-top:0}
     window.addEventListener('scroll', syncHeaderState, {passive:true});
   }
 
-  /* ── Who We Help: industry switcher (click a row, sticky image crossfades) ── */
-  var industryList = document.getElementById('industryList');
-  if (industryList) {
-    var industryItems = industryList.querySelectorAll('.industry-item');
-    var industryImg = document.getElementById('industryImgActive');
-    industryItems.forEach(function(item){
-      item.addEventListener('click', function(e){
-        if (e.target.closest('a')) return; /* let the inner "X finance →" link navigate normally */
-        industryItems.forEach(function(i){ i.classList.remove('is-active'); });
-        item.classList.add('is-active');
-        var src = item.getAttribute('data-img');
-        var alt = item.getAttribute('data-alt') || '';
-        if (industryImg && src && industryImg.src.indexOf(src) === -1) {
-          industryImg.style.opacity = '0';
-          setTimeout(function(){
-            industryImg.src = src;
-            industryImg.alt = alt;
-            industryImg.style.opacity = '1';
-          }, 250);
+  /* ── Hero repayment calculator: live estimate ── */
+  var heroCalc = document.querySelector('.hero-calc');
+  if (heroCalc) {
+    var toggleBtns = heroCalc.querySelectorAll('.hero-calc-toggle button');
+    var priceInput = heroCalc.querySelectorAll('input[type=range]')[0];
+    var termInput = heroCalc.querySelectorAll('input[type=range]')[1];
+    var priceLabel = heroCalc.querySelectorAll('.hero-calc-slider-row span')[0];
+    var termLabel = heroCalc.querySelectorAll('.hero-calc-slider-row span')[1];
+    var resultValue = heroCalc.querySelector('.hero-calc-result-value');
+    var ANNUAL_RATE = 0.0899; // flat indicative rate applied across all asset types
+
+    var defaultPriceByAsset = {Vehicle:65000, Truck:100000, Equipment:50000};
+
+    function fmt(n){ return '$' + Math.round(n).toLocaleString('en-NZ'); }
+
+    function recalc(){
+      var price = parseInt(priceInput.value, 10);
+      var years = parseInt(termInput.value, 10);
+      priceLabel.textContent = fmt(price);
+      termLabel.textContent = years + (years === 1 ? ' yr' : ' yrs');
+      var weeklyRate = ANNUAL_RATE / 52;
+      var n = years * 52;
+      var weekly = (price * weeklyRate) / (1 - Math.pow(1 + weeklyRate, -n));
+      resultValue.innerHTML = fmt(weekly) + '<span>/week</span>';
+    }
+
+    toggleBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        toggleBtns.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        var asset = btn.textContent.trim();
+        if (defaultPriceByAsset[asset] !== undefined) {
+          priceInput.value = defaultPriceByAsset[asset];
         }
+        recalc();
       });
     });
+    if (priceInput) priceInput.addEventListener('input', recalc);
+    if (termInput) termInput.addEventListener('input', recalc);
+    recalc();
   }
 
   /* ── Scroll reveals via IntersectionObserver ── */
   if (!reduced && 'IntersectionObserver' in window) {
 
     var singles = document.querySelectorAll(
-      '.intro-inner > div, .section-header, .who-header, .process-header,' +
+      '.intro-inner > div, .section-header, .process-header,' +
       '.why-inner > .sec-label, .why-inner > h2, .promise-header,' +
       '.reviews-header, .nick-inner > *, .final-cta-inner > *, .wipe-wrap'
     );
