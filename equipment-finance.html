@@ -313,9 +313,24 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 @media(max-width:900px){.calc-inner{grid-template-columns:1fr;gap:40px}.calc-section{padding:60px 24px}}
 @media(max-width:860px){.faq-section{padding:60px 24px}.faq-inner{grid-template-columns:1fr;gap:40px}}
 @media(max-width:900px){.promise-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.promise-grid{grid-template-columns:1fr}}
 @media(max-width:768px){.final-cta-section{padding:72px 24px 60px}.final-cta-buttons{flex-direction:column;align-items:center}.btn-final-primary{width:100%;max-width:340px;justify-content:center}.related-bar{padding:24px}}
 @media(max-width:600px){.site-links{padding:16px 20px}}
+
+/* READING */
+.reading-section{background:var(--sand);padding:80px 48px}
+.reading-inner{max-width:1200px;margin:0 auto}
+.reading-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:40px}
+.reading-section h2 em{font-style:italic}
+.reading-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.reading-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:26px 24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;transition:box-shadow .25s,transform .25s,border-color .25s}
+.reading-card:hover{box-shadow:0 10px 32px rgba(22,20,15,.08);transform:translateY(-3px);border-color:rgba(240,108,0,.2)}
+.reading-cat{font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.reading-card h3{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--ink);line-height:1.3}
+.reading-card p{font-size:.8rem;font-weight:300;color:var(--mid);line-height:1.6;flex:1}
+.reading-link{font-family:var(--sans);font-size:.66rem;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:var(--faint);transition:color .2s}
+.reading-card:hover .reading-link{color:var(--orange)}
+@media(max-width:1024px){.reading-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.reading-section{padding:56px 20px}.reading-grid{grid-template-columns:1fr}}
 
 /* ═══════════ ANIMATION LAYER ═══════════ */
 
@@ -701,6 +716,40 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <div class="faq-answer"><div class="faq-answer-inner">Our initial assessment is a soft check and does not affect your credit score. A full credit check is only run once you've agreed to proceed with a specific lender and loan structure. We never run multiple checks across lenders without your knowledge.</div></div>
       </li>
     </ul>
+  </div>
+</section>
+
+<!-- RELATED READING -->
+<section class="reading-section" aria-label="Related reading">
+  <div class="reading-inner">
+    <p class="sec-label">Related Reading</p>
+    <h2>More on <em>equipment finance.</em></h2>
+    <div class="reading-grid" role="list">
+      <a href="/Blog/excavator-finance-nz.html" class="reading-card" role="listitem">
+        <span class="reading-cat">Equipment Finance</span>
+        <h3>Excavator Finance NZ: New vs Used, and What Changes</h3>
+        <p>How hours, age, deposits and attachments affect your finance.</p>
+        <span class="reading-link">Read Article →</span>
+      </a>
+      <a href="/Blog/equipment-finance-hospitality-nz.html" class="reading-card" role="listitem">
+        <span class="reading-cat">Equipment Finance</span>
+        <h3>Equipment Finance for Hospitality Businesses</h3>
+        <p>Financing ovens, fridges, coffee machines and fit-outs.</p>
+        <span class="reading-link">Read Article →</span>
+      </a>
+      <a href="/Blog/ocr-vs-swap-rates-equipment-finance-nz.html" class="reading-card" role="listitem">
+        <span class="reading-cat">Finance Guides</span>
+        <h3>OCR vs Swap Rates: Why Your Quote Doesn't Move With the OCR</h3>
+        <p>How swap rates actually drive NZ business finance pricing.</p>
+        <span class="reading-link">Read Article →</span>
+      </a>
+      <a href="/Blog/asset-finance-broker-nz.html" class="reading-card" role="listitem">
+        <span class="reading-cat">Finance Guides</span>
+        <h3>Why Use an Asset Finance Broker in NZ?</h3>
+        <p>How a broker builds a deal that works for your cash flow.</p>
+        <span class="reading-link">Read Article →</span>
+      </a>
+    </div>
   </div>
 </section>
 
