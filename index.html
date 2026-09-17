@@ -478,6 +478,19 @@ body{padding-top:0}
 }
 
 /* =============================================
+   14. MOBILE DECLUTTER
+   "Why fundr" (4 cards) and "Our Promise" (4 items) make the same trust
+   argument back-to-back. On mobile, where every section is a full extra
+   screen of scroll, that's two sections doing one job. Promise carries the
+   personal quote from Nick and is the stronger of the two, so on mobile we
+   drop Why-fundr and keep Promise. Content stays in the DOM (unchanged for
+   desktop / crawlers) — this only hides it visually below 640px.
+   ============================================= */
+@media(max-width:640px){
+  .why-section{display:none;}
+}
+
+/* =============================================
    RESPONSIVE
    ============================================= */
 @media(max-width:900px){.hero-inner{padding:60px 24px 120px;grid-template-columns:1fr;gap:36px}.hero-bg{object-position:68% 40%}}
@@ -485,9 +498,31 @@ body{padding-top:0}
 @media(max-width:380px){.hero-inner{padding:44px 16px 110px}.hero h1{font-size:2rem}.hero-calc{padding:22px}}
 @media(max-width:900px){.statement{padding:80px 24px}}
 @media(max-width:900px){.intro-inner{grid-template-columns:1fr;gap:48px}.intro-section{padding:72px 24px}}
-@media(max-width:600px){.intro-section{padding:56px 20px}.intro-stat-num{font-size:2.6rem;min-width:80px}.intro-inner{gap:40px}}
+@media(max-width:600px){.intro-section{padding:56px 20px}.intro-inner{gap:32px}}
+/* Mobile: 3 stacked giant-number stat rows (~300px of scroll) become one compact 3-col strip.
+   Same three facts, far less vertical space — and it stops repeating the hero's 15+/24hr badges
+   at full stacked size a second time right below the fold. */
+@media(max-width:600px){
+  .intro-stats{flex-direction:row;flex-wrap:wrap;gap:20px 14px;}
+  .intro-stat{flex:1 1 28%;padding:0;border-bottom:none;flex-direction:column;align-items:flex-start;gap:6px;}
+  .intro-stat-num{font-size:1.7rem;min-width:0;}
+  .intro-stat-text strong{font-size:.68rem;margin-bottom:2px;}
+  .intro-stat-text{font-size:.66rem;line-height:1.35;}
+}
 @media(max-width:1024px){.products-grid{grid-template-columns:repeat(2,1fr)}.product-card.span-2{grid-column:span 2}}@media(max-width:900px){.products-section{padding:72px 24px}.products-grid{grid-template-columns:1fr}.product-card.span-2{grid-column:span 1}.section-header{flex-direction:column;align-items:flex-start;gap:12px}}
 @media(max-width:600px){.products-section{padding:56px 20px}}
+/* Mobile: 5 finance-type cards become a swipeable carousel instead of 5 stacked full-width blocks */
+@media(max-width:600px){
+  .products-grid{
+    display:flex;grid-template-columns:none;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    gap:16px;margin:0 -20px;padding:0 20px 10px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  .products-grid::-webkit-scrollbar{display:none}
+  .product-card,.product-card.span-2{flex:0 0 82%;scroll-snap-align:start;grid-column:auto;}
+  .product-card.span-2 .product-photo,.product-card .product-photo{height:200px}
+}
 @media(max-width:900px){.industries{grid-template-columns:1fr;gap:28px}.industry-media{position:relative;top:0;order:-1}.who-section{padding:72px 24px}.who-header{flex-direction:column;align-items:flex-start;gap:12px}.who-header p{text-align:left;max-width:100%}}
 @media(max-width:600px){.who-section{padding:56px 20px}}
 @media(max-width:900px){.process-section{padding:72px 24px}.process-steps{grid-template-columns:1fr;gap:36px}.process-steps::before{display:none}.process-step{padding:0}.process-cta{flex-direction:column;align-items:flex-start}}
@@ -499,6 +534,16 @@ body{padding-top:0}
 @media(max-width:600px){.promise-section{padding:56px 20px}.promise-item{grid-template-columns:48px 1fr;gap:16px;padding:24px 0}.promise-num-wrap svg{width:48px;height:48px}.promise-num-wrap text{font-size:16px}.promise-content h3{font-size:1.15rem}.btn-promise{width:100%;justify-content:center}}
 @media(max-width:900px){.reviews-header{padding:0 24px}.review-card{flex:0 0 300px}}
 @media(max-width:600px){.reviews-header{flex-direction:column;align-items:flex-start;padding:0 20px}.agg-score{text-align:left}.reviews-track{padding:0 20px}}
+/* Mobile: testimonials become a swipeable carousel instead of stacking one-per-row */
+@media(max-width:600px){
+  .reviews-track{
+    flex-wrap:nowrap;justify-content:flex-start;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  .reviews-track::-webkit-scrollbar{display:none}
+  .review-card{flex:0 0 86%;scroll-snap-align:start;}
+}
 @media(max-width:900px){.nick-section{padding:72px 24px}.nick-inner{grid-template-columns:1fr;gap:48px}.nick-mark{font-size:clamp(6rem,26vw,9rem);top:1.7em;left:-.02em}}
 @media(max-width:600px){.nick-section{padding:56px 20px}.nick-actions{flex-direction:column}.btn-cta-primary,.btn-cta-ghost{width:100%;justify-content:center}.cred-card{padding:18px 20px}}
 @media(max-width:900px){.final-cta{padding:64px 24px}}
@@ -573,7 +618,14 @@ body{padding-top:0}
 <div id="header-placeholder"></div>
 
 <section class="hero" aria-label="fundr — NZ business finance broker">
-  <img class="hero-bg" src="images/primemover-hero.jpg" alt="Mercedes-Benz prime mover truck driving along a New Zealand coastal highway at dusk — fundr finances vehicles, utes, trucks and equipment for NZ businesses" fetchpriority="high">
+  <picture>
+    <!-- Mobile crop: swap in a dedicated portrait-oriented crop of the same photo, framed
+         tighter on the truck cab so the subject reads clearly on a phone screen instead of
+         relying on object-position to crop a landscape desktop image. See note below the
+         markup for recommended dimensions. -->
+    <source media="(max-width: 640px)" srcset="images/primemover-hero-mobile.jpg">
+    <img class="hero-bg" src="images/primemover-hero.jpg" alt="Mercedes-Benz prime mover truck driving along a New Zealand coastal highway at dusk — fundr finances vehicles, utes, trucks and equipment for NZ businesses" fetchpriority="high">
+  </picture>
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-accent" aria-hidden="true"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
