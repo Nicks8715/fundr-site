@@ -290,7 +290,6 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 @media(max-width:900px){.calc-inner{grid-template-columns:1fr;gap:40px}.calc-section{padding:60px 24px}}
 @media(max-width:860px){.faq-section{padding:60px 24px}.faq-inner{grid-template-columns:1fr;gap:40px}}
 @media(max-width:900px){.promise-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.promise-grid{grid-template-columns:1fr}}
 @media(max-width:768px){.final-cta-section{padding:72px 24px 60px}.final-cta-buttons{flex-direction:column;align-items:center}.btn-final-primary{width:100%;max-width:340px;justify-content:center}.related-bar{padding:24px}}
 @media(max-width:600px){.site-links{padding:16px 20px}}
 
@@ -309,6 +308,33 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .reading-card:hover .reading-link{color:var(--orange)}
 @media(max-width:1024px){.reading-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.reading-section{padding:56px 20px}.reading-grid{grid-template-columns:1fr}}
+
+/* =============================================
+   MOBILE DECLUTTER + CAROUSELS (see vehicle-finance.html for rationale)
+   ============================================= */
+@media(max-width:640px){
+  .why-section{display:none;}
+
+  .about-stats{grid-template-columns:none;flex-direction:row;flex-wrap:wrap;gap:20px 14px;}
+  .about-stats > div{flex:1 1 28%;}
+  .stat-num{font-size:1.7rem;}
+  .stat-label{font-size:.62rem;}
+
+  .models-grid,.reviews-grid,.reading-grid,.promise-grid{
+    display:flex;grid-template-columns:none;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    gap:14px;margin:0 -20px;padding:0 20px 10px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    border:none;background:none;
+  }
+  .models-grid::-webkit-scrollbar,.reviews-grid::-webkit-scrollbar,
+  .reading-grid::-webkit-scrollbar,.promise-grid::-webkit-scrollbar{display:none}
+
+  .model-card{flex:0 0 82%;scroll-snap-align:start;border-right:none;border:1px solid #d8d4cc;border-radius:10px;}
+  .review-card{flex:0 0 86%;scroll-snap-align:start;}
+  .reading-card{flex:0 0 82%;scroll-snap-align:start;}
+  .promise-card{flex:0 0 82%;scroll-snap-align:start;border-radius:8px;}
+}
 
 /* ═══════════ ANIMATION LAYER ═══════════ */
 
