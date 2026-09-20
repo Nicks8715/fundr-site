@@ -346,6 +346,41 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 @media(max-width:1024px){.reading-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.reading-section{padding:56px 20px}.reading-grid{grid-template-columns:1fr}}
 
+/* =============================================
+   MOBILE DECLUTTER + CAROUSELS
+   This page repeats the "15+ lenders / fast / talk to Nick" pitch three
+   times (About stats, Why Choose fundr, Our Promise). On mobile, where each
+   is a full-width stacked section, that's a lot of scroll for one message.
+   Why-fundr is hidden below 640px — Our Promise (with Nick's personal
+   quote) makes the stronger version of the same case. Card grids that were
+   stacking one-per-row become horizontal swipe carousels instead.
+   ============================================= */
+@media(max-width:640px){
+  .why-section{display:none;}
+
+  .about-stats{flex-direction:row;flex-wrap:wrap;gap:20px 14px;grid-template-columns:none;}
+  .about-stats > div{flex:1 1 28%;}
+  .stat-num{font-size:1.7rem;}
+  .stat-label{font-size:.62rem;}
+
+  .models-grid,.reviews-grid,.reading-grid,.promise-grid,.secondary-vehicles{
+    display:flex;grid-template-columns:none;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    gap:14px;margin:0 -20px;padding:0 20px 10px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    border:none;background:none;
+  }
+  .models-grid::-webkit-scrollbar,.reviews-grid::-webkit-scrollbar,
+  .reading-grid::-webkit-scrollbar,.promise-grid::-webkit-scrollbar,
+  .secondary-vehicles::-webkit-scrollbar{display:none}
+
+  .model-card{flex:0 0 82%;scroll-snap-align:start;border-right:none;border:1px solid #d8d4cc;border-radius:10px;}
+  .secondary-card{flex:0 0 78%;scroll-snap-align:start;border-right:none;border:1px solid #d8d4cc;border-radius:10px;}
+  .review-card{flex:0 0 86%;scroll-snap-align:start;}
+  .reading-card{flex:0 0 82%;scroll-snap-align:start;}
+  .promise-card{flex:0 0 82%;scroll-snap-align:start;border-radius:8px;}
+}
+
 /* ═══════════ ANIMATION LAYER ═══════════ */
 
 /* Hero: slow Ken Burns zoom on the image */
