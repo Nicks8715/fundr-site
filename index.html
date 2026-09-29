@@ -19,14 +19,53 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FinancialService",
-  "name": "fundr",
-  "description": "NZ specialist asset finance broker for vehicle, ute, truck and equipment finance. 15+ lenders, 24hr approvals.",
-  "url": "https://www.fundr.co.nz",
-  "telephone": "+64211023416",
-  "email": "nick@fundr.co.nz",
-  "areaServed": "NZ",
-  "serviceType": ["Vehicle Finance", "Ute Finance", "Truck Finance", "Equipment Finance", "Business Finance", "Luxury Vehicle Finance"]
+  "@graph": [
+    {
+      "@type": "FinancialService",
+      "@id": "https://www.fundr.co.nz/#organization",
+      "name": "fundr",
+      "legalName": "fundr Limited",
+      "description": "NZ specialist asset finance broker for vehicle, ute, truck and equipment finance. 15+ lenders, 24hr approvals.",
+      "url": "https://www.fundr.co.nz",
+      "image": "https://www.fundr.co.nz/images/og-image.jpg",
+      "telephone": "+64211023416",
+      "email": "nick@fundr.co.nz",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mairangi Bay",
+        "addressRegion": "Auckland",
+        "addressCountry": "NZ"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "New Zealand"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "FSPR number",
+        "value": "FSP1007390"
+      },
+      "serviceType": ["Vehicle Finance", "Ute Finance", "Truck Finance", "Equipment Finance", "Business Finance", "Luxury Vehicle Finance"],
+      "founder": { "@id": "https://www.fundr.co.nz/about.html#nick-sevta" },
+      "sameAs": [
+        "https://www.linkedin.com/company/fundrnz/",
+        "https://www.instagram.com/fundr_nz/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.fundr.co.nz/about.html#nick-sevta",
+      "name": "Nick Sevta",
+      "jobTitle": "Founder and Broker",
+      "description": "Founder and principal broker of fundr, with 15+ years of NZ commercial finance experience. Previously NZ Country Manager at BOQ Finance and General Manager at flexicommercial (humm group), with earlier roles at GE Capital, Wells Fargo and Bank of New Zealand.",
+      "url": "https://www.fundr.co.nz/about.html",
+      "worksFor": { "@id": "https://www.fundr.co.nz/#organization" },
+      "knowsAbout": ["Asset finance", "Vehicle finance", "Truck finance", "Equipment finance", "Chattel mortgages", "Hire purchase", "Finance leases", "NZ commercial finance"],
+      "sameAs": [
+        "https://www.linkedin.com/in/nicksevta/"
+      ]
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1015,10 +1054,10 @@ body{padding-top:0}
       <a href="/blog.html" class="text-link" data-cursor="" aria-label="View all guides">View All Guides &rarr;</a>
     </div>
     <div class="content-grid" role="list" aria-label="Finance guides">
-      <a href="/Blog/lock-in-asset-finance-before-ocr-september-2026.html" class="content-card" role="listitem" data-cursor="view">
+      <a href="/Blog/ocr-vs-swap-rates-equipment-finance-nz.html" class="content-card" role="listitem" data-cursor="view">
         <div class="content-cat">Finance Guides</div>
-        <h3>Should you lock in asset finance before September's OCR decision?</h3>
-        <p>The OCR sits at 2.50% with the next review on 2 September 2026 — what a rising-rate environment means for your next purchase.</p>
+        <h3>OCR at 2.75%: why your equipment finance quote doesn't move with it</h3>
+        <p>The RBNZ lifted the OCR to 2.75% on 2 September 2026. Here's why asset finance pricing follows swap rates, not the OCR itself.</p>
       </a>
       <a href="/Blog/how-to-finance-a-work-ute-nz.html" class="content-card" role="listitem" data-cursor="view">
         <div class="content-cat">Vehicles &amp; Utes</div>
