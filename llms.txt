@@ -1,8 +1,18 @@
 # fundr
 
-> fundr is a New Zealand-based asset finance brokerage (FSP1007390) specialising in vehicle, truck, equipment and business finance for tradies, SMEs and business owners. Founded and run by Nick Sevta, fundr works with 15+ NZ lenders to arrange finance with approvals typically within 24 hours. Operates nationwide across New Zealand.
+> fundr is a New Zealand-based asset finance brokerage (FSP1007390) specialising in vehicle, truck, equipment and business finance for tradies, SMEs and business owners. Founded and run by Nick Sevta, fundr works with 15+ NZ lenders to arrange finance with approvals typically within 24 hours. Operates nationwide across New Zealand from Mairangi Bay, Auckland.
+
+Last updated: 30 September 2026
 
 fundr is an independent finance broker, not a lender — it takes each application to a panel of 15+ NZ lenders to find the best rate and structure for the client's business and situation. Services cover vehicle finance (cars, utes, vans, luxury/prestige vehicles), truck finance (prime movers, tippers, curtainsiders, crane trucks), equipment finance (construction, medical, kitchen, gym, warehouse and more) and general business finance (working capital, cashflow, business acquisition funding). Clients deal directly with Nick Sevta throughout the process, from application to settlement.
+
+## About the Broker
+
+Nick Sevta is the founder, director and sole broker of fundr Limited, with 15+ years of commercial finance experience. His prior roles include NZ Country Manager at BOQ Finance, General Manager at flexicommercial (humm group), and senior roles at GE Capital, Wells Fargo and Bank of New Zealand. He specialises in structuring chattel mortgages, hire purchase and finance leases, and assessing serviceability and credit for NZ businesses.
+
+- Contact: Nick Sevta, nick@fundr.co.nz, +64 21 102 3416
+- Location: Mairangi Bay, Auckland, New Zealand (serves all of NZ)
+- Registration: fundr Limited, FSPR number FSP1007390
 
 ## What We Finance
 
@@ -11,6 +21,7 @@ fundr is an independent finance broker, not a lender — it takes each applicati
 - [Truck Finance](https://www.fundr.co.nz/truck-finance.html): Prime movers, tippers, curtainsiders, crane trucks and heavy vehicles.
 - [Equipment Finance](https://www.fundr.co.nz/equipment-finance.html): Construction, medical, kitchen, gym, warehouse and other business equipment.
 - [Business Finance](https://www.fundr.co.nz/business-finance.html): Working capital, cashflow solutions and business acquisition funding.
+- [Unsecured Business Loans](https://www.fundr.co.nz/unsecured-business-loans.html): Unsecured business lending options for NZ SMEs.
 - [Ford Ranger Finance](https://www.fundr.co.nz/ford-ranger-finance.html): Finance for XL, XLS, XLT, Wildtrak and Raptor models.
 - [Toyota Hilux Finance](https://www.fundr.co.nz/toyota-hilux-finance.html): Finance for SR, SR5 and Rogue, single/extra/double cab.
 - [Luxury Vehicle Finance](https://www.fundr.co.nz/luxury-vehicle-finance.html): Range Rover, BMW, Mercedes-Benz, Porsche — balloon payment structuring for business owners and directors.
@@ -32,7 +43,7 @@ fundr is an independent finance broker, not a lender — it takes each applicati
 
 - [Excavator Finance NZ: New vs Used, and What Changes](https://www.fundr.co.nz/Blog/excavator-finance-nz.html): How hours, age, deposits and attachments affect excavator finance.
 - [New Business Truck Finance NZ: The Contract Trick](https://www.fundr.co.nz/Blog/truck-finance-new-transport-business.html): Using a signed contract or letter of intent to finance a first truck with no trading history.
-- [Should You Lock In Asset Finance Before September's OCR Decision?](https://www.fundr.co.nz/Blog/lock-in-asset-finance-before-ocr-september-2026.html): What a rising-rate environment means for your next asset purchase.
+- [Should You Lock In Asset Finance Before September's OCR Decision?](https://www.fundr.co.nz/Blog/lock-in-asset-finance-before-ocr-september-2026.html): How OCR movements around the September 2026 review affect the timing of an asset purchase.
 - [OCR vs Swap Rates: Why Your Equipment Finance Quote Doesn't Move With the OCR](https://www.fundr.co.nz/Blog/ocr-vs-swap-rates-equipment-finance-nz.html): How swap rates actually drive NZ business finance pricing.
 - [Business Asset Finance Auckland: Local Market Guide for SME Owners](https://www.fundr.co.nz/Blog/business-asset-finance-auckland.html): Vehicle, equipment and business finance for Auckland SMEs.
 - [Equipment Finance for Hospitality Businesses](https://www.fundr.co.nz/Blog/equipment-finance-hospitality-nz.html): Financing ovens, fridges, coffee machines and fit-outs.
@@ -47,6 +58,13 @@ fundr is an independent finance broker, not a lender — it takes each applicati
 - [IRD Investment Boost Explained](https://www.fundr.co.nz/Blog/investment-boost-for-business-growth.html): Claiming 20% of new asset costs upfront from May 2025.
 - [Why Use an Asset Finance Broker in NZ](https://www.fundr.co.nz/Blog/asset-finance-broker-nz.html): How a broker builds a deal that works for your cashflow.
 - [All Articles](https://www.fundr.co.nz/blog.html): Full blog index.
+
+## Elsewhere
+
+- [Nick Sevta on LinkedIn](https://www.linkedin.com/in/nicksevta/)
+- [fundr on LinkedIn](https://www.linkedin.com/company/fundrnz/)
+- [Nick Sevta on the NZ Business Owners podcast (Spotify)](https://open.spotify.com/episode/5FNmsl6HW6HTG3k3A2EKNv): "From Cold to Gold: Turning Outreach into Business Growth", October 2024.
+- Instagram: @fundr_nz
 
 ## Company & Legal
 
