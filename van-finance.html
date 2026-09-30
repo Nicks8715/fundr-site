@@ -412,6 +412,37 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .about-cols.even{grid-template-columns:1fr 1fr}
 .who-col h3{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink);margin-bottom:14px}
 @media(max-width:768px){.about-cols.even{grid-template-columns:1fr}}
+
+/* ANIMATION LAYER */
+@keyframes kenBurns{from{transform:scale(1.06) translateY(-4px)}to{transform:scale(1) translateY(0)}}
+.hero-bg img{animation:kenBurns 9s var(--ease) both;will-change:transform}
+.hl{display:block;overflow:hidden}
+.hl-in{display:block;transform:translateY(110%);animation:lineUp .9s cubic-bezier(.22,1,.36,1) both}
+@keyframes lineUp{to{transform:translateY(0)}}
+.hl:nth-child(1) .hl-in{animation-delay:.25s}
+.hl:nth-child(2) .hl-in{animation-delay:.4s}
+@keyframes riseSoft{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:riseSoft .85s cubic-bezier(.22,1,.36,1) both}
+.hero-content>nav{animation-delay:.1s}
+.hero-content>.eyebrow{animation-delay:.18s}
+.hero-content>h1{animation-delay:.3s}
+.hero-content>.hero-sub{animation-delay:.75s}
+.hero-content>.pill-row{animation-delay:.85s}
+.hero-content>.hero-actions{animation-delay:.95s}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv-g .rv-i{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv-g.in .rv-i{opacity:1;transform:translateY(0)}
+.rv-g.in .rv-i:nth-child(1){transition-delay:.04s}
+.rv-g.in .rv-i:nth-child(2){transition-delay:.10s}
+.rv-g.in .rv-i:nth-child(3){transition-delay:.16s}
+.rv-g.in .rv-i:nth-child(4){transition-delay:.22s}
+@keyframes diamondIn{from{opacity:0;transform:scale(.4) rotate(-90deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.rv.in .sec-label::before{animation:diamondIn .5s var(--ease) .12s both}
+@media(prefers-reduced-motion:reduce){
+  .hero-bg img,.hero-content>*,.hl-in{animation:none!important;transform:none!important;opacity:1!important}
+  .rv,.rv-g .rv-i{opacity:1!important;transform:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -565,17 +596,33 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 </section>
 
 <!-- REVIEW -->
-<section class="reviews-section" aria-label="Customer review">
+<section class="reviews-section" aria-label="Customer reviews">
   <div class="reviews-inner">
-    <p class="sec-label">Customer Review</p>
-    <h2>What a delivery business<br><em>says about fundr.</em></h2>
-    <div class="reviews-grid single" role="list">
+    <p class="sec-label">Customer Reviews</p>
+    <h2>What business owners<br><em>say about fundr.</em></h2>
+    <div class="reviews-grid" role="list">
       <article class="review-card" role="listitem">
         <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="review-quote">"We needed a van fast for a new contract. Nick had us approved and settled within two days. Absolute lifesaver."</p>
         <div class="review-author">
           <div class="reviewer-avatar" aria-hidden="true">SM</div>
           <div><div class="reviewer-name">Sarah M.</div><div class="reviewer-role">Delivery business owner, Wellington</div></div>
+        </div>
+      </article>
+      <article class="review-card" role="listitem">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="review-quote">"Nick sorted our ute finance in under 24 hours. One call, minimal paperwork, done. Wish I'd found fundr years ago."</p>
+        <div class="review-author">
+          <div class="reviewer-avatar" aria-hidden="true">JR</div>
+          <div><div class="reviewer-name">James R.</div><div class="reviewer-role">Trades business owner, Auckland</div></div>
+        </div>
+      </article>
+      <article class="review-card" role="listitem">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="review-quote">"As a sole trader I wasn't sure I'd qualify. Nick walked me through everything and got me approved. Couldn't recommend him more highly."</p>
+        <div class="review-author">
+          <div class="reviewer-avatar" aria-hidden="true">RK</div>
+          <div><div class="reviewer-name">Rachel K.</div><div class="reviewer-role">Sole trader, Hamilton</div></div>
         </div>
       </article>
     </div>
@@ -765,6 +812,21 @@ document.querySelectorAll('.faq-trigger').forEach(trigger=>{
     if(!isOpen){item.classList.add('open');trigger.setAttribute('aria-expanded','true');answer.style.maxHeight=answer.scrollHeight+'px';}
   });
 });
+(function(){
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduced){
+    var h1=document.querySelector('.hero-content h1');
+    if(h1){var parts=h1.innerHTML.split(/<br\s*\/?>/i);
+      h1.innerHTML=parts.map(function(l){return '<span class="hl"><span class="hl-in">'+l+'</span></span>';}).join('');}
+  }
+  if(!reduced&&'IntersectionObserver' in window){
+    document.querySelectorAll('.about-inner > .sec-label, .about-inner > h2, .about-cols, .models-header, .why-inner > .sec-label, .why-inner > h2, .reviews-inner > .sec-label, .reviews-inner > h2, .process-header-row, .faq-left, .reading-inner > .sec-label, .reading-inner > h2, .final-cta-inner > *').forEach(function(el){el.classList.add('rv');});
+    document.querySelectorAll('.models-grid, .why-grid, .reviews-grid, .steps, .faq-list, .reading-grid').forEach(function(g){
+      g.classList.add('rv-g');Array.prototype.forEach.call(g.children,function(c){c.classList.add('rv-i');});});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.rv, .rv-g').forEach(function(el){io.observe(el);});
+  }
+})();
 </script>
 
 <div id="footer-placeholder"></div>
