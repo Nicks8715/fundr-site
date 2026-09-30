@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.fundr.co.nz/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://www.fundr.co.nz/what-we-finance.html</loc><priority>0.9</priority></url>
-  <url><loc>https://www.fundr.co.nz/vehicle-finance.html</loc><priority>0.9</priority></url>
-  <url><loc>https://www.fundr.co.nz/ute-finance.html</loc><priority>0.9</priority></url>
-  <url><loc>https://www.fundr.co.nz/truck-finance.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.fundr.co.nz/</loc><priority>1.0</priority><changefreq>weekly</changefreq><lastmod>2026-09-30</lastmod></url>
+  <url><loc>https://www.fundr.co.nz/what-we-finance.html</loc><priority>0.9</priority><lastmod>2026-09-30</lastmod></url>
+  <url><loc>https://www.fundr.co.nz/vehicle-finance.html</loc><priority>0.9</priority><lastmod>2026-09-30</lastmod></url>
+  <url><loc>https://www.fundr.co.nz/ute-finance.html</loc><priority>0.9</priority><lastmod>2026-09-30</lastmod></url>
+  <url><loc>https://www.fundr.co.nz/truck-finance.html</loc><priority>0.9</priority><lastmod>2026-09-30</lastmod></url>
   <url><loc>https://www.fundr.co.nz/luxury-vehicle-finance.html</loc><priority>0.9</priority></url>
-  <url><loc>https://www.fundr.co.nz/equipment-finance.html</loc><priority>0.9</priority></url>
-  <url><loc>https://www.fundr.co.nz/business-finance.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.fundr.co.nz/equipment-finance.html</loc><priority>0.9</priority><lastmod>2026-09-30</lastmod></url>
+  <url><loc>https://www.fundr.co.nz/business-finance.html</loc><priority>0.9</priority><lastmod>2026-09-30</lastmod></url>
   <url><loc>https://www.fundr.co.nz/ford-ranger-finance.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.fundr.co.nz/toyota-hilux-finance.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.fundr.co.nz/van-finance.html</loc><priority>0.8</priority><lastmod>2026-09-30</lastmod></url>
   <url><loc>https://www.fundr.co.nz/unsecured-business-loans.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.fundr.co.nz/quick-quote.html</loc><priority>0.7</priority></url>
   <url><loc>https://www.fundr.co.nz/apply.html</loc><priority>0.7</priority></url>
@@ -28,13 +29,13 @@
   <url><loc>https://www.fundr.co.nz/Blog/ocr-vs-swap-rates-equipment-finance-nz.html</loc><priority>0.7</priority><lastmod>2026-08-01</lastmod></url>
   <url><loc>https://www.fundr.co.nz/Blog/business-asset-finance-auckland.html</loc><priority>0.7</priority><lastmod>2026-08-03</lastmod></url>
   <url><loc>https://www.fundr.co.nz/Blog/equipment-finance-hospitality-nz.html</loc><priority>0.7</priority><lastmod>2026-08-03</lastmod></url>
-  <url><loc>https://www.fundr.co.nz/Blog/vehicle-finance-broker-nz.html</loc><priority>0.7</priority><lastmod>2026-07-01</lastmod></url>
+  <url><loc>https://www.fundr.co.nz/Blog/vehicle-finance-broker-nz.html</loc><priority>0.7</priority><lastmod>2026-09-30</lastmod></url>
   <url><loc>https://www.fundr.co.nz/Blog/business-loan-vs-asset-finance-nz.html</loc><priority>0.7</priority><lastmod>2026-07-01</lastmod></url>
   <url><loc>https://www.fundr.co.nz/Blog/finance-lease-vs-term-loan-nz.html</loc><priority>0.7</priority><lastmod>2026-07-01</lastmod></url>
   <url><loc>https://www.fundr.co.nz/Blog/business-finance-refinance-nz.html</loc><priority>0.7</priority><lastmod>2026-07-01</lastmod></url>
   <url><loc>https://www.fundr.co.nz/Blog/ute-finance-nz-fleet-upgrade.html</loc><priority>0.7</priority><lastmod>2026-03-01</lastmod></url>
   <url><loc>https://www.fundr.co.nz/Blog/truck-finance-nz-options.html</loc><priority>0.7</priority><lastmod>2026-03-01</lastmod></url>
-  <url><loc>https://www.fundr.co.nz/Blog/business-vehicle-finance-nz.html</loc><priority>0.7</priority><lastmod>2026-02-01</lastmod></url>
+  <url><loc>https://www.fundr.co.nz/Blog/business-vehicle-finance-nz.html</loc><priority>0.7</priority><lastmod>2026-09-30</lastmod></url>
   <url><loc>https://www.fundr.co.nz/Blog/how-to-finance-a-work-ute-nz.html</loc><priority>0.7</priority><lastmod>2026-02-01</lastmod></url>
   <url><loc>https://www.fundr.co.nz/Blog/asset-finance-broker-nz.html</loc><priority>0.7</priority><lastmod>2026-01-01</lastmod></url>
   <url><loc>https://www.fundr.co.nz/Blog/investment-boost-for-business-growth.html</loc><priority>0.7</priority><lastmod>2025-05-01</lastmod></url>
