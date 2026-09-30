@@ -50,6 +50,7 @@
       "sameAs": [
         "https://www.linkedin.com/company/fundrnz/",
         "https://www.instagram.com/fundr_nz/",
+        "https://www.facebook.com/fundrNewZealand",
         "https://www.google.com/maps?cid=11595850427227398231"
       ]
     },
@@ -277,6 +278,8 @@ body{padding-top:0}
 .products-inner h2 em{font-style:italic}
 .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .product-card.span-2{grid-column:span 2}
+.product-card.span-3{grid-column:span 3}
+.product-card.span-3 .product-photo{height:200px}
 .product-card.span-2 .product-photo{height:200px}
 .product-card{
   background:var(--white);padding:0 0 32px;
@@ -549,7 +552,7 @@ body{padding-top:0}
   .intro-stat-text strong{font-size:.68rem;margin-bottom:2px;}
   .intro-stat-text{font-size:.66rem;line-height:1.35;}
 }
-@media(max-width:1024px){.products-grid{grid-template-columns:repeat(2,1fr)}.product-card.span-2{grid-column:span 2}}@media(max-width:900px){.products-section{padding:72px 24px}.products-grid{grid-template-columns:1fr}.product-card.span-2{grid-column:span 1}.section-header{flex-direction:column;align-items:flex-start;gap:12px}}
+@media(max-width:1024px){.products-grid{grid-template-columns:repeat(2,1fr)}.product-card.span-2{grid-column:span 2}.product-card.span-3{grid-column:span 2}}@media(max-width:900px){.products-section{padding:72px 24px}.products-grid{grid-template-columns:1fr}.product-card.span-2{grid-column:span 1}.product-card.span-3{grid-column:span 1}.section-header{flex-direction:column;align-items:flex-start;gap:12px}}
 @media(max-width:600px){.products-section{padding:56px 20px}}
 /* Mobile: 5 finance-type cards become a swipeable carousel instead of 5 stacked full-width blocks */
 @media(max-width:600px){
@@ -560,7 +563,7 @@ body{padding-top:0}
     -webkit-overflow-scrolling:touch;scrollbar-width:none;
   }
   .products-grid::-webkit-scrollbar{display:none}
-  .product-card,.product-card.span-2{flex:0 0 82%;scroll-snap-align:start;grid-column:auto;}
+  .product-card,.product-card.span-2,.product-card.span-3{flex:0 0 82%;scroll-snap-align:start;grid-column:auto;}
   .product-card.span-2 .product-photo,.product-card .product-photo{height:200px}
 }
 @media(max-width:900px){.industries{grid-template-columns:1fr;gap:28px}.industry-media{position:relative;top:0;order:-1}.who-section{padding:72px 24px}.who-header{flex-direction:column;align-items:flex-start;gap:12px}.who-header p{text-align:left;max-width:100%}}
@@ -889,6 +892,16 @@ body{padding-top:0}
           <p>Range Rover, BMW, Mercedes-Benz and Porsche, structured with balloon payments and specialist lenders. For directors and business owners — a vehicle that's also a business asset.</p>
           <div class="product-tags"><span class="product-tag">Directors &amp; executives</span></div>
           <span class="product-arrow">Explore Luxury Vehicle Finance &rarr;</span>
+        </div>
+      </a>
+      <a href="/business-finance.html" class="product-card span-3" role="listitem" data-cursor="view">
+        <div class="product-photo"><img src="images/business-finance-hero.jpg" alt="Business finance for New Zealand companies, arranged by fundr" loading="lazy" width="1280" height="200"><span class="product-photo-tag">Business finance</span></div>
+        <div class="product-body">
+          <span class="product-num">07</span>
+          <h3>Business Finance</h3>
+          <p>Working capital, cashflow solutions and business acquisition funding for NZ SMEs — finance that isn't tied to a single vehicle or asset.</p>
+          <div class="product-tags"><span class="product-tag">SME owners</span></div>
+          <span class="product-arrow">Explore Business Finance &rarr;</span>
         </div>
       </a>
     </div>
