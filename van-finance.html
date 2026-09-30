@@ -413,6 +413,24 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .who-col h3{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink);margin-bottom:14px}
 @media(max-width:768px){.about-cols.even{grid-template-columns:1fr}}
 
+@media(max-width:600px){
+  .reviews-grid{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 24px;gap:14px;margin:0 -24px;padding:0 24px 10px;max-width:none;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .reviews-grid::-webkit-scrollbar{display:none}
+  .review-card{flex:0 0 86%;scroll-snap-align:start}
+}
+@media(max-width:600px){
+  .models-grid{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 20px;gap:14px;margin:0 -20px;padding:0 20px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none;border:none;background:none}
+  .models-grid::-webkit-scrollbar{display:none}
+  .model-card{flex:0 0 82%;scroll-snap-align:start;border:1px solid #d8d4cc!important;border-radius:10px}
+}
+@media(max-width:600px){
+  .why-section{padding:60px 24px}
+  .why-grid,.reading-grid{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -24px;padding:0 24px 10px;scroll-padding:0 24px;-webkit-overflow-scrolling:touch;scrollbar-width:none;border:none;background:none}
+  .reading-grid{margin:0 -20px;padding:0 20px 10px;scroll-padding:0 20px}
+  .why-grid::-webkit-scrollbar,.reading-grid::-webkit-scrollbar{display:none}
+  .why-card{flex:0 0 82%;scroll-snap-align:start;border-radius:8px}
+  .reading-card{flex:0 0 82%;scroll-snap-align:start}
+}
 /* ANIMATION LAYER */
 @keyframes kenBurns{from{transform:scale(1.06) translateY(-4px)}to{transform:scale(1) translateY(0)}}
 .hero-bg img{animation:kenBurns 9s var(--ease) both;will-change:transform}
@@ -672,6 +690,30 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   </div>
 </section>
 
+<!-- CALCULATOR -->
+<section class="calc-section" aria-label="Van finance repayment calculator">
+  <div class="calc-inner">
+    <div>
+      <p class="sec-label">Repayment Calculator</p>
+      <h2>Estimate your van<br><em>repayments.</em></h2>
+      <p class="calc-intro">Get a rough idea of monthly repayments on your work van based on price and term. Actual rates depend on your business profile — get a proper quote to see your real options.</p>
+    </div>
+    <div class="calc-card" role="region" aria-label="Van finance repayment calculator">
+      <div class="calc-row">
+        <div class="field"><label for="c-amount">Van Price</label><input id="c-amount" type="number" value="55000" min="5000" max="500000" step="1000" inputmode="numeric"></div>
+        <div class="field"><label for="c-term">Loan Term</label><select id="c-term"><option value="12">12 months</option><option value="24">24 months</option><option value="36">36 months</option><option value="48" selected>48 months</option><option value="60">60 months</option><option value="72">72 months</option></select></div>
+      </div>
+      <div class="field field-full"><label for="c-rate">Interest Rate (Est.)</label><input id="c-rate" type="number" value="8.9" min="1" max="30" step="0.1" inputmode="decimal"></div>
+      <div class="calc-result" aria-live="polite">
+        <span class="calc-result-label">Est. Monthly Payment</span>
+        <span class="calc-result-num" id="c-result">$0</span>
+      </div>
+      <p class="calc-disclaimer">Figures are estimates only. Actual rates and repayments vary based on your credit profile, lender, and loan structure. Using this calculator does not affect your credit.</p>
+      <a href="/check-eligibility-full.html" class="calc-btn" aria-label="Get a real quote">Get a Real Quote &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq-section" aria-label="Van finance FAQ">
   <div class="faq-inner">
@@ -799,6 +841,16 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 </nav>
 
 <script>
+function calcRepay(){
+  const amt=parseFloat(document.getElementById('c-amount').value)||0;
+  const months=parseInt(document.getElementById('c-term').value)||48;
+  const rate=parseFloat(document.getElementById('c-rate').value)||0;
+  const r=(rate/100)/12;
+  const pmt=r===0?amt/months:amt*(r*Math.pow(1+r,months))/(Math.pow(1+r,months)-1);
+  document.getElementById('c-result').textContent=isNaN(pmt)||pmt<=0?'$0':'$'+Math.round(pmt).toLocaleString();
+}
+['c-amount','c-term','c-rate'].forEach(id=>document.getElementById(id).addEventListener('input',calcRepay));
+calcRepay();
 document.querySelectorAll('.faq-trigger').forEach(trigger=>{
   trigger.addEventListener('click',()=>{
     const item=trigger.closest('.faq-item');
@@ -820,7 +872,7 @@ document.querySelectorAll('.faq-trigger').forEach(trigger=>{
       h1.innerHTML=parts.map(function(l){return '<span class="hl"><span class="hl-in">'+l+'</span></span>';}).join('');}
   }
   if(!reduced&&'IntersectionObserver' in window){
-    document.querySelectorAll('.about-inner > .sec-label, .about-inner > h2, .about-cols, .models-header, .why-inner > .sec-label, .why-inner > h2, .reviews-inner > .sec-label, .reviews-inner > h2, .process-header-row, .faq-left, .reading-inner > .sec-label, .reading-inner > h2, .final-cta-inner > *').forEach(function(el){el.classList.add('rv');});
+    document.querySelectorAll('.about-inner > .sec-label, .about-inner > h2, .about-cols, .models-header, .why-inner > .sec-label, .why-inner > h2, .reviews-inner > .sec-label, .reviews-inner > h2, .process-header-row, .calc-inner > div:first-child, .calc-card, .faq-left, .reading-inner > .sec-label, .reading-inner > h2, .final-cta-inner > *').forEach(function(el){el.classList.add('rv');});
     document.querySelectorAll('.models-grid, .why-grid, .reviews-grid, .steps, .faq-list, .reading-grid').forEach(function(g){
       g.classList.add('rv-g');Array.prototype.forEach.call(g.children,function(c){c.classList.add('rv-i');});});
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
