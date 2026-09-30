@@ -40,7 +40,7 @@
       "url": "https://www.fundr.co.nz/what-we-finance.html",
       "telephone": "+64211023416",
       "areaServed": "NZ",
-      "serviceType": ["Vehicle Finance","Ute Finance","Truck Finance","Luxury Vehicle Finance","Equipment Finance","Business Finance"],
+      "serviceType": ["Vehicle Finance","Ute Finance","Van Finance","Truck Finance","Luxury Vehicle Finance","Equipment Finance","Business Finance"],
       "broker": {"@type": "Person","name": "Nick","jobTitle": "Finance Broker","url": "https://www.fundr.co.nz/about.html"}
     }
   ]
@@ -117,6 +117,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .product-tag{font-size:.68rem;font-weight:500;color:var(--mid);background:rgba(22,20,15,.06);border-radius:100px;padding:4px 10px}
 .product-cta{font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid transparent;padding:0 0 1px;transition:color .2s,border-color .2s;margin-top:auto}
 .product-card:hover .product-cta{color:var(--orange);border-color:var(--orange)}
+.product-card.span-full{grid-column:1/-1}
+.product-card.span-full p{max-width:720px}
 .industries-section{background:var(--sand);padding:80px 48px}
 .industries-inner{max-width:1200px;margin:0 auto}
 .industries-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:48px}
@@ -257,6 +259,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   <div class="quick-nav-inner">
     <a href="/vehicle-finance.html" class="quick-nav-link">Vehicle Finance</a>
     <a href="/ute-finance.html" class="quick-nav-link">Ute Finance</a>
+    <a href="/van-finance.html" class="quick-nav-link">Van Finance</a>
     <a href="/truck-finance.html" class="quick-nav-link">Truck Finance</a>
     <a href="/luxury-vehicle-finance.html" class="quick-nav-link">Luxury &amp; Prestige</a>
     <a href="/equipment-finance.html" class="quick-nav-link">Equipment Finance</a>
@@ -283,6 +286,13 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <div class="product-tags"><span class="product-tag">Toyota Hilux</span><span class="product-tag">Ford Ranger</span><span class="product-tag">Any make or model</span></div>
         <span class="product-cta">View Ute Finance →</span>
       </a>
+      <a href="/van-finance.html" class="product-card" role="listitem" aria-label="Van Finance">
+        <div class="product-card-label">Van Finance</div>
+        <h3>Tradie, Courier &amp; Delivery Vans</h3>
+        <p>Work vans, courier and delivery vans, and full fleets. fundr finances compact to high-roof vans, new or used, for tradies, owner-operators and delivery businesses.</p>
+        <div class="product-tags"><span class="product-tag">Toyota HiAce</span><span class="product-tag">Ford Transit</span><span class="product-tag">Mercedes Sprinter</span></div>
+        <span class="product-cta">View Van Finance →</span>
+      </a>
       <a href="/truck-finance.html" class="product-card" role="listitem" aria-label="Truck Finance">
         <div class="product-card-label">Truck Finance</div>
         <h3>Rigids, Semis &amp; Fleets</h3>
@@ -304,7 +314,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <div class="product-tags"><span class="product-tag">Construction</span><span class="product-tag">Medical</span><span class="product-tag">Hospitality</span><span class="product-tag">Manufacturing</span></div>
         <span class="product-cta">View Equipment Finance →</span>
       </a>
-      <a href="/business-finance.html" class="product-card" role="listitem" aria-label="Business Finance">
+      <a href="/business-finance.html" class="product-card span-full" role="listitem" aria-label="Business Finance">
         <div class="product-card-label">Business Finance</div>
         <h3>Working Capital &amp; Business Loans</h3>
         <p>Need funding not tied to a specific asset? fundr arranges working capital solutions and business loans for NZ companies looking to grow, bridge a gap, or seize an opportunity.</p>
@@ -391,6 +401,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <a href="/">Home</a>
     <a href="/vehicle-finance.html">Vehicle Finance</a>
     <a href="/ute-finance.html">Ute Finance</a>
+    <a href="/van-finance.html">Van Finance</a>
     <a href="/truck-finance.html">Truck Finance</a>
     <a href="/luxury-vehicle-finance.html">Luxury Vehicle Finance</a>
     <a href="/equipment-finance.html">Equipment Finance</a>
