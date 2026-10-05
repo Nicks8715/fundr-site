@@ -1,6 +1,7 @@
 {
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/index", "destination": "/", "permanent": true },
 
     { "source": "/ute-finance", "destination": "/ute-finance.html", "permanent": true },
     { "source": "/vehicle-finance", "destination": "/vehicle-finance.html", "permanent": true },
@@ -93,6 +94,10 @@
     { "source": "/truck-finance-nz-options", "destination": "/Blog/truck-finance-nz-options.html", "permanent": true },
     { "source": "/ute-finance-nz-fleet-upgrade", "destination": "/Blog/ute-finance-nz-fleet-upgrade.html", "permanent": true },
 
+    { "source": "/news", "destination": "/blog.html", "permanent": true },
+    { "source": "/news/:slug*", "destination": "/blog.html", "permanent": true },
+    { "source": "/Blog", "destination": "/blog.html", "permanent": true },
+    { "source": "/Blog/", "destination": "/blog.html", "permanent": true },
     { "source": "/blog/categories", "destination": "/blog.html", "permanent": true },
     { "source": "/blog/categories/:slug*", "destination": "/blog.html", "permanent": true },
     { "source": "/blog/tags/:slug*", "destination": "/blog.html", "permanent": true },
