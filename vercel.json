@@ -37,6 +37,7 @@
 
     { "source": "/about-fundr", "destination": "/about.html", "permanent": true },
     { "source": "/about-us", "destination": "/about.html", "permanent": true },
+    { "source": "/about-nick", "destination": "/about.html", "permanent": true },
     { "source": "/the-fundr-way", "destination": "/fundr-way.html", "permanent": true },
     { "source": "/our-process", "destination": "/process.html", "permanent": true },
     { "source": "/how-it-works", "destination": "/process.html", "permanent": true },
@@ -83,6 +84,8 @@
     { "source": "/services/equipment-finance", "destination": "/equipment-finance.html", "permanent": true },
     { "source": "/services/business-finance", "destination": "/business-finance.html", "permanent": true },
 
+    { "source": "/what-we-finance/business-acquisition-finance", "destination": "/business-finance.html", "permanent": true },
+    { "source": "/whatwefinance/business-acquisition-finance", "destination": "/business-finance.html", "permanent": true },
     { "source": "/what-we-finance/:slug*", "destination": "/what-we-finance.html", "permanent": true },
     { "source": "/whatwefinance/:slug*", "destination": "/what-we-finance.html", "permanent": true },
 
@@ -101,7 +104,6 @@
     { "source": "/blog/categories", "destination": "/blog.html", "permanent": true },
     { "source": "/blog/categories/:slug*", "destination": "/blog.html", "permanent": true },
     { "source": "/blog/tags/:slug*", "destination": "/blog.html", "permanent": true },
-    { "source": "/blog/:slug.html", "destination": "/Blog/:slug.html", "permanent": true },
     { "source": "/blog/:slug([^/.]+)", "destination": "/Blog/:slug.html", "permanent": true },
     { "source": "/Blog/:slug([^/.]+)", "destination": "/Blog/:slug.html", "permanent": true },
 
@@ -112,6 +114,11 @@
     { "source": "/post/asset-finance-broker-nz", "destination": "/Blog/asset-finance-broker-nz.html", "permanent": true },
     { "source": "/post/business-vehicle-finance-nz", "destination": "/Blog/business-vehicle-finance-nz.html", "permanent": true },
     { "source": "/post/investment-boost-for-business-growth", "destination": "/Blog/investment-boost-for-business-growth.html", "permanent": true },
+    { "source": "/post/starting-a-new-business-loan-nz", "destination": "/Blog/business-loan-vs-asset-finance-nz.html", "permanent": true },
+    { "source": "/post/how-an-asset-finance-broker-can-transform-your-business-:rest", "destination": "/Blog/asset-finance-broker-nz.html", "permanent": true },
     { "source": "/post/:slug*", "destination": "/blog.html", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/_components/(.*)", "headers": [ { "key": "X-Robots-Tag", "value": "noindex" } ] }
   ]
 }
