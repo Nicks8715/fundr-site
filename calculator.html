@@ -28,448 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>/* =============================================
-   FUNDR SHARED STYLES
-   shared.css — include on every page
-   ============================================= */
-
-/* ── RESET & ROOT ── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
-:root{
-  --orange:#f06c00;
-  --orange-light:#ff8c2a;
-  --orange-dim:rgba(240,108,0,.12);
-  --ink:#16140f;
-  --mid:#5a5348;
-  --faint:#a09890;
-  --sand:#f0ece3;
-  --sand-dark:#e4dfd4;
-  --dark:#0e0d0b;
-  --dark2:#1a1a18;
-  --white:#fff;
-  --border:rgba(22,20,15,.10);
-  --border-dark:rgba(255,255,255,.08);
-  --serif:'Instrument Serif',Georgia,serif;
-  --sans:'Geist',system-ui,sans-serif;
-  --logo-font:'League Spartan','Geist',system-ui,sans-serif;
-  --ease:cubic-bezier(.25,.46,.45,.94);
-  --header-h:68px;
-}
-body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
-
-/* =============================================
-   HEADER
-   ============================================= */
-.site-header{
-  position:sticky;top:0;z-index:200;
-  background:var(--white);
-  border-bottom:1px solid var(--border);
-  height:var(--header-h);
-}
-.header-inner{
-  max-width:1280px;margin:0 auto;
-  padding:0 40px;height:100%;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;
-}
-.header-logo{
-  font-family:var(--logo-font);
-  font-size:1.5rem;font-weight:800;
-  color:var(--ink);text-decoration:none;
-  letter-spacing:-.03em;flex-shrink:0;
-  transition:color .2s;
-}
-.header-logo:hover{color:var(--orange)}
-
-/* Nav links */
-.header-nav{display:flex;align-items:center;gap:4px}
-.nav-link{
-  font-family:var(--sans);font-size:.82rem;font-weight:500;
-  color:var(--mid);background:none;border:none;
-  padding:8px 12px;border-radius:6px;
-  cursor:pointer;text-decoration:none;
-  display:flex;align-items:center;gap:4px;
-  transition:color .2s,background .2s;
-  white-space:nowrap;
-}
-.nav-link:hover,.nav-link.active{color:var(--ink);background:rgba(22,20,15,.05)}
-
-/* Dropdown */
-.nav-item{position:relative}
-.chevron{transition:transform .2s var(--ease);flex-shrink:0}
-.nav-item.open .chevron{transform:rotate(180deg)}
-.nav-item.open .nav-link{color:var(--ink);background:rgba(22,20,15,.05)}
-
-.dropdown-menu{
-  position:absolute;top:calc(100% + 8px);left:0;
-  background:var(--white);
-  border:1px solid var(--border);border-radius:12px;
-  padding:8px;min-width:280px;
-  box-shadow:0 12px 40px rgba(22,20,15,.12),0 2px 8px rgba(22,20,15,.06);
-  opacity:0;visibility:hidden;transform:translateY(-8px);
-  transition:opacity .2s var(--ease),transform .2s var(--ease),visibility .2s;
-  z-index:300;
-}
-.nav-item.open .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
-
-.dropdown-item{
-  display:flex;align-items:center;gap:12px;
-  padding:10px 12px;border-radius:8px;
-  text-decoration:none;color:var(--ink);
-  transition:background .15s;
-}
-.dropdown-item:hover{background:var(--sand)}
-.di-icon{font-size:1.1rem;flex-shrink:0;width:28px;text-align:center}
-.di-body{display:flex;flex-direction:column;gap:1px}
-.di-body strong{font-size:.82rem;font-weight:600;color:var(--ink)}
-.di-body span{font-size:.72rem;font-weight:300;color:var(--mid)}
-.dropdown-item--all{
-  border-top:1px solid var(--border);margin-top:4px;padding-top:12px;
-  font-size:.76rem;font-weight:500;color:var(--orange);
-  justify-content:center;
-}
-.dropdown-item--all:hover{background:var(--orange-dim)}
-
-/* Header actions */
-.header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.header-apply{
-  font-family:var(--sans);font-size:.78rem;font-weight:600;
-  color:var(--white);background:var(--ink);
-  padding:10px 20px;border-radius:100px;
-  text-decoration:none;white-space:nowrap;
-  transition:background .2s;
-}
-.header-apply:hover{background:var(--orange)}
-
-/* Hamburger */
-.header-hamburger{
-  display:none;flex-direction:column;justify-content:center;
-  align-items:center;gap:5px;
-  width:40px;height:40px;
-  background:var(--ink);border:none;border-radius:50%;
-  cursor:pointer;flex-shrink:0;
-  padding:0;
-}
-.header-hamburger span{
-  display:block;width:16px;height:2px;
-  background:#fff;border-radius:2px;
-  transition:transform .3s,opacity .3s;
-}
-.header-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.header-hamburger.open span:nth-child(2){opacity:0}
-.header-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-/* Mobile Menu */
-.mobile-menu{
-  display:none;position:fixed;
-  top:var(--header-h);left:0;right:0;bottom:0;
-  background:var(--white);z-index:190;
-  overflow-y:auto;
-  transform:translateX(100%);
-  transition:transform .3s var(--ease);
-}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-menu-inner{padding:32px 24px 48px;max-width:480px;margin:0 auto}
-.mobile-section{margin-bottom:32px}
-.mobile-section-label{
-  font-size:.65rem;font-weight:600;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--faint);
-  margin-bottom:12px;
-}
-.mobile-link{
-  display:block;font-size:.95rem;font-weight:400;
-  color:var(--ink);text-decoration:none;
-  padding:11px 0;border-bottom:1px solid var(--border);
-  transition:color .2s;
-}
-.mobile-link:last-child{border-bottom:none}
-.mobile-link:hover{color:var(--orange)}
-.mobile-link--all{color:var(--orange);font-weight:500}
-.mobile-cta{display:flex;flex-direction:column;gap:10px;margin-top:8px}
-.mobile-apply-btn{
-  display:block;text-align:center;
-  background:var(--ink);color:#fff;
-  padding:15px;border-radius:8px;
-  font-family:var(--sans);font-size:.9rem;font-weight:600;
-  text-decoration:none;transition:background .2s;
-}
-.mobile-apply-btn:hover{background:var(--orange)}
-.mobile-phone-btn{
-  display:block;text-align:center;
-  background:var(--sand);color:var(--ink);
-  padding:13px;border-radius:8px;
-  font-family:var(--sans);font-size:.9rem;font-weight:400;
-  text-decoration:none;transition:background .2s;
-}
-.mobile-phone-btn:hover{background:var(--sand-dark)}
-
-/* =============================================
-   FOOTER
-   ============================================= */
-.site-footer{background:var(--dark);padding:72px 48px 40px}
-.footer-inner{max-width:1200px;margin:0 auto}
-.footer-top{
-  display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;
-  gap:56px;padding-bottom:56px;border-bottom:1px solid var(--border-dark);
-}
-.footer-logo{
-  font-family:var(--logo-font);
-  font-size:1.5rem;font-weight:800;
-  color:#fff;text-decoration:none;
-  letter-spacing:-.03em;display:inline-block;
-  margin-bottom:16px;
-}
-.footer-logo:hover{color:var(--orange)}
-.footer-desc{font-size:.83rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.8;max-width:240px;margin-bottom:28px}
-.footer-contact{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
-.contact-link{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:var(--sans);font-size:.82rem;font-weight:300;
-  color:rgba(255,255,255,.60);text-decoration:none;
-  transition:color .2s,transform .2s;
-}
-.contact-link:hover{color:rgba(255,255,255,.9);transform:translateX(4px)}
-.contact-link svg{width:14px;height:14px;stroke:var(--orange);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-.footer-social{display:flex;gap:10px}
-.social-btn{
-  width:36px;height:36px;border-radius:50%;
-  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);
-  display:flex;align-items:center;justify-content:center;
-  text-decoration:none;transition:border-color .2s,background .2s,transform .2s;
-}
-.social-btn:hover{border-color:var(--orange);background:rgba(240,108,0,.15);transform:translateY(-3px)}
-.social-btn svg{width:15px;height:15px;fill:rgba(255,255,255,.5);transition:fill .2s}
-.social-btn:hover svg{fill:var(--orange)}
-.footer-col h4,.footer-actions-col h4{
-  font-size:.62rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
-  color:rgba(255,255,255,.55);margin-bottom:20px;
-}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
-.footer-col ul li a{
-  font-size:.82rem;font-weight:300;color:rgba(255,255,255,.60);
-  text-decoration:none;display:inline-block;transition:color .2s,transform .2s;
-}
-.footer-col ul li a:hover{color:rgba(255,255,255,.9);transform:translateX(4px)}
-.action-card{
-  display:flex;align-items:flex-start;gap:14px;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-  border-radius:8px;padding:16px 18px;margin-bottom:10px;
-  text-decoration:none;
-  transition:background .25s var(--ease),border-color .25s,transform .25s;
-}
-.action-card:last-of-type{margin-bottom:0}
-.action-card:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);transform:translateY(-2px)}
-.action-icon{width:36px;height:36px;flex-shrink:0;border-radius:7px;background:rgba(240,108,0,.10);border:1px solid rgba(240,108,0,.2);display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s}
-.action-card:hover .action-icon{background:rgba(240,108,0,.18);border-color:rgba(240,108,0,.38)}
-.action-icon svg{width:16px;height:16px;stroke:var(--orange);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.action-body strong{display:block;font-size:.82rem;font-weight:500;color:#fff;margin-bottom:2px}
-.action-body span{font-size:.74rem;font-weight:300;color:rgba(255,255,255,.55)}
-.footer-trust{margin-top:20px;padding-top:20px;border-top:1px solid var(--border-dark);display:flex;flex-direction:column;gap:10px}
-.trust-item{display:flex;align-items:center;gap:9px;font-size:.74rem;font-weight:300;color:rgba(255,255,255,.50)}
-.trust-item svg{width:13px;height:13px;stroke:var(--orange);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-.footer-locations{display:flex;align-items:center;gap:24px;flex-wrap:wrap;padding:32px 0;border-bottom:1px solid var(--border-dark)}
-.loc-label{font-size:.62rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap;flex-shrink:0}
-.loc-tags{display:flex;flex-wrap:wrap;gap:8px}
-.loc-tag{font-size:.70rem;font-weight:300;color:rgba(255,255,255,.55);padding:4px 12px;border:1px solid rgba(255,255,255,.09);border-radius:100px;transition:color .2s,border-color .2s;cursor:default}
-.loc-tag:hover{color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.50)}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:32px}
-.footer-copy{font-size:.72rem;color:rgba(255,255,255,.50)}
-.footer-legal{display:flex;gap:24px;flex-wrap:wrap}
-.footer-legal a{font-size:.72rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
-.footer-legal a:hover{color:rgba(255,255,255,.72)}
-
-/* =============================================
-   CONTACT POPUP / MODAL
-   ============================================= */
-.popup-overlay{
-  position:fixed;inset:0;z-index:1000;
-  background:rgba(14,13,11,.65);
-  backdrop-filter:blur(4px);
-  -webkit-backdrop-filter:blur(4px);
-  opacity:0;visibility:hidden;
-  transition:opacity .25s,visibility .25s;
-  display:flex;align-items:flex-start;justify-content:center;
-  padding:40px 16px;overflow-y:auto;
-}
-.popup-overlay.open{opacity:1;visibility:visible}
-.popup-card{
-  background:var(--white);border-radius:16px;
-  width:100%;max-width:640px;
-  overflow:hidden;
-  transform:translateY(-16px);
-  transition:transform .3s var(--ease);
-  box-shadow:0 24px 80px rgba(14,13,11,.3);
-  margin:auto;
-}
-.popup-overlay.open .popup-card{transform:translateY(0)}
-.popup-head{
-  background:var(--dark);padding:32px 36px 28px;
-  position:relative;
-}
-.popup-close{
-  position:absolute;top:20px;right:20px;
-  width:36px;height:36px;border-radius:50%;
-  background:rgba(255,255,255,.1);border:none;
-  color:#fff;font-size:1.2rem;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:background .2s;line-height:1;
-}
-.popup-close:hover{background:rgba(255,255,255,.2)}
-.popup-eyebrow{font-size:.65rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:8px;margin-bottom:10px}
-.popup-eyebrow::before{content:'●';color:var(--orange);font-size:.5rem}
-.popup-head h2{font-family:var(--serif);font-size:clamp(1.5rem,4vw,2rem);font-weight:400;color:#fff;line-height:1.2;margin-bottom:8px}
-.popup-head h2 em{font-style:italic}
-.popup-head p{font-size:.84rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:16px}
-.popup-head p strong{color:rgba(255,255,255,.85);font-weight:500}
-.popup-badges{display:flex;flex-wrap:wrap;gap:8px}
-.popup-badge{font-size:.70rem;font-weight:500;color:rgba(255,255,255,.75);padding:5px 12px;border:1px solid rgba(255,255,255,.18);border-radius:100px;display:flex;align-items:center;gap:5px}
-.popup-badge::before{content:'✓';color:var(--orange)}
-.popup-body{padding:28px 36px 32px}
-.popup-field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.popup-field{margin-bottom:14px}
-.popup-field label{display:block;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:6px}
-.popup-field label span{font-size:.65rem;font-weight:300;color:var(--faint);margin-left:4px;text-transform:none;letter-spacing:0}
-.popup-field input,.popup-field select{
-  width:100%;padding:12px 14px;
-  border:1.5px solid var(--border);border-radius:8px;
-  font-family:var(--sans);font-size:.9rem;color:var(--ink);
-  background:var(--white);outline:none;
-  appearance:none;-webkit-appearance:none;
-  transition:border-color .2s,box-shadow .2s;
-}
-.popup-field input:focus,.popup-field select:focus{border-color:var(--orange);box-shadow:0 0 0 3px var(--orange-dim)}
-.popup-field input::placeholder{color:var(--faint)}
-.popup-field select{
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a5348' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;cursor:pointer;
-}
-.popup-submit{
-  width:100%;padding:16px;
-  background:var(--orange);border:none;border-radius:8px;
-  font-family:var(--sans);font-size:.84rem;font-weight:600;
-  letter-spacing:.07em;text-transform:uppercase;
-  color:#fff;cursor:pointer;
-  transition:background .2s,transform .2s;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  margin-top:6px;
-}
-.popup-submit:hover{background:var(--orange-light);transform:translateY(-1px)}
-.popup-submit:active{transform:translateY(0)}
-.popup-disclaimer{font-size:.70rem;color:var(--faint);text-align:center;margin-top:10px;line-height:1.5}
-.popup-success{
-  display:none;text-align:center;padding:48px 36px;
-}
-.popup-success-icon{width:64px;height:64px;background:var(--orange-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
-.popup-success h3{font-family:var(--serif);font-size:1.6rem;font-weight:400;margin-bottom:10px}
-.popup-success p{font-size:.88rem;color:var(--mid);line-height:1.6}
-
-/* =============================================
-   RESPONSIVE — HEADER / FOOTER
-   ============================================= */
-@media(max-width:1024px){
-  .footer-top{grid-template-columns:1fr 1fr;gap:40px}
-  .footer-brand{grid-column:1/-1}
-  .footer-desc{max-width:100%}
-}
-@media(max-width:900px){
-  .site-footer{padding:56px 24px 36px}
-  .footer-top{padding-bottom:40px;gap:32px}
-}
-@media(max-width:768px){
-  .header-inner{padding:0 20px}
-  .header-nav{display:none}
-  .header-apply{display:none}
-  .header-hamburger{display:flex}
-  .mobile-menu{display:block}
-}
-@media(max-width:600px){
-  .site-footer{padding:48px 20px 32px}
-  .footer-top{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;align-items:flex-start}
-  .footer-legal{gap:16px}
-  .footer-locations{gap:16px}
-  .loc-label{width:100%}
-  .popup-field-row{grid-template-columns:1fr}
-  .popup-head,.popup-body{padding-left:24px;padding-right:24px}
-}
-
-/* ── What We Finance split trigger (label = link, arrow = dropdown) ── */
-.wwf-trigger {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  cursor: default;
-}
-.wwf-label {
-  font-family: var(--sans);
-  font-size: .82rem;
-  font-weight: 500;
-  color: var(--mid);
-  text-decoration: none;
-  padding: 8px 6px 8px 12px;
-  border-radius: 6px 0 0 6px;
-  transition: color .2s, background .2s;
-  white-space: nowrap;
-}
-.wwf-label:hover { color: var(--ink); background: rgba(22,20,15,.05); }
-.wwf-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 10px 8px 4px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--mid);
-  border-radius: 0 6px 6px 0;
-  transition: color .2s, background .2s;
-}
-.wwf-arrow:hover { color: var(--ink); background: rgba(22,20,15,.05); }
-.nav-item.open .wwf-label,
-.nav-item.open .wwf-arrow { color: var(--ink); background: rgba(22,20,15,.05); }
-
-/* ── Blog post hero image ── */
-.blog-hero-img-wrap {
-  width: 100%;
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 48px 48px;
-}
-.blog-hero-img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 6px;
-  display: block;
-}
-@media (max-width: 768px) {
-  .blog-hero-img-wrap { padding: 0 24px 32px; }
-  .blog-hero-img { height: 240px; }
-}
-
-/* ── Blog card images ── */
-.featured-img {
-  height: 280px;
-  overflow: hidden;
-  border-radius: 8px 8px 0 0;
-  background: #1a1a18;
-}
-.article-img {
-  height: 180px;
-  overflow: hidden;
-  border-radius: 8px 8px 0 0;
-  background: #1a1a18;
-}
-
-/* ── Mobile font size — ensures readable body text on small screens ── */
-@media (max-width: 600px) {
-  body { font-size: 16px; }
-  p, li, a { line-height: 1.75; }
-}
-</style>
+<link rel="stylesheet" href="/shared.css">
 <style>
 body{background:var(--sand)}
 
@@ -589,10 +148,11 @@ body{background:var(--sand)}
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- HEADER -->
+<div id="header-placeholder"><!--ssr:header-->
 <header class="site-header" id="site-header">
   <div class="header-inner">
 
-    <a href="https://www.fundr.co.nz/index.html" class="header-logo" aria-label="fundr home">fundr.</a>
+    <a href="/index.html" class="header-logo" aria-label="fundr home">fundr.</a>
 
     <!-- Desktop Nav -->
     <nav class="header-nav" aria-label="Main navigation">
@@ -600,7 +160,7 @@ body{background:var(--sand)}
       <!-- What We Finance — click label goes to page, arrow opens dropdown -->
       <div class="nav-item has-dropdown" id="wwf-item">
         <div class="nav-link wwf-trigger">
-          <a href="https://www.fundr.co.nz/what-we-finance.html" class="wwf-label">What We Finance</a>
+          <a href="/what-we-finance.html" class="wwf-label">What We Finance</a>
           <button class="wwf-arrow dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Show finance options">
             <svg class="chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
               <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -608,42 +168,86 @@ body{background:var(--sand)}
           </button>
         </div>
         <div class="dropdown-menu" role="menu">
-          <a href="https://www.fundr.co.nz/vehicle-finance.html" class="dropdown-item" role="menuitem">
+          <a href="/vehicle-finance.html" class="dropdown-item" role="menuitem">
             <span class="di-icon">🚗</span>
             <span class="di-body"><strong>Vehicle Finance</strong><span>Cars, utes, vans & SUVs</span></span>
           </a>
-          <a href="https://www.fundr.co.nz/ute-finance.html" class="dropdown-item" role="menuitem">
+          <a href="/luxury-vehicle-finance.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🏎️</span>
+            <span class="di-body"><strong>Luxury Vehicle Finance</strong><span>Audi, BMW, Porsche & more</span></span>
+          </a>
+          <a href="/ute-finance.html" class="dropdown-item" role="menuitem">
             <span class="di-icon">🛻</span>
             <span class="di-body"><strong>Ute Finance</strong><span>Hilux, Ranger, Triton & more</span></span>
           </a>
-          <a href="https://www.fundr.co.nz/truck-finance.html" class="dropdown-item" role="menuitem">
+          <a href="/van-finance.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🚐</span>
+            <span class="di-body"><strong>Van Finance</strong><span>Tradie, courier & delivery vans</span></span>
+          </a>
+          <a href="/truck-finance.html" class="dropdown-item" role="menuitem">
             <span class="di-icon">🚚</span>
             <span class="di-body"><strong>Truck Finance</strong><span>Owner-operators & fleets</span></span>
           </a>
-          <a href="https://www.fundr.co.nz/equipment-finance.html" class="dropdown-item" role="menuitem">
+          <a href="/equipment-finance.html" class="dropdown-item" role="menuitem">
             <span class="di-icon">⚙️</span>
             <span class="di-body"><strong>Equipment Finance</strong><span>Any industry, any equipment</span></span>
           </a>
-          <a href="https://www.fundr.co.nz/business-finance.html" class="dropdown-item" role="menuitem">
+          <a href="/business-finance.html" class="dropdown-item" role="menuitem">
             <span class="di-icon">🏢</span>
             <span class="di-body"><strong>Business Finance</strong><span>Working capital & business loans</span></span>
           </a>
-          <a href="https://www.fundr.co.nz/what-we-finance.html" class="dropdown-item dropdown-item--all" role="menuitem">
+          <a href="/what-we-finance.html" class="dropdown-item dropdown-item--all" role="menuitem">
             View All Finance Options →
           </a>
         </div>
       </div>
 
-      <a href="https://www.fundr.co.nz/about.html" class="nav-link">About</a>
-      <a href="https://www.fundr.co.nz/process.html" class="nav-link">Process</a>
-      <a href="https://www.fundr.co.nz/calculator.html" class="nav-link">Calculator</a>
-      <a href="https://www.fundr.co.nz/blog.html" class="nav-link">Blog</a>
-      <a href="https://www.fundr.co.nz/faq.html" class="nav-link">FAQ</a>
+      <a href="/about.html" class="nav-link">About</a>
+      <a href="/process.html" class="nav-link">Process</a>
+      <!-- Calculators — label links to hub, hover/tap/arrow opens dropdown -->
+      <div class="nav-item has-dropdown calc-item" id="calc-item">
+        <div class="nav-link calc-trigger">
+          <a href="/calculators.html" class="calc-label">Calculators</a>
+          <button class="calc-arrow dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Show calculators">
+            <svg class="chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="dropdown-menu" role="menu">
+          <a href="/calculator.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🚗</span>
+            <span class="di-body"><strong>Vehicle Finance Calculator</strong><span>Cars, SUVs and fleet vehicles</span></span>
+          </a>
+          <a href="/ute-finance-calculator.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🛻</span>
+            <span class="di-body"><strong>Ute Finance Calculator</strong><span>Hilux, Ranger, D-Max & more</span></span>
+          </a>
+          <a href="/truck-finance-calculator.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🚚</span>
+            <span class="di-body"><strong>Truck Finance Calculator</strong><span>Prime movers, tippers & fleets</span></span>
+          </a>
+          <a href="/equipment-finance-calculator.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">⚙️</span>
+            <span class="di-body"><strong>Equipment Finance Calculator</strong><span>Machinery, hospitality & more</span></span>
+          </a>
+          <a href="/business-loan-calculator.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🏢</span>
+            <span class="di-body"><strong>Business Loan Calculator</strong><span>Working capital & term loans</span></span>
+          </a>
+          <a href="/balloon-repayment-calculator.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🎈</span>
+            <span class="di-body"><strong>Balloon Repayment Calculator</strong><span>See the balloon trade-off</span></span>
+          </a>
+          <a href="/calculators.html" class="dropdown-item dropdown-item--all" role="menuitem">All Calculators →</a>
+        </div>
+      </div>
+      <a href="/blog.html" class="nav-link">Blog</a>
+      <a href="/faq.html" class="nav-link">FAQ</a>
+      <a href="/referral-partners.html" class="nav-link">Partners</a>
     </nav>
 
     <!-- CTA + Hamburger -->
     <div class="header-actions">
-      <a href="https://www.fundr.co.nz/apply.html" class="header-apply">Apply Now</a>
+      <a href="/apply.html" class="header-apply">Apply Now</a>
       <button class="header-hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -656,28 +260,41 @@ body{background:var(--sand)}
     <div class="mobile-menu-inner">
       <div class="mobile-section">
         <p class="mobile-section-label">What We Finance</p>
-        <a href="https://www.fundr.co.nz/vehicle-finance.html" class="mobile-link">Vehicle Finance</a>
-        <a href="https://www.fundr.co.nz/ute-finance.html" class="mobile-link">Ute Finance</a>
-        <a href="https://www.fundr.co.nz/truck-finance.html" class="mobile-link">Truck Finance</a>
-        <a href="https://www.fundr.co.nz/equipment-finance.html" class="mobile-link">Equipment Finance</a>
-        <a href="https://www.fundr.co.nz/business-finance.html" class="mobile-link">Business Finance</a>
-        <a href="https://www.fundr.co.nz/what-we-finance.html" class="mobile-link mobile-link--all">View All →</a>
+        <a href="/vehicle-finance.html" class="mobile-link">Vehicle Finance</a>
+        <a href="/luxury-vehicle-finance.html" class="mobile-link">Luxury Vehicle Finance</a>
+        <a href="/ute-finance.html" class="mobile-link">Ute Finance</a>
+        <a href="/van-finance.html" class="mobile-link">Van Finance</a>
+        <a href="/truck-finance.html" class="mobile-link">Truck Finance</a>
+        <a href="/equipment-finance.html" class="mobile-link">Equipment Finance</a>
+        <a href="/business-finance.html" class="mobile-link">Business Finance</a>
+        <a href="/what-we-finance.html" class="mobile-link mobile-link--all">View All →</a>
+      </div>
+      <div class="mobile-section">
+        <p class="mobile-section-label">Calculators</p>
+        <a href="/calculator.html" class="mobile-link">Vehicle Finance Calculator</a>
+        <a href="/ute-finance-calculator.html" class="mobile-link">Ute Finance Calculator</a>
+        <a href="/truck-finance-calculator.html" class="mobile-link">Truck Finance Calculator</a>
+        <a href="/equipment-finance-calculator.html" class="mobile-link">Equipment Finance Calculator</a>
+        <a href="/business-loan-calculator.html" class="mobile-link">Business Loan Calculator</a>
+        <a href="/balloon-repayment-calculator.html" class="mobile-link">Balloon Repayment Calculator</a>
+        <a href="/calculators.html" class="mobile-link mobile-link--all">All Calculators →</a>
       </div>
       <div class="mobile-section">
         <p class="mobile-section-label">Company</p>
-        <a href="https://www.fundr.co.nz/about.html" class="mobile-link">About</a>
-        <a href="https://www.fundr.co.nz/process.html" class="mobile-link">Process</a>
-        <a href="https://www.fundr.co.nz/calculator.html" class="mobile-link">Calculator</a>
-        <a href="https://www.fundr.co.nz/blog.html" class="mobile-link">Blog</a>
-        <a href="https://www.fundr.co.nz/faq.html" class="mobile-link">FAQ</a>
+        <a href="/about.html" class="mobile-link">About</a>
+        <a href="/process.html" class="mobile-link">Process</a>
+        <a href="/blog.html" class="mobile-link">Blog</a>
+        <a href="/faq.html" class="mobile-link">FAQ</a>
+        <a href="/referral-partners.html" class="mobile-link">Referral Partners</a>
       </div>
       <div class="mobile-cta">
-        <a href="https://www.fundr.co.nz/apply.html" class="mobile-apply-btn">Apply Now →</a>
+        <a href="/apply.html" class="mobile-apply-btn">Apply Now →</a>
         <a href="tel:0211023416" class="mobile-phone-btn">📞 021 102 3416</a>
       </div>
     </div>
   </div>
 </header>
+<!--/ssr:header--></div>
 
 
 <!-- PAGE HEADER -->
@@ -726,7 +343,7 @@ body{background:var(--sand)}
       <div class="calc-row">
         <div class="field">
           <label for="c-rate">Interest Rate (Est. %)</label>
-          <input id="c-rate" type="number" value="7.9" min="1" max="30" step="0.1"
+          <input id="c-rate" type="number" value="8.99" min="1" max="30" step="0.01"
             aria-label="Estimated interest rate percentage" inputmode="decimal" oninput="calcRepay()">
         </div>
         <div class="field">
@@ -1057,6 +674,10 @@ body{background:var(--sand)}
 <!-- =============================================
      FUNDR SHARED FOOTER — single instance
      ============================================= -->
+<div id="footer-placeholder"><!--ssr:footer-->
+<!-- =============================================
+     FUNDR SHARED FOOTER — single instance
+     ============================================= -->
 <footer class="site-footer" aria-label="Site footer">
   <div class="footer-inner">
 
@@ -1064,7 +685,7 @@ body{background:var(--sand)}
 
       <!-- Brand col -->
       <div class="footer-brand">
-        <a href="https://www.fundr.co.nz/index.html" class="footer-logo" aria-label="fundr home">fundr.</a>
+        <a href="/index.html" class="footer-logo" aria-label="fundr home">fundr.</a>
         <p class="footer-desc">Fast, simple asset finance for Kiwi businesses. From trucks to equipment — we help you get the gear you need to grow, without the wait.</p>
         <div class="footer-contact">
           <a href="mailto:nick@fundr.co.nz" class="contact-link">
@@ -1093,11 +714,13 @@ body{background:var(--sand)}
       <div class="footer-col">
         <h4>What We Finance</h4>
         <ul>
-          <li><a href="https://www.fundr.co.nz/vehicle-finance.html">Vehicle Finance</a></li>
-          <li><a href="https://www.fundr.co.nz/ute-finance.html">Ute Finance</a></li>
-          <li><a href="https://www.fundr.co.nz/truck-finance.html">Truck Finance</a></li>
-          <li><a href="https://www.fundr.co.nz/equipment-finance.html">Equipment Finance</a></li>
-          <li><a href="https://www.fundr.co.nz/business-finance.html">Business Finance</a></li>
+          <li><a href="/vehicle-finance.html">Vehicle Finance</a></li>
+          <li><a href="/luxury-vehicle-finance.html">Luxury Vehicle Finance</a></li>
+          <li><a href="/ute-finance.html">Ute Finance</a></li>
+          <li><a href="/van-finance.html">Van Finance</a></li>
+          <li><a href="/truck-finance.html">Truck Finance</a></li>
+          <li><a href="/equipment-finance.html">Equipment Finance</a></li>
+          <li><a href="/business-finance.html">Business Finance</a></li>
         </ul>
       </div>
 
@@ -1105,30 +728,30 @@ body{background:var(--sand)}
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="https://www.fundr.co.nz/about.html">About</a></li>
-          <li><a href="https://www.fundr.co.nz/fundr-way.html">The fundr Way</a></li>
-          <li><a href="https://www.fundr.co.nz/process.html">Our Process</a></li>
-          <li><a href="https://www.fundr.co.nz/blog.html">Blog</a></li>
-          <li><a href="https://www.fundr.co.nz/faq.html">FAQ</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/fundr-way.html">The fundr Way</a></li>
+          <li><a href="/process.html">Our Process</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
         </ul>
       </div>
 
       <!-- Quick Actions -->
       <div class="footer-actions-col">
         <h4>Quick Actions</h4>
-        <a href="https://www.fundr.co.nz/calculator.html" class="action-card">
+        <a href="/calculator.html" class="action-card">
           <div class="action-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
           </div>
           <div class="action-body"><strong>Repayment Calculator</strong><span>Estimate your repayments in seconds</span></div>
         </a>
-        <a href="/quick-quote.html" class="action-card">
+        <a href="/apply.html" class="action-card">
           <div class="action-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
           </div>
           <div class="action-body"><strong>Apply Now</strong><span>Start your application today</span></div>
         </a>
-        <a href="https://www.fundr.co.nz/check-eligibility-full.html" class="action-card">
+        <a href="/check-eligibility-full.html" class="action-card">
           <div class="action-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
@@ -1173,282 +796,20 @@ body{background:var(--sand)}
     <div class="footer-bottom">
       <p class="footer-copy">&copy; 2026 fundr Limited. FSP1007390. All rights reserved.</p>
       <div class="footer-legal">
-        <a href="https://www.fundr.co.nz/privacy.html">Privacy Policy</a>
-        <a href="https://www.fundr.co.nz/complaints.html">Complaints Process</a>
-        <a href="https://www.fundr.co.nz/disclosure.html">Disclosure Statement</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/complaints.html">Complaints Process</a>
+        <a href="/disclosure.html">Disclosure Statement</a>
       </div>
     </div>
 
   </div>
 </footer>
+<!--/ssr:footer--></div>
+<div id="popup-placeholder"></div>
 
 
 
-<script>(function () {
-  'use strict';
-
-  /* ─────────────────────────────────────────
-     COMPONENT LOADER
-     Uses innerHTML so placeholders stay in DOM
-     and listeners bind correctly after injection
-  ───────────────────────────────────────── */
-  function loadComponents(base) {
-    base = base || '';
-    var components = [
-      { id: 'header-placeholder',  path: base + '/_components/header.html' },
-      { id: 'footer-placeholder',  path: base + '/_components/footer.html' },
-      { id: 'popup-placeholder',   path: base + '/_components/popup.html'  },
-    ];
-
-    var loaded = 0;
-    var total  = components.length;
-
-    components.forEach(function (comp) {
-      var el = document.getElementById(comp.id);
-      if (!el) { total--; return; }
-
-      fetch(comp.path)
-        .then(function (r) { return r.text(); })
-        .then(function (html) {
-          el.innerHTML = html;
-          loaded++;
-          if (loaded >= total) {
-            init();           // wire everything AFTER all components are in DOM
-          }
-        })
-        .catch(function () {
-          loaded++;
-          if (loaded >= total) { init(); }
-        });
-    });
-  }
-
-  /* ─────────────────────────────────────────
-     INIT — called once all components loaded
-  ───────────────────────────────────────── */
-  function init() {
-    setActiveNavLink();
-    initDropdown();
-    initMobileMenu();
-    initPopup();
-    initHeaderScroll();
-    wireOpenPopup();
-  }
-
-  /* ─────────────────────────────────────────
-     ACTIVE LINK
-  ───────────────────────────────────────── */
-  function setActiveNavLink() {
-    var path = window.location.pathname.replace(/\/$/, '') || '/index';
-    document.querySelectorAll('.nav-link, .mobile-link, .wwf-label').forEach(function (el) {
-      var href = (el.getAttribute('href') || '');
-      if (href && href !== '#' && href !== '/' && path.indexOf(href.replace('.html', '')) !== -1) {
-        el.classList.add('active');
-      }
-    });
-  }
-
-  /* ─────────────────────────────────────────
-     DROPDOWN
-  ───────────────────────────────────────── */
-  function initDropdown() {
-    var item   = document.querySelector('.nav-item.has-dropdown');
-    var menu   = document.querySelector('.dropdown-menu');
-    var arrow  = document.querySelector('.wwf-arrow');
-
-    if (!item || !menu || !arrow) return;
-
-    function openDrop() {
-      item.classList.add('open');
-      arrow.setAttribute('aria-expanded', 'true');
-    }
-    function closeDrop() {
-      item.classList.remove('open');
-      arrow.setAttribute('aria-expanded', 'false');
-    }
-    function toggleDrop(e) {
-      e.stopPropagation();
-      item.classList.contains('open') ? closeDrop() : openDrop();
-    }
-
-    arrow.addEventListener('click', toggleDrop);
-
-    // Close on outside click
-    document.addEventListener('click', function (e) {
-      if (!item.contains(e.target)) closeDrop();
-    });
-
-    // Keyboard: Escape closes
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeDrop();
-    });
-  }
-
-  /* ─────────────────────────────────────────
-     MOBILE MENU
-  ───────────────────────────────────────── */
-  function initMobileMenu() {
-    var btn  = document.getElementById('hamburger-btn');
-    var menu = document.getElementById('mobile-menu');
-    if (!btn || !menu) return;
-
-    function openMenu() {
-      menu.classList.add('open');
-      btn.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
-      menu.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeMenu() {
-      menu.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    btn.addEventListener('click', function () {
-      menu.classList.contains('open') ? closeMenu() : openMenu();
-    });
-
-    menu.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', closeMenu);
-    });
-  }
-
-  /* ─────────────────────────────────────────
-     POPUP
-  ───────────────────────────────────────── */
-  function initPopup() {
-    var overlay  = document.getElementById('contact-popup');
-    if (!overlay) return;
-
-    var form      = document.getElementById('popup-form');
-    var successEl = document.getElementById('popup-success');
-    var closeBtn  = overlay.querySelector('.popup-close');
-
-    function openPopup() {
-      overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      if (form)      form.style.display      = '';
-      if (successEl) successEl.style.display = 'none';
-    }
-    function closePopup() {
-      overlay.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    if (closeBtn) closeBtn.addEventListener('click', closePopup);
-    overlay.addEventListener('click', function (e) { if (e.target === overlay) closePopup(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
-
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var submitBtn = form.querySelector('.popup-submit');
-        submitBtn.textContent = 'Sending…';
-        submitBtn.disabled = true;
-
-        fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { Accept: 'application/json' }
-        })
-          .then(function (res) {
-            if (res.ok) {
-              form.style.display = 'none';
-              if (successEl) successEl.style.display = 'flex';
-            } else {
-              submitBtn.textContent = 'GET MY OPTIONS →';
-              submitBtn.disabled = false;
-              alert('Something went wrong — please call Nick on 021 102 3416.');
-            }
-          })
-          .catch(function () {
-            submitBtn.textContent = 'GET MY OPTIONS →';
-            submitBtn.disabled = false;
-            alert('Connection error — please try again.');
-          });
-      });
-    }
-  }
-
-  /* Wire page-level open-popup buttons (outside components) */
-  function wireOpenPopup() {
-    document.querySelectorAll('.open-popup').forEach(function (btn) {
-      if (btn._wired) return;
-      btn._wired = true;
-      btn.addEventListener('click', function () {
-        var overlay = document.getElementById('contact-popup');
-        if (!overlay) return;
-        overlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
-        var form = document.getElementById('popup-form');
-        var succ = document.getElementById('popup-success');
-        if (form) form.style.display = '';
-        if (succ) succ.style.display = 'none';
-      });
-    });
-  }
-
-  /* ─────────────────────────────────────────
-     HEADER SCROLL SHADOW
-  ───────────────────────────────────────── */
-  function initHeaderScroll() {
-    var header = document.getElementById('site-header');
-    if (!header) return;
-    window.addEventListener('scroll', function () {
-      header.style.boxShadow = window.scrollY > 10
-        ? '0 2px 20px rgba(22,20,15,.08)' : 'none';
-    }, { passive: true });
-  }
-
-  /* ─────────────────────────────────────────
-     BOOT — detect root vs /Blog/ and load
-  ───────────────────────────────────────── */
-  var inBlog = window.location.pathname.indexOf('/Blog/') !== -1;
-  var base   = inBlog ? '..' : '';
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { loadComponents(base); });
-  } else {
-    loadComponents(base);
-  }
-
-})();
-
-/* ─────────────────────────────────────────
-   SCROLL REVEAL ANIMATION
-   Adds .on class to .rv elements as they enter viewport
-   Content is visible by default (opacity:1 in CSS)
-   This only adds the animated entrance effect
-───────────────────────────────────────── */
-(function () {
-  if (!('IntersectionObserver' in window)) return;
-
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('on');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-
-  // Run on DOMContentLoaded to catch elements already in DOM
-  function observeAll() {
-    document.querySelectorAll('.rv').forEach(function (el) {
-      observer.observe(el);
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', observeAll);
-  } else {
-    observeAll();
-  }
-})();
-</script>
+<script src="/shared.js"></script>
 
 <script>
 /* ─── FUNDR REPAYMENT CALCULATOR ─── */
@@ -1456,11 +817,11 @@ body{background:var(--sand)}
 
   /* Default rates per finance type */
   var DEFAULTS = {
-    vehicle:   { label: 'Vehicle & Ute <em>Finance Calculator</em>', amountLabel: 'Vehicle Price',    rate: 7.9,  amount: 45000  },
-    truck:     { label: 'Truck <em>Finance Calculator</em>',         amountLabel: 'Truck Price',       rate: 7.9,  amount: 120000 },
-    equipment: { label: 'Equipment <em>Finance Calculator</em>',     amountLabel: 'Equipment Cost',    rate: 7.9,  amount: 60000  },
+    vehicle:   { label: 'Vehicle & Ute <em>Finance Calculator</em>', amountLabel: 'Vehicle Price',    rate: 8.99,  amount: 45000  },
+    truck:     { label: 'Truck <em>Finance Calculator</em>',         amountLabel: 'Truck Price',       rate: 8.99,  amount: 120000 },
+    equipment: { label: 'Equipment <em>Finance Calculator</em>',     amountLabel: 'Equipment Cost',    rate: 8.99,  amount: 60000  },
     business:  { label: 'Business <em>Finance Calculator</em>',      amountLabel: 'Loan Amount',       rate: 10.5, amount: 50000  },
-    luxury:    { label: 'Luxury &amp; Prestige <em>Finance Calculator</em>', amountLabel: 'Vehicle Price',   rate: 7.9,  amount: 150000 },
+    luxury:    { label: 'Luxury &amp; Prestige <em>Finance Calculator</em>', amountLabel: 'Vehicle Price',   rate: 8.99,  amount: 150000 },
   };
 
   var currentType = 'vehicle';
