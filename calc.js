@@ -46,7 +46,7 @@
     };
     var out = {
       pmt: $('o-pmt'), per: $('o-per'), loan: $('o-loan'), interest: $('o-interest'), total: $('o-total'),
-      balloon: $('o-balloon'), cmpWith: $('o-cmp-with'), cmpWithout: $('o-cmp-without'),
+      balloon: $('o-balloon'), price: $('o-price'), deposit: $('o-deposit'), depRow: $('o-deposit-row'), balRow: $('o-balloon-row'), cmpWith: $('o-cmp-with'), cmpWithout: $('o-cmp-without'),
       cmpSave: $('o-cmp-save'), cmpExtra: $('o-cmp-extra'), quote: $('o-quote')
     };
     var used = false;
@@ -59,7 +59,7 @@
       var balloonPct = els.balloon ? clamp(num(els.balloon, 0), 0, cfg.maxBalloon || 60) : 0;
       return {
         price: price, deposit: deposit, fee: fee, loan: loan,
-        years: clamp(num(els.term, 5), 0.5, 30),
+        years: clamp(num(els.term, 60) / 12, 0.5, 30),
         apr: clamp(num(els.rate, 0), 0, 40),
         balloonPct: balloonPct,
         balloon: loan * balloonPct / 100,
@@ -71,13 +71,17 @@
     function render() {
       var s = read();
       var a = payment(s.loan, s.apr, s.years, s.balloon, s.freq, s.advance);
-      var label = { monthly: 'per month', fortnightly: 'per fortnight', weekly: 'per week' }[s.freq] || 'per month';
+      var label = { monthly: 'Est. Monthly Payment', fortnightly: 'Est. Fortnightly Payment', weekly: 'Est. Weekly Payment' }[s.freq] || 'Est. Monthly Payment';
       if (out.pmt) out.pmt.textContent = money(a.pmt, 0);
       if (out.per) out.per.textContent = label;
       if (out.loan) out.loan.textContent = money(s.loan);
       if (out.interest) out.interest.textContent = money(a.interest);
       if (out.total) out.total.textContent = money(a.total);
-      if (out.balloon) out.balloon.textContent = s.balloon > 0 ? money(s.balloon) : 'None';
+      if (out.balloon) out.balloon.textContent = money(s.balloon);
+      if (out.price) out.price.textContent = money(s.price);
+      if (out.deposit) out.deposit.textContent = money(s.deposit);
+      if (out.depRow) out.depRow.style.display = s.deposit > 0 ? '' : 'none';
+      if (out.balRow) out.balRow.style.display = s.balloon > 0 ? '' : 'none';
 
       if (out.cmpWith) {
         var b0 = payment(s.loan, s.apr, s.years, 0, s.freq, s.advance);
