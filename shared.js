@@ -66,35 +66,45 @@
      DROPDOWN
   ───────────────────────────────────────── */
   function initDropdown() {
-    var item   = document.querySelector('.nav-item.has-dropdown');
-    var menu   = document.querySelector('.dropdown-menu');
-    var arrow  = document.querySelector('.wwf-arrow');
+    var items = document.querySelectorAll('.nav-item.has-dropdown');
+    if (!items.length) return;
 
-    if (!item || !menu || !arrow) return;
-
-    function openDrop() {
-      item.classList.add('open');
-      arrow.setAttribute('aria-expanded', 'true');
+    function setOpen(item, open) {
+      var arrow = item.querySelector('.dropdown-toggle');
+      item.classList.toggle('open', open);
+      if (arrow) arrow.setAttribute('aria-expanded', open ? 'true' : 'false');
     }
-    function closeDrop() {
-      item.classList.remove('open');
-      arrow.setAttribute('aria-expanded', 'false');
-    }
-    function toggleDrop(e) {
-      e.stopPropagation();
-      item.classList.contains('open') ? closeDrop() : openDrop();
+    function closeAll(except) {
+      items.forEach(function (it) { if (it !== except) setOpen(it, false); });
     }
 
-    arrow.addEventListener('click', toggleDrop);
+    items.forEach(function (item) {
+      var arrow = item.querySelector('.dropdown-toggle');
+      if (!arrow) return;
 
-    // Close on outside click
-    document.addEventListener('click', function (e) {
-      if (!item.contains(e.target)) closeDrop();
+      // click / tap / Enter / Space on the arrow toggles
+      arrow.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var willOpen = !item.classList.contains('open');
+        closeAll(item);
+        setOpen(item, willOpen);
+      });
+
+      // hover-open on real pointer devices (CSS handles the visuals; this keeps aria in sync)
+      if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        var t;
+        item.addEventListener('mouseenter', function () { clearTimeout(t); closeAll(item); setOpen(item, true); });
+        item.addEventListener('mouseleave', function () { t = setTimeout(function () { setOpen(item, false); }, 120); });
+      }
+
+      // keyboard: Escape closes and returns focus to the arrow
+      item.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { setOpen(item, false); arrow.focus(); }
+      });
     });
 
-    // Keyboard: Escape closes
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeDrop();
+    document.addEventListener('click', function (e) {
+      items.forEach(function (it) { if (!it.contains(e.target)) setOpen(it, false); });
     });
   }
 
