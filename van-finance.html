@@ -521,7 +521,42 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 
       <a href="/about.html" class="nav-link">About</a>
       <a href="/process.html" class="nav-link">Process</a>
-      <a href="/calculator.html" class="nav-link">Calculator</a>
+      <!-- Calculators — label links to hub, hover/tap/arrow opens dropdown -->
+      <div class="nav-item has-dropdown calc-item" id="calc-item">
+        <div class="nav-link calc-trigger">
+          <a href="/calculators.html" class="calc-label">Calculators</a>
+          <button class="calc-arrow dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Show calculators">
+            <svg class="chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="dropdown-menu" role="menu">
+          <a href="/calculator.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🚗</span>
+            <span class="di-body"><strong>Vehicle Finance Calculator</strong><span>Cars, SUVs and fleet vehicles</span></span>
+          </a>
+          <a href="/ute-finance-calculator.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🛻</span>
+            <span class="di-body"><strong>Ute Finance Calculator</strong><span>Hilux, Ranger, D-Max & more</span></span>
+          </a>
+          <a href="/truck-finance-calculator.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🚚</span>
+            <span class="di-body"><strong>Truck Finance Calculator</strong><span>Prime movers, tippers & fleets</span></span>
+          </a>
+          <a href="/equipment-finance-calculator.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">⚙️</span>
+            <span class="di-body"><strong>Equipment Finance Calculator</strong><span>Machinery, hospitality & more</span></span>
+          </a>
+          <a href="/business-loan-calculator.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🏢</span>
+            <span class="di-body"><strong>Business Loan Calculator</strong><span>Working capital & term loans</span></span>
+          </a>
+          <a href="/balloon-repayment-calculator.html" class="dropdown-item" role="menuitem">
+            <span class="di-icon">🎈</span>
+            <span class="di-body"><strong>Balloon Repayment Calculator</strong><span>See the balloon trade-off</span></span>
+          </a>
+          <a href="/calculators.html" class="dropdown-item dropdown-item--all" role="menuitem">All Calculators →</a>
+        </div>
+      </div>
       <a href="/blog.html" class="nav-link">Blog</a>
       <a href="/faq.html" class="nav-link">FAQ</a>
       <a href="/referral-partners.html" class="nav-link">Partners</a>
@@ -552,10 +587,19 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <a href="/what-we-finance.html" class="mobile-link mobile-link--all">View All →</a>
       </div>
       <div class="mobile-section">
+        <p class="mobile-section-label">Calculators</p>
+        <a href="/calculator.html" class="mobile-link">Vehicle Finance Calculator</a>
+        <a href="/ute-finance-calculator.html" class="mobile-link">Ute Finance Calculator</a>
+        <a href="/truck-finance-calculator.html" class="mobile-link">Truck Finance Calculator</a>
+        <a href="/equipment-finance-calculator.html" class="mobile-link">Equipment Finance Calculator</a>
+        <a href="/business-loan-calculator.html" class="mobile-link">Business Loan Calculator</a>
+        <a href="/balloon-repayment-calculator.html" class="mobile-link">Balloon Repayment Calculator</a>
+        <a href="/calculators.html" class="mobile-link mobile-link--all">All Calculators →</a>
+      </div>
+      <div class="mobile-section">
         <p class="mobile-section-label">Company</p>
         <a href="/about.html" class="mobile-link">About</a>
         <a href="/process.html" class="mobile-link">Process</a>
-        <a href="/calculator.html" class="mobile-link">Calculator</a>
         <a href="/blog.html" class="mobile-link">Blog</a>
         <a href="/faq.html" class="mobile-link">FAQ</a>
         <a href="/referral-partners.html" class="mobile-link">Referral Partners</a>
