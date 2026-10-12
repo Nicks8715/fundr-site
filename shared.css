@@ -380,14 +380,14 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
   font-family: var(--sans);
   font-size: .82rem;
   font-weight: 500;
-  color: var(--mid);
+  color: inherit;
   text-decoration: none;
   padding: 8px 6px 8px 12px;
   border-radius: 6px 0 0 6px;
   transition: color .2s, background .2s;
   white-space: nowrap;
 }
-.wwf-label:hover { color: var(--ink); background: rgba(22,20,15,.05); }
+.wwf-label:hover { color: inherit; background: rgba(22,20,15,.05); }
 .wwf-arrow {
   display: flex;
   align-items: center;
@@ -396,13 +396,13 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0}
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--mid);
+  color: inherit;
   border-radius: 0 6px 6px 0;
   transition: color .2s, background .2s;
 }
-.wwf-arrow:hover { color: var(--ink); background: rgba(22,20,15,.05); }
+.wwf-arrow:hover { color: inherit; background: rgba(22,20,15,.05); }
 .nav-item.open .wwf-label,
-.nav-item.open .wwf-arrow { color: var(--ink); background: rgba(22,20,15,.05); }
+.nav-item.open .wwf-arrow { color: inherit; background: rgba(22,20,15,.05); }
 
 /* ── Blog post hero image ── */
 .blog-hero-img-wrap {
@@ -455,9 +455,9 @@ body {
    Append to shared.css. Works with the existing .nav-item.has-dropdown pattern. */
 .nav-item.has-dropdown.calc-item > .nav-link.calc-trigger{padding:0}
 .calc-trigger{display:flex;align-items:center;gap:0}
-.calc-trigger .calc-label{font-family:var(--sans);font-size:.82rem;font-weight:500;color:var(--mid);text-decoration:none;padding:8px 6px 8px 12px;border-radius:6px 0 0 6px;white-space:nowrap;transition:color .2s,background .2s}
-.calc-trigger .calc-arrow{display:flex;align-items:center;justify-content:center;padding:8px 10px 8px 4px;background:none;border:none;cursor:pointer;color:var(--mid);border-radius:0 6px 6px 0;transition:color .2s,background .2s}
-.calc-trigger .calc-label:hover,.calc-trigger .calc-arrow:hover,.nav-item.open .calc-label,.nav-item.open .calc-arrow{color:var(--ink);background:rgba(22,20,15,.05)}
+.calc-trigger .calc-label{font-family:var(--sans);font-size:.82rem;font-weight:500;color:inherit;text-decoration:none;padding:8px 6px 8px 12px;border-radius:6px 0 0 6px;white-space:nowrap;transition:color .2s,background .2s}
+.calc-trigger .calc-arrow{display:flex;align-items:center;justify-content:center;padding:8px 10px 8px 4px;background:none;border:none;cursor:pointer;color:inherit;border-radius:0 6px 6px 0;transition:color .2s,background .2s}
+.calc-trigger .calc-label:hover,.calc-trigger .calc-arrow:hover,.nav-item.open .calc-label,.nav-item.open .calc-arrow{color:inherit;background:rgba(22,20,15,.05)}
 .calc-item .dropdown-menu{min-width:300px}
 /* invisible bridge so the menu doesn't close while the pointer crosses the gap */
 .calc-item .dropdown-menu::before{content:'';position:absolute;left:0;right:0;top:-10px;height:10px}
