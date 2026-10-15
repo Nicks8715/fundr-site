@@ -2,7 +2,7 @@
 
 > fundr is a New Zealand-based asset finance brokerage (FSP1007390) specialising in vehicle, truck, equipment and business finance for tradies, SMEs and business owners. Founded and run by Nick Sevta, fundr works with 15+ NZ lenders to arrange finance with approvals typically within 24 hours. Operates nationwide across New Zealand from Mairangi Bay, Auckland.
 
-Last updated: 12 October 2026
+Last updated: 15 October 2026
 
 fundr is an independent finance broker, not a lender — it takes each application to a panel of 15+ NZ lenders to find the best rate and structure for the client's business and situation. Services cover vehicle finance (cars, utes, vans, luxury/prestige vehicles), truck finance (prime movers, tippers, curtainsiders, crane trucks), equipment finance (construction, medical, kitchen, gym, warehouse and more) and general business finance (working capital, cashflow, business acquisition funding). Clients deal directly with Nick Sevta throughout the process, from application to settlement.
 
@@ -37,20 +37,14 @@ Nick Sevta is the founder, director and sole broker of fundr Limited, with 15+ y
 - [Apply for Finance](https://www.fundr.co.nz/apply.html): Application form — approvals typically within 24 hours.
 - [Get an Instant Quote](https://www.fundr.co.nz/quick-quote.html): 60-second indicative quote tool, no credit check.
 - [Check Eligibility](https://www.fundr.co.nz/check-eligibility-full.html): Quick eligibility check for NZ businesses.
-- [Finance Calculators (hub)](https://www.fundr.co.nz/calculators.html): All fundr calculators in one place. Indicative only, not an offer of credit.
-- [Vehicle Finance Calculator](https://www.fundr.co.nz/calculator.html): Repayment calculator for cars, SUVs and fleet vehicles, with optional balloon.
-- [Ute Finance Calculator](https://www.fundr.co.nz/ute-finance-calculator.html): Repayments on a work ute; weekly, fortnightly or monthly.
-- [Truck Finance Calculator](https://www.fundr.co.nz/truck-finance-calculator.html): Repayments on prime movers, tippers and other trucks, with balloon.
-- [Equipment Finance Calculator](https://www.fundr.co.nz/equipment-finance-calculator.html): Repayments on machinery and business equipment.
-- [Business Loan Calculator](https://www.fundr.co.nz/business-loan-calculator.html): Term loan repayments including an optional establishment fee.
-- [Balloon Repayment Calculator](https://www.fundr.co.nz/balloon-repayment-calculator.html): Compares repayments with and without a balloon, and the extra interest.
+- [Finance Calculators](https://www.fundr.co.nz/calculators.html): Free repayment calculators for vehicles, utes, trucks, equipment and business loans, plus a balloon repayment comparison. Indicative only, not an offer of credit.
 - [Referral Partner Programme](https://www.fundr.co.nz/referral-partners.html): For accountants, dealers and advisers referring clients to fundr.
 
 ## Guides & Insights
 
 - [Excavator Finance NZ: New vs Used, and What Changes](https://www.fundr.co.nz/Blog/excavator-finance-nz.html): How hours, age, deposits and attachments affect excavator finance.
 - [New Business Truck Finance NZ: The Contract Trick](https://www.fundr.co.nz/Blog/truck-finance-new-transport-business.html): Using a signed contract or letter of intent to finance a first truck with no trading history.
-- [OCR Rises to 2.75%: Should You Lock In Asset Finance Now?](https://www.fundr.co.nz/Blog/lock-in-asset-finance-before-ocr-september-2026.html): The RBNZ lifted the OCR to 2.75% on 2 September 2026 and signals more may follow; who should lock in a fixed rate now and who can wait. Updated 30 September 2026.
+- [OCR Rises: Should You Lock In Asset Finance Now?](https://www.fundr.co.nz/Blog/lock-in-asset-finance-before-ocr-september-2026.html): How a rising OCR affects asset finance pricing, and who should lock in a fixed rate now versus who can wait.
 - [OCR vs Swap Rates: Why Your Equipment Finance Quote Doesn't Move With the OCR](https://www.fundr.co.nz/Blog/ocr-vs-swap-rates-equipment-finance-nz.html): How swap rates actually drive NZ business finance pricing.
 - [Business Asset Finance Auckland: Local Market Guide for SME Owners](https://www.fundr.co.nz/Blog/business-asset-finance-auckland.html): Vehicle, equipment and business finance for Auckland SMEs.
 - [Equipment Finance for Hospitality Businesses](https://www.fundr.co.nz/Blog/equipment-finance-hospitality-nz.html): Financing ovens, fridges, coffee machines and fit-outs.
