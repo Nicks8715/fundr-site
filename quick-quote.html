@@ -169,6 +169,9 @@ body{font-family:var(--sans);color:var(--ink);background:var(--sand);overflow-x:
   .submit-card{padding:20px}
   .submit-trust{gap:12px}
 }
+.submit-privacy{font-size:.72rem;color:rgba(255,255,255,.4);text-align:center;margin-top:12px;line-height:1.6}
+.submit-privacy a{color:rgba(255,255,255,.7);text-decoration:underline;text-underline-offset:3px}
+.submit-privacy a:hover{color:#fff}
 </style>
 </head>
 <body>
@@ -190,7 +193,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--sand);overflow-x:
   <p>Tell us what you need and get an instant indicative rate emailed to you — no credit check, no obligation.</p>
   <div class="hero-badges">
     <span class="hero-badge">No credit check</span>
-    <span class="hero-badge">Response within 1 hour</span>
+    <span class="hero-badge">Response within 1 business hour</span>
     <span class="hero-badge">15+ lender panel</span>
     <span class="hero-badge">NZ-owned broker</span>
   </div>
@@ -312,12 +315,12 @@ body{font-family:var(--sans);color:var(--ink);background:var(--sand);overflow-x:
               <div class="radio-card-label">Under 1 year</div>
               <div class="radio-card-sub">Start-up / new biz</div>
             </div>
-            <div class="radio-card" data-val="1to3">
-              <div class="radio-card-label">1–3 years</div>
+            <div class="radio-card" data-val="1to2">
+              <div class="radio-card-label">1–2 years</div>
               <div class="radio-card-sub">Established</div>
             </div>
-            <div class="radio-card" data-val="3plus">
-              <div class="radio-card-label">3+ years</div>
+            <div class="radio-card" data-val="2plus">
+              <div class="radio-card-label">2+ years</div>
               <div class="radio-card-sub">Well established</div>
             </div>
           </div>
@@ -399,6 +402,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--sand);overflow-x:
         <svg viewBox="0 0 16 16"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
         Get My Indicative Quote
       </button>
+      <p class="submit-privacy">By submitting, you agree to our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
       <p class="submit-sub">Your quote will be emailed instantly. No credit check performed. Nick will call to confirm within 1 business hour.</p>
       <div class="submit-trust">
         <span class="trust-item"><span class="trust-dot"></span>FSP registered broker</span>
@@ -507,7 +511,7 @@ function goStep(n) {
 
   /* Track step progression — lets you see where people drop off in the funnel */
   window.dataLayer = window.dataLayer || [];
-  dataLayer.push({ event: 'quick_quote_step', step_number: n });
+  dataLayer.push({ event: 'quick_quote_step', step_number: n, step_name: ({1:'finance',2:'business',3:'details'})[n] });
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -522,17 +526,17 @@ function calculateRate() {
 
   let low, high;
 
-  if (trading === '3plus') {
-    if (credit === 'good' && homeowner === 'yes')    { low = 7.5;  high = 8.5; }
-    else if (credit === 'good' && homeowner === 'no') { low = 8.99; high = 10.99; }
+  if (trading === '2plus') {
+    if (credit === 'good' && homeowner === 'yes')    { low = 8.99;  high = 9.99; }
+    else if (credit === 'good' && homeowner === 'no') { low = 9.99; high = 10.99; }
     else if (credit === 'fair' && homeowner === 'yes'){ low = 9.99; high = 11.99; }
     else if (credit === 'fair' && homeowner === 'no') { low = 10.99; high = 12.99; }
     else if (credit === 'issues')                     { low = 13.99; high = 17.99; }
-  } else { // 1to3
+  } else { // 1to2
     if (credit === 'good' && homeowner === 'yes')    { low = 8.99; high = 10.99; }
     else if (credit === 'good' && homeowner === 'no') { low = 10.49; high = 12.49; }
-    else if (credit === 'fair' && homeowner === 'yes'){ low = 11.49; high = 13.49; }
-    else if (credit === 'fair' && homeowner === 'no') { low = 12.49; high = 14.99; }
+    else if (credit === 'fair' && homeowner === 'yes'){ low = 9.99; high = 11.99; }
+    else if (credit === 'fair' && homeowner === 'no') { low = 10.99; high = 12.99; }
     else if (credit === 'issues')                     { low = 14.99; high = 18.99; }
   }
 
@@ -582,7 +586,7 @@ async function submitQuote() {
     '300000': '$250,000+'
   };
 
-  const tradingLabels = { under1: 'Under 1 year', '1to3': '1–3 years', '3plus': '3+ years' };
+  const tradingLabels = { under1: 'Under 1 year', '1to2': '1–2 years', '2plus': '2+ years' };
   const creditLabels = { good: 'Good', fair: 'Fair', issues: 'Some issues' };
 
   // Monthly estimates
