@@ -9,8 +9,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>fundr | Vehicle, Truck & Equipment Finance NZ — Business Finance Broker</title>
-<meta name="description" content="fundr is NZ's specialist asset finance broker. Vehicle, ute, truck, equipment and luxury prestige vehicle finance from 15+ lenders. Approvals in 24 hours. Talk to Nick directly.">
+<title>fundr | Vehicle, Truck & Equipment Finance Broker NZ</title>
+<meta name="description" content="fundr is NZ's specialist asset finance broker. Vehicle, ute, truck, equipment and luxury finance from 15+ lenders. 24-hour approvals. Talk to Nick directly.">
 <link rel="canonical" href="https://www.fundr.co.nz/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="fundr | Vehicle, Truck & Equipment Finance NZ">
@@ -206,14 +206,13 @@ body{padding-top:0}
 }
 .btn-hero:hover{background:var(--orange);color:#fff}
 .btn-hero svg{width:12px;height:12px;flex-shrink:0}
-.btn-ghost-hero{
-  position:relative;display:inline-flex;align-items:center;gap:6px;
-  color:rgba(255,255,255,.45);background:none;border:none;
-  border-bottom:1px solid rgba(255,255,255,.18);padding:0 0 2px;
-  font-family:var(--sans);font-size:.78rem;cursor:none;
-  transition:color .2s,border-color .2s,transform .15s var(--ease);text-decoration:none;will-change:transform;
+.hero-text-link{
+  display:inline-flex;align-items:center;min-height:44px;
+  color:rgba(255,255,255,.72);font-family:var(--sans);font-size:.8rem;
+  text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:4px;
+  transition:color .2s,text-decoration-color .2s;
 }
-.btn-ghost-hero:hover{color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.45)}
+.hero-text-link:hover,.hero-text-link:focus-visible{color:#fff;text-decoration-color:rgba(255,255,255,.8)}
 .hero-stats{position:absolute;bottom:0;left:0;right:0;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.08);background:rgba(14,13,11,.75);backdrop-filter:blur(8px);}
 .hero-stat{padding:22px 32px;border-right:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:4px;}
 .hero-stat:last-child{border-right:none}
@@ -433,8 +432,8 @@ body{padding-top:0}
 .agg-stars{color:var(--orange);font-size:.9rem;letter-spacing:2px;display:block;margin:4px 0}
 .agg-label{font-size:.68rem;color:var(--faint);letter-spacing:.08em;text-transform:uppercase}
 .reviews-track-wrap{padding:4px 0}
-.reviews-track{display:flex;gap:20px;padding:0 48px;justify-content:center;flex-wrap:wrap;max-width:1200px;margin:0 auto}
-.review-card{flex:0 0 340px;background:#fff;border:1px solid var(--border-light);border-radius:10px;padding:32px 28px;display:flex;flex-direction:column;gap:20px}
+.reviews-track{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:0 48px;max-width:1200px;margin:0 auto}
+.review-card{background:#fff;border:1px solid var(--border-light);border-radius:10px;padding:32px 28px;display:flex;flex-direction:column;gap:20px}
 .review-stars{color:var(--orange);font-size:.85rem;letter-spacing:2px}
 .review-text{font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--ink);line-height:1.65;flex:1}
 .reviewer{display:flex;flex-direction:column;gap:3px;padding-top:16px;border-top:1px solid var(--border-light)}
@@ -502,8 +501,8 @@ body{padding-top:0}
 /* =============================================
    13. MOBILE-ONLY CALCULATOR SECTION
    Desktop keeps the calculator as a grid item inside the hero (untouched).
-   On mobile/tablet, that in-hero copy is hidden so the photo reads clean,
-   and this separate, clearly-mobile-only copy renders below the hero instead.
+   On mobile/tablet the same element is moved (see the script after the hero)
+   into this section so the photo reads clean. There is only one copy in the markup.
    ============================================= */
 .mobile-calc-section{display:none;}
 @media(max-width:900px){
@@ -575,12 +574,12 @@ body{padding-top:0}
 @media(max-width:600px){.why-grid{grid-template-columns:1fr}}
 @media(max-width:900px){.promise-section{padding:72px 24px}.promise-header{grid-template-columns:1fr;gap:24px;margin-bottom:52px}.promise-item{grid-template-columns:56px 1fr;gap:20px;padding:28px 0}.promise-num-wrap svg{width:56px;height:56px}.promise-num-wrap text{font-size:18px}.promise-cta{flex-direction:column;align-items:flex-start}}
 @media(max-width:600px){.promise-section{padding:56px 20px}.promise-item{grid-template-columns:48px 1fr;gap:16px;padding:24px 0}.promise-num-wrap svg{width:48px;height:48px}.promise-num-wrap text{font-size:16px}.promise-content h3{font-size:1.15rem}.btn-promise{width:100%;justify-content:center}}
-@media(max-width:900px){.reviews-header{padding:0 24px}.review-card{flex:0 0 300px}}
+@media(max-width:900px){.reviews-header{padding:0 24px}.reviews-track{padding:0 24px}}
 @media(max-width:600px){.reviews-header{flex-direction:column;align-items:flex-start;padding:0 20px}.agg-score{text-align:left}.reviews-track{padding:0 20px}}
 /* Mobile: testimonials become a swipeable carousel instead of stacking one-per-row */
 @media(max-width:600px){
   .reviews-track{
-    flex-wrap:nowrap;justify-content:flex-start;
+    display:flex;flex-wrap:nowrap;justify-content:flex-start;
     overflow-x:auto;scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;scrollbar-width:none;
   }
@@ -834,13 +833,11 @@ body{padding-top:0}
           Get My Quote in 60 Seconds
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="/check-eligibility-full.html" class="btn-ghost-hero" data-magnetic data-cursor="" aria-label="Check your eligibility">
-          Check my eligibility &rarr;
-        </a>
+        <a href="/check-eligibility-full.html" class="hero-text-link">Check my eligibility &rarr;</a>
       </div>
     </div>
 
-    <div class="hero-calc" aria-label="Repayment calculator">
+    <div class="hero-calc" id="heroCalc" aria-label="Repayment calculator">
       <div class="hero-calc-eyebrow">Repayment calculator</div>
       <h3>What could your repayments look like?</h3>
 
@@ -866,12 +863,12 @@ body{padding-top:0}
       <div class="hero-calc-result">
         <div>
           <div class="hero-calc-result-label">Est. weekly repayment</div>
-          <div class="hero-calc-result-value">$298<span>/week</span></div>
+          <div class="hero-calc-result-value">$311<span>/week</span></div>
         </div>
       </div>
 
       <a href="/quick-quote.html" class="hero-calc-cta">Get my real rate &rarr;</a>
-      <div class="hero-calc-fine">Indicative at 8.99% p.a. Final rate confirmed once we assess your deal.</div>
+      <div class="hero-calc-fine">Indicative at 8.99% p.a., weekly repayments over the selected term. No deposit, balloon or fees included. Final rate confirmed once we assess your deal.</div>
     </div>
   </div>
 
@@ -893,42 +890,20 @@ body{padding-top:0}
 </section>
 
 <section class="mobile-calc-section" aria-label="Repayment calculator (mobile)">
-  <div class="calc-frame">
-    <div class="hero-calc" aria-label="Repayment calculator">
-      <div class="hero-calc-eyebrow">Repayment calculator</div>
-      <h3>What could your repayments look like?</h3>
-
-      <div class="hero-calc-field">
-        <label>Asset type</label>
-        <div class="hero-calc-toggle">
-          <button type="button" class="active">Vehicle</button>
-          <button type="button">Truck</button>
-          <button type="button">Equipment</button>
-        </div>
-      </div>
-
-      <div class="hero-calc-field">
-        <div class="hero-calc-slider-row"><label style="margin:0;">Purchase price</label><span>$65,000</span></div>
-        <input type="range" min="10000" max="300000" value="65000" aria-label="Purchase price">
-      </div>
-
-      <div class="hero-calc-field" style="margin-bottom:0;">
-        <div class="hero-calc-slider-row"><label style="margin:0;">Term</label><span>5 yrs</span></div>
-        <input type="range" min="1" max="7" value="5" aria-label="Loan term in years">
-      </div>
-
-      <div class="hero-calc-result">
-        <div>
-          <div class="hero-calc-result-label">Est. weekly repayment</div>
-          <div class="hero-calc-result-value">$298<span>/week</span></div>
-        </div>
-      </div>
-
-      <a href="/quick-quote.html" class="hero-calc-cta">Get my real rate &rarr;</a>
-      <div class="hero-calc-fine">Indicative at 8.99% p.a. Final rate confirmed once we assess your deal.</div>
-    </div>
-  </div>
+  <div class="calc-frame"></div>
 </section>
+<script>
+/* One calculator in the markup. Below 900px it moves into the section under the hero (see section 13 in the CSS). */
+(function(){
+  var calc=document.getElementById('heroCalc');
+  var frame=document.querySelector('.mobile-calc-section .calc-frame');
+  if(!calc||!frame||!window.matchMedia)return;
+  var home=calc.parentNode, mq=window.matchMedia('(max-width:900px)');
+  function place(){var t=mq.matches?frame:home;if(calc.parentNode!==t)t.appendChild(calc);}
+  place();
+  if(mq.addEventListener)mq.addEventListener('change',place);else if(mq.addListener)mq.addListener(place);
+})();
+</script>
 
 <section class="statement" aria-label="The fundr way" id="statement">
   <div class="statement-inner">
@@ -1175,7 +1150,7 @@ body{padding-top:0}
   <div class="reviews-header">
     <div>
       <p class="sec-label">Customer Reviews</p>
-      <h2>What NZ business owners<br><em>say about fundr.</em></h2>
+      <h2>What clients<br><em>say about fundr.</em></h2>
     </div>
     <div class="reviews-head-right">
       <div class="agg-score" aria-label="5.0 star rating on Google">
@@ -1185,29 +1160,37 @@ body{padding-top:0}
     </div>
   </div>
   <div class="reviews-track-wrap">
-    <div class="reviews-track" id="reviewsTrack" role="list" aria-label="Customer testimonials">
+    <div class="reviews-track" id="reviewsTrack" role="list" aria-label="Google reviews">
       <article class="review-card" role="listitem">
         <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"fundr sorted our excavator finance in under 24 hours. Nick knew exactly what lenders to approach — we'd been knocked back by our bank but fundr got it done."</p>
+        <p class="review-text">"Fantastic service from Nick. He made financing both my mower and new car quick, easy and completely stress-free. Excellent communication throughout—I highly recommend him."</p>
         <div class="reviewer">
-          <span class="reviewer-name">Jason M.</span>
-          <span class="reviewer-role">Civil contractor, Auckland</span>
+          <span class="reviewer-name">Grant H.</span>
+          <span class="reviewer-role">Google review</span>
         </div>
       </article>
       <article class="review-card" role="listitem">
         <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"Got our Hilux financed in two days. Nick handled everything, found us a great rate and was easy to deal with the whole way through. Won't use anyone else."</p>
+        <p class="review-text">"Had a great experience dealing with Nick from Fundr. After recently starting a new company, getting car finance wasn't completely straightforward, but Nick made the whole process easy and stress-free. He was responsive, knowledgeable, and got everything sorted quickly. Would definitely recommend Nick to anyone needing finance."</p>
         <div class="reviewer">
-          <span class="reviewer-name">Shane R.</span>
-          <span class="reviewer-role">Builder, Christchurch</span>
+          <span class="reviewer-name">Grant E.</span>
+          <span class="reviewer-role">Google review</span>
         </div>
       </article>
       <article class="review-card" role="listitem">
         <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"As a new business we weren't sure we'd qualify. Nick built a case for us and got us approved for our first truck. Absolute legend."</p>
+        <p class="review-text">"Had a great experience with Fundr, especially with Nick, who made the whole finance process really easy and straightforward. He was very helpful, professional, and kept everything moving smoothly. Really appreciate his help in getting finance sorted for my new Ford Everest. Highly recommend Nick and the team at Fundr!"</p>
         <div class="reviewer">
-          <span class="reviewer-name">Tony R.</span>
-          <span class="reviewer-role">Owner-operator, Wellington</span>
+          <span class="reviewer-name">Amrinder S.</span>
+          <span class="reviewer-role">Google review</span>
+        </div>
+      </article>
+      <article class="review-card" role="listitem">
+        <div class="review-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Excellent service from Nick and the team at Fundr. The process of obtaining funding for new work equipment was quick, straightforward, and hassle-free. Nick was efficient, communicative, and made the entire experience seamless from start to finish. Highly recommend Fundr for any business finance needs."</p>
+        <div class="reviewer">
+          <span class="reviewer-name">Josh S.</span>
+          <span class="reviewer-role">Google review</span>
         </div>
       </article>
     </div>
@@ -1564,7 +1547,7 @@ body{padding-top:0}
     window.addEventListener('scroll', syncHeaderState, {passive:true});
   }
 
-  /* ── Repayment calculators: wire up every instance on the page (desktop hero copy + mobile-only copy) ── */
+  /* ── Repayment calculator ── */
   document.querySelectorAll('.hero-calc').forEach(function(heroCalc){
     var toggleBtns = heroCalc.querySelectorAll('.hero-calc-toggle button');
     var priceInput = heroCalc.querySelectorAll('input[type=range]')[0];
@@ -1677,7 +1660,7 @@ body{padding-top:0}
 
   /* ── Sticky mobile CTA: only show once the mobile calculator's own CTA is out of view ── */
   var mobileCtaBar = document.querySelector('.mobile-cta-bar');
-  var mobileCalcCta = document.querySelector('.mobile-calc-section .hero-calc-cta');
+  var mobileCalcCta = document.querySelector('#heroCalc .hero-calc-cta');
   if (mobileCtaBar && mobileCalcCta && 'IntersectionObserver' in window) {
     var ctaIO = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
