@@ -10,11 +10,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Truck Finance NZ | Prime Movers, Tippers & More | fundr</title>
-<meta name="description" content="Finance any truck your business needs — prime movers, tippers, curtainsiders and crane trucks. 15+ NZ lenders, 24hr approvals, no broker fee.">
+<meta name="description" content="Finance any truck your business needs — prime movers, tippers, curtainsiders and crane trucks. 15+ NZ lenders, most decisions within 24 hours.">
 <link rel="canonical" href="https://www.fundr.co.nz/truck-finance.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Truck Finance NZ | Prime Movers, Tippers & More | fundr">
-<meta property="og:description" content="Finance any truck for your NZ business. 15+ lenders, 24hr approvals. fundr makes truck finance simple.">
+<meta property="og:description" content="Finance any truck for your NZ business. 15+ lenders, most decisions within 24 hours. fundr makes truck finance simple.">
 <meta property="og:url" content="https://www.fundr.co.nz/truck-finance.html">
 <meta property="og:site_name" content="fundr">
 <meta property="og:image" content="https://www.fundr.co.nz/images/og-image.jpg">
@@ -39,23 +39,34 @@
     },
     {
       "@type": "FinancialService",
+      "@id": "https://www.fundr.co.nz/truck-finance.html#provider",
       "name": "fundr — Truck Finance NZ",
-      "description": "Truck finance broker for NZ businesses. Finance prime movers, tippers, curtainsiders and any commercial truck. 15+ lenders, 24hr approvals.",
+      "description": "Truck finance broker for NZ businesses. Finance prime movers, tippers, curtainsiders and any commercial truck. 15+ lenders, most decisions within 24 hours.",
       "url": "https://www.fundr.co.nz/truck-finance.html",
       "telephone": "+64211023416",
       "areaServed": "NZ",
       "serviceType": "Truck Finance"
     },
     {
+      "@type": "Service",
+      "@id": "https://www.fundr.co.nz/truck-finance.html#service",
+      "name": "Commercial Truck Finance NZ",
+      "serviceType": "Commercial truck finance",
+      "description": "Commercial truck finance arranged through a panel of 15+ NZ lenders. New and used prime movers, tippers, curtainsiders and specialist trucks, typically from $20,000 to $2,000,000 over 3 to 5 years, with most applications decided within 24 hours.",
+      "url": "https://www.fundr.co.nz/truck-finance.html",
+      "provider": {"@id": "https://www.fundr.co.nz/truck-finance.html#provider"},
+      "areaServed": {"@type": "Country", "name": "New Zealand"}
+    },
+    {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type":"Question","name":"What types of trucks can fundr finance?","acceptedAnswer":{"@type":"Answer","text":"fundr can finance any commercial truck — prime movers, pantechs, curtainsiders, tipper trucks, crane trucks, tilt trays, concrete agitators, refrigerated trucks and more."}},
-        {"@type":"Question","name":"Can I get truck finance with no deposit?","acceptedAnswer":{"@type":"Answer","text":"Yes — many of our lenders offer 100% finance on commercial trucks, meaning no deposit required."}},
-        {"@type":"Question","name":"How long does truck finance approval take?","acceptedAnswer":{"@type":"Answer","text":"Most applications receive a decision within 24 hours. In many cases we can get same-day approval."}},
-        {"@type":"Question","name":"Can I finance a used truck or private sale?","acceptedAnswer":{"@type":"Answer","text":"Yes. fundr can finance both new and used trucks, including private sales."}},
-        {"@type":"Question","name":"Can a new business get truck finance?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can use a written contract or letter of intent to demonstrate income and build a cash flow forecast."}},
-        {"@type":"Question","name":"How much can I borrow for truck finance?","acceptedAnswer":{"@type":"Answer","text":"Typically from $20,000 to $2,000,000 depending on the vehicle and your business profile."}},
-        {"@type":"Question","name":"Does applying affect my credit score?","acceptedAnswer":{"@type":"Answer","text":"Our initial assessment is a soft check and does not affect your credit score."}}
+        {"@type":"Question","name":"What types of trucks can fundr finance?","acceptedAnswer":{"@type":"Answer","text":"fundr can finance any commercial truck your business needs — prime movers, pantechs, curtainsiders, tipper trucks, crane trucks, tilt trays, concrete agitators, refrigerated trucks and more. If it's a commercial vehicle, we can find finance for it."}},
+        {"@type":"Question","name":"Can I get truck finance with no deposit?","acceptedAnswer":{"@type":"Answer","text":"Yes — many of our lenders offer 100% finance on commercial trucks, meaning no deposit required. Approval and rate will depend on your business trading history and credit profile. Some lenders may require a deposit for newer businesses or very high loan amounts."}},
+        {"@type":"Question","name":"How long does truck finance approval take?","acceptedAnswer":{"@type":"Answer","text":"Most applications receive a decision within 24 hours. In many cases we can get same-day approval. Once approved, funds are typically released within 1–2 business days so you can get your truck on the road quickly."}},
+        {"@type":"Question","name":"Can I finance a used truck or private sale?","acceptedAnswer":{"@type":"Answer","text":"Yes. fundr can finance both new and used trucks, including private sales. Nick manages the full process including coordinating payment to the seller — all you need to provide is the agreed purchase price."}},
+        {"@type":"Question","name":"Can a new business get truck finance?","acceptedAnswer":{"@type":"Answer","text":"Yes. fundr specialises in structuring finance for newer businesses. We can use a written contract or letter of intent to demonstrate income, and build a cash flow forecast to prove serviceability. Don't assume you won't qualify — talk to Nick first."}},
+        {"@type":"Question","name":"How much can I borrow for truck finance?","acceptedAnswer":{"@type":"Answer","text":"You can typically borrow from $20,000 to $2,000,000 depending on the vehicle and your business profile. Nick will guide you through the best finance strategy based on your specific situation and loan amount."}},
+        {"@type":"Question","name":"Does applying affect my credit score?","acceptedAnswer":{"@type":"Answer","text":"Our initial assessment is a soft check and does not affect your credit score. A full credit check is only run once you've agreed to proceed with a specific lender and loan structure."}}
       ]
     }
   ]
@@ -123,6 +134,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .about-cols{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
 .about-body{font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.85}
 .about-body p+p{margin-top:16px}
+.about-body p.about-lead{font-size:1rem;font-weight:400;color:var(--ink)}
+@media(max-width:600px){.process-cta-actions .btn-orange{white-space:normal;text-align:center;justify-content:center;max-width:100%}.process-cta-actions{max-width:100%}}
 .fundr-way-btn{display:inline-flex;align-items:center;gap:6px;margin-top:28px;font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding:0 0 2px;transition:color .2s,border-color .2s}
 .fundr-way-btn:hover{color:var(--orange);border-color:var(--orange)}
 .about-stats{display:flex;flex-direction:column;gap:32px}
@@ -575,10 +588,10 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <h1>Truck Finance NZ —<br><em>Built for Business.</em></h1>
     <p class="hero-sub">
       <strong>Prime movers, tippers, curtainsiders and more.</strong>
-      We arrange commercial truck finance from 15+ NZ lenders — approvals in 24 hours, no deposit required, and no broker fee charged to you.
+      We arrange commercial truck finance from 15+ NZ lenders with most decisions within 24 hours and no-deposit options available.
     </p>
     <div class="pill-row" role="list">
-      <span class="pill" role="listitem">24hr Approvals</span>
+      <span class="pill" role="listitem">Most Decisions in 24hrs</span>
       <span class="pill" role="listitem">No Credit Impact to Apply</span>
       <span class="pill" role="listitem">15+ Lenders</span>
       <span class="pill" role="listitem">Owner-Operator &amp; Fleet</span>
@@ -611,6 +624,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <div class="about-cols">
       <div>
         <div class="about-body">
+          <p class="about-lead">Commercial truck finance in NZ typically ranges from $20,000 to $2,000,000, with loan terms of 3 to 5 years (36 to 60 months), and most applications get a decision within 24 hours. Our service is generally free to you because we're paid by the lender, and if a fee applies we'll explain it and agree it before we proceed.</p>
           <p>fundr is an independent truck finance broker — which means we work for your business, not the lender. When you apply through fundr, we take your deal to our full panel of 15+ NZ lenders and find the one that fits your situation best.</p>
           <p>Whether you're an owner-operator buying your first prime mover or a fleet business adding another tipper, Nick has the experience to structure your finance properly — right loan, right term, right rate. No messing around.</p>
           <p>One application, one point of contact, from enquiry through to the keys in your hand.</p>
@@ -619,7 +633,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       </div>
       <div class="about-stats" aria-label="fundr key stats">
         <div class="about-stat"><div class="stat-num">15+</div><div class="stat-label">NZ lenders on panel</div></div>
-        <div class="about-stat"><div class="stat-num">24hr</div><div class="stat-label">Typical approval time</div></div>
+        <div class="about-stat"><div class="stat-num">24hr</div><div class="stat-label">Typical decision time</div></div>
         <div class="about-stat"><div class="stat-num">15yr</div><div class="stat-label">Commercial finance experience</div></div>
       </div>
     </div>
@@ -716,7 +730,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       </article>
       <article class="why-card" role="listitem">
         <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h3 class="why-card-title">Approved in 24 Hours</h3>
+        <h3 class="why-card-title">Decisions in 24 Hours</h3>
         <p class="why-card-desc">Most truck finance applications get a decision within 24 hours. No weeks of waiting — get your truck on the road fast.</p>
       </article>
       <article class="why-card" role="listitem">
@@ -791,7 +805,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       <article class="step" role="listitem">
         <div class="step-num" aria-hidden="true">03</div>
         <h3 class="step-title">Get approved and get moving</h3>
-        <p class="step-desc">You'll hear back within 24 hours. Sign digitally and funds are released so you can get your truck on the road.</p>
+        <p class="step-desc">Most decisions come back within 24 hours. Sign digitally and funds are released so you can get your truck on the road.</p>
         <span class="step-pill">✓ ~24 hour decision</span>
       </article>
     </div>
@@ -800,10 +814,10 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <div class="process-cta-inner">
       <div class="process-cta-text">
         <h3>Ready to get<br><em>your truck financed?</em></h3>
-        <p>One application. 15+ lenders. A decision in 24 hours. fundr makes truck finance straightforward for NZ businesses.</p>
+        <p>One application. 15+ lenders. Most decisions within 24 hours. fundr makes truck finance straightforward for NZ businesses.</p>
       </div>
       <div class="process-cta-actions">
-        <a href="/quick-quote.html" class="btn-orange" aria-label="Apply for truck finance">Apply Now — Free, No Obligation &rarr;</a>
+        <a href="/quick-quote.html" class="btn-orange" aria-label="Get my truck finance quote">Get My Quote — Free, No Obligation &rarr;</a>
         <a href="tel:0211023416" class="cta-phone" aria-label="Call Nick">Or call Nick: 021 102 3416</a>
       </div>
     </div>
@@ -829,7 +843,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <span class="calc-result-num" id="c-result">$0</span>
       </div>
       <p class="calc-disclaimer">Figures are estimates only. Actual rates and repayments vary based on your credit profile, lender, and loan structure. No credit check performed.</p>
-      <a href="/check-eligibility-full.html" class="calc-btn" aria-label="Get a real truck finance quote">Get a Real Quote &rarr;</a>
+      <a href="/quick-quote.html" class="calc-btn" aria-label="Get a real truck finance quote">Get a Real Quote &rarr;</a>
     </div>
   </div>
 </section>
@@ -914,7 +928,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     </div>
     <div class="promise-grid" role="list">
       <article class="promise-card" role="listitem"><div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3 class="promise-card-title">15+ Lenders on Panel</h3><p class="promise-card-desc">We shop your deal to the right lender — not just whoever your bank is. More choice means better rates.</p></article>
-      <article class="promise-card" role="listitem"><div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3 class="promise-card-title">Decision in 24 Hours</h3><p class="promise-card-desc">Not three weeks. Most applications get an answer the same day or next business day.</p></article>
+      <article class="promise-card" role="listitem"><div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3 class="promise-card-title">Decisions in 24 Hours</h3><p class="promise-card-desc">Not three weeks. Most applications get an answer the same day or next business day.</p></article>
       <article class="promise-card" role="listitem"><div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div><h3 class="promise-card-title">Flexible Loan Terms</h3><p class="promise-card-desc">Repayments structured around your cash flow — not the lender's preference.</p></article>
       <article class="promise-card" role="listitem"><div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3 class="promise-card-title">Talk to Nick Directly</h3><p class="promise-card-desc">You deal with one person — Nick — from enquiry through to settlement. No 0800 numbers.</p></article>
       <article class="promise-card" role="listitem"><div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><h3 class="promise-card-title">Expert Finance Knowledge</h3><p class="promise-card-desc">15 years in commercial lending. We know what lenders need and how to get your deal across the line.</p></article>
@@ -929,13 +943,13 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <p class="final-sec-label">Get Started</p>
     <h2>Ready to get your<br><em>truck financed?</em></h2>
     <div class="final-cta-buttons">
-      <a href="/quick-quote.html" class="btn-final-primary" aria-label="Apply now for truck finance">Apply Now — It's Free &rarr;</a>
+      <a href="/quick-quote.html" class="btn-final-primary" aria-label="Get my truck finance quote">Get My Quote — It's Free &rarr;</a>
       <a href="/check-eligibility-full.html" class="btn-final-ghost" aria-label="Check eligibility">Check eligibility</a>
     </div>
     <p class="reassurance">
       <span>Apply in 3 minutes</span>
       <span>No credit impact</span>
-      <span>We'll be in touch within the hour</span>
+      <span>Nick will be in touch within 1 business hour</span>
     </p>
     <p class="call-line">Prefer to talk first? <a href="tel:0211023416" class="call-phone" aria-label="Call Nick">Call Nick: 021 102 3416</a></p>
   </div>
