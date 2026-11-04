@@ -38,12 +38,23 @@
     },
     {
       "@type": "FinancialService",
+      "@id": "https://www.fundr.co.nz/luxury-vehicle-finance.html#provider",
       "name": "fundr — Luxury Vehicle Finance NZ",
       "description": "Specialist luxury and prestige vehicle finance broker in New Zealand. Finance an Audi, BMW, Mercedes-Benz, Porsche or Range Rover for business or director use. 15+ lenders, balloon payment structuring.",
       "url": "https://www.fundr.co.nz/luxury-vehicle-finance.html",
       "telephone": "+64211023416",
       "areaServed": "NZ",
       "serviceType": "Luxury Vehicle Finance"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.fundr.co.nz/luxury-vehicle-finance.html#service",
+      "name": "Luxury Vehicle Finance NZ",
+      "serviceType": "Luxury and prestige vehicle finance",
+      "description": "Luxury and prestige vehicle finance arranged through a panel of 15+ NZ lenders, with balloon payment structuring. Typically from $20,000 to $500,000 over 3 to 5 years, with most applications decided within 24 to 48 hours.",
+      "url": "https://www.fundr.co.nz/luxury-vehicle-finance.html",
+      "provider": {"@id": "https://www.fundr.co.nz/luxury-vehicle-finance.html#provider"},
+      "areaServed": {"@type": "Country", "name": "New Zealand"}
     },
     {
       "@type": "FAQPage",
@@ -55,7 +66,7 @@
         {"@type":"Question","name":"Are repayments on a director's vehicle tax deductible?","acceptedAnswer":{"@type":"Answer","text":"For business-use vehicles, finance repayments and depreciation can be tax deductible, though FBT may apply where there is private use. Speak with your accountant to confirm your specific position, and we can structure the finance accordingly."}},
         {"@type":"Question","name":"How long does luxury vehicle finance approval take?","acceptedAnswer":{"@type":"Answer","text":"Most applications receive a decision within 24 to 48 hours. Higher-value vehicles can sometimes take a little longer as lenders complete their assessment."}},
         {"@type":"Question","name":"Is BMW or Audi finance easier to get approved than other prestige brands?","acceptedAnswer":{"@type":"Answer","text":"Generally yes — BMW and Audi have the broadest lender coverage of the prestige brands we finance, which usually means more competitive rates and a faster decision. Range Rover, Mercedes and Porsche are still well supported, but lenders assess balloon structure and resale more closely on those."}},
-        {"@type":"Question","name":"What balloon payment is typical for a Porsche compared to other brands?","acceptedAnswer":{"@type":"Answer","text":"Porsche generally supports the highest balloon percentages of the brands we finance, reflecting strong resale value on models like the 911 and Cayenne. Exact structuring depends on the specific model, age and your lender."}},
+        {"@type":"Question","name":"What balloon payment is typical for a Porsche compared to other brands?","acceptedAnswer":{"@type":"Answer","text":"Porsche generally supports the highest balloon percentages of the brands we finance, reflecting strong resale value on models like the 911 and Cayenne. Exact structuring depends on the specific model, age and your lender — Nick will talk you through real numbers for your vehicle."}},
         {"@type":"Question","name":"Can I finance an electric Mercedes-Benz (EQ) or other prestige EV through my business?","acceptedAnswer":{"@type":"Answer","text":"Yes, though lenders currently take a more conservative view on balloon structuring for prestige EVs given limited long-term resale data compared to petrol equivalents. We'll factor this into how we structure your deal and which lender we approach."}}
       ]
     }
@@ -125,6 +136,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .about-cols{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:start}
 .about-copy p{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--mid)}
 .about-copy p+p{margin-top:1rem}
+.about-copy p.about-lead{font-size:1rem;font-weight:400;color:var(--ink)}
+@media(max-width:600px){.process-cta-actions .btn-orange{white-space:normal;text-align:center;justify-content:center;max-width:100%}.process-cta-actions{max-width:100%}}
 .cta-link{display:inline-flex;align-items:center;gap:6px;margin-top:28px;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px;transition:color .2s,border-color .2s}
 .cta-link:hover{color:var(--orange);border-color:var(--orange)}
 .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:40px 32px}
@@ -581,13 +594,14 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <hr class="about-divider">
     <div class="about-cols">
       <div class="about-copy">
+        <p class="about-lead">Luxury and prestige vehicle finance in NZ typically ranges from $20,000 to $500,000, with loan terms of 3 to 5 years (36 to 60 months) and an optional balloon payment, and most applications get a decision within 24 to 48 hours. Our service is generally free to you because we're paid by the lender, and if a fee applies we'll explain it and agree it before we proceed.</p>
         <p>You've put years into building the business — a director's vehicle that reflects that shouldn't mean a clumsy dealer finance package or a maxed-out personal loan. fundr structures luxury and prestige vehicle finance properly, with balloon payments, terms and lender selection matched to how the vehicle actually holds its value.</p>
         <p>We work with lenders who understand prestige vehicles — Range Rover, BMW, Mercedes-Benz, Porsche and beyond — and structure the deal around your business, not just whatever the dealer's finance desk pushes on the day.</p>
         <a href="/fundr-way.html" class="cta-link" aria-label="Learn how fundr works">How fundr works &rarr;</a>
       </div>
       <div class="about-stats" aria-label="fundr at a glance">
         <div><div class="stat-num">15+</div><div class="stat-label">Lenders on panel</div></div>
-        <div><div class="stat-num">48hr</div><div class="stat-label">Typical approval</div></div>
+        <div><div class="stat-num">24–48hr</div><div class="stat-label">Typical decision</div></div>
         <div><div class="stat-num">15yr</div><div class="stat-label">Commercial lending experience</div></div>
       </div>
     </div>
@@ -727,8 +741,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       <article class="step" role="listitem">
         <div class="step-num" aria-hidden="true">03</div>
         <h3 class="step-title">Get approved and drive away</h3>
-        <p class="step-desc">Most applications hear back within 48 hours. Sign digitally and funds are released so you can pick up your vehicle.</p>
-        <span class="step-pill">✓ ~48 hour decision</span>
+        <p class="step-desc">Most decisions come back within 24 to 48 hours. Sign digitally and funds are released so you can pick up your vehicle.</p>
+        <span class="step-pill">✓ 24–48 hour decision</span>
       </article>
     </div>
   </div>
@@ -739,7 +753,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <p>One application. 15+ lenders. Balloon payment structuring built in. fundr makes luxury vehicle finance straightforward for NZ directors.</p>
       </div>
       <div class="process-cta-actions">
-        <a href="/quick-quote.html" class="btn-orange" aria-label="Apply for luxury vehicle finance">Apply Now — Free, No Obligation &rarr;</a>
+        <a href="/quick-quote.html" class="btn-orange" aria-label="Get my luxury vehicle finance quote">Get My Quote — Free, No Obligation &rarr;</a>
         <a href="tel:0211023416" class="cta-phone" aria-label="Call Nick">Or call Nick: 021 102 3416</a>
       </div>
     </div>
@@ -768,7 +782,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <span class="calc-result-num" id="c-result">$0</span>
       </div>
       <p class="calc-disclaimer">Figures are estimates only. Actual rates, terms and balloon structures vary based on your credit profile, lender, and the specific vehicle. No credit check performed.</p>
-      <a href="/check-eligibility-full.html" class="calc-btn" aria-label="Get a real quote">Get a Real Quote &rarr;</a>
+      <a href="/quick-quote.html" class="calc-btn" aria-label="Get a real quote">Get a Real Quote &rarr;</a>
     </div>
   </div>
 </section>
@@ -867,7 +881,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       </article>
       <article class="promise-card" role="listitem">
         <div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h3 class="promise-card-title">Decision in 24–48 Hours</h3>
+        <h3 class="promise-card-title">Decisions in 24–48 Hours</h3>
         <p class="promise-card-desc">Most applications get an answer fast, even for higher-value vehicles that need more lender assessment.</p>
       </article>
       <article class="promise-card" role="listitem">
@@ -900,13 +914,13 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <p class="final-sec-label">Get Started</p>
     <h2>Ready to get your<br><em>vehicle financed?</em></h2>
     <div class="final-cta-buttons">
-      <a href="/quick-quote.html" class="btn-final-primary" aria-label="Apply now for luxury vehicle finance">Apply Now — It's Free &rarr;</a>
+      <a href="/quick-quote.html" class="btn-final-primary" aria-label="Get my luxury vehicle finance quote">Get My Quote — It's Free &rarr;</a>
       <a href="/check-eligibility-full.html" class="btn-final-ghost" aria-label="Check eligibility">Check eligibility</a>
     </div>
     <p class="reassurance">
       <span>Apply in a few minutes</span>
       <span>No credit impact</span>
-      <span>We'll be in touch within the hour</span>
+      <span>Nick will be in touch within 1 business hour</span>
     </p>
     <p class="call-line">Prefer to talk first? <a href="tel:0211023416" class="call-phone" aria-label="Call Nick">Call Nick: 021 102 3416</a></p>
   </div>
