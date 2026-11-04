@@ -9,12 +9,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ute Finance NZ | 15+ Lenders, 24hr Approval | fundr</title>
-<meta name="description" content="fundr arranges business ute finance across NZ — any make or model. 15+ lenders, no broker fee, approvals in 24 hours. Apply in 3 minutes.">
+<title>Ute Finance NZ | Business Utes, 15+ Lenders | fundr</title>
+<meta name="description" content="fundr arranges business ute finance across NZ — any make or model. 15+ lenders, most decisions within 24 hours. Apply in 3 minutes.">
 <link rel="canonical" href="https://www.fundr.co.nz/ute-finance.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ute Finance NZ | 15+ Lenders, 24hr Approval | fundr">
-<meta property="og:description" content="fundr arranges business ute finance across NZ — any make or model. 15+ lenders, no broker fee, approvals in 24 hours.">
+<meta property="og:title" content="Ute Finance NZ | Business Utes, 15+ Lenders | fundr">
+<meta property="og:description" content="fundr arranges business ute finance across NZ — any make or model. 15+ lenders, most decisions within 24 hours.">
 <meta property="og:url" content="https://www.fundr.co.nz/ute-finance.html">
 <meta property="og:site_name" content="fundr">
 <meta property="og:image" content="https://www.fundr.co.nz/images/og-image.jpg">
@@ -38,22 +38,33 @@
     },
     {
       "@type": "FinancialService",
+      "@id": "https://www.fundr.co.nz/ute-finance.html#provider",
       "name": "fundr — Ute Finance NZ",
-      "description": "Specialist ute finance broker in New Zealand. Finance a Ford Ranger, Toyota Hilux, Mitsubishi Triton or any work ute. 15+ lenders, fast approvals, no broker fee.",
+      "description": "Specialist ute finance broker in New Zealand. Finance a Ford Ranger, Toyota Hilux, Mitsubishi Triton or any work ute. 15+ lenders, most decisions within 24 hours.",
       "url": "https://www.fundr.co.nz/ute-finance.html",
       "telephone": "+64211023416",
       "areaServed": "NZ",
       "serviceType": "Ute Finance"
     },
     {
+      "@type": "Service",
+      "@id": "https://www.fundr.co.nz/ute-finance.html#service",
+      "name": "Business Ute Finance NZ",
+      "serviceType": "Business ute finance",
+      "description": "Business ute finance arranged through a panel of 15+ NZ lenders. New and used work utes, typically from $10,000 to $250,000 over 3 to 5 years, with most applications decided within 24 hours.",
+      "url": "https://www.fundr.co.nz/ute-finance.html",
+      "provider": {"@id": "https://www.fundr.co.nz/ute-finance.html#provider"},
+      "areaServed": {"@type": "Country", "name": "New Zealand"}
+    },
+    {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type":"Question","name":"Can I get ute finance with no deposit?","acceptedAnswer":{"@type":"Answer","text":"Yes — many of our lenders offer 100% finance on business utes, meaning no deposit required."}},
-        {"@type":"Question","name":"How long does ute finance approval take?","acceptedAnswer":{"@type":"Answer","text":"Most applications receive a decision within 24 hours. In many cases we can get same-day approval."}},
-        {"@type":"Question","name":"Can I finance a used ute or private sale?","acceptedAnswer":{"@type":"Answer","text":"Yes. fundr can finance both new and used utes, including private sales."}},
-        {"@type":"Question","name":"Are ute finance repayments tax deductible?","acceptedAnswer":{"@type":"Answer","text":"For business use, ute finance repayments can be tax deductible. Speak with your accountant to confirm."}},
-        {"@type":"Question","name":"What do I need to apply?","acceptedAnswer":{"@type":"Answer","text":"Proof of identity, proof of business (GST/NZBN), recent bank statements (3-6 months), and details of the ute."}},
-        {"@type":"Question","name":"Does applying affect my credit score?","acceptedAnswer":{"@type":"Answer","text":"Our initial assessment is a soft check and does not affect your credit score."}}
+        {"@type":"Question","name":"Can I get ute finance with no deposit?","acceptedAnswer":{"@type":"Answer","text":"Yes — many of our lenders offer 100% finance on business utes, meaning no deposit required. Your approval and rate will depend on your business trading history and credit profile. Some lenders may require a small deposit for newer businesses or higher-risk applications."}},
+        {"@type":"Question","name":"How long does ute finance approval take?","acceptedAnswer":{"@type":"Answer","text":"Most applications receive a decision within 24 hours. In many cases we can get same-day approval. Once approved, funds are typically released within 1–2 business days so you can pick up your ute quickly."}},
+        {"@type":"Question","name":"Can I finance a used ute or private sale?","acceptedAnswer":{"@type":"Answer","text":"Yes. fundr can finance both new and used utes, including private sales. Used ute finance is subject to the age and condition of the vehicle — most lenders will consider utes up to 10–12 years old depending on the loan amount."}},
+        {"@type":"Question","name":"Are ute finance repayments tax deductible?","acceptedAnswer":{"@type":"Answer","text":"For business use, ute finance repayments — and in some structures, depreciation — can be tax deductible. We recommend speaking with your accountant to confirm what applies to your situation. fundr can structure your finance to maximise your tax position."}},
+        {"@type":"Question","name":"What do I need to apply?","acceptedAnswer":{"@type":"Answer","text":"Typically you'll need: proof of identity (driver's licence), proof of business (GST number or NZBN), recent bank statements (3–6 months), and details of the ute you want to buy. Nick will guide you through exactly what's needed for your situation."}},
+        {"@type":"Question","name":"Does applying affect my credit score?","acceptedAnswer":{"@type":"Answer","text":"Our initial assessment is a soft check and does not affect your credit score. A full credit check is only run once you've agreed to proceed with a specific lender and loan structure. We never run multiple checks across lenders without your knowledge."}}
       ]
     }
   ]
@@ -122,6 +133,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .about-cols{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:start}
 .about-copy p{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--mid)}
 .about-copy p+p{margin-top:1rem}
+.about-copy p.about-lead{font-size:1rem;font-weight:400;color:var(--ink)}
+@media(max-width:600px){.process-cta-actions .btn-orange{white-space:normal;text-align:center;justify-content:center;max-width:100%}.process-cta-actions{max-width:100%}}
 .cta-link{display:inline-flex;align-items:center;gap:6px;margin-top:28px;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px;transition:color .2s,border-color .2s}
 .cta-link:hover{color:var(--orange);border-color:var(--orange)}
 .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:40px 32px}
@@ -541,9 +554,9 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     </nav>
     <div class="eyebrow"><span>NZ Business Ute Finance</span></div>
     <h1>Ute Finance —<br><em>Built for Tradies.</em></h1>
-    <p class="hero-sub"><strong>Ranger, Hilux, D-Max and more.</strong> We arrange business ute finance from 15+ NZ lenders — approvals in 24 hours, no deposit required, and no broker fee charged to you.</p>
+    <p class="hero-sub"><strong>Ranger, Hilux, D-Max and more.</strong> We arrange business ute finance from 15+ NZ lenders, with most decisions within 24 hours and no-deposit options available.</p>
     <div class="pill-row" role="list">
-      <span class="pill" role="listitem">24hr Approvals</span>
+      <span class="pill" role="listitem">Most Decisions in 24hrs</span>
       <span class="pill" role="listitem">No Credit Impact to Apply</span>
       <span class="pill" role="listitem">15+ Lenders</span>
       <span class="pill" role="listitem">Tax-Deductible Repayments</span>
@@ -575,13 +588,14 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <hr class="about-divider">
     <div class="about-cols">
       <div class="about-copy">
+        <p class="about-lead">Business ute finance in NZ typically ranges from $10,000 to $250,000, with loan terms of 3 to 5 years (36 to 60 months), and most applications get a decision within 24 hours. Our service is generally free to you because we're paid by the lender, and if a fee applies we'll explain it and agree it before we proceed.</p>
         <p>fundr is a specialist finance broker — which means we work for you, not the lender. When you apply for ute finance, we take your deal to our panel of 15+ NZ lenders and find the one that's the right fit for your business and your situation.</p>
         <p>One application. One point of contact. No repeated credit checks and no chasing multiple banks. Just straightforward ute finance for NZ tradies, sorted fast.</p>
         <a href="/fundr-way.html" class="cta-link" aria-label="Learn how fundr works">How fundr works &rarr;</a>
       </div>
       <div class="about-stats" aria-label="fundr at a glance">
         <div><div class="stat-num">15+</div><div class="stat-label">Lenders on panel</div></div>
-        <div><div class="stat-num">24hr</div><div class="stat-label">Typical approval</div></div>
+        <div><div class="stat-num">24hr</div><div class="stat-label">Typical decision</div></div>
         <div><div class="stat-num">15yr</div><div class="stat-label">Commercial lending experience</div></div>
       </div>
     </div>
@@ -640,7 +654,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       </article>
       <article class="why-card" role="listitem">
         <div class="why-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h3 class="why-card-title">Approved in 24 Hours</h3>
+        <h3 class="why-card-title">Decisions in 24 Hours</h3>
         <p class="why-card-desc">Most applications get a decision within 24 hours. No three-week delays while the bank reviews your file.</p>
       </article>
       <article class="why-card" role="listitem">
@@ -661,30 +675,27 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 <section class="reviews-section" aria-label="Customer reviews">
   <div class="reviews-inner">
     <p class="sec-label">Customer Reviews</p>
-    <h2>What NZ tradies say<br><em>about fundr.</em></h2>
+    <h2>What clients say<br><em>about fundr.</em></h2>
     <div class="reviews-grid" role="list">
       <article class="review-card" role="listitem">
         <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="review-quote">"Nick sorted our Ranger finance in under 24 hours. Way easier than going to the bank — and we got a better rate. Will use fundr for our next ute for sure."</p>
+        <p class="review-quote">"Had a great experience dealing with Nick from Fundr. After recently starting a new company, getting car finance wasn't completely straightforward, but Nick made the whole process easy and stress-free. He was responsive, knowledgeable, and got everything sorted quickly. Would definitely recommend Nick to anyone needing finance."</p>
         <div class="review-author">
-          <div class="reviewer-avatar" aria-hidden="true">JM</div>
-          <div><div class="reviewer-name">James M.</div><div class="reviewer-role">Electrical contractor, Auckland</div></div>
+          <div><div class="reviewer-name">Grant E.</div><div class="reviewer-role">Google review</div></div>
         </div>
       </article>
       <article class="review-card" role="listitem">
         <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="review-quote">"Bought my Hilux through fundr. Nick was straight up about what we'd qualify for, no messing around. Finance approved same day and we picked up the truck two days later."</p>
+        <p class="review-quote">"Had a great experience with Fundr, especially with Nick, who made the whole finance process really easy and straightforward. He was very helpful, professional, and kept everything moving smoothly. Really appreciate his help in getting finance sorted for my new Ford Everest. Highly recommend Nick and the team at Fundr!"</p>
         <div class="review-author">
-          <div class="reviewer-avatar" aria-hidden="true">SR</div>
-          <div><div class="reviewer-name">Shane R.</div><div class="reviewer-role">Builder, Christchurch</div></div>
+          <div><div class="reviewer-name">Amrinder S.</div><div class="reviewer-role">Google review</div></div>
         </div>
       </article>
       <article class="review-card" role="listitem">
         <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="review-quote">"We've financed three utes through Nick now. The process gets smoother every time. No broker fee, fast turnaround — I tell every tradie I know to call fundr first."</p>
+        <p class="review-quote">"Excellent service from Nick and the team at Fundr. The process of obtaining funding for new work equipment was quick, straightforward, and hassle-free. Nick was efficient, communicative, and made the entire experience seamless from start to finish. Highly recommend Fundr for any business finance needs."</p>
         <div class="review-author">
-          <div class="reviewer-avatar" aria-hidden="true">DK</div>
-          <div><div class="reviewer-name">Danny K.</div><div class="reviewer-role">Plumbing business owner, Wellington</div></div>
+          <div><div class="reviewer-name">Josh S.</div><div class="reviewer-role">Google review</div></div>
         </div>
       </article>
     </div>
@@ -715,7 +726,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       <article class="step" role="listitem">
         <div class="step-num" aria-hidden="true">03</div>
         <h3 class="step-title">Get approved and get moving</h3>
-        <p class="step-desc">You'll hear back within 24 hours. Sign digitally and funds are released so you can get back on the tools.</p>
+        <p class="step-desc">Most decisions come back within 24 hours. Sign digitally and funds are released so you can get back on the tools.</p>
         <span class="step-pill">✓ ~24 hour decision</span>
       </article>
     </div>
@@ -724,10 +735,10 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <div class="process-cta-inner">
       <div class="process-cta-text">
         <h3>Ready to get<br><em>your ute financed?</em></h3>
-        <p>One application. 15+ lenders. A decision in 24 hours. fundr makes ute finance straightforward for NZ tradies.</p>
+        <p>One application. 15+ lenders. Most decisions within 24 hours. fundr makes ute finance straightforward for NZ tradies.</p>
       </div>
       <div class="process-cta-actions">
-        <a href="/quick-quote.html" class="btn-orange" aria-label="Apply for ute finance">Apply Now — Free, No Obligation &rarr;</a>
+        <a href="/quick-quote.html" class="btn-orange" aria-label="Get my ute finance quote">Get My Quote — Free, No Obligation &rarr;</a>
         <a href="tel:0211023416" class="cta-phone" aria-label="Call Nick">Or call Nick: 021 102 3416</a>
       </div>
     </div>
@@ -753,7 +764,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
         <span class="calc-result-num" id="c-result">$0</span>
       </div>
       <p class="calc-disclaimer">Figures are estimates only. Actual rates and repayments vary based on your credit profile, lender, and loan structure. No credit check performed.</p>
-      <a href="/check-eligibility-full.html" class="calc-btn" aria-label="Get a real quote">Get a Real Quote &rarr;</a>
+      <a href="/quick-quote.html" class="calc-btn" aria-label="Get a real quote">Get a Real Quote &rarr;</a>
     </div>
   </div>
 </section>
@@ -846,7 +857,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       </article>
       <article class="promise-card" role="listitem">
         <div class="promise-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h3 class="promise-card-title">Decision in 24 Hours</h3>
+        <h3 class="promise-card-title">Decisions in 24 Hours</h3>
         <p class="promise-card-desc">Not three weeks. Most applications get an answer the same day or next business day.</p>
       </article>
       <article class="promise-card" role="listitem">
@@ -879,13 +890,13 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <p class="final-sec-label">Get Started</p>
     <h2>Ready to get your<br><em>ute financed?</em></h2>
     <div class="final-cta-buttons">
-      <a href="/quick-quote.html" class="btn-final-primary" aria-label="Apply now for ute finance">Apply Now — It's Free &rarr;</a>
+      <a href="/quick-quote.html" class="btn-final-primary" aria-label="Get my ute finance quote">Get My Quote — It's Free &rarr;</a>
       <a href="/check-eligibility-full.html" class="btn-final-ghost" aria-label="Check eligibility">Check eligibility</a>
     </div>
     <p class="reassurance">
       <span>Apply in 3 minutes</span>
       <span>No credit impact</span>
-      <span>We'll be in touch within the hour</span>
+      <span>Nick will be in touch within 1 business hour</span>
     </p>
     <p class="call-line">Prefer to talk first? <a href="tel:0211023416" class="call-phone" aria-label="Call Nick">Call Nick: 021 102 3416</a></p>
   </div>
