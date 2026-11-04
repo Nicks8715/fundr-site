@@ -46,12 +46,27 @@
   "@type": "Article",
   "headline": "Business Asset Finance Auckland: Local Market Guide for SME Owners",
   "description": "Vehicle, equipment and business asset finance for Auckland SMEs. Local lender panel, industry insight and fast approvals for tradies, transport and hospitality businesses.",
-  "author": {"@type":"Person","name":"Nick Sevta","jobTitle":"Director","worksFor":{"@type":"Organization","name":"fundr","url":"https://www.fundr.co.nz"}},
-  "publisher": {"@type":"Organization","name":"fundr","url":"https://www.fundr.co.nz"},
+  "author": {
+    "@type": "Person",
+    "name": "Nick Sevta",
+    "url": "https://www.fundr.co.nz/about.html",
+    "jobTitle": "Director",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "fundr",
+      "url": "https://www.fundr.co.nz"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://www.fundr.co.nz/#org",
+    "name": "fundr",
+    "url": "https://www.fundr.co.nz"
+  },
   "datePublished": "2026-08-03",
-  "dateModified": "2026-08-03",
-  "url": "https://www.fundr.co.nz/Blog/business-asset-finance-auckland.html",
+  "dateModified": "2026-11-05",
   "mainEntityOfPage": "https://www.fundr.co.nz/Blog/business-asset-finance-auckland.html",
+  "url": "https://www.fundr.co.nz/Blog/business-asset-finance-auckland.html",
   "image": "https://www.fundr.co.nz/images/blog-business-asset-finance-auckland.jpg",
   "keywords": "business asset finance Auckland, vehicle finance Auckland, equipment finance Auckland, business loan Auckland SME, asset finance broker Auckland"
 }
@@ -62,11 +77,46 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"What types of business asset finance are available in Auckland?","acceptedAnswer":{"@type":"Answer","text":"Auckland SMEs typically access chattel mortgages, finance leases, hire purchase, and operating leases for vehicles and equipment, alongside term business loans for working capital or growth. fundr sources across 15+ NZ lenders to match the right structure to your business and asset."}},
-    {"@type":"Question","name":"How fast can I get business asset finance approved in Auckland?","acceptedAnswer":{"@type":"Answer","text":"Most applications through fundr receive a credit decision within 24 hours, with same-day approvals available for straightforward deals. Auckland's lender density means more options are typically available locally than in some regional areas, which can also support faster turnaround."}},
-    {"@type":"Question","name":"Can new Auckland businesses get asset finance?","acceptedAnswer":{"@type":"Answer","text":"Yes, though options are narrower than for established businesses. Newer Auckland businesses — under 12–24 months trading — typically need specialist non-bank lenders rather than the main banks, and may need to provide a deposit or additional security. A broker can identify which lenders on the panel will consider a shorter trading history."}},
-    {"@type":"Question","name":"Do Auckland businesses pay different rates to the rest of NZ?","acceptedAnswer":{"@type":"Answer","text":"Rates are generally set nationally by each lender rather than by region, so an Auckland business and a Wellington business with similar profiles would typically see similar rate ranges from the same lender. What can differ regionally is which lenders are actively competing for your type of deal, which is where a broker with a full national panel adds value."}},
-    {"@type":"Question","name":"What industries in Auckland use asset finance most?","acceptedAnswer":{"@type":"Answer","text":"Construction and trades, transport and logistics, hospitality, and manufacturing are among the most active users of business asset finance in Auckland, reflecting the city's scale as NZ's largest commercial and industrial hub. Vehicle and equipment finance make up the bulk of enquiries fundr sees from Auckland businesses."}}
+    {
+      "@type": "Question",
+      "name": "What types of business asset finance are available in Auckland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Auckland SMEs typically access chattel mortgages, finance leases, hire purchase, and operating leases for vehicles and equipment, alongside term business loans for working capital or growth. fundr sources across 15+ NZ lenders to match the right structure to your business and asset."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast can I get business asset finance approved in Auckland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most applications through fundr receive a credit decision within 24 hours. Auckland's lender density means more options are typically available locally than in some regional areas, which can also support faster turnaround."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can new Auckland businesses get asset finance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, though options are narrower than for established businesses. Newer Auckland businesses — under 12–24 months trading — typically need specialist non-bank lenders rather than the main banks, and may need to provide a deposit or additional security. A broker can identify which lenders on the panel will consider a shorter trading history."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do Auckland businesses pay different rates to the rest of NZ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rates are generally set nationally by each lender rather than by region, so an Auckland business and a Wellington business with similar profiles would typically see similar rate ranges from the same lender. What can differ regionally is which lenders are actively competing for your type of deal, which is where a broker with a full national panel adds value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What industries in Auckland use asset finance most?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Construction and trades, transport and logistics, hospitality, and manufacturing are among the most active users of business asset finance in Auckland, reflecting the city's scale as NZ's largest commercial and industrial hub. Vehicle and equipment finance make up the bulk of enquiries fundr sees from Auckland businesses."
+      }
+    }
   ]
 }
 </script>
@@ -192,6 +242,7 @@ td strong{font-weight:500;color:var(--text)}
 @media(max-width:1024px){.post-layout{grid-template-columns:1fr}.sidebar{position:static}.container{padding:0 36px}}
 @media(max-width:768px){.container{padding:0 24px}.post-hero{padding:52px 0 52px}.post-h1{font-size:2rem}.cta-btns{flex-direction:column}.meta-divider{display:none}}
 .rv{opacity:1;transform:none}
+.prose .btn-org,.prose .btn-fill{color:#fff;border-bottom:none}
 </style>
 
 <link rel="stylesheet" href="../shared.css">
@@ -363,14 +414,14 @@ td strong{font-weight:500;color:var(--text)}
         <div class="meta-author">
           <div class="meta-av">N</div>
           <div>
-            <div class="meta-name">Nick Sevta</div>
+            <div class="meta-name"><a href="/about.html" rel="author" style="color:inherit;text-decoration:none">Nick Sevta</a></div>
             <div class="meta-role">Director, fundr</div>
           </div>
         </div>
         <div class="meta-divider"></div>
         <div class="meta-item">
           <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          3 August 2026
+          Published 3 August 2026 · Updated 5 November 2026
         </div>
         <div class="meta-divider"></div>
         <div class="meta-item">
@@ -402,7 +453,12 @@ td strong{font-weight:500;color:var(--text)}
 
       <div class="prose">
 
-        <p class="rv"><strong>Business asset finance in Auckland</strong> covers vehicle, equipment, and working capital funding for the city's SMEs — from tradies in West Auckland to hospitality operators in the CBD and transport fleets running out of South Auckland's industrial hubs. As NZ's largest commercial centre, Auckland has the deepest lender market in the country, which is both an advantage and a source of genuine confusion for business owners trying to work out who actually offers the best deal.</p>
+        <div class="callout rv">
+          <div class="callout-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p><strong>Short answer:</strong> Business asset finance in Auckland is funding for vehicles, equipment and working capital, arranged through banks, non-bank lenders and brokers. Auckland has the deepest lender market in New Zealand, so comparing several lenders before you commit is the practical way to find the best fit.</p>
+        </div>
+
+<p class="rv"><strong>Business asset finance in Auckland</strong> covers vehicle, equipment, and working capital funding for the city's SMEs — from tradies in West Auckland to hospitality operators in the CBD and transport fleets running out of South Auckland's industrial hubs. As NZ's largest commercial centre, Auckland has the deepest lender market in the country, which is both an advantage and a source of genuine confusion for business owners trying to work out who actually offers the best deal.</p>
         <p class="rv">This guide covers how the Auckland asset finance market works, what local businesses typically finance, and how to cut through the noise of a crowded lender landscape.</p>
 
         <h2 id="auckland-market" class="rv">Auckland's business finance market at a glance</h2>
@@ -479,7 +535,7 @@ td strong{font-weight:500;color:var(--text)}
             <div class="step-num">03</div>
             <div class="step-body">
               <h3>Fast decisions, funded fast</h3>
-              <p>Most applications receive a decision within 24 hours. Once approved, funds are typically released the same day documents are signed.</p>
+              <p>Most applications receive a decision within 24 hours. Once approved, funds are released once documents are signed.</p>
             </div>
           </li>
         </ol>
@@ -488,8 +544,8 @@ td strong{font-weight:500;color:var(--text)}
           <h3>Financing a vehicle or equipment in <em>Auckland?</em></h3>
           <p>Tell Nick what you need and he'll match you to the right lender from fundr's full panel — no wasted applications, no cost, no credit impact to enquire.</p>
           <div class="cta-btns">
-            <a href="/apply.html" class="btn-org">GET MY QUOTE →</a>
-            <a href="tel:02110234146" class="btn-gw">
+            <a href="/quick-quote.html" class="btn-org">GET MY QUOTE →</a>
+            <a href="tel:0211023416" class="btn-gw">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               021 102 3416
             </a>
@@ -504,7 +560,7 @@ td strong{font-weight:500;color:var(--text)}
         </div>
         <div class="faq-item rv">
           <div class="faq-q">How fast can I get business asset finance approved in Auckland?</div>
-          <div class="faq-a">Most applications through fundr receive a credit decision within 24 hours, with same-day approvals available for straightforward deals. Auckland's lender density means more options are typically available locally than in some regional areas, which can also support faster turnaround.</div>
+          <div class="faq-a">Most applications through fundr receive a credit decision within 24 hours. Auckland's lender density means more options are typically available locally than in some regional areas, which can also support faster turnaround.</div>
         </div>
         <div class="faq-item rv">
           <div class="faq-q">Can new Auckland businesses get asset finance?</div>
@@ -525,7 +581,7 @@ td strong{font-weight:500;color:var(--text)}
             <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
             Copy link
           </button>
-          <a href="mailto:?subject=Business Asset Finance Auckland — fundr Guide&body=https://fundr.co.nz/Blog/business-asset-finance-auckland.html" class="share-btn">
+          <a href="mailto:?subject=Business Asset Finance Auckland — fundr Guide&body=https://www.fundr.co.nz/Blog/business-asset-finance-auckland.html" class="share-btn">
             <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Email
           </a>
@@ -533,14 +589,15 @@ td strong{font-weight:500;color:var(--text)}
 
         <div class="cta-box rv">
           <h3>Talk to <em>Nick.</em></h3>
-          <p>Based in Auckland and financing a vehicle, equipment, or looking for business working capital? Get a straight read on your options across fundr's full lender panel. No forms. No credit impact. Most decisions within 24 hours.</p>
+          <p>Based in Auckland and financing a vehicle, equipment, or looking for business working capital? Get a straight read on your options across fundr's full lender panel. No credit impact. Most decisions within 24 hours. Send your details and Nick will be in touch within 1 business hour.</p>
           <div class="cta-btns">
-            <a href="/apply.html" class="btn-org">APPLY NOW →</a>
-            <a href="tel:02110234146" class="btn-gw">
+            <a href="/quick-quote.html" class="btn-org">GET MY QUOTE →</a>
+            <a href="tel:0211023416" class="btn-gw">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               021 102 3416
             </a>
           </div>
+          <p style="margin:18px 0 0;font-size:.8125rem;color:rgba(255,255,255,.55)">Not sure you qualify? <a href="/check-eligibility-full.html" style="color:#fff;border-bottom:none;text-decoration:underline;text-underline-offset:3px">Check your eligibility first →</a></p>
         </div>
 
       </div>
@@ -549,8 +606,8 @@ td strong{font-weight:500;color:var(--text)}
     <aside class="sidebar">
       <div class="sidebar-cta">
         <h4>Ready to <em>finance?</em></h4>
-        <p>15+ NZ lenders. Approvals in 24 hours. No credit impact to enquire.</p>
-        <a href="/apply.html" class="btn-org">Apply Now →</a>
+        <p>15+ NZ lenders. Most decisions within 24 hours. No credit impact to enquire.</p>
+        <a href="/quick-quote.html" class="btn-org">Get My Quote →</a>
       </div>
 
       <div class="sidebar-card">
@@ -562,7 +619,7 @@ td strong{font-weight:500;color:var(--text)}
           </div>
           <div class="fact">
             <div class="fact-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div><div class="fact-t">Decisions in 24 hours</div><div class="fact-d">Same-day approvals available</div></div>
+            <div><div class="fact-t">Most decisions in 24 hours</div><div class="fact-d">15+ lenders, one application</div></div>
           </div>
           <div class="fact">
             <div class="fact-ico"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>

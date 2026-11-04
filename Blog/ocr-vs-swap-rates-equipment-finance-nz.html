@@ -46,12 +46,27 @@
   "@type": "Article",
   "headline": "OCR vs Swap Rates: Why Your Equipment Finance Quote Doesn't Move With the Official Cash Rate",
   "description": "Confused why your equipment finance rate moved when the OCR didn't? Here's how swap rates actually drive NZ business finance pricing, explained simply.",
-  "author": {"@type":"Person","name":"Nick Sevta","jobTitle":"Director","worksFor":{"@type":"Organization","name":"fundr","url":"https://www.fundr.co.nz"}},
-  "publisher": {"@type":"Organization","name":"fundr","url":"https://www.fundr.co.nz"},
+  "author": {
+    "@type": "Person",
+    "name": "Nick Sevta",
+    "url": "https://www.fundr.co.nz/about.html",
+    "jobTitle": "Director",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "fundr",
+      "url": "https://www.fundr.co.nz"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://www.fundr.co.nz/#org",
+    "name": "fundr",
+    "url": "https://www.fundr.co.nz"
+  },
   "datePublished": "2026-08-03",
-  "dateModified": "2026-08-03",
-  "url": "https://www.fundr.co.nz/Blog/ocr-vs-swap-rates-equipment-finance-nz.html",
+  "dateModified": "2026-11-05",
   "mainEntityOfPage": "https://www.fundr.co.nz/Blog/ocr-vs-swap-rates-equipment-finance-nz.html",
+  "url": "https://www.fundr.co.nz/Blog/ocr-vs-swap-rates-equipment-finance-nz.html",
   "image": "https://www.fundr.co.nz/images/blog-ocr-vs-swap-rates.jpg",
   "keywords": "OCR vs swap rates NZ, equipment finance rates NZ, how is business finance priced NZ, wholesale swap rates explained, RBNZ OCR business lending"
 }
@@ -62,11 +77,46 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"What is the difference between the OCR and swap rates?","acceptedAnswer":{"@type":"Answer","text":"The OCR is the Reserve Bank's overnight lending rate, reviewed roughly every six weeks. Swap rates are wholesale market rates that reflect where investors expect the OCR to average over a future period — 1, 3, or 5 years, for example. Lenders use swap rates, not the OCR itself, to price most fixed-rate business and equipment finance."}},
-    {"@type":"Question","name":"Why did my equipment finance quote go up if the OCR hasn't changed?","acceptedAnswer":{"@type":"Answer","text":"Because your quote is priced off swap rates, which move whenever market expectations shift — often well before the RBNZ makes an official OCR decision. If the market starts pricing in a future OCR hike, swap rates rise immediately, and lenders adjust their fixed rates accordingly, even though the OCR itself hasn't moved yet."}},
-    {"@type":"Question","name":"Does a lower OCR always mean lower equipment finance rates?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily, and not immediately. If markets already expect an OCR cut and it happens exactly as predicted, swap rates may not move at all on the day, because the cut was already priced in. Equipment finance rates tend to track the trajectory the market expects, not the headline OCR number in isolation."}},
-    {"@type":"Question","name":"Which swap rate matters most for equipment finance?","acceptedAnswer":{"@type":"Answer","text":"Generally the swap rate closest to your loan term. A 3-year equipment loan is priced more off the 3-year swap rate than the 1-year or overnight rate. This is why a short OCR pause doesn't necessarily mean stable pricing on a 5-year facility if longer-term swap rates are still moving."}},
-    {"@type":"Question","name":"Where can I check current NZ swap rates?","acceptedAnswer":{"@type":"Answer","text":"NZ wholesale swap rates are published by major banks' treasury and economics teams (ASB, ANZ, Westpac, BNZ) and by financial data providers. They're less commonly reported in mainstream media than the OCR, which is part of why the gap between the two often goes unnoticed by business owners."}}
+    {
+      "@type": "Question",
+      "name": "What is the difference between the OCR and swap rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The OCR is the Reserve Bank's overnight lending rate, reviewed roughly every six weeks. Swap rates are wholesale market rates that reflect where investors expect the OCR to average over a future period — 1, 3, or 5 years, for example. Lenders use swap rates, not the OCR itself, to price most fixed-rate business and equipment finance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did my equipment finance quote go up if the OCR hasn't changed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because your quote is priced off swap rates, which move whenever market expectations shift — often well before the RBNZ makes an official OCR decision. If the market starts pricing in a future OCR hike, swap rates rise immediately, and lenders adjust their fixed rates accordingly, even though the OCR itself hasn't moved yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a lower OCR always mean lower equipment finance rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily, and not immediately. If markets already expect an OCR cut and it happens exactly as predicted, swap rates may not move at all on the day, because the cut was already priced in. Equipment finance rates tend to track the trajectory the market expects, not the headline OCR number in isolation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which swap rate matters most for equipment finance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally the swap rate closest to your loan term. A 3-year equipment loan is priced more off the 3-year swap rate than the 1-year or overnight rate. This is why a short OCR pause doesn't necessarily mean stable pricing on a 5-year facility if longer-term swap rates are still moving."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I check current NZ swap rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NZ wholesale swap rates are published by major banks' treasury and economics teams (ASB, ANZ, Westpac, BNZ) and by financial data providers. They're less commonly reported in mainstream media than the OCR, which is part of why the gap between the two often goes unnoticed by business owners."
+      }
+    }
   ]
 }
 </script>
@@ -192,6 +242,7 @@ td strong{font-weight:500;color:var(--text)}
 @media(max-width:1024px){.post-layout{grid-template-columns:1fr}.sidebar{position:static}.container{padding:0 36px}}
 @media(max-width:768px){.container{padding:0 24px}.post-hero{padding:52px 0 52px}.post-h1{font-size:2rem}.cta-btns{flex-direction:column}.meta-divider{display:none}}
 .rv{opacity:1;transform:none}
+.prose .btn-org,.prose .btn-fill{color:#fff;border-bottom:none}
 </style>
 
 <link rel="stylesheet" href="../shared.css">
@@ -363,14 +414,14 @@ td strong{font-weight:500;color:var(--text)}
         <div class="meta-author">
           <div class="meta-av">N</div>
           <div>
-            <div class="meta-name">Nick Sevta</div>
+            <div class="meta-name"><a href="/about.html" rel="author" style="color:inherit;text-decoration:none">Nick Sevta</a></div>
             <div class="meta-role">Director, fundr</div>
           </div>
         </div>
         <div class="meta-divider"></div>
         <div class="meta-item">
           <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          3 August 2026
+          Published Equipment finance quotes follow wholesale swap rates, which reflect where the market expects interest rates to go, rather than today's OCR itself. That is why your quote can change before, or without, an OCR decision. · Updated 5 November 2026
         </div>
         <div class="meta-divider"></div>
         <div class="meta-item">
@@ -403,7 +454,7 @@ td strong{font-weight:500;color:var(--text)}
       <div class="prose">
 
         <p class="rv">If you've ever asked why your <strong>equipment finance quote</strong> changed when the news said the OCR hadn't moved, you're not missing something obvious — the OCR and the rate your lender actually quotes you are related, but they're not the same thing. Most NZ business finance is priced off wholesale swap rates, not the OCR directly, and understanding the difference explains a lot of otherwise confusing rate movements.</p>
-        <p class="rv">This is one of the most misunderstood parts of business finance in NZ, and it matters right now: the OCR sits at 2.50% following the RBNZ's July 2026 increase, with the next review on 2 September — but swap rates on terms beyond 12 months had already started firming before that decision was even made.</p>
+        <p class="rv">This is one of the most misunderstood parts of business finance in NZ, and it matters right now: the OCR sits at 2.75% after the RBNZ's increases in July and September 2026 and its hold on 28 October, with the next decision on 9 December — and swap rates on terms beyond 12 months had already started firming before the July decision was even made.</p>
 
         <h2 id="the-confusion" class="rv">The confusion: "The OCR hasn't moved, so why has my rate?"</h2>
         <p class="rv">It's a fair question, and it comes up constantly. A business owner sees a headline saying the RBNZ held the OCR steady, then gets an equipment finance quote that's noticeably higher than a similar quote a few months earlier. It feels inconsistent — but it isn't, once you understand what's actually driving the number on your quote.</p>
@@ -463,14 +514,14 @@ td strong{font-weight:500;color:var(--text)}
           <li><strong>A broker who tracks this daily can tell you when the timing genuinely matters.</strong> This is part of what a broker is actually for — not just finding a lender, but reading the market correctly on your behalf.</li>
         </ul>
 
-        <p class="rv">If you're weighing up whether to move now or wait, we've written a companion piece on the practical decision: <a href="/Blog/lock-in-asset-finance-before-ocr-september-2026.html">Should You Lock In Asset Finance Before September's OCR Decision?</a></p>
+        <p class="rv">If you're weighing up whether to move now or wait, we've written a companion piece on the practical decision: <a href="/Blog/lock-in-asset-finance-before-ocr-september-2026.html">OCR at 2.75%: Should You Lock In Asset Finance Now?</a></p>
 
         <div class="cta-box rv">
           <h3>Want a rate that reflects <em>today's market?</em></h3>
           <p>Nick checks current lender pricing across fundr's panel — not last quarter's numbers — so you know exactly where your deal stands right now. No cost, no obligation, no credit impact.</p>
           <div class="cta-btns">
-            <a href="/apply.html" class="btn-org">GET MY QUOTE →</a>
-            <a href="tel:02110234146" class="btn-gw">
+            <a href="/quick-quote.html" class="btn-org">GET MY QUOTE →</a>
+            <a href="tel:0211023416" class="btn-gw">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               021 102 3416
             </a>
@@ -506,7 +557,7 @@ td strong{font-weight:500;color:var(--text)}
             <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
             Copy link
           </button>
-          <a href="mailto:?subject=OCR vs Swap Rates — fundr Guide&body=https://fundr.co.nz/Blog/ocr-vs-swap-rates-equipment-finance-nz.html" class="share-btn">
+          <a href="mailto:?subject=OCR vs Swap Rates — fundr Guide&body=https://www.fundr.co.nz/Blog/ocr-vs-swap-rates-equipment-finance-nz.html" class="share-btn">
             <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Email
           </a>
@@ -514,14 +565,15 @@ td strong{font-weight:500;color:var(--text)}
 
         <div class="cta-box rv">
           <h3>Talk to <em>Nick.</em></h3>
-          <p>Want to know what today's actual market rate looks like for your equipment or vehicle purchase — not last quarter's headline? Get a straight answer, no forms, no credit impact.</p>
+          <p>Want to know what today's actual market rate looks like for your equipment or vehicle purchase — not last quarter's headline? Get a straight answer, with no credit impact. Send your details and Nick will be in touch within 1 business hour.</p>
           <div class="cta-btns">
-            <a href="/apply.html" class="btn-org">APPLY NOW →</a>
-            <a href="tel:02110234146" class="btn-gw">
+            <a href="/quick-quote.html" class="btn-org">GET MY QUOTE →</a>
+            <a href="tel:0211023416" class="btn-gw">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               021 102 3416
             </a>
           </div>
+          <p style="margin:18px 0 0;font-size:.8125rem;color:rgba(255,255,255,.55)">Not sure you qualify? <a href="/check-eligibility-full.html" style="color:#fff;border-bottom:none;text-decoration:underline;text-underline-offset:3px">Check your eligibility first →</a></p>
         </div>
 
       </div>
@@ -530,8 +582,8 @@ td strong{font-weight:500;color:var(--text)}
     <aside class="sidebar">
       <div class="sidebar-cta">
         <h4>Ready to <em>finance?</em></h4>
-        <p>15+ NZ lenders. Approvals in 24 hours. No credit impact to enquire.</p>
-        <a href="/apply.html" class="btn-org">Apply Now →</a>
+        <p>15+ NZ lenders. Most decisions within 24 hours. No credit impact to enquire.</p>
+        <a href="/quick-quote.html" class="btn-org">Get My Quote →</a>
       </div>
 
       <div class="sidebar-card">
@@ -539,11 +591,11 @@ td strong{font-weight:500;color:var(--text)}
         <div class="sidebar-facts">
           <div class="fact">
             <div class="fact-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div><div class="fact-t">OCR at 2.50%</div><div class="fact-d">Next review 2 September 2026</div></div>
+            <div><div class="fact-t">OCR at 2.75%</div><div class="fact-d">Held 28 Oct 2026, next decision 9 Dec</div></div>
           </div>
           <div class="fact">
             <div class="fact-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div><div class="fact-t">Decisions in 24 hours</div><div class="fact-d">Same-day approvals available</div></div>
+            <div><div class="fact-t">Most decisions in 24 hours</div><div class="fact-d">15+ lenders, one application</div></div>
           </div>
           <div class="fact">
             <div class="fact-ico"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
@@ -567,7 +619,7 @@ td strong{font-weight:500;color:var(--text)}
       <div class="sidebar-card">
         <div class="sidebar-title">Related articles</div>
         <div class="related-posts">
-          <a href="/Blog/lock-in-asset-finance-before-ocr-september-2026.html" class="related-post"><span class="rp-cat">Rates &amp; Market</span><span class="rp-title">Should You Lock In Before September's OCR Decision?</span></a>
+          <a href="/Blog/lock-in-asset-finance-before-ocr-september-2026.html" class="related-post"><span class="rp-cat">Rates &amp; Market</span><span class="rp-title">OCR at 2.75%: Should You Lock In Asset Finance Now?</span></a>
           <a href="/Blog/business-finance-refinance-nz.html" class="related-post"><span class="rp-cat">Finance Guide</span><span class="rp-title">Business Finance Refinance NZ</span></a>
           <a href="/Blog/finance-lease-vs-term-loan-nz.html" class="related-post"><span class="rp-cat">Finance Guide</span><span class="rp-title">Finance Lease vs Term Loan NZ</span></a>
           <a href="/blog.html" class="related-post"><span class="rp-cat">Blog</span><span class="rp-title">All Articles →</span></a>
