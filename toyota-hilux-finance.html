@@ -121,6 +121,20 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
 .hero-content>*:nth-child(3){animation-delay:.28s}.hero-content>*:nth-child(4){animation-delay:.38s}
 .hero-content>*:nth-child(5){animation-delay:.48s}.hero-content>*:nth-child(6){animation-delay:.58s}
 
+.reviews-section{background:var(--white);padding:80px 48px}
+.reviews-inner{max-width:1200px;margin:0 auto}
+.reviews-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:48px}
+.reviews-section h2 em{font-style:italic}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review-card{background:#f9f8f6;border:1px solid var(--border);border-radius:8px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;transition:box-shadow .25s,transform .25s,border-color .25s}
+.review-card:hover{box-shadow:0 8px 32px rgba(22,20,15,.07);transform:translateY(-2px);border-color:rgba(240,108,0,.15)}
+.review-stars{display:flex;gap:3px;font-size:1rem;color:var(--orange);letter-spacing:1px;line-height:1}
+.review-quote{font-family:var(--serif);font-style:italic;font-size:.95rem;font-weight:400;color:var(--mid);line-height:1.75;flex:1}
+.review-author{display:flex;align-items:center;gap:14px;padding-top:4px;border-top:1px solid var(--border)}
+.reviewer-avatar{width:40px;height:40px;border-radius:50%;background:#e8e4dd;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:.72rem;font-weight:600;color:var(--faint);flex-shrink:0}
+.reviewer-name{font-size:.88rem;font-weight:600;color:var(--ink);line-height:1.3}
+.reviewer-role{font-size:.75rem;font-weight:300;color:var(--faint);margin-top:2px}
+@media(max-width:900px){.reviews-grid{grid-template-columns:1fr;gap:16px}.reviews-section{padding:60px 24px}}
 .about-section{background:var(--white);padding:80px 48px}
 .about-inner{max-width:1200px;margin:0 auto}
 .about-section h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink)}
@@ -459,7 +473,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <h1>Toyota Hilux Finance —<br><em>Built for Tradies.</em></h1>
     <p class="hero-sub"><strong>SR, SR5 and Rogue.</strong> We arrange Toyota Hilux finance — part of our <a href="/ute-finance.html" style="color:inherit;text-decoration:underline">ute finance</a> service — from 15+ NZ lenders. Most decisions within 24 hours, and no deposit needed in many cases. Our service is generally free to you; we're paid by the lender.</p>
     <div class="pill-row" role="list">
-      <span class="pill" role="listitem">24hr Approvals</span>
+      <span class="pill" role="listitem">Most Decisions in 24hrs</span>
       <span class="pill" role="listitem">No Credit Impact to Apply</span>
       <span class="pill" role="listitem">15+ Lenders</span>
       <span class="pill" role="listitem">Tax-Deductible Repayments</span>
@@ -497,7 +511,7 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
       </div>
       <div class="about-stats" aria-label="fundr at a glance">
         <div><div class="stat-num">15+</div><div class="stat-label">Lenders on panel</div></div>
-        <div><div class="stat-num">24hr</div><div class="stat-label">Typical approval</div></div>
+        <div><div class="stat-num">24hr</div><div class="stat-label">Most decisions within</div></div>
         <div><div class="stat-num">15yr</div><div class="stat-label">Commercial lending experience</div></div>
       </div>
     </div>
@@ -573,6 +587,37 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
   </div>
 </section>
 
+
+<!-- REVIEWS -->
+<section class="reviews-section" aria-label="Customer reviews">
+  <div class="reviews-inner">
+    <p class="sec-label">Customer Reviews</p>
+    <h2>What clients say<br><em>about fundr.</em></h2>
+    <div class="reviews-grid" role="list">
+      <article class="review-card" role="listitem">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="review-quote">"Had a great experience dealing with Nick from Fundr. After recently starting a new company, getting car finance wasn't completely straightforward, but Nick made the whole process easy and stress-free. He was responsive, knowledgeable, and got everything sorted quickly. Would definitely recommend Nick to anyone needing finance."</p>
+        <div class="review-author">
+          <div><div class="reviewer-name">Grant E.</div><div class="reviewer-role">Google review</div></div>
+        </div>
+      </article>
+      <article class="review-card" role="listitem">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="review-quote">"Had a great experience with Fundr, especially with Nick, who made the whole finance process really easy and straightforward. He was very helpful, professional, and kept everything moving smoothly. Really appreciate his help in getting finance sorted for my new Ford Everest. Highly recommend Nick and the team at Fundr!"</p>
+        <div class="review-author">
+          <div><div class="reviewer-name">Amrinder S.</div><div class="reviewer-role">Google review</div></div>
+        </div>
+      </article>
+      <article class="review-card" role="listitem">
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="review-quote">"Excellent service from Nick and the team at Fundr. The process of obtaining funding for new work equipment was quick, straightforward, and hassle-free. Nick was efficient, communicative, and made the entire experience seamless from start to finish. Highly recommend Fundr for any business finance needs."</p>
+        <div class="review-author">
+          <div><div class="reviewer-name">Josh S.</div><div class="reviewer-role">Google review</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
 <section class="process-section" aria-label="How Toyota Hilux finance works">
@@ -751,6 +796,8 @@ body{font-family:var(--sans);color:var(--ink);overflow-x:hidden;margin:0;padding
     <nav class="related-links" aria-label="Related finance products">
       <a href="/ute-finance.html" class="related-link">Ute Finance</a>
       <a href="/ford-ranger-finance.html" class="related-link">Ford Ranger Finance</a>
+      <a href="/vw-amarok-finance.html" class="related-link">VW Amarok Finance</a>
+      <a href="/byd-isuzu-triton-finance.html" class="related-link">BYD, Isuzu &amp; Triton Finance</a>
       <a href="/truck-finance.html" class="related-link">Truck Finance</a>
       <a href="/equipment-finance.html" class="related-link">Equipment Finance</a>
       <a href="/calculator.html" class="related-link">Finance Calculator</a>
