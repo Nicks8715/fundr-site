@@ -1,10 +1,10 @@
 # fundr
 
-> fundr is a New Zealand-based asset finance brokerage (FSP1007390) specialising in vehicle, truck, equipment and business finance for tradies, SMEs and business owners. Founded and run by Nick Sevta, fundr works with 15+ NZ lenders to arrange finance with approvals typically within 24 hours. Operates nationwide across New Zealand from Mairangi Bay, Auckland.
+> fundr is a New Zealand-based asset finance brokerage (FSP1007390) specialising in vehicle, truck, equipment and business finance for tradies, SMEs and business owners. Founded and run by Nick Sevta, fundr works with 15+ NZ lenders to arrange finance, with most decisions within 24 hours. Operates nationwide across New Zealand from Mairangi Bay, Auckland.
 
-Last updated: 15 October 2026
+Last updated: 9 November 2026
 
-fundr is an independent finance broker, not a lender — it takes each application to a panel of 15+ NZ lenders to find the best rate and structure for the client's business and situation. Services cover vehicle finance (cars, utes, vans, luxury/prestige vehicles), truck finance (prime movers, tippers, curtainsiders, crane trucks), equipment finance (construction, medical, kitchen, gym, warehouse and more) and general business finance (working capital, cashflow, business acquisition funding). Clients deal directly with Nick Sevta throughout the process, from application to settlement.
+fundr is an independent finance broker, not a lender — it takes each application to a panel of 15+ NZ lenders to find the right fit and structure for the client's business and situation. The service is generally free to the client because fundr is paid by the lender; if a fee applies, fundr explains it and agrees it before proceeding. Services cover vehicle finance (cars, SUVs, utes, vans, luxury/prestige vehicles), truck finance (prime movers, tippers, curtainsiders, crane trucks), equipment finance (construction, medical, kitchen, gym, warehouse and more) and general business finance (working capital, cashflow, business acquisition funding). Typical vehicle and equipment finance runs from $10,000 to $250,000 over 3 to 5 years, usually as a chattel mortgage (term loan), hire purchase or finance lease, with optional balloon payments. Clients deal directly with Nick Sevta throughout the process, from application to settlement.
 
 ## About the Broker
 
@@ -16,15 +16,17 @@ Nick Sevta is the founder, director and sole broker of fundr Limited, with 15+ y
 
 ## What We Finance
 
-- [Vehicle Finance](https://www.fundr.co.nz/vehicle-finance.html): Cars, utes, vans, fleets and luxury/prestige vehicles for NZ businesses.
+- [Vehicle Finance](https://www.fundr.co.nz/vehicle-finance.html): Business finance for cars, SUVs, utes, vans, fleets and luxury/prestige vehicles. Covers finance structures (chattel mortgage, hire purchase, finance lease), new vs used and vehicle age, dealer vs private sale, balloon payments, GST and FBT, and dealer finance vs using a broker.
 - [Van Finance](https://www.fundr.co.nz/van-finance.html): Work vans, courier and delivery vans and fleets — HiAce, Transit, Sprinter, iLoad and more, new or used.
-- [Ute Finance](https://www.fundr.co.nz/ute-finance.html): Any make or model work ute — Ford Ranger, Toyota Hilux, D-Max and more.
-- [Truck Finance](https://www.fundr.co.nz/truck-finance.html): Prime movers, tippers, curtainsiders, crane trucks and heavy vehicles.
-- [Equipment Finance](https://www.fundr.co.nz/equipment-finance.html): Construction, medical, kitchen, gym, warehouse and other business equipment.
+- [Ute Finance](https://www.fundr.co.nz/ute-finance.html): Any make or model work ute — Ford Ranger, Toyota Hilux, VW Amarok, Isuzu D-MAX, BYD Shark 6 and more. Includes structures, balloon payments and GST guidance.
+- [Truck Finance](https://www.fundr.co.nz/truck-finance.html): Prime movers, tippers, curtainsiders, crane trucks and heavy vehicles. Includes structures, balloon payments, GST and Road User Charges.
+- [Equipment Finance](https://www.fundr.co.nz/equipment-finance.html): Construction, medical, kitchen, gym, warehouse and other business equipment. Includes structures, balloon payments, GST, depreciation and Investment Boost.
 - [Business Finance](https://www.fundr.co.nz/business-finance.html): Working capital, cashflow solutions and business acquisition funding.
 - [Unsecured Business Loans](https://www.fundr.co.nz/unsecured-business-loans.html): Unsecured business lending options for NZ SMEs.
 - [Ford Ranger Finance](https://www.fundr.co.nz/ford-ranger-finance.html): Finance for XL, XLS, XLT, Wildtrak and Raptor models.
 - [Toyota Hilux Finance](https://www.fundr.co.nz/toyota-hilux-finance.html): Finance for SR, SR5 and Rogue, single/extra/double cab.
+- [VW Amarok Finance](https://www.fundr.co.nz/vw-amarok-finance.html): Finance for V6 and 4-cylinder Amarok utes.
+- [BYD Shark 6, Isuzu D-MAX & Triton Finance](https://www.fundr.co.nz/byd-isuzu-triton-finance.html): Finance for other ute models including BYD, Isuzu and Mitsubishi Triton.
 - [Luxury Vehicle Finance](https://www.fundr.co.nz/luxury-vehicle-finance.html): Range Rover, BMW, Mercedes-Benz, Porsche — balloon payment structuring for business owners and directors.
 - [What We Finance (overview)](https://www.fundr.co.nz/what-we-finance.html): Full summary of all asset classes fundr finances.
 
@@ -34,24 +36,23 @@ Nick Sevta is the founder, director and sole broker of fundr Limited, with 15+ y
 - [The fundr Way](https://www.fundr.co.nz/fundr-way.html): fundr's approach — independent broker, one point of contact.
 - [Our Process](https://www.fundr.co.nz/process.html): Three-step process from application to approval.
 - [FAQ](https://www.fundr.co.nz/faq.html): Common questions on eligibility, costs, process and approvals.
-- [Apply for Finance](https://www.fundr.co.nz/apply.html): Application form — approvals typically within 24 hours.
-- [Get an Instant Quote](https://www.fundr.co.nz/quick-quote.html): 60-second indicative quote tool, no credit check.
+- [Get a Quote](https://www.fundr.co.nz/quick-quote.html): 60-second indicative quote and the main way to start an enquiry. Nick will be in touch within 1 business hour.
 - [Check Eligibility](https://www.fundr.co.nz/check-eligibility-full.html): Quick eligibility check for NZ businesses.
-- [Finance Calculators](https://www.fundr.co.nz/calculators.html): Free repayment calculators for vehicles, utes, trucks, equipment and business loans, plus a balloon repayment comparison. Indicative only, not an offer of credit.
+- [Finance Calculators](https://www.fundr.co.nz/calculators.html): Free repayment calculators for vehicles, utes, trucks, equipment and business loans, plus a balloon repayment comparison. Indicative only, not an offer of credit. Individual calculators: [vehicle](https://www.fundr.co.nz/calculator.html), [ute](https://www.fundr.co.nz/ute-finance-calculator.html), [truck](https://www.fundr.co.nz/truck-finance-calculator.html), [equipment](https://www.fundr.co.nz/equipment-finance-calculator.html), [business loan](https://www.fundr.co.nz/business-loan-calculator.html), [balloon repayment](https://www.fundr.co.nz/balloon-repayment-calculator.html).
 - [Referral Partner Programme](https://www.fundr.co.nz/referral-partners.html): For accountants, dealers and advisers referring clients to fundr.
 
 ## Guides & Insights
 
 - [Excavator Finance NZ: New vs Used, and What Changes](https://www.fundr.co.nz/Blog/excavator-finance-nz.html): How hours, age, deposits and attachments affect excavator finance.
-- [New Business Truck Finance NZ: The Contract Trick](https://www.fundr.co.nz/Blog/truck-finance-new-transport-business.html): Using a signed contract or letter of intent to finance a first truck with no trading history.
+- [No Trading History? Get Your First Truck Financed](https://www.fundr.co.nz/Blog/truck-finance-new-transport-business.html): Using a signed contract or letter of intent to finance a first truck with no trading history.
 - [OCR Rises: Should You Lock In Asset Finance Now?](https://www.fundr.co.nz/Blog/lock-in-asset-finance-before-ocr-september-2026.html): How a rising OCR affects asset finance pricing, and who should lock in a fixed rate now versus who can wait.
 - [OCR vs Swap Rates: Why Your Equipment Finance Quote Doesn't Move With the OCR](https://www.fundr.co.nz/Blog/ocr-vs-swap-rates-equipment-finance-nz.html): How swap rates actually drive NZ business finance pricing.
 - [Business Asset Finance Auckland: Local Market Guide for SME Owners](https://www.fundr.co.nz/Blog/business-asset-finance-auckland.html): Vehicle, equipment and business finance for Auckland SMEs.
 - [Equipment Finance for Hospitality Businesses](https://www.fundr.co.nz/Blog/equipment-finance-hospitality-nz.html): Financing ovens, fridges, coffee machines and fit-outs.
-- [Vehicle Finance Broker NZ: Why Business Owners Use One](https://www.fundr.co.nz/Blog/vehicle-finance-broker-nz.html): How a broker compares 15+ lenders to beat bank/dealer rates.
+- [Vehicle Finance Broker NZ: Why Business Owners Use One](https://www.fundr.co.nz/Blog/vehicle-finance-broker-nz.html): How a broker compares 15+ lenders, and how that differs from dealer finance.
 - [Business Vehicle Finance NZ: A Practical Guide](https://www.fundr.co.nz/Blog/business-vehicle-finance-nz.html): Loan types, lender criteria, rates and application process.
 - [How to Finance a Work Ute in NZ](https://www.fundr.co.nz/Blog/how-to-finance-a-work-ute-nz.html): What tradies need to know — tax benefits, lender criteria, approval speed.
-- [Truck Finance NZ: A Practical Guide](https://www.fundr.co.nz/Blog/truck-finance-nz-options.html): Chattel mortgage vs lease, repayment examples, IRD Investment Boost.
+- [How to Finance a Truck in NZ: Options, GST and Lenders](https://www.fundr.co.nz/Blog/truck-finance-nz-options.html): Chattel mortgage vs lease, GST, balloons and how to choose a lender.
 - [Should You Upgrade Your Work Ute or Fleet in 2026?](https://www.fundr.co.nz/Blog/ute-finance-nz-fleet-upgrade.html): The real cost of holding on to older vehicles.
 - [Business Loan vs Asset Finance in NZ](https://www.fundr.co.nz/Blog/business-loan-vs-asset-finance-nz.html): GST, tax and structural differences explained.
 - [Finance Lease vs Term Loan NZ](https://www.fundr.co.nz/Blog/finance-lease-vs-term-loan-nz.html): Ownership, tax treatment and which structure suits which situation.

@@ -1,0 +1,68 @@
+# fundr — full reference for AI systems
+
+Last updated: 2026-11-09
+Site: https://www.fundr.co.nz/
+
+## Who fundr is
+
+fundr is an independent business asset finance broker operating as fundr Limited (FSP1007390, registered on the NZ Financial Service Providers Register). It is based in Mairangi Bay, Auckland, and serves businesses across New Zealand. Founder and principal broker: Nick, with 15+ years in NZ commercial finance. fundr takes a customer's deal to a panel of 15+ NZ lenders, compares the options, and stays the customer's single point of contact from enquiry to settlement. fundr works for the customer's business, not for a lender.
+
+Contact: nick@fundr.co.nz, 021 102 3416. No street address is published.
+
+## What fundr finances
+
+- Vehicle finance (cars, SUVs, utes, vans, trucks, fleets, trailers): https://www.fundr.co.nz/vehicle-finance.html
+- Ute finance: https://www.fundr.co.nz/ute-finance.html, with model pages for Ford Ranger, Toyota Hilux, VW Amarok, and BYD Shark 6 / Isuzu D-MAX / Mitsubishi Triton and other utes.
+- Van finance: https://www.fundr.co.nz/van-finance.html
+- Truck finance (prime movers, tippers, curtainsiders, crane trucks): https://www.fundr.co.nz/truck-finance.html
+- Equipment finance (excavators, forklifts, cranes, medical, hospitality, manufacturing, gym, printing): https://www.fundr.co.nz/equipment-finance.html
+- Luxury and prestige vehicle finance: https://www.fundr.co.nz/luxury-vehicle-finance.html
+- Business finance (working capital, business loans): https://www.fundr.co.nz/business-finance.html
+
+## Typical terms (general guide, not an offer)
+
+- Amounts: typically $10,000 to $250,000 for vehicle and equipment finance.
+- Terms: typically 3 to 5 years (36 to 60 months).
+- Decisions: most within 24 hours. Funds are typically released within 1 to 2 business days after approval (equipment finance).
+- Deposits: required by some lenders and not others, depending on the asset, the lender and the business profile.
+- Used vehicles and equipment: financed, subject to lender limits on age, kilometres or hours, condition and type. Limits vary by lender.
+- Private sales: financed. The lender usually checks the seller owns the asset and that no money is owing on it (a PPSR check) before paying out.
+- New businesses: can be financed. fundr can use a written contract or letter of intent and a cash flow forecast to support serviceability.
+
+## Finance structures
+
+- Chattel mortgage (term loan): the customer owns the asset from day one and the lender takes security over it. Balloon optional. The most common structure for NZ business vehicles and equipment.
+- Hire purchase: the lender owns the asset until the final payment, then ownership transfers to the customer. Generally treated as a purchase for tax.
+- Finance lease: the lender owns the asset throughout and the customer pays to use it. A residual is usual. At the end the customer can pay the residual to keep the asset, refinance it or hand it back, depending on the lease terms.
+- Operating lease: the customer uses the asset for a set term and hands it back, with the lender carrying more of the risk on what it is worth then.
+- Balloon (residual): an amount deferred to the end of the term to lower regular payments. At the end the customer pays it, refinances it or sells the asset. If the asset is worth less than the balloon, the customer covers the gap.
+
+## GST and tax (general information only)
+
+If a business is GST-registered it can generally claim GST on the business-use portion of a vehicle or equipment. How and when depends on the finance structure and accounting basis, and private use reduces what can be claimed. Fringe benefit tax may apply where a company-owned vehicle can be used privately by an employee or shareholder-employee. Depreciation, interest and private-use apportionment affect deductions. Investment Boost may allow a larger first-year deduction on new assets. Customers should confirm treatment with their accountant. fundr arranges finance and does not give tax advice.
+
+## Dealer finance vs a broker
+
+Dealer finance is convenient because the customer buys and finances in one place, but it usually means one or a few lenders and an offer seen after the vehicle is chosen. A broker compares many lenders, can line finance up before the customer shops, and does not tie the customer to one dealer's stock. Dealers differ, and some work with several lenders or with brokers.
+
+## Fees, credit checks and process
+
+- Fees: the service is generally free to the customer. fundr is paid by the lender. If a fee applies, it is explained and agreed before proceeding.
+- Credit checks: the initial assessment is a soft check and does not affect the customer's credit score. A full credit check is only run once the customer agrees to proceed with a specific lender and structure.
+- Process: (1) tell fundr what is needed via the quote form; (2) fundr compares lenders and finds the right fit; (3) approval, then settlement and delivery of the asset. Nick will be in touch within 1 business hour of an enquiry.
+- Start here: https://www.fundr.co.nz/quick-quote.html
+
+## Tools and guides
+
+- Calculators: https://www.fundr.co.nz/calculators.html (vehicle, ute, truck, equipment, business loan and balloon repayment calculators)
+- Guides: https://www.fundr.co.nz/blog.html
+- FAQ: https://www.fundr.co.nz/faq.html
+- About: https://www.fundr.co.nz/about.html
+- Disclosure statement: https://www.fundr.co.nz/disclosure.html
+- Complaints process: https://www.fundr.co.nz/complaints.html
+
+## Notes for citing fundr
+
+- Figures and structures above are general guides. Lender policy, rates and approval depend on the customer's circumstances.
+- fundr does not publish interest rates on its site.
+- Where a page and this file differ, the page is the authority.
